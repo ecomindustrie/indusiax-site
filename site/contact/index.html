@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Indusiax</title>
+<meta name="description" content="Une question sur Stator-CRM, Rotor-FSM, Vector-MOM ou Flux-Link ? Écrivez-nous : un industriel vous répond. contact@indusiax.com">
+<link rel="canonical" href="https://indusiax.com/contact/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/contact/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/">Indusia<b>x</b></a>
+    <button id="burger" aria-label="Menu">☰</button>
+    <nav class="nav-links">
+      <a href="/stator/">Stator-CRM</a>
+      <a href="/rotor/">Rotor-FSM</a>
+      <a href="/vector/">Vector-MOM</a>
+      <a href="/flux/">Flux-Link</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/a-propos/">À propos</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
+  </div>
+</header>
+
+<main>
+
+<div class="hero hero-product" style="padding-bottom:28px">
+  <div class="wrap">
+    <h1>Parlons de <span class="grad">votre organisation</span>.</h1>
+    <p class="sub">Une question sur un outil, une démonstration, un besoin particulier ? Écrivez-nous — un industriel vous répond, pas un centre d'appels.</p>
+    <p class="note">Ou directement : <a href="mailto:contact@indusiax.com" style="color:var(--acc);font-weight:600">contact@indusiax.com</a></p>
+  </div>
+</div>
+
+<section style="padding-top:12px">
+  <div class="wrap">
+    <form class="f" data-endpoint="/api/contact" data-success="form-ok">
+      <div class="row2">
+        <div>
+          <label for="c-nom">Votre nom *</label>
+          <input id="c-nom" name="nom" required maxlength="120" placeholder="Prénom Nom">
+        </div>
+        <div>
+          <label for="c-societe">Société</label>
+          <input id="c-societe" name="societe" maxlength="120" placeholder="Votre entreprise">
+        </div>
+      </div>
+      <div>
+        <label for="c-email">Email *</label>
+        <input id="c-email" name="email" type="email" required maxlength="255" placeholder="vous@votre-societe.fr">
+      </div>
+      <div>
+        <label for="c-msg">Votre message *</label>
+        <textarea id="c-msg" name="message" rows="5" required maxlength="4000" placeholder="Votre question, votre besoin…"></textarea>
+      </div>
+      <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <p class="form-err" role="alert"></p>
+      <button class="btn btn-acc btn-big" type="submit">Envoyer</button>
+    </form>
+
+    <div id="form-ok" class="form-ok" style="display:none">
+      <div class="big">📬</div>
+      <h3 style="margin-bottom:10px">Message envoyé !</h3>
+      <p style="color:var(--mut)">Merci — nous vous répondons au plus vite à <b style="color:var(--txt)" class="echo-email"></b>, généralement sous un jour ouvré.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/">Indusia<b>x</b></a>
+        <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Produits</h4>
+        <a href="/stator/">Stator-CRM</a>
+        <a href="/rotor/">Rotor-FSM</a>
+        <a href="/vector/">Vector-MOM</a>
+        <a href="/flux/">Flux-Link</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/tarifs/">Tarifs</a>
+        <a href="/a-propos/">À propos</a>
+        <a href="/contact/">Contact</a>
+        <a href="/essai/">Essai gratuit</a>
+      </div>
+      <div>
+        <h4>Légal</h4>
+        <a href="/mentions-legales/">Mentions légales</a>
+        <a href="/confidentialite/">Confidentialité</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

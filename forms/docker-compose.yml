@@ -1,0 +1,31 @@
+services:
+  indusiax-forms:
+    build: .
+    container_name: indusiax-forms
+    restart: unless-stopped
+    environment:
+      - FORMS_DB=/data/demandes.db
+      - ADMIN_TOKEN=o2c9q6zp7xu1l0gsejr5y8ihwad3kbmnvft4
+      # Notifications email (à activer avec un mot de passe d'application Gmail :
+      # https://myaccount.google.com/apppasswords sur ecom.industriegt@gmail.com)
+      # - SMTP_HOST=smtp.gmail.com
+      # - SMTP_PORT=587
+      # - SMTP_USER=ecom.industriegt@gmail.com
+      # - SMTP_PASS=xxxx xxxx xxxx xxxx
+      # - NOTIFY_TO=ecom.industriegt@gmail.com
+      # - NOTIFY_FROM=ecom.industriegt@gmail.com
+    volumes:
+      - /var/lib/indusiax-forms:/data
+    networks:
+      - dokploy-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.indusiax-forms.entrypoints=websecure"
+      - "traefik.http.routers.indusiax-forms.rule=(Host(`indusiax.com`) || Host(`www.indusiax.com`)) && PathPrefix(`/api`)"
+      - "traefik.http.routers.indusiax-forms.tls.certresolver=letsencrypt"
+      - "traefik.http.services.indusiax-forms.loadbalancer.server.port=8000"
+      - "traefik.docker.network=dokploy-network"
+
+networks:
+  dokploy-network:
+    external: true

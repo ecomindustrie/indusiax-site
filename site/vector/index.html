@@ -3,29 +3,32 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vector-MOM — Comptes-rendus de réunion par IA | Indusiax</title>
-<meta name="description" content="L'IA transcrit vos réunions et rédige le compte-rendu — et vos enregistrements ne quittent jamais nos serveurs en Europe. 12 €/mois, essai gratuit 30 jours, sans carte.">
+<title>Vector-MOM — Comptes-rendus de réunion par IA, hébergés en Europe | Indusiax</title>
+<meta name="description" content="Restez dans la discussion, l'IA prend les notes. Vector-MOM transcrit vos réunions (qui a dit quoi) et rédige le compte-rendu — et vos enregistrements ne quittent jamais nos serveurs européens. 12 €/mois, essai 30 jours, compte immédiat.">
 <link rel="canonical" href="https://indusiax.com/vector/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Vector-MOM — Comptes-rendus de réunion par IA">
-<meta property="og:description" content="L'IA transcrit vos réunions et rédige le compte-rendu structuré. Essai gratuit 30 jours, compte immédiat.">
+<meta property="og:title" content="Vector-MOM — Comptes-rendus de réunion par IA, hébergés en Europe">
+<meta property="og:description" content="L'IA transcrit vos réunions et rédige le compte-rendu structuré. Vos enregistrements restent en Europe. Essai 30 jours, compte immédiat.">
 <meta property="og:url" content="https://indusiax.com/vector/">
+<meta property="og:image" content="https://indusiax.com/assets/vector/hero.jpg">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Vector-MOM",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Comptes-rendus de réunion automatiques par IA : transcription, identification des interlocuteurs, notes structurées, partage et intégration CRM.",
-  "url": "https://indusiax.com/vector/",
-  "offers": {"@type": "Offer", "price": "12.00", "priceCurrency": "EUR",
-             "description": "12 € HT par mois, essai gratuit de 30 jours"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vector-MOM","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Comptes-rendus de réunion automatiques par IA : transcription, identification des interlocuteurs, notes structurées, partage et intégration CRM. Données hébergées en Europe.","url":"https://indusiax.com/vector/","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR","description":"12 € HT par mois, essai gratuit de 30 jours"}}
 </script>
+<style>
+/* maquette compte-rendu (transcript + décisions) */
+.mom .who{display:flex;gap:10px;padding:8px 0;font-size:.8rem;color:#2a3742;align-items:flex-start;}
+.mom .who .sp{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.03em;color:#fff;background:var(--p2);border-radius:3px;padding:3px 6px;white-space:nowrap;flex-shrink:0;}
+.mom .who .sp.b{background:#5b6b7a;}
+.mom .dec{margin-top:12px;padding-top:12px;border-top:2px solid var(--pline);}
+.mom .dec .h{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:#67717c;margin-bottom:8px;}
+.mom .dec .d{display:flex;align-items:center;gap:9px;font-size:.8rem;color:#24303c;padding:4px 0;}
+.mom .dec .d .pastille{width:12px;height:12px;}
+.mom .tag{margin-top:13px;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;color:#5a8f5f;}
+</style>
 </head>
 <body>
 
@@ -39,46 +42,96 @@
       <a class="on" href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="https://vector.indusiax.com/register">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#A78BFA;--p2:#7c3aed">
 
-<div class="hero hero-product">
-  <div class="wrap">
-    <span class="kicker" style="border-color:rgba(167,139,250,.5)">Vector-MOM · Réunions &amp; IA</span>
-    <h1>Restez dans la discussion. <span class="grad">L'IA prend les notes.</span></h1>
-    <p class="sub">Réunion client, point d'équipe, visio Teams ou Meet : Vector-MOM enregistre, transcrit en indiquant qui parle, et rédige un compte-rendu structuré selon vos modèles. Vous relisez, vous partagez, c'est terminé.</p>
-    <div class="ctas">
-      <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Créer mon compte — essai immédiat</a>
-      <a class="btn btn-ghost btn-big" href="/tarifs/">12 € / mois</a>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/vector/hero.jpg" alt="Réunion d'équipe dans une PME industrielle, smartphone en train d'enregistrer" fetchpriority="high"></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Restez dans la discussion. <span class="ac">L'IA prend les notes.</span></h1>
+      <p class="sub">Réunion client, point d'équipe, visio Teams ou Meet : Vector-MOM enregistre, transcrit en indiquant qui parle, et rédige un compte-rendu structuré selon vos modèles. Vous relisez, vous partagez — et vos enregistrements ne quittent jamais l'Europe.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Créer mon compte — essai immédiat</a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">12 € / mois</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Compte créé en 30 secondes · sans carte</div>
+        <div class="pv-chips">
+          <span class="pv-chip">🇪🇺 Hébergé en Europe</span><span class="pv-chip">Qui a dit quoi</span>
+          <span class="pv-chip">Teams · Meet · Zoom</span><span class="pv-chip">Export Word</span>
+        </div>
+      </div>
     </div>
-    <p class="note">Compte créé en 30 secondes · 30 jours d'accès complet · Sans carte bancaire · 🇪🇺 Vos enregistrements ne quittent pas nos serveurs européens</p>
+    <div class="pv-card mom" aria-label="Aperçu d'un compte-rendu">
+      <div class="ch"><span class="t">COMPTE-RENDU</span><span class="a">Réunion chantier</span></div>
+      <div class="cb">
+        <div class="who"><span class="sp">VOUS</span><span>Il nous faut la nacelle livrée avant le 14, sinon le planning saute.</span></div>
+        <div class="who"><span class="sp b">CLIENT</span><span>OK pour le 14, à condition qu'on valide l'accès poids lourd.</span></div>
+        <div class="who"><span class="sp b">CHEF ATELIER</span><span>Je m'occupe de l'accès et je confirme demain matin.</span></div>
+        <div class="dec">
+          <div class="h">Décisions &amp; actions</div>
+          <div class="d"><span class="pastille p-ok"></span> Livraison nacelle confirmée — 14 juin</div>
+          <div class="d"><span class="pastille p-aa"></span> Valider l'accès poids lourd — chef atelier, J+1</div>
+        </div>
+        <div class="tag">🔒 Transcrit &amp; stocké sur nos serveurs européens</div>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
+<!-- ORIGIN STORY -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:22px">Pourquoi Vector existe</span>
+    <div class="pv-origin">
+      <p class="lead">On a nos réunions à nous : chantiers, litiges, prix, salariés. Le genre de choses qu'on <b>n'envoie pas chez un géant du cloud américain</b> pour se faire transcrire.</p>
+      <p>Les outils de compte-rendu qu'on a testés expédiaient tous nos enregistrements Dieu sait où. Inacceptable quand on parle d'un devis confidentiel ou d'un dossier RH. Alors on a construit le nôtre : la transcription tourne sur nos propres serveurs, en Europe, et rien ne sort. C'est le compte-rendu automatique qu'un industriel peut utiliser la conscience tranquille.</p>
+      <div class="sig">By Industry, For Industry — l'équipe Indusiax</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIDENTIALITÉ -->
 <section>
   <div class="wrap">
-    <h2 class="sec">Vos réunions sont confidentielles. Elles le restent.</h2>
-    <p class="sec-sub">On y parle prix, clients, salariés, litiges — pas le genre de choses à envoyer chez un géant du cloud américain.</p>
-    <div class="grid c3">
-      <div class="card"><span class="ic">🎧</span><h3>Transcription chez nous</h3><p>L'audio de vos réunions est transcrit <b style="color:var(--txt)">sur nos propres serveurs</b>, en Europe. Vos enregistrements ne sont jamais envoyés à un service de transcription tiers — contrairement à la plupart des outils du marché.</p></div>
-      <div class="card"><span class="ic">🇪🇺</span><h3>Stockées en Europe</h3><p>Enregistrements, transcriptions et comptes-rendus vivent sur des serveurs en Union européenne, soumis au droit européen. Sauvegardés chaque nuit, avec copie hors-site. <a href="/securite/" style="color:var(--acc);font-weight:600">Notre page Sécurité →</a></p></div>
+    <span class="eb" style="margin-bottom:14px">Vos réunions restent les vôtres</span>
+    <h2 class="sec" style="text-align:left;max-width:680px">Confidentielles. Et elles le restent.</h2>
+    <div class="grid c3" style="margin-top:36px">
+      <div class="card"><span class="ic">🎧</span><h3>Transcription chez nous</h3><p>L'audio est transcrit <b style="color:var(--txt)">sur nos propres serveurs</b>, en Europe. Jamais envoyé à un service de transcription tiers — contrairement à la plupart des outils du marché.</p></div>
+      <div class="card"><span class="ic">🇪🇺</span><h3>Stockées en Europe</h3><p>Enregistrements, transcriptions et comptes-rendus vivent sur des serveurs dans l'UE, soumis au droit européen. Sauvegardés chaque nuit, copie hors-site. <a href="/securite/" style="color:var(--acc);font-weight:600">Page Sécurité →</a></p></div>
       <div class="card"><span class="ic">🗑️</span><h3>À vous, vraiment</h3><p>Export en un clic (Word, Markdown, transcription), suppression définitive à tout moment — l'audio compris. Si vous partez, vous partez avec tout, et il ne reste rien.</p></div>
     </div>
   </div>
 </section>
 
+<!-- BAND -->
+<div class="pv-band">
+  <img src="/assets/vector/band.jpg" alt="Deux professionnels en discussion technique autour de plans d'atelier" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">De la parole au compte-rendu</span>
+    <h2>Vous menez la réunion. Vector écrit pendant ce temps.</h2>
+    <p>Micro seul en présentiel, ou micro + son de la visio pour capturer tout le monde — et l'IA range les décisions au bon endroit.</p>
+  </div>
+</div>
+
+<!-- COMMENT / FONCTIONS -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">De la parole au compte-rendu, sans clavier.</h2>
-    <div class="grid c3">
+    <span class="eb" style="margin-bottom:14px">Comment ça marche</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">De la parole au compte-rendu, sans clavier.</h2>
+    <div class="grid c3" style="margin-top:36px">
       <div class="card"><span class="ic">🎙️</span><h3>Enregistrement simple</h3><p>Micro seul en présentiel, ou micro + son de la visio (Meet, Teams, Zoom web) pour capturer tous les participants.</p></div>
       <div class="card"><span class="ic">🗣️</span><h3>Qui a dit quoi</h3><p>La transcription distingue votre voix de celle de vos interlocuteurs — le compte-rendu attribue les décisions aux bonnes personnes.</p></div>
-      <div class="card"><span class="ic">📝</span><h3>Notes structurées</h3><p>L'IA rédige selon vos modèles : relevé de décisions, actions à mener, compte-rendu de visite commerciale… à vous de choisir la trame.</p></div>
+      <div class="card"><span class="ic">📝</span><h3>Notes structurées</h3><p>L'IA rédige selon vos modèles : relevé de décisions, actions à mener, compte-rendu de visite… à vous de choisir la trame.</p></div>
       <div class="card"><span class="ic">📅</span><h3>Relié à votre agenda</h3><p>Connectez Google ou Outlook : vos rendez-vous du jour apparaissent, la réunion se crée en un clic avec les bons participants.</p></div>
       <div class="card"><span class="ic">🔗</span><h3>Partage en un lien</h3><p>Envoyez le compte-rendu en lecture seule à ceux qui n'étaient pas là — sans pièce jointe ni copier-coller.</p></div>
       <div class="card"><span class="ic">🧲</span><h3>Vers votre CRM</h3><p>Avec Stator-CRM, le compte-rendu du rendez-vous client rejoint directement la fiche du client concerné.</p></div>
@@ -86,20 +139,58 @@
   </div>
 </section>
 
+<!-- POUR QUI -->
 <section>
   <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Pour qui</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Fait pour les réunions qui décident.</h2>
+    <div class="pv-aud" style="margin-top:40px">
+      <div class="pv-photo">
+        <img src="/assets/vector/audience.jpg" alt="Réunion de chantier avec casques, revue sur tablette" loading="lazy">
+        <div class="badge">
+          <span class="eb">Le vrai sujet</span>
+          <h3>Un CR clair, c'est un litige évité.</h3>
+          <p>« On avait dit quoi, déjà ? » — la phrase qui coûte cher. Le compte-rendu attribué, daté et partagé met tout le monde d'accord.</p>
+        </div>
+      </div>
+      <div class="pv-audlist">
+        <div class="pv-aud-i"><div class="k">01</div><div><h3>Dirigeants &amp; chefs de projet</h3><p>Réunions de chantier, revues d'affaire, points fournisseurs : les décisions écrites, sans y passer la soirée.</p></div></div>
+        <div class="pv-aud-i"><div class="k">02</div><div><h3>Commerciaux techniques</h3><p>Compte-rendu de visite dicté en sortant du rendez-vous, rangé au bon endroit (et dans le CRM avec Stator).</p></div></div>
+        <div class="pv-aud-i"><div class="k">03</div><div><h3>Bureaux d'études &amp; qualité</h3><p>Réunions techniques longues : la trame structurée sort un relevé de décisions exploitable.</p></div></div>
+        <div class="pv-aud-i"><div class="k">04</div><div><h3>Tous ceux qui tiennent au secret</h3><p>RH, direction, juridique : des sujets sensibles qui doivent rester en Europe, sur nos serveurs.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIF + CTA -->
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Tarif</span>
     <h2 class="sec">Essai immédiat, tarif d'artisan.</h2>
-    <ul class="checklist">
-      <li><b>30 jours d'accès complet</b> — créez votre compte, c'est parti. Aucune carte demandée.</li>
-      <li><b>Après l'essai</b> — 12 € / mois par carte ou prélèvement. Sans abonnement, rien ne s'efface : vos comptes-rendus restent consultables et exportables, simplement en lecture seule.</li>
-      <li><b>En français, anglais et néerlandais</b> — interface et comptes-rendus.</li>
-      <li><b>Parrainez un collègue</b> — il gagne 15 jours d'essai en plus, vous gagnez un mois offert dès son premier abonnement.</li>
-    </ul>
+    <div style="max-width:440px;margin:32px auto 0">
+      <div class="price-card bundle" style="position:relative;text-align:center">
+        <span class="badge-eco">Compte immédiat · sans carte</span>
+        <h3 class="t-vector" style="margin-top:6px">Vector-MOM</h3>
+        <div class="amount" style="margin:4px auto 0">12 €<small> HT / mois</small></div>
+        <div class="per">Réunions illimitées, tout inclus.</div>
+        <ul style="text-align:left">
+          <li>Transcription « qui a dit quoi »</li>
+          <li>Comptes-rendus structurés IA</li>
+          <li>Agendas Google &amp; Outlook</li>
+          <li>🇪🇺 Hébergement &amp; transcription en Europe</li>
+          <li>Français, anglais, néerlandais</li>
+        </ul>
+        <a class="btn btn-acc" style="align-self:center" href="https://vector.indusiax.com/register">Créer mon compte gratuit</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Parrainez un collègue : +15 j pour lui, 1 mois offert pour vous.</p>
   </div>
 </section>
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">On l'a fait pour nos réunions. Prenez-le pour les vôtres.</span>
     <h2>Votre prochaine réunion mérite un vrai compte-rendu.</h2>
     <p>Compte créé en 30 secondes, 30 jours d'essai complet.</p>
     <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Créer mon compte gratuit</a>
@@ -115,26 +206,9 @@
         <a class="logo" href="/">Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
-      <div>
-        <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
-      </div>
-      <div>
-        <h4>Indusiax</h4>
-        <a href="/tarifs/">Tarifs</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-        <a href="/essai/">Essai gratuit</a>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <a href="/mentions-legales/">Mentions légales</a>
-        <a href="/confidentialite/">Confidentialité</a>
-        <a href="/securite/">Sécurité &amp; données</a>
-      </div>
+      <div><h4>Produits</h4><a href="/stator/">Stator-CRM</a><a href="/rotor/">Rotor-FSM</a><a href="/vector/">Vector-MOM</a><a href="/flux/">Flux-Link</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Tarifs</a><a href="/blog/">Blog</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/essai/">Essai gratuit</a></div>
+      <div><h4>Légal</h4><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/securite/">Sécurité &amp; données</a></div>
     </div>
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>

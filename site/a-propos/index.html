@@ -3,12 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>À propos — Indusiax, des logiciels nés à l'atelier</title>
-<meta name="description" content="Indusiax est né dans une PME française de mécanique industrielle : des outils construits pour notre propre activité, partagés avec les TPE et PME industrielles qui vivent les mêmes réalités.">
+<title>À propos — Indusiax, des outils construits par nécessité</title>
+<meta name="description" content="Indusiax est né dans une PME française de mécanique industrielle qui ne trouvait pas les logiciels adaptés à son métier. Elle a fini par les construire elle-même — et les partage aujourd'hui avec les TPE et PME industrielles qui vivent les mêmes réalités.">
 <link rel="canonical" href="https://indusiax.com/a-propos/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="À propos — Indusiax, des outils construits par nécessité">
+<meta property="og:description" content="On cherchait des logiciels pour notre industrie. On ne les a pas trouvés. On les a construits nous-mêmes.">
+<meta property="og:url" content="https://indusiax.com/a-propos/">
+<meta property="og:image" content="https://indusiax.com/assets/apropos/hero.jpg">
+<style>
+/* timeline en 4 temps */
+.tl{max-width:900px;margin:44px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
+.tl::before{content:"";position:absolute;top:19px;left:calc(12.5% - 1px);right:calc(12.5% - 1px);height:2px;background:var(--bord);z-index:0;}
+.tl-i{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;}
+.tl-i .dot{width:40px;height:40px;border-radius:50%;background:#10161d;border:2px solid var(--acc);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--acc);margin-bottom:16px;}
+.tl-i h3{font-size:.98rem;margin-bottom:6px;}
+.tl-i p{font-size:.82rem;color:var(--mut);}
+@media(max-width:760px){.tl{grid-template-columns:1fr;gap:28px;}.tl::before{display:none;}}
+/* chiffres */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:880px;margin:0 auto;}
+.stat-strip .s{text-align:center;}
+.stat-strip .n{font-family:var(--mono);font-weight:800;font-size:2rem;color:var(--acc);letter-spacing:-.02em;}
+.stat-strip .l{font-size:.82rem;color:var(--mut);margin-top:4px;}
+@media(max-width:640px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:26px;}}
+</style>
 </head>
 <body>
 
@@ -22,48 +44,103 @@
       <a href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a class="on" href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
-<div class="hero hero-product" style="padding-bottom:36px">
-  <div class="wrap">
-    <span class="kicker">Notre histoire</span>
-    <h1>Des logiciels nés <span class="grad">à l'atelier</span>.</h1>
-    <p class="sub">Indusiax n'est pas une startup qui a « identifié un marché ». C'est une PME industrielle qui n'a pas trouvé chaussure à son pied — et qui a fini par fabriquer la chaussure.</p>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/apropos/hero.jpg" alt="Fondateur d'Indusiax, bras croisés, dans son atelier de mécanique industrielle" fetchpriority="high"></div>
+  <div class="wrap" style="position:relative;z-index:2;padding:86px 0 90px;max-width:760px">
+    <span class="eb">Notre histoire</span>
+    <h1 style="font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:16px 0 22px">On n'a pas trouvé l'outil qu'il nous fallait. <span class="ac">Alors on l'a construit.</span></h1>
+    <p class="sub" style="max-width:56ch">Indusiax n'est pas une startup qui a « identifié un marché ». C'est une PME industrielle française qui cherchait des logiciels pour son métier, qui n'en a pas trouvé, et qui a fini par fabriquer les siens — assez bons pour être partagés.</p>
   </div>
-</div>
+</section>
 
-<section style="padding-top:20px">
-  <div class="wrap" style="max-width:760px">
-    <div style="color:var(--mut);font-size:1.02rem;display:flex;flex-direction:column;gap:18px">
-      <p>Tout commence dans une entreprise française de mécanique et d'équipements industriels. Comme beaucoup de TPE et PME du secteur, elle cherchait des outils de gestion : un CRM qui comprenne qu'on vend des machines et du service, un moyen de tracer les expertises réalisées chez les clients, de garder les comptes-rendus de réunion, de montrer son savoir-faire sur LinkedIn.</p>
-      <p>Les grands logiciels du marché ? Trop chers, trop complexes, pensés pour des armées de commerciaux en costume — pas pour un atelier où le même technicien démonte un réducteur le matin et rédige son rapport le soir.</p>
-      <p>Alors nous avons construit nos propres outils. D'abord pour nous. Ils ont fait leurs preuves au quotidien : les devis partent plus vite, les relances ne s'oublient plus, les rapports d'intervention sont propres, les réunions laissent une trace.</p>
-      <p>Indusiax, c'est la décision de partager ces outils avec les entreprises qui vivent les mêmes réalités que nous. D'où notre devise : <b style="color:var(--txt)">« By industry, for industry. »</b> Ce n'est pas un slogan marketing — c'est notre acte de naissance.</p>
+<!-- CHIFFRES -->
+<section style="padding:52px 0">
+  <div class="wrap">
+    <div class="stat-strip">
+      <div class="s"><div class="n">4</div><div class="l">outils, une seule suite connectée</div></div>
+      <div class="s"><div class="n">1</div><div class="l">PME industrielle à l'origine de tout</div></div>
+      <div class="s"><div class="n">🇪🇺</div><div class="l">hébergement 100 % européen</div></div>
+      <div class="s"><div class="n">30</div><div class="l">jours d'essai, 0 carte bancaire</div></div>
     </div>
   </div>
 </section>
 
+<!-- RÉCIT LONG -->
+<section class="alt">
+  <div class="wrap" style="max-width:760px">
+    <div style="color:var(--mut);font-size:1.05rem;line-height:1.7;display:flex;flex-direction:column;gap:20px">
+      <p><b style="color:var(--txt)">Tout commence par une frustration, pas par une idée géniale.</b> Une entreprise française de mécanique et d'équipements industriels cherche, comme des milliers d'autres TPE et PME du secteur, des outils de gestion qui lui ressemblent : un CRM qui comprenne qu'on vend des machines et du service et pas des abonnements SaaS, un moyen de tracer les expertises réalisées chez les clients, de garder la mémoire des réunions, de montrer son savoir-faire sans y passer ses soirées.</p>
+      <p>Elle regarde ce qui existe. Les grands CRM du marché ? Taillés pour des armées de commerciaux en costume, avec des « leads » et des « pipelines » — pas pour un technicien qui démonte un réducteur le matin et rédige son rapport le soir. Les outils terrain ? Hors de prix, ou pensés pour des multinationales avec un service informatique dédié. Les comptes-rendus de réunion automatiques ? Tous prêts à expédier ses enregistrements les plus confidentiels chez un géant du cloud américain.</p>
+      <p><b style="color:var(--txt)">Alors elle a fait ce que font les industriels quand la pièce n'existe pas au catalogue : elle l'a usinée elle-même.</b> D'abord pour elle. Sans business plan, sans levée de fonds, sans étude de marché — juste un besoin réel, résolu avec les moyens du bord, testé en conditions réelles chaque jour.</p>
+      <p>Les résultats n'ont pas menti. Les devis sont partis plus vite. Les relances ne se sont plus oubliées. Les rapports d'intervention sont devenus nets, signés, professionnels. Les réunions ont laissé une trace au lieu de s'évaporer. Le compte LinkedIn, muet depuis des années, s'est mis à vivre.</p>
+      <p>C'est là qu'est née l'idée d'Indusiax : <b style="color:var(--txt)">si ces outils nous manquaient à nous, ils manquaient sûrement à d'autres.</b> Pas à des « entreprises tech ». À des entreprises comme la nôtre — qui vendent, qui interviennent, qui fabriquent, qui entretiennent, et qui n'ont ni le temps ni l'envie de se battre avec un logiciel qui ne parle pas leur langue.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BAND origine -->
+<div class="pv-band">
+  <img src="/assets/apropos/band.jpg" alt="Premier croquis d'un outil dessiné à la main sur un établi" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">Le tout premier outil</span>
+    <h2>Un croquis sur un coin d'établi. Pas un cahier des charges de 40 pages.</h2>
+    <p>Ce qui a précédé le code, c'est un problème concret un mardi matin — et l'envie de le régler avant vendredi.</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Comment on en est arrivé là</span>
+    <h2 class="sec">Une histoire en quatre temps.</h2>
+    <div class="tl">
+      <div class="tl-i"><div class="dot">01</div><h3>Le problème</h3><p>Aucun logiciel du marché ne parle vraiment le langage de notre industrie.</p></div>
+      <div class="tl-i"><div class="dot">02</div><h3>On construit pour nous</h3><p>Sans financement extérieur, sans road-map marketing — juste résoudre notre propre journée de travail.</p></div>
+      <div class="tl-i"><div class="dot">03</div><h3>Ça marche, vraiment</h3><p>Utilisé chaque jour, en conditions réelles, par nos propres équipes — le meilleur test qui soit.</p></div>
+      <div class="tl-i"><div class="dot">04</div><h3>On le partage</h3><p>Indusiax naît : mettre ces outils entre les mains d'entreprises qui vivent les mêmes réalités.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE / DEVISE -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">Ce en quoi nous croyons</h2>
-    <div class="grid c3">
-      <div class="card"><span class="ic">🔧</span><h3>La simplicité est un travail</h3><p>Un outil que l'équipe n'utilise pas ne vaut rien. Chaque écran est pensé pour quelqu'un qui a autre chose à faire que de la saisie.</p></div>
-      <div class="card"><span class="ic">🤝</span><h3>Le client n'est pas un « lead »</h3><p>Dans l'industrie, les relations commerciales durent des années. Nos outils respectent ce temps long : historique, traçabilité, mémoire.</p></div>
-      <div class="card"><span class="ic">🔒</span><h3>Vos données sont à vous</h3><p>Hébergement dans l'Union européenne, exports libres, pas de revente, pas de surprise. Si vous partez, vous partez avec tout.</p></div>
+    <div class="pv-origin">
+      <p class="lead">« By industry, for industry » n'est pas un slogan qu'une agence nous a vendu. <b>C'est notre acte de naissance.</b></p>
+      <p>Nous ne sommes ni plus intelligents ni plus rapides que les éditeurs installés. Nous avons simplement un avantage qu'aucun budget marketing n'achète : nous utilisons nos propres outils, chaque jour, dans notre propre activité. Quand un écran est mal pensé, c'est nous qui butons dessus les premiers.</p>
+      <div class="sig">L'équipe Indusiax</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Ce en quoi nous croyons</span>
+    <h2 class="sec">Trois convictions qui guident chaque décision produit.</h2>
+    <div class="grid c3" style="margin-top:32px">
+      <div class="card"><span class="ic">🔧</span><h3>La simplicité est un travail</h3><p>Un outil que l'équipe n'utilise pas ne vaut rien, aussi complet soit-il. Chaque écran est pensé pour quelqu'un qui a autre chose à faire que de la saisie.</p></div>
+      <div class="card"><span class="ic">🤝</span><h3>Le client n'est pas un « lead »</h3><p>Dans l'industrie, les relations commerciales durent des années, parfois des décennies. Nos outils respectent ce temps long : historique, traçabilité, mémoire.</p></div>
+      <div class="card"><span class="ic">🔒</span><h3>Vos données sont à vous</h3><p>Hébergement dans l'Union européenne, exports libres, pas de revente, pas de surprise. Si vous partez, vous partez avec tout — il ne reste rien chez nous.</p></div>
     </div>
   </div>
 </section>
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Le meilleur argument, c'est l'essai</span>
     <h2>Envie de juger sur pièces ?</h2>
-    <p>C'est exactement pour ça qu'il y a 30 jours d'essai gratuit.</p>
+    <p>C'est exactement pour ça qu'il y a 30 jours d'essai gratuit, sans carte bancaire.</p>
     <a class="btn btn-acc btn-big" href="/essai/">Démarrer mon essai</a>
   </div>
 </div>
@@ -87,6 +164,7 @@
       <div>
         <h4>Indusiax</h4>
         <a href="/tarifs/">Tarifs</a>
+        <a href="/blog/">Blog</a>
         <a href="/a-propos/">À propos</a>
         <a href="/contact/">Contact</a>
         <a href="/essai/">Essai gratuit</a>

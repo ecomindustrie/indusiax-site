@@ -4,28 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stator-CRM — Le CRM des TPE &amp; PME industrielles | Indusiax</title>
-<meta name="description" content="CRM pensé pour la vente de matériel et services industriels : clients, devis PDF, relances automatiques, tournées commerciales, SAV, parc machines, téléphonie et IA. 65 €/utilisateur/mois, essai gratuit 30 jours.">
+<meta name="description" content="Le CRM conçu par des industriels pour des industriels : clients, devis PDF, relances, tournées, SAV, parc machines. Vos clients achètent des machines, pas des « leads ». 65 €/utilisateur/mois, essai 30 jours.">
 <link rel="canonical" href="https://indusiax.com/stator/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/stator/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Stator-CRM — Le CRM des TPE & PME industrielles">
-<meta property="og:description" content="Clients, devis, relances, tournées, SAV, parc machines : le CRM qui parle le langage de l'atelier. Essai gratuit 30 jours.">
+<meta property="og:description" content="Conçu par des industriels, pour des industriels. Clients, devis, relances, tournées, SAV, parc machines. Essai 30 jours.">
 <meta property="og:url" content="https://indusiax.com/stator/">
+<meta property="og:image" content="https://indusiax.com/assets/stator/hero.jpg">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Stator-CRM",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "CRM pour TPE et PME industrielles : gestion des clients, devis, relances, tournées commerciales, SAV, parc machines, téléphonie intégrée et assistance IA.",
-  "url": "https://indusiax.com/stator/",
-  "offers": {"@type": "Offer", "price": "65.00", "priceCurrency": "EUR",
-             "description": "65 € HT par utilisateur et par mois, essai gratuit de 30 jours"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Stator-CRM","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"CRM pour TPE et PME industrielles : clients, devis, relances, tournées commerciales, SAV, parc machines, téléphonie intégrée et assistance IA.","url":"https://indusiax.com/stator/","offers":{"@type":"Offer","price":"65.00","priceCurrency":"EUR","description":"65 € HT par utilisateur et par mois, essai gratuit de 30 jours"}}
 </script>
+<style>
+/* maquette CRM (carte affaire) */
+.crm .row{display:flex;align-items:center;gap:12px;padding:9px 0;border-bottom:1px dashed var(--pline);font-size:.84rem;color:#24303c;}
+.crm .row:last-child{border-bottom:0;}.crm .row .l{color:#67717c;font-family:var(--mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;width:74px;flex-shrink:0;}
+.crm .row .v{font-weight:600;color:#1a2530;}
+.crm .amount{font-family:var(--mono);font-weight:700;color:var(--p);font-size:1rem;}
+.crm .pipe{display:flex;gap:5px;margin-top:2px;}
+.crm .pipe i{height:6px;flex:1;border-radius:3px;background:#e4eaf0;}
+.crm .pipe i.on{background:var(--p);}
+.crm .foot{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;border-top:2px solid var(--pline);font-family:var(--mono);font-size:.68rem;color:#67717c;}
+.crm .pill{margin-left:auto;background:rgba(232,76,43,.12);color:var(--p2);font-weight:700;border-radius:3px;padding:4px 8px;font-size:.64rem;}
+</style>
 </head>
 <body>
 
@@ -39,74 +43,160 @@
       <a href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/?produit=stator">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
-<div class="hero hero-product">
-  <div class="wrap">
-    <span class="kicker" style="border-color:rgba(232,76,43,.5)">Stator-CRM · CRM industriel</span>
-    <h1>Le CRM qui parle le langage <span class="grad">de l'atelier</span>.</h1>
-    <p class="sub">Vos clients achètent des machines, des pièces et du service — pas des « leads ». Stator-CRM suit vos devis, relance à votre place, organise vos tournées et garde l'historique de chaque machine installée.</p>
-    <div class="ctas">
-      <a class="btn btn-acc btn-big" href="/essai/?produit=stator">Essayer gratuitement 30 jours</a>
-      <a class="btn btn-ghost btn-big" href="/tarifs/">65 € / utilisateur / mois</a>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/stator/hero.jpg" alt="Responsable commercial d'une PME industrielle au travail près de l'atelier" fetchpriority="high"></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Le CRM qui parle le langage <span class="ac">de l'atelier.</span></h1>
+      <p class="sub">Vos clients achètent des machines, des pièces et du service — pas des « leads ». Stator-CRM suit vos devis, relance à votre place, organise vos tournées et garde l'histoire de chaque machine installée. Enfin un CRM que vos commerciaux ouvriront vraiment.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="/essai/?produit=stator">Essayer gratuitement 30 jours</a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">65 € / utilisateur / mois</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Tout le cycle, d'un seul endroit</div>
+        <div class="pv-chips">
+          <span class="pv-chip">Devis PDF</span><span class="pv-chip">Relances auto</span>
+          <span class="pv-chip">Tournées</span><span class="pv-chip">SAV</span>
+          <span class="pv-chip">Parc machines</span><span class="pv-chip">Téléphonie</span>
+        </div>
+      </div>
     </div>
-    <p class="note">Espace d'essai dédié préparé sous 24 h ouvrées · Sans carte bancaire</p>
-  </div>
-</div>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec">Du premier appel à la machine installée.</h2>
-    <p class="sec-sub">Tout le cycle commercial d'une PME industrielle, dans un outil que vos commerciaux utiliseront vraiment.</p>
-    <div class="grid c3">
-      <div class="card"><span class="ic">📇</span><h3>Clients &amp; contacts</h3><p>Fiches complètes par entreprise : contacts, secteurs d'activité, rendez-vous, comptes-rendus de visite, documents. Import de vos fichiers Excel existants.</p></div>
-      <div class="card"><span class="ic">📄</span><h3>Devis PDF professionnels</h3><p>Configurateur de devis avec votre catalogue machines, vos remises encadrées, votre logo et la signature du commercial. Envoi par email en deux clics.</p></div>
-      <div class="card"><span class="ic">🔔</span><h3>Relances automatiques</h3><p>Chaque devis envoyé est suivi : au bout du délai que vous fixez, le CRM vous signale qui relancer et prépare l'email de relance.</p></div>
-      <div class="card"><span class="ic">🗺️</span><h3>Tournées commerciales</h3><p>Cartographie de votre portefeuille et planification de circuits de visites optimisés — fini les allers-retours à vide dans la région.</p></div>
-      <div class="card"><span class="ic">🔧</span><h3>SAV &amp; parc machines</h3><p>Réclamations suivies, et traçabilité de chaque machine installée chez vos clients : numéro de série, devis d'origine, historique des interventions.</p></div>
-      <div class="card"><span class="ic">📞</span><h3>Téléphonie intégrée</h3><p>Appelez depuis la fiche client, retrouvez le journal des appels, l'enregistrement et le résumé rédigé par l'IA (module optionnel).</p></div>
-      <div class="card"><span class="ic">🤖</span><h3>Assistance IA</h3><p>Dictez votre compte-rendu de visite en sortant du rendez-vous : l'IA le structure et le range dans la fiche client. Posez-lui des questions sur votre portefeuille.</p></div>
-      <div class="card"><span class="ic">📊</span><h3>Performance &amp; historique</h3><p>Chiffre d'affaires par client, par commercial, par secteur. Import de votre historique de ventes (compatible Business Central).</p></div>
-      <div class="card"><span class="ic">🧩</span><h3>Modules à la carte</h3><p>Téléphonie, cartographie, RH, santé financière… Activez uniquement ce qui sert votre organisation — l'interface reste simple.</p></div>
+    <div class="pv-card crm" aria-label="Aperçu d'une fiche affaire">
+      <div class="ch"><span class="t">AFFAIRE</span><span class="a">DEV-2026-0142</span></div>
+      <div class="cb">
+        <div class="row"><span class="l">Client</span><span class="v">Mécanique Vasseur SAS</span></div>
+        <div class="row"><span class="l">Objet</span><span class="v">Centre d'usinage 5 axes</span></div>
+        <div class="row"><span class="l">Montant</span><span class="amount">184 500 €</span></div>
+        <div class="row"><span class="l">Étape</span><span class="v" style="flex:1">Devis envoyé
+          <span class="pipe"><i class="on"></i><i class="on"></i><i class="on"></i><i></i><i></i></span></span></div>
+        <div class="foot">📄 Devis PDF signé · logo maison<span class="pill">RELANCE J+7</span></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ORIGIN STORY -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">Un espace dédié, à votre nom.</h2>
-    <p class="sec-sub">Contrairement aux grands CRM mutualisés, chaque client Stator dispose de sa propre instance : vos données ne partagent jamais leur base avec celles d'un autre.</p>
+    <span class="eb c" style="display:flex;margin-bottom:22px">Pourquoi Stator existe</span>
+    <div class="pv-origin">
+      <p class="lead">Nous sommes <b>industriels avant d'être éditeurs de logiciels</b>. On a cherché longtemps un CRM pour notre métier. On n'a trouvé que des usines à gaz pensées pour la tech ou la vente en ligne.</p>
+      <p>Aucun ne connaissait le devis de machine à 6 chiffres, la tournée de l'atelier, le numéro de série installé chez le client, le SAV qui revient trois ans plus tard. Alors on l'a construit nous-mêmes — d'abord pour nous, avec nos commerciaux, sur le terrain. Stator-CRM, c'est cet outil-là : celui qu'on aurait voulu trouver.</p>
+      <div class="sig">By Industry, For Industry — l'équipe Indusiax</div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONS -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Ce qu'il fait</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Du premier appel à la machine installée.</h2>
+    <p style="color:var(--mut);max-width:56ch;margin:12px 0 36px">Tout le cycle commercial d'une PME industrielle, dans un outil que vos équipes utiliseront vraiment.</p>
+    <div class="grid c3">
+      <div class="card"><span class="ic">📇</span><h3>Clients &amp; contacts</h3><p>Fiches complètes par entreprise : contacts, secteurs, rendez-vous, comptes-rendus de visite, documents. Import direct de vos fichiers Excel.</p></div>
+      <div class="card"><span class="ic">📄</span><h3>Devis PDF professionnels</h3><p>Configurateur avec votre catalogue machines, vos remises encadrées, votre logo et la signature du commercial. Envoi par email en deux clics.</p></div>
+      <div class="card"><span class="ic">🔔</span><h3>Relances automatiques</h3><p>Chaque devis est suivi : au délai que vous fixez, le CRM vous signale qui relancer et prépare l'email. Plus un devis ne dort.</p></div>
+      <div class="card"><span class="ic">🗺️</span><h3>Tournées commerciales</h3><p>Cartographie de votre portefeuille et circuits de visites optimisés — fini les allers-retours à vide dans la région.</p></div>
+      <div class="card"><span class="ic">🔧</span><h3>SAV &amp; parc machines</h3><p>Réclamations suivies et traçabilité de chaque machine installée : numéro de série, devis d'origine, historique des interventions.</p></div>
+      <div class="card"><span class="ic">📞</span><h3>Téléphonie intégrée</h3><p>Appelez depuis la fiche client, retrouvez le journal, l'enregistrement et le résumé rédigé par l'IA (module optionnel).</p></div>
+      <div class="card"><span class="ic">🤖</span><h3>Assistance IA</h3><p>Dictez votre compte-rendu en sortant du rendez-vous : l'IA le structure et le range dans la fiche. Interrogez votre portefeuille en langage naturel.</p></div>
+      <div class="card"><span class="ic">📊</span><h3>Performance &amp; historique</h3><p>Chiffre d'affaires par client, commercial et secteur. Import de votre historique de ventes (compatible Business Central).</p></div>
+      <div class="card"><span class="ic">🧩</span><h3>Modules à la carte</h3><p>Téléphonie, cartographie, RH, santé financière… Activez seulement ce qui sert votre organisation ; l'interface reste simple.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND parc machines -->
+<div class="pv-band">
+  <img src="/assets/stator/band.jpg" alt="Hall d'exposition et de stockage de machines industrielles" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">La mémoire de votre parc</span>
+    <h2>Chaque machine que vous installez a une histoire. Stator la garde entière.</h2>
+    <p>Numéro de série, devis d'origine, contrat, interventions : trois ans plus tard, tout est là — et le SAV devient une occasion de revendre.</p>
+  </div>
+</div>
+
+<!-- INSTANCE DÉDIÉE -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Chez vous, pas chez tout le monde</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Un espace dédié, à votre nom.</h2>
+    <p style="color:var(--mut);max-width:60ch;margin:12px 0 24px">Contrairement aux grands CRM mutualisés, chaque client Stator a sa propre instance : vos données ne partagent jamais leur base avec celles d'un autre.</p>
     <ul class="checklist">
       <li><b>Votre marque</b> — le CRM porte votre nom et votre logo, pas le nôtre.</li>
       <li><b>Vos métiers</b> — secteurs, gammes et documents adaptés à votre activité.</li>
       <li><b>Vos utilisateurs</b> — rôles commercial, administratif et direction ; chacun voit ce qui le concerne.</li>
       <li><b>Vos données</b> — hébergées dans l'Union européenne, sauvegardées chaque nuit, exportables à tout moment.</li>
-      <li><b>Votre rythme</b> — abonnement mensuel par utilisateur, par carte ou par virement sur facture.</li>
+      <li><b>Votre rythme</b> — abonnement mensuel par utilisateur, par carte ou sur facture.</li>
     </ul>
   </div>
 </section>
 
+<!-- POUR QUI -->
 <section>
   <div class="wrap">
-    <h2 class="sec">Questions fréquentes</h2>
-    <div style="max-width:720px;margin:0 auto">
-      <details class="faq"><summary>Comment se passe l'essai gratuit ?</summary><p>Vous remplissez le formulaire d'essai ; nous préparons votre espace dédié sous 24 h ouvrées et vous recevez vos accès par email. Vous disposez alors de 30 jours d'accès complet, sans carte bancaire. À l'issue, vos données restent consultables : rien n'est supprimé.</p></details>
-      <details class="faq"><summary>Puis-je importer mes clients existants ?</summary><p>Oui — vos fichiers Excel de clients et votre catalogue s'importent directement. Nous vous accompagnons lors de la mise en route si besoin.</p></details>
-      <details class="faq"><summary>En quelles langues le CRM est-il disponible ?</summary><p>Français et anglais aujourd'hui ; néerlandais et italien sont en préparation.</p></details>
-      <details class="faq"><summary>Et si j'arrête mon abonnement ?</summary><p>Votre espace passe en lecture seule : vous consultez et exportez tout, mais rien n'est jamais supprimé sans votre demande explicite.</p></details>
-      <details class="faq"><summary>Le CRM fonctionne-t-il avec les autres outils Indusiax ?</summary><p>Oui : Stator-CRM est le cœur de la suite. Vector-MOM y pousse les comptes-rendus de réunion, la connexion « Se connecter avec Stator » ouvre les autres outils, et l'offre suite complète relie le tout à tarif réduit.</p></details>
+    <span class="eb" style="margin-bottom:14px">Pour qui</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Fait pour ceux qui vendent et entretiennent du matériel.</h2>
+    <div class="pv-aud" style="margin-top:40px">
+      <div class="pv-photo">
+        <img src="/assets/stator/audience.jpg" alt="Commercial technique en discussion chez un client, tablette en main" loading="lazy">
+        <div class="badge">
+          <span class="eb">Le terrain</span>
+          <h3>Un cycle de vente long, technique, avec du SAV derrière.</h3>
+          <p>Ce n'est pas de la vente au clic. C'est du devis étudié, de la visite, de la machine installée et suivie. Stator est bâti pour ce rythme-là.</p>
+        </div>
+      </div>
+      <div class="pv-audlist">
+        <div class="pv-aud-i"><div class="k">01</div><div><h3>Distributeurs &amp; revendeurs de matériel</h3><p>Machines-outils, manutention, agricole, TP : catalogue, devis, remises encadrées, parc installé.</p></div></div>
+        <div class="pv-aud-i"><div class="k">02</div><div><h3>Fabricants &amp; intégrateurs</h3><p>Cycle d'affaire long et technique : suivi des opportunités, historique complet, relances qui ne lâchent rien.</p></div></div>
+        <div class="pv-aud-i"><div class="k">03</div><div><h3>Sociétés de maintenance &amp; SAV</h3><p>Contrats, interventions, parc client : la vente et le service enfin dans le même outil.</p></div></div>
+        <div class="pv-aud-i"><div class="k">04</div><div><h3>PME industrielles avec une équipe commerciale</h3><p>2 à 20 commerciaux qui veulent un outil simple, pas un CRM américain qu'on n'ouvre jamais.</p></div></div>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- TARIF + CTA -->
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Tarif</span>
+    <h2 class="sec">Un prix clair, par utilisateur.</h2>
+    <div style="max-width:440px;margin:32px auto 0">
+      <div class="price-card bundle" style="position:relative;text-align:center">
+        <span class="badge-eco">Essai 30 jours sans carte</span>
+        <h3 class="t-stator" style="margin-top:6px">Stator-CRM</h3>
+        <div class="amount" style="margin:4px auto 0">65 €<small> HT / utilisateur / mois</small></div>
+        <div class="per">Espace dédié, tous les modules de base inclus.</div>
+        <ul style="text-align:left">
+          <li>Clients, devis PDF, relances</li>
+          <li>Tournées &amp; cartographie</li>
+          <li>SAV &amp; parc machines</li>
+          <li>Assistance IA &amp; import Excel</li>
+          <li>Réductions sur la suite complète</li>
+        </ul>
+        <a class="btn btn-acc" style="align-self:center" href="/essai/?produit=stator">Demander mon essai gratuit</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Espace préparé sous 24 h ouvrées · sans carte bancaire · sans engagement</p>
   </div>
 </section>
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">On l'a fait pour nous. Faites-en votre outil.</span>
     <h2>Votre CRM d'essai vous attend.</h2>
     <p>30 jours d'accès complet, votre espace dédié préparé sous 24 h ouvrées.</p>
     <a class="btn btn-acc btn-big" href="/essai/?produit=stator">Demander mon essai gratuit</a>
@@ -122,26 +212,9 @@
         <a class="logo" href="/">Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
-      <div>
-        <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
-      </div>
-      <div>
-        <h4>Indusiax</h4>
-        <a href="/tarifs/">Tarifs</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-        <a href="/essai/">Essai gratuit</a>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <a href="/mentions-legales/">Mentions légales</a>
-        <a href="/confidentialite/">Confidentialité</a>
-        <a href="/securite/">Sécurité &amp; données</a>
-      </div>
+      <div><h4>Produits</h4><a href="/stator/">Stator-CRM</a><a href="/rotor/">Rotor-FSM</a><a href="/vector/">Vector-MOM</a><a href="/flux/">Flux-Link</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Tarifs</a><a href="/blog/">Blog</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/essai/">Essai gratuit</a></div>
+      <div><h4>Légal</h4><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/securite/">Sécurité &amp; données</a></div>
     </div>
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>

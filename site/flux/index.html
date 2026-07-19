@@ -4,28 +4,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Flux-Link — Publiez sur LinkedIn sans y passer vos soirées | Indusiax</title>
-<meta name="description" content="Dictez trois phrases, ajoutez les photos de l'atelier : l'IA rédige un post LinkedIn professionnel dans votre langue et le publie. 12 €/mois, essai gratuit 30 jours — compte immédiat.">
+<meta name="description" content="Dictez trois phrases, ajoutez les photos de l'atelier : l'IA rédige un post LinkedIn professionnel dans votre langue et le publie. L'outil de com' des industriels qui n'ont pas de community manager. 12 €/mois, essai 30 jours, compte immédiat.">
 <link rel="canonical" href="https://indusiax.com/flux/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/flux/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Flux-Link — Publiez sur LinkedIn sans y passer vos soirées">
-<meta property="og:description" content="Dictez, l'IA rédige, LinkedIn publie. L'outil de communication des industriels qui n'ont pas de community manager. Essai gratuit 30 jours.">
+<meta property="og:description" content="Dictez, l'IA rédige, LinkedIn publie. L'outil de communication des industriels qui n'ont pas de community manager. Essai 30 jours.">
 <meta property="og:url" content="https://indusiax.com/flux/">
+<meta property="og:image" content="https://indusiax.com/assets/flux/hero.jpg">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Flux-Link",
-  "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Création et publication de posts LinkedIn par IA pour les PME industrielles : dictée vocale, rédaction automatique multilingue, publication directe.",
-  "url": "https://indusiax.com/flux/",
-  "offers": {"@type": "Offer", "price": "12.00", "priceCurrency": "EUR",
-             "description": "12 € HT par mois, essai gratuit de 30 jours"}
-}
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Flux-Link","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Création et publication de posts LinkedIn par IA pour les PME industrielles : dictée vocale, rédaction automatique multilingue, publication directe.","url":"https://indusiax.com/flux/","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR","description":"12 € HT par mois, essai gratuit de 30 jours"}}
 </script>
+<style>
+/* maquette post LinkedIn */
+.post .top{display:flex;align-items:center;gap:10px;}
+.post .av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--p),var(--p2));flex-shrink:0;display:grid;place-items:center;color:#fff;font-family:var(--mono);font-weight:700;font-size:.9rem;}
+.post .id .n{font-weight:700;font-size:.84rem;color:#1a2530;}
+.post .id .m{font-family:var(--mono);font-size:.6rem;color:#8794a1;}
+.post .body{font-size:.82rem;color:#24303c;line-height:1.5;margin:12px 0;}
+.post .body b{color:var(--p2);}
+.post .img{height:96px;border-radius:6px;background:linear-gradient(120deg,#dce4ec,#eef2f6);display:grid;place-items:center;color:#9aa7b3;font-size:.66rem;font-family:var(--mono);}
+.post .eng{display:flex;gap:16px;margin-top:11px;padding-top:10px;border-top:1px solid #e4eaf0;font-family:var(--mono);font-size:.64rem;color:#67717c;}
+.post .voice{display:flex;align-items:center;gap:8px;margin-top:12px;padding-top:11px;border-top:2px solid var(--pline);font-family:var(--mono);font-size:.64rem;color:var(--p2);font-weight:700;}
+</style>
 </head>
 <body>
 
@@ -39,53 +43,129 @@
       <a href="/vector/">Vector-MOM</a>
       <a class="on" href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="https://flux.indusiax.com/login">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#0EA5E9;--p2:#0369a1">
 
-<div class="hero hero-product">
-  <div class="wrap">
-    <span class="kicker" style="border-color:rgba(14,165,233,.5)">Flux-Link · Communication LinkedIn</span>
-    <h1>Votre savoir-faire mérite d'être vu. <span class="grad">Pas vos soirées sacrifiées.</span></h1>
-    <p class="sub">Vous venez de livrer une belle machine, de terminer un chantier propre ? Dictez trois phrases, ajoutez les photos : Flux-Link rédige un post LinkedIn professionnel dans votre langue et le publie sur votre profil. C'est tout.</p>
-    <div class="ctas">
-      <a class="btn btn-acc btn-big" href="https://flux.indusiax.com/login">Créer mon compte — essai immédiat</a>
-      <a class="btn btn-ghost btn-big" href="/tarifs/">12 € / mois</a>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/flux/hero.jpg" alt="Artisan industriel fier dans son atelier, smartphone en main" fetchpriority="high"></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Votre savoir-faire mérite d'être vu. <span class="ac">Pas vos soirées sacrifiées.</span></h1>
+      <p class="sub">Vous venez de livrer une belle machine, de terminer un chantier propre ? Dictez trois phrases, ajoutez les photos : Flux-Link rédige un post LinkedIn professionnel dans votre langue et le publie sur votre profil. C'est tout.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://flux.indusiax.com/login">Créer mon compte — essai immédiat</a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">12 € / mois</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Compte créé en 30 secondes · sans carte</div>
+        <div class="pv-chips">
+          <span class="pv-chip">Dictée vocale</span><span class="pv-chip">4 langues</span>
+          <span class="pv-chip">Publication directe</span><span class="pv-chip">Photos incluses</span>
+        </div>
+      </div>
     </div>
-    <p class="note">Compte créé en 30 secondes · 30 jours d'accès complet · Sans carte bancaire</p>
-  </div>
-</div>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec">Du téléphone au post publié, en quatre étapes.</h2>
-    <div class="grid c4">
-      <div class="card"><span class="ic">📷</span><h3>1. Vos photos</h3><p>La machine qui part, le chantier terminé, l'équipe au travail — les images que vous avez déjà dans votre téléphone.</p></div>
-      <div class="card"><span class="ic">🎙️</span><h3>2. Trois phrases dictées</h3><p>Racontez avec vos mots : ce que c'est, pour qui, ce qui vous rend fier. Pas besoin d'être écrivain.</p></div>
-      <div class="card"><span class="ic">✍️</span><h3>3. L'IA rédige</h3><p>Un post structuré, professionnel, à votre ton — en français, anglais, néerlandais ou italien. Vous relisez et ajustez si besoin.</p></div>
-      <div class="card"><span class="ic">🚀</span><h3>4. Publication directe</h3><p>Un clic, et le post part sur votre profil LinkedIn, photos comprises. Les fichiers sont ensuite effacés de nos serveurs.</p></div>
+    <div class="pv-card post" aria-label="Aperçu d'un post LinkedIn généré">
+      <div class="ch"><span class="t">POST LINKEDIN</span><span class="a">Prêt à publier</span></div>
+      <div class="cb">
+        <div class="top"><div class="av">MV</div><div class="id"><div class="n">Mécanique Vasseur</div><div class="m">Vous · à l'instant</div></div></div>
+        <div class="body">Fière de livrer ce <b>centre d'usinage 5 axes</b> à un client de longue date. 3 semaines d'intégration, une équipe au taquet, une machine prête à produire dès lundi. 💪 #usinage #industrie #savoirfaire</div>
+        <div class="img">📷 photo de l'atelier</div>
+        <div class="eng">👍 42　💬 7　↗ 3</div>
+        <div class="voice">🎙️ Dicté en 20 s → rédigé par l'IA</div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ORIGIN STORY -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">Pourquoi publier sur LinkedIn quand on est industriel ?</h2>
-    <p class="sec-sub">Parce que vos clients, vos futurs salariés et vos donneurs d'ordres y passent tous les jours — et que la PME qui montre son savoir-faire gagne les appels d'offres de demain.</p>
+    <span class="eb c" style="display:flex;margin-bottom:22px">Pourquoi Flux existe</span>
+    <div class="pv-origin">
+      <p class="lead">On sait faire une belle machine. <b>Écrire un post LinkedIn, beaucoup moins</b> — et on n'a pas de community manager sous la main.</p>
+      <p>Résultat : une page d'entreprise muette depuis des années, pendant que les clients, les futurs soudeurs et les donneurs d'ordres, eux, sont sur LinkedIn tous les jours. On voulait montrer notre atelier sans y passer nos soirées. Aucun outil ne parlait notre langue, alors on a fait Flux-Link : vous dictez, l'IA écrit comme un pro, LinkedIn publie. Dix minutes par semaine.</p>
+      <div class="sig">By Industry, For Industry — l'équipe Indusiax</div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Comment ça marche</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Du téléphone au post publié, en quatre gestes.</h2>
+    <div class="pv-two" style="margin-top:44px">
+      <div class="pv-shot"><img src="/assets/flux/audience.jpg" alt="Soudeur au travail dans un atelier" loading="lazy"></div>
+      <div class="pv-steps">
+        <div class="pv-step"><div class="n">1</div><div><h3>Vos photos</h3><p>La machine qui part, le chantier terminé, l'équipe au travail — les images déjà dans votre téléphone.</p></div></div>
+        <div class="pv-step"><div class="n">2</div><div><h3>Trois phrases dictées</h3><p>Racontez avec vos mots : ce que c'est, pour qui, ce qui vous rend fier. Pas besoin d'être écrivain.</p></div></div>
+        <div class="pv-step"><div class="n">3</div><div><h3>L'IA rédige</h3><p>Un post structuré, professionnel, à votre ton — français, anglais, néerlandais ou italien. Vous relisez, vous ajustez.</p></div></div>
+        <div class="pv-step"><div class="n">4</div><div><h3>Publication directe</h3><p>Un clic, le post part sur votre profil, photos comprises. Les fichiers sont ensuite effacés de nos serveurs.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="pv-band">
+  <img src="/assets/flux/band.jpg" alt="Machine industrielle en inox parfaitement finie dans un atelier" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">Ce que vous produisez est photogénique</span>
+    <h2>Une belle pièce, une belle légende. Le reste, on s'en occupe.</h2>
+    <p>La régularité fait tout sur LinkedIn. Flux-Link la rend possible sans embaucher — dix minutes par semaine suffisent.</p>
+  </div>
+</div>
+
+<!-- POURQUOI LINKEDIN / POUR QUI -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Pourquoi s'y mettre</span>
+    <h2 class="sec" style="text-align:left;max-width:680px">Pourquoi publier sur LinkedIn quand on est industriel ?</h2>
+    <p style="color:var(--mut);max-width:64ch;margin:12px 0 36px">Parce que vos clients, vos futurs salariés et vos donneurs d'ordres y passent tous les jours — et que la PME qui montre son savoir-faire gagne les appels d'offres de demain.</p>
     <div class="grid c3">
       <div class="card"><span class="ic">🤝</span><h3>Crédibilité commerciale</h3><p>Un prospect qui vous cherche trouve une entreprise vivante, qui livre et qui progresse — pas une page muette depuis 2019.</p></div>
       <div class="card"><span class="ic">🧑‍🏭</span><h3>Recrutement</h3><p>Les bons soudeurs et techniciens choisissent les ateliers qu'ils voient. Montrez le vôtre.</p></div>
-      <div class="card"><span class="ic">⏱️</span><h3>10 minutes par semaine</h3><p>La régularité fait tout sur LinkedIn. Flux-Link la rend possible sans embaucher un community manager.</p></div>
+      <div class="card"><span class="ic">⏱️</span><h3>10 minutes par semaine</h3><p>La régularité fait tout sur LinkedIn. Flux-Link la rend possible sans community manager.</p></div>
     </div>
+  </div>
+</section>
+
+<!-- TARIF + CTA -->
+<section>
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Tarif</span>
+    <h2 class="sec">Un post pro coûte moins qu'un café par jour.</h2>
+    <div style="max-width:440px;margin:32px auto 0">
+      <div class="price-card bundle" style="position:relative;text-align:center">
+        <span class="badge-eco">Compte immédiat · sans carte</span>
+        <h3 class="t-flux" style="margin-top:6px">Flux-Link</h3>
+        <div class="amount" style="margin:4px auto 0">12 €<small> HT / mois</small></div>
+        <div class="per">Posts illimités, tout inclus.</div>
+        <ul style="text-align:left">
+          <li>Dictée vocale + rédaction IA</li>
+          <li>4 langues (FR, EN, NL, IT)</li>
+          <li>Publication directe LinkedIn</li>
+          <li>Photos &amp; vidéos</li>
+          <li>Fichiers effacés après publication</li>
+        </ul>
+        <a class="btn btn-acc" style="align-self:center" href="https://flux.indusiax.com/login">Créer mon compte gratuit</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">30 jours d'accès complet · sans carte bancaire · sans engagement</p>
   </div>
 </section>
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">On l'a fait pour notre atelier. Montrez le vôtre.</span>
     <h2>Votre premier post est à trois phrases d'ici.</h2>
     <p>Compte créé en 30 secondes, 30 jours d'essai complet, sans carte.</p>
     <a class="btn btn-acc btn-big" href="https://flux.indusiax.com/login">Créer mon compte gratuit</a>
@@ -101,26 +181,9 @@
         <a class="logo" href="/">Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
-      <div>
-        <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
-      </div>
-      <div>
-        <h4>Indusiax</h4>
-        <a href="/tarifs/">Tarifs</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-        <a href="/essai/">Essai gratuit</a>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <a href="/mentions-legales/">Mentions légales</a>
-        <a href="/confidentialite/">Confidentialité</a>
-        <a href="/securite/">Sécurité &amp; données</a>
-      </div>
+      <div><h4>Produits</h4><a href="/stator/">Stator-CRM</a><a href="/rotor/">Rotor-FSM</a><a href="/vector/">Vector-MOM</a><a href="/flux/">Flux-Link</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Tarifs</a><a href="/blog/">Blog</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/essai/">Essai gratuit</a></div>
+      <div><h4>Légal</h4><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/securite/">Sécurité &amp; données</a></div>
     </div>
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>

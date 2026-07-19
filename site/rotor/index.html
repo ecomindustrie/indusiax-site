@@ -3,29 +3,143 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Rotor-FSM — Interventions terrain &amp; expertises machines | Indusiax</title>
-<meta name="description" content="Logiciel d'interventions terrain pour PME industrielles : planification, fiches d'expertise machines sur site, rapports client professionnels. 55 €/mois, essai gratuit 30 jours.">
+<title>Rotor-FSM — Le logiciel des prestataires de contrôle & VGP | Indusiax</title>
+<meta name="description" content="Du contrôle terrain au rapport PDF signé, sans ressaisie. Rotor-FSM transforme vos vérifications sur site en rapports professionnels à votre marque. Pour prestataires VGP, mainteneurs et bureaux de contrôle. Dès 39 €/mois, essai 30 jours.">
 <link rel="canonical" href="https://indusiax.com/rotor/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Rotor-FSM — Interventions terrain & expertises machines">
-<meta property="og:description" content="Planifiez, intervenez, remettez un rapport professionnel — tablette à la main, même au fond de l'atelier. Essai gratuit 30 jours.">
+<meta property="og:title" content="Rotor-FSM — Le logiciel des prestataires de contrôle & VGP">
+<meta property="og:description" content="Du contrôle terrain au rapport signé, sans ressaisie. À votre marque, prêt pour le client. Démo en ligne immédiate.">
 <meta property="og:url" content="https://indusiax.com/rotor/">
+<meta property="og:image" content="https://indusiax.com/assets/rotor/hero.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Rotor-FSM",
   "applicationCategory": "BusinessApplication",
-  "operatingSystem": "Web",
-  "description": "Gestion des interventions terrain pour PME industrielles : planification, expertises machines sur site, rapports client.",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "Logiciel de contrôle et de VGP pour prestataires industriels : vérifications sur site sur tablette, fiches paramétrables, rapports PDF à la marque du prestataire, suivi des échéances réglementaires.",
   "url": "https://indusiax.com/rotor/",
-  "offers": {"@type": "Offer", "price": "55.00", "priceCurrency": "EUR",
-             "description": "55 € HT par mois, essai gratuit de 30 jours"}
+  "offers": [
+    {"@type": "Offer", "name": "Solo", "price": "39.00", "priceCurrency": "EUR", "description": "39 € HT / mois, essai gratuit 30 jours"},
+    {"@type": "Offer", "name": "Équipe", "price": "149.00", "priceCurrency": "EUR", "description": "149 € HT / mois jusqu'à 5 techniciens"}
+  ]
 }
 </script>
+<style>
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-500.woff2') format('woff2');font-weight:500;font-display:swap;}
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-700.woff2') format('woff2');font-weight:700;font-display:swap;}
+/* ── Page ROTOR : éléments riches (charte site + accent bleu rotor) ── */
+.r{--r:#3B82F6;--r-deep:#2563EB;--ok:#22c55e;--aa:#E0A128;--nc:#ef4444;
+  --mono:'JBMono',ui-monospace,Consolas,monospace;--paper:#fff;--pink:#10161d;--pline:#c7d2dd;}
+.r .mono{font-family:var(--mono);}
+.r .eb{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--r);display:inline-flex;align-items:center;gap:9px;}
+.r .eb::before{content:"";width:22px;height:2px;background:var(--acc);display:inline-block;}
+.pastille{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);display:inline-block;}
+.p-ok{background:var(--ok);}.p-aa{background:var(--aa);}.p-nc{background:var(--nc);}
+
+/* HERO photo */
+.r-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bord);}
+.r-hero .bg{position:absolute;inset:0;z-index:0;}
+.r-hero .bg img{width:100%;height:100%;object-fit:cover;}
+.r-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 60%,#080b1020 100%);}
+.r-hero-in{position:relative;z-index:2;padding:78px 0 84px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;}
+.r-hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin:16px 0 20px;}
+.r-hero h1 .ac{color:var(--r);}
+.r-hero .sub{font-size:clamp(1rem,1.9vw,1.18rem);color:var(--mut);max-width:52ch;}
+.r-hero .ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.r-trust{margin-top:34px;padding-top:20px;border-top:1px solid var(--bord);}
+.r-trust .lb{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);}
+.r-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.r-chip{font-family:var(--mono);font-size:.72rem;color:var(--mut);border:1px solid var(--bord);border-radius:3px;padding:5px 10px;}
+/* verdict card */
+.verdict{background:var(--paper);color:var(--pink);border-radius:8px;border:1px solid var(--pline);overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);justify-self:end;width:100%;max-width:390px;}
+.verdict .vh{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;background:var(--r);color:#fff;}
+.verdict .vh .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;}
+.verdict .vh .a{font-family:var(--mono);font-size:.66rem;opacity:.85;}
+.verdict .vb{padding:15px 17px 17px;}
+.vrow{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed var(--pline);font-size:.82rem;color:#24303c;}
+.vrow:last-of-type{border-bottom:0;}.vrow .l{flex:1;}
+.vsc{display:flex;align-items:center;gap:13px;margin-top:12px;padding-top:13px;border-top:2px solid var(--pline);}
+.gauge{width:56px;height:56px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--ok) 94%,var(--pline) 0);display:grid;place-items:center;}
+.gauge span{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.82rem;}
+.vsc .m{font-family:var(--mono);font-size:.7rem;color:#556;line-height:1.5;}.vsc .m b{color:var(--ok);}
+.stamp{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.08em;color:var(--ok);border:2px solid var(--ok);border-radius:3px;padding:6px 9px;transform:rotate(-4deg);}
+@media(max-width:900px){.r-hero-in{grid-template-columns:1fr;gap:28px;padding:52px 0 60px;}.verdict{justify-self:start;max-width:410px;}.r-hero .bg::after{background:linear-gradient(180deg,#080b10e6,#080b10aa);}}
+
+/* comment + tablet */
+.r-two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+.r-shot{border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);}
+.r-shot img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
+.r-steps{display:grid;gap:20px;}
+.r-step{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;}
+.r-step .n{font-family:var(--mono);font-weight:700;font-size:.9rem;color:#fff;background:var(--r);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;}
+.r-step h3{font-size:1.05rem;margin:2px 0 5px;}.r-step p{font-size:.92rem;color:var(--mut);}
+@media(max-width:860px){.r-two{grid-template-columns:1fr;gap:30px;}.r-two .r-shot{order:-1;}}
+
+/* image band */
+.r-band{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center;}
+.r-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.r-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#080b10ec 0%,#080b10b0 46%,#080b1055 100%);}
+.r-band .in{position:relative;z-index:2;padding:64px 0;max-width:620px;}
+.r-band h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 12px;}
+.r-band p{font-family:var(--mono);font-size:.86rem;color:var(--mut);}
+
+/* report mockup */
+.r-rep{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;}
+.r-legend{display:grid;gap:10px;margin-top:24px;}
+.r-legend .lg{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--mut);}
+.r-legend code{font-family:var(--mono);font-size:.72rem;color:var(--mut2);margin-left:auto;}
+.mock{background:var(--paper);color:var(--pink);border:1px solid var(--pline);border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.5);padding:24px;}
+.mock .mh{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:13px;border-bottom:2px solid var(--r);}
+.mock .lg2{font-weight:800;font-size:1.05rem;color:var(--r);}
+.mock .lg2 small{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:#8794a1;font-weight:500;}
+.mock .tt{text-align:right;font-weight:800;font-size:.9rem;color:var(--r);}
+.mock .tt small{display:block;font-family:var(--mono);font-size:.58rem;color:#8794a1;font-weight:500;}
+table.mk{width:100%;border-collapse:collapse;margin-top:14px;font-size:.72rem;}
+table.mk th{background:var(--r);color:#fff;font-family:var(--mono);font-weight:500;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 9px;text-align:left;}
+table.mk th:last-child,table.mk td:last-child{text-align:center;width:60px;}
+table.mk td{padding:7px 9px;border-bottom:1px solid #e4eaf0;color:#2a3742;}
+table.mk .sub td{background:#eef2f6;font-weight:700;font-family:var(--mono);font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;color:var(--r);}
+table.mk .pastille{margin:0 auto;}
+.mk-f{display:flex;align-items:center;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid #e4eaf0;}
+.mk-bar{flex:1;height:11px;background:#eef2f6;border-radius:6px;overflow:hidden;}
+.mk-bar i{display:block;height:100%;width:91%;background:linear-gradient(90deg,var(--ok),#37b06e);}
+.mk-f .sc{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ok);}
+@media(max-width:860px){.r-rep{grid-template-columns:1fr;gap:32px;}}
+
+/* parc */
+.r-parc{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:16px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;}
+.r-parc::-webkit-scrollbar{height:8px;}.r-parc::-webkit-scrollbar-thumb{background:var(--bord);border-radius:4px;}
+.mc{scroll-snap-align:start;background:var(--paper);border:1px solid var(--pline);border-radius:6px;overflow:hidden;}
+.mc .im{background:#fff;padding:10px;}.mc .im img{width:100%;height:auto;}
+.mc .cap{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-top:1px solid #e7ecf1;}
+.mc .cap .l{font-weight:700;font-size:.86rem;color:var(--pink);}
+.mc .cap .f{font-family:var(--mono);font-size:.62rem;color:#fff;background:var(--r);border-radius:2px;padding:3px 7px;}
+
+/* pour qui */
+.r-aud{display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;align-items:stretch;}
+.r-photo{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);min-height:100%;}
+.r-photo img{width:100%;height:100%;object-fit:cover;}
+.r-photo .badge{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(8,11,16,.82);backdrop-filter:blur(6px);border:1px solid var(--bord);border-radius:10px;padding:15px 17px;}
+.r-photo .badge h3{font-size:1.02rem;margin:8px 0 6px;}
+.r-photo .badge p{font-size:.82rem;color:var(--mut);}
+.r-photo .badge .ref{margin-top:9px;font-family:var(--mono);font-size:.64rem;color:var(--r);}
+.r-audlist{display:grid;gap:13px;align-content:center;}
+.r-aud-i{display:flex;gap:14px;background:var(--bg2);border:1px solid var(--bord);border-radius:12px;padding:17px 19px;}
+.r-aud-i .k{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--r);}
+.r-aud-i h3{font-size:1rem;margin-bottom:3px;}.r-aud-i p{font-size:.88rem;color:var(--mut);}
+@media(max-width:860px){.r-aud{grid-template-columns:1fr;}.r-photo{min-height:340px;}}
+
+/* pricing 2-cols */
+.r-prices{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:780px;margin:0 auto;}
+@media(max-width:640px){.r-prices{grid-template-columns:1fr;}}
+</style>
 </head>
 <body>
 
@@ -39,70 +153,236 @@
       <a href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
-    <a class="btn btn-acc nav-cta" href="/essai/?produit=rotor">Essai gratuit 30 jours</a>
+    <a class="btn btn-acc nav-cta" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Voir la démo</a>
   </div>
 </header>
 
-<main>
+<main class="r">
 
-<div class="hero hero-product">
-  <div class="wrap">
-    <span class="kicker" style="border-color:rgba(59,130,246,.5)">Rotor-FSM · Interventions terrain</span>
-    <h1>L'expertise machine, <span class="grad">du site client au rapport</span>.</h1>
-    <p class="sub">Vos techniciens interviennent chez le client ; Rotor-FSM les suit : planification des interventions, fiches d'expertise remplies sur place, et rapport professionnel remis au client — sans ressaisie le soir au bureau.</p>
-    <div class="ctas">
-      <a class="btn btn-acc btn-big" href="/essai/?produit=rotor">Essayer gratuitement 30 jours</a>
-      <a class="btn btn-ghost btn-big" href="/tarifs/">55 € / mois</a>
+<!-- HERO -->
+<section class="r-hero">
+  <div class="bg"><img src="/assets/rotor/hero.jpg" alt="Technicien inspectant un chariot élévateur avec une tablette dans un entrepôt" fetchpriority="high"></div>
+  <div class="wrap r-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Du contrôle terrain au rapport signé. <span class="ac">Sans ressaisie.</span></h1>
+      <p class="sub">Vérifiez sur site, faites signer, envoyez. Rotor-FSM rédige le rapport pendant que vous rangez votre matériel — professionnel, à votre marque, prêt pour le client. Vos soirées ne sont plus pour la paperasse.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Voir la démo en direct →</a>
+        <a class="btn btn-ghost btn-big" href="#tarifs">Découvrir les tarifs</a>
+      </div>
+      <div class="r-trust">
+        <div class="lb">Un seul outil pour tout votre parc</div>
+        <div class="r-chips">
+          <span class="r-chip">VGP levage</span><span class="r-chip">Portes automatiques</span>
+          <span class="r-chip">Rayonnages</span><span class="r-chip">Air comprimé</span>
+          <span class="r-chip">Incendie</span><span class="r-chip">EPI antichute</span>
+        </div>
+      </div>
     </div>
-    <p class="note">Espace d'essai préparé sous 24 h ouvrées · Sans carte bancaire</p>
+    <div class="verdict" aria-label="Aperçu d'un rapport de contrôle">
+      <div class="vh"><span class="t">FICHE DE CONTRÔLE</span><span class="a">ARC · 2026-0142</span></div>
+      <div class="vb">
+        <div class="vrow"><span class="l">Plaque de charge &amp; capacité</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Frein de service (essai en charge)</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Circuit hydraulique / fuites</span><span class="pastille p-aa"></span></div>
+        <div class="vrow"><span class="l">Fins de course &amp; limiteur</span><span class="pastille p-ok"></span></div>
+        <div class="vsc">
+          <div class="gauge"><span>94%</span></div>
+          <div class="m">Score de<br>conformité<br><b>APTE</b></div>
+          <div class="stamp">CONFORME</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEME -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Ce que ça change, dès demain</span>
+    <h2 class="sec">Au revoir pertes de temps, bonjour rapidité et rigueur.</h2>
+    <p class="sec-sub">Le contrôle, c'est votre expertise. La ressaisie, la mise en page et les relances, c'est ce qui grignote vos marges et retarde vos factures. Rotor-FSM efface tout ce qui n'est pas votre métier.</p>
+    <div class="grid c3">
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">01 · TEMPS PERDU</span><h3 style="margin-top:10px">Fini la double saisie</h3><p>Notes sur le terrain le jour, ressaisie Word ou Excel le soir : chaque rapport vous coûtait deux fois. Ici, il n'existe qu'une seule fois — sur place.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">02 · CRÉDIBILITÉ</span><h3 style="margin-top:10px">Un rendu irréprochable</h3><p>C'est sur le document reçu que le client juge votre sérieux — et décide de vous reprendre l'an prochain. Offrez-lui un rapport net, identique à chaque intervention.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">03 · SUIVI</span><h3 style="margin-top:10px">Plus une échéance oubliée</h3><p>Qui recontrôler, et quand ? Rotor-FSM suit les périodicités pour vous. Une échéance ratée, c'est un contrat qui file : ne le laissez plus passer.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Comment ça marche</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Trois gestes. Du parking du client à sa boîte mail.</h2>
+    <div class="r-two" style="margin-top:44px">
+      <div class="r-shot"><img src="/assets/rotor/tablet.jpg" alt="Mains gantées tenant une tablette industrielle sur site" loading="lazy"></div>
+      <div class="r-steps">
+        <div class="r-step"><div class="n">1</div><div><h3>Contrôlez sur tablette</h3><p>Cochez l'état, saisissez les mesures, prenez les photos. Tout tient dans la main — même sans réseau : atelier, sous-sol, zone blanche.</p></div></div>
+        <div class="r-step"><div class="n">2</div><div><h3>Rotor-FSM rédige</h3><p>Pastilles conforme / non conforme, score de conformité calculé, synthèse des anomalies proposée par l'IA. Vous relisez, vous validez.</p></div></div>
+        <div class="r-step"><div class="n">3</div><div><h3>Signez, envoyez</h3><p>Le client signe sur l'écran. Le PDF part par mail, à vos couleurs. Zéro remise au propre, zéro retour au bureau.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="r-band">
+  <img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec rayonnages et chariot élévateur" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">Le suivi qui rapporte</span>
+    <h2>Chaque équipement de vos clients a une échéance. Rotor-FSM ne l'oublie jamais.</h2>
+    <p>Périodicités VGP suivies automatiquement — vous rappelez le client avant qu'il ne pense à un concurrent.</p>
   </div>
 </div>
 
-<section>
-  <div class="wrap">
-    <h2 class="sec">Ce que vos techniciens font déjà — en mieux organisé.</h2>
-    <div class="grid c3">
-      <div class="card"><span class="ic">📅</span><h3>Planification</h3><p>Les interventions programmées, affectées aux bons techniciens, visibles de tous — plus de doublons ni de trous dans le planning.</p></div>
-      <div class="card"><span class="ic">📋</span><h3>Fiches d'expertise</h3><p>Vos fiches de contrôle et d'expertise machines, structurées et remplies sur site : mesures, observations, préconisations.</p></div>
-      <div class="card"><span class="ic">📷</span><h3>Photos sur place</h3><p>L'état du matériel documenté en images, directement dans le dossier d'intervention.</p></div>
-      <div class="card"><span class="ic">📄</span><h3>Rapports client</h3><p>À la fin de l'intervention, un rapport PDF propre et professionnel, à l'image de votre entreprise, prêt à être remis au client.</p></div>
-      <div class="card"><span class="ic">🗂️</span><h3>Historique par machine</h3><p>Chaque équipement garde la trace de ses expertises passées : l'usure se suit dans le temps, les visites se préparent mieux.</p></div>
-      <div class="card"><span class="ic">🔗</span><h3>Relié au CRM</h3><p>Avec Stator-CRM, les interventions rejoignent la fiche du client et son parc machines — le commercial sait ce que le technicien a vu.</p></div>
+<!-- RAPPORT -->
+<section class="alt">
+  <div class="wrap r-rep">
+    <div>
+      <span class="eb" style="margin-bottom:14px">Le livrable</span>
+      <h2 class="sec" style="text-align:left">Le rapport qui vous fait gagner le prochain contrat.</h2>
+      <p style="color:var(--mut);max-width:52ch;margin-top:14px">Structure de VGP réglementaire, code couleur limpide, schéma de l'équipement, score de conformité. Le document qui vous place au-dessus des rapports Word — et que le client garde précieusement.</p>
+      <div class="r-legend">
+        <div class="lg"><span class="pastille p-ok"></span> Correct — conforme à l'usage <code>C</code></div>
+        <div class="lg"><span class="pastille p-aa"></span> À améliorer — sous surveillance <code>AA</code></div>
+        <div class="lg"><span class="pastille p-nc"></span> Non conforme — action requise <code>NC</code></div>
+      </div>
+    </div>
+    <div class="mock" aria-label="Extrait d'un rapport de contrôle PDF">
+      <div class="mh">
+        <div class="lg2">VOTRE MARQUE<small>À VOS COULEURS</small></div>
+        <div class="tt">RAPPORT DE CONTRÔLE<small>PÉRIODIQUE — VGP</small></div>
+      </div>
+      <table class="mk">
+        <thead><tr><th>Désignations</th><th>État</th></tr></thead>
+        <tbody>
+          <tr class="sub"><td colspan="2">Organes de levage</td></tr>
+          <tr><td>Usure du talon des fourches</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Chaînes, axes et réas</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Circuit hydraulique, fuites</td><td><span class="pastille p-aa"></span></td></tr>
+          <tr class="sub"><td colspan="2">Freinage &amp; sécurité</td></tr>
+          <tr><td>Frein de service en charge</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Protège-conducteur, ceinture</td><td><span class="pastille p-ok"></span></td></tr>
+        </tbody>
+      </table>
+      <div class="mk-f"><span class="mono" style="font-size:.62rem;color:#54636f">SCORE DE CONFORMITÉ</span><div class="mk-bar"><i></i></div><span class="sc">91%</span></div>
     </div>
   </div>
 </section>
 
+<!-- PARC -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Un parc, une appli</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Chaque machine a sa fiche. Déjà prête.</h2>
+    <p style="color:var(--mut);max-width:56ch;margin:12px 0 36px">Des gabarits pensés pour le terrain et alignés sur les périodicités réglementaires. Et un éditeur pour créer les vôtres — sans écrire une ligne de code.</p>
+    <div class="r-parc">
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="Schéma chariot élévateur" loading="lazy"></div><div class="cap"><span class="l">Chariot élévateur</span><span class="f">VGP 6 mois</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="Schéma pont roulant" loading="lazy"></div><div class="cap"><span class="l">Pont roulant / palan</span><span class="f">VGP 12 mois</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="Schéma nacelle PEMP" loading="lazy"></div><div class="cap"><span class="l">Nacelle PEMP</span><span class="f">VGP 6 mois</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="Schéma rayonnage" loading="lazy"></div><div class="cap"><span class="l">Rayonnage</span><span class="f">EN 15635</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="Schéma extincteur" loading="lazy"></div><div class="cap"><span class="l">Extincteur</span><span class="f">Vérif. annuelle</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="Schéma EPI antichute" loading="lazy"></div><div class="cap"><span class="l">EPI antichute</span><span class="f">Vérif. annuelle</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONS -->
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">Adapté à vos fiches, pas l'inverse.</h2>
-    <p class="sec-sub">Chaque entreprise a ses protocoles de contrôle. Lors de la mise en route, vos fiches d'expertise sont adaptées à vos machines, vos mesures et vos habitudes de rédaction.</p>
-    <ul class="checklist">
-      <li><b>Vos protocoles</b> — les rubriques et mesures de VOS fiches d'expertise.</li>
-      <li><b>Votre image</b> — rapports à votre logo et vos couleurs, remis au client en votre nom.</li>
-      <li><b>Vos équipes</b> — un forfait mensuel simple, quel que soit le nombre de techniciens.</li>
-      <li><b>Vos données</b> — hébergées dans l'Union européenne, exportables à tout moment.</li>
-    </ul>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec">Questions fréquentes</h2>
-    <div style="max-width:720px;margin:0 auto">
-      <details class="faq"><summary>Comment se passe l'essai gratuit ?</summary><p>Vous remplissez le formulaire d'essai ; nous préparons votre espace et adaptons une première fiche d'expertise à votre activité, sous 24 h ouvrées. Vous testez ensuite 30 jours en conditions réelles, sans carte bancaire.</p></details>
-      <details class="faq"><summary>Mes fiches d'expertise actuelles sont des PDF. Que deviennent-elles ?</summary><p>Nous les transformons en formulaires numériques équivalents : mêmes rubriques, mêmes mesures — mais remplissables sur tablette, avec photos et historique. Le rapport final reste un PDF à votre image.</p></details>
-      <details class="faq"><summary>Faut-il aussi prendre le CRM ?</summary><p>Non — Rotor-FSM fonctionne seul. La liaison avec Stator-CRM est un plus si vous voulez que commerce et technique partagent la même vision du client.</p></details>
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Fonctionnalités</span>
+    <h2 class="sec">Tout ce qu'un prestataire de contrôle attend d'un outil de terrain.</h2>
+    <div class="grid c4" style="margin-top:40px">
+      <div class="card"><span class="ic">🧩</span><h3>Fiches paramétrables</h3><p>Créez et adaptez vos types de machines et points de contrôle, sans développeur.</p></div>
+      <div class="card"><span class="ic">🎨</span><h3>À vos couleurs</h3><p>Logo, titre, thème : le rapport porte votre marque, jamais la nôtre.</p></div>
+      <div class="card"><span class="ic">🤖</span><h3>Assistant IA</h3><p>Dysfonctionnements et conclusions rédigés à partir de vos relevés — vous validez.</p></div>
+      <div class="card"><span class="ic">📄</span><h3>PDF instantané</h3><p>Généré sur l'appareil, prêt à envoyer au client — aucune remise au propre.</p></div>
+      <div class="card"><span class="ic">👥</span><h3>Multi-technicien</h3><p>Toute l'équipe sur la même base, chaque rapport rattaché à son intervenant.</p></div>
+      <div class="card"><span class="ic">📅</span><h3>Échéancier VGP</h3><p>Les périodicités suivies pour vous : vous savez qui recontrôler, et quand.</p></div>
+      <div class="card"><span class="ic">✍️</span><h3>Signature sur site</h3><p>Le client signe sur la tablette ; sa signature figure sur le PDF final.</p></div>
+      <div class="card"><span class="ic">📶</span><h3>Hors-ligne</h3><p>Atelier, sous-sol, zone blanche : la saisie continue, la synchro se fait au réseau.</p></div>
     </div>
   </div>
 </section>
 
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Pour qui</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Conçu pour les indépendants et les PME du contrôle.</h2>
+    <div class="r-aud" style="margin-top:40px">
+      <div class="r-photo">
+        <img src="/assets/rotor/audience.jpg" alt="Technicien de contrôle avec sa tablette dans une installation industrielle" loading="lazy">
+        <div class="badge">
+          <span class="eb">Le marché</span>
+          <h3>La VGP n'exige qu'une « personne qualifiée ».</h3>
+          <p>Pas d'accréditation obligatoire pour la vérification courante. C'est ce qui a fait naître un tissu dense de prestataires indépendants — et c'est exactement pour eux que Rotor-FSM est conçu.</p>
+          <div class="ref">Art. R4323-24 · arrêté du 1ᵉʳ mars 2004 · NF EN 15635</div>
+        </div>
+      </div>
+      <div class="r-audlist">
+        <div class="r-aud-i"><div class="k">01</div><div><h3>Vérificateurs VGP indépendants</h3><p>8 à 10 contrôles par jour, en tournée. Un rapport pro remis aussitôt, sans jamais rentrer au bureau.</p></div></div>
+        <div class="r-aud-i"><div class="k">02</div><div><h3>PME de contrôle levage &amp; manutention</h3><p>Chariots, nacelles, ponts roulants : plusieurs techniciens, une seule base commune.</p></div></div>
+        <div class="r-aud-i"><div class="k">03</div><div><h3>Mainteneurs portes &amp; fermetures</h3><p>Contrats d'entretien semestriels : historique, échéances et relances au même endroit.</p></div></div>
+        <div class="r-aud-i"><div class="k">04</div><div><h3>Bureaux de contrôle &amp; sécurité</h3><p>Extincteurs, EPI, rayonnages : des tournées volumiques, des rapports en série, sans effort.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="alt" id="tarifs">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Tarifs</span>
+    <h2 class="sec">Un prix clair. Rentabilisé dès le premier rapport.</h2>
+    <div class="r-prices" style="margin-top:40px">
+      <div class="price-card">
+        <h3>Solo</h3>
+        <div class="amount">39 €<small> HT / mois</small></div>
+        <div class="per">Pour l'indépendant. Un compte, tout inclus.</div>
+        <ul>
+          <li>Rapports illimités</li>
+          <li>Toutes les fiches machines</li>
+          <li>Rapport PDF à vos couleurs</li>
+          <li>Assistant IA &amp; mode hors-ligne</li>
+          <li>390 € / an — 2 mois offerts</li>
+        </ul>
+        <a class="btn btn-ghost" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Tester dans la démo</a>
+      </div>
+      <div class="price-card bundle" style="position:relative">
+        <span class="badge-eco">LE PLUS CHOISI</span>
+        <h3>Équipe</h3>
+        <div class="amount">149 €<small> HT / mois</small></div>
+        <div class="per">Jusqu'à 5 techniciens. Siège en plus à 25 €.</div>
+        <ul>
+          <li>Tout le plan Solo</li>
+          <li>5 comptes techniciens</li>
+          <li>Base d'équipe partagée</li>
+          <li>Suivi des échéances VGP</li>
+          <li>1 490 € / an — 2 mois offerts</li>
+        </ul>
+        <a class="btn btn-acc" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Tester dans la démo</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Démo libre · sans carte bancaire · sans engagement</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
 <div class="cta-final">
   <div class="wrap">
-    <h2>Vos rapports d'intervention méritent mieux que le carbone.</h2>
-    <p>30 jours d'essai gratuit, votre espace préparé sous 24 h ouvrées.</p>
-    <a class="btn btn-acc btn-big" href="/essai/?produit=rotor">Demander mon essai gratuit</a>
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:12px">Voir avant de croire</span>
+    <h2>Ne nous croyez pas. Testez.</h2>
+    <p>La démo en ligne est une instance complète, remplie de vrais scénarios de contrôle. Ouvrez une fiche, cochez, générez le PDF. En 3 minutes, vous saurez.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Ouvrir la démo en direct →</a>
+      <a class="btn btn-ghost btn-big" href="#tarifs">Voir les tarifs</a>
+    </div>
   </div>
 </div>
 
@@ -115,26 +395,9 @@
         <a class="logo" href="/">Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
-      <div>
-        <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
-      </div>
-      <div>
-        <h4>Indusiax</h4>
-        <a href="/tarifs/">Tarifs</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-        <a href="/essai/">Essai gratuit</a>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <a href="/mentions-legales/">Mentions légales</a>
-        <a href="/confidentialite/">Confidentialité</a>
-        <a href="/securite/">Sécurité &amp; données</a>
-      </div>
+      <div><h4>Produits</h4><a href="/stator/">Stator-CRM</a><a href="/rotor/">Rotor-FSM</a><a href="/vector/">Vector-MOM</a><a href="/flux/">Flux-Link</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Tarifs</a><a href="/blog/">Blog</a><a href="/a-propos/">À propos</a><a href="/contact/">Contact</a><a href="/essai/">Essai gratuit</a></div>
+      <div><h4>Légal</h4><a href="/mentions-legales/">Mentions légales</a><a href="/confidentialite/">Confidentialité</a><a href="/securite/">Sécurité &amp; données</a></div>
     </div>
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>

@@ -4,15 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Indusiax — Logiciels de gestion pour TPE &amp; PME industrielles</title>
-<meta name="description" content="CRM commercial, gestion d'interventions, comptes-rendus de réunion par IA et communication LinkedIn : une suite de logiciels simples, créés par un industriel pour les TPE et PME industrielles. Essai gratuit 30 jours, sans carte bancaire.">
+<meta name="description" content="CRM commercial, contrôles &amp; interventions terrain, comptes-rendus de réunion par IA, communication LinkedIn : des logiciels simples, créés dans une PME industrielle française pour les TPE &amp; PME de l'industrie. Essai gratuit 30 jours, sans carte bancaire.">
 <link rel="canonical" href="https://indusiax.com/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Indusiax — Logiciels de gestion pour TPE & PME industrielles">
-<meta property="og:description" content="CRM, interventions terrain, réunions IA, LinkedIn : des outils simples créés par un industriel pour l'industrie. Essai gratuit 30 jours.">
+<meta property="og:description" content="CRM, contrôles terrain, réunions IA, LinkedIn : des outils simples créés dans une PME industrielle, pour l'industrie. Essai gratuit 30 jours.">
 <meta property="og:url" content="https://indusiax.com/">
+<meta property="og:image" content="https://indusiax.com/assets/home/hero.jpg">
 <meta property="og:locale" content="fr_FR">
 <script type="application/ld+json">
 {
@@ -22,9 +24,37 @@
   "url": "https://indusiax.com",
   "email": "contact@indusiax.com",
   "slogan": "By industry, for industry.",
-  "description": "Suite de logiciels de gestion pour TPE et PME industrielles : CRM, interventions terrain, comptes-rendus de réunion IA, communication LinkedIn."
+  "description": "Suite de logiciels de gestion pour TPE et PME industrielles : CRM, contrôles et interventions terrain, comptes-rendus de réunion IA, communication LinkedIn."
 }
 </script>
+<style>
+/* ---- carte suite (héros) ---- */
+.suite-card .srow{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px dashed var(--pline);}
+.suite-card .srow:last-of-type{border-bottom:0;}
+.suite-card .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.suite-card .nm{font-weight:700;font-size:.85rem;color:#1a2530;width:112px;flex-shrink:0;}
+.suite-card .rl{font-family:var(--mono);font-size:.64rem;color:#67717c;letter-spacing:.03em;}
+.suite-card .st{margin-left:auto;font-family:var(--mono);font-size:.6rem;color:#22c55e;font-weight:700;}
+.suite-card .sfoot{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:12px;border-top:2px solid var(--pline);font-family:var(--mono);font-size:.66rem;color:#67717c;}
+.suite-card .sfoot .pill{margin-left:auto;background:rgba(232,76,43,.12);color:#c23a1e;font-weight:700;border-radius:3px;padding:4px 8px;font-size:.62rem;white-space:nowrap;}
+/* ---- cartes produits avec photo ---- */
+.hp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:820px){.hp-grid{grid-template-columns:1fr;}}
+.hp-card{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--bord);border-radius:14px;overflow:hidden;text-decoration:none;transition:transform .15s,border-color .15s;}
+.hp-card:hover{transform:translateY(-3px);border-color:#3a4656;}
+.hp-card .im{aspect-ratio:21/9;overflow:hidden;border-bottom:1px solid var(--bord);}
+.hp-card .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s;}
+.hp-card:hover .im img{transform:scale(1.03);}
+.hp-card .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.hp-card .tg{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.hp-card h3{font-size:1.25rem;color:var(--txt);}
+.hp-card p{font-size:.92rem;color:var(--mut);flex:1;}
+.hp-card .pr{font-family:var(--mono);font-size:.78rem;color:var(--txt);font-weight:700;}
+.hp-card .go{color:var(--acc);font-weight:600;font-size:.92rem;}
+/* ---- schéma suite ---- */
+.hub{max-width:760px;margin:38px auto 0;}
+.hub svg{width:100%;height:auto;display:block;}
+</style>
 </head>
 <body>
 
@@ -38,84 +68,159 @@
       <a href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
-<div class="hero">
-  <div class="wrap">
-    <span class="kicker">By industry, for industry.</span>
-    <h1>Les logiciels que votre <span class="grad">atelier</span> attendait.</h1>
-    <p class="sub">CRM commercial, interventions terrain, comptes-rendus de réunion par IA, communication LinkedIn : des outils simples, créés <b>dans</b> une PME industrielle, <b>pour</b> les TPE et PME industrielles.</p>
-    <div class="ctas">
-      <a class="btn btn-acc btn-big" href="/essai/">Essayer gratuitement 30 jours</a>
-      <a class="btn btn-ghost btn-big" href="/tarifs/">Voir les tarifs</a>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/home/hero.jpg" alt="Dirigeant de PME industrielle traversant son atelier, tablette en main" fetchpriority="high"></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Les logiciels que votre <span class="ac">entreprise industrielle</span> attendait.</h1>
+      <p class="sub">CRM commercial, contrôles &amp; interventions terrain, comptes-rendus de réunion par IA, communication LinkedIn : des outils simples, créés <b>dans</b> une PME industrielle française, <b>pour</b> les TPE &amp; PME de l'industrie — fabricants, distributeurs, mainteneurs, prestataires de services.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="/essai/">Essayer gratuitement 30 jours</a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">Voir les tarifs</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Sans carte bancaire · sans engagement</div>
+        <div class="pv-chips">
+          <span class="pv-chip">Né dans une PME, pas dans un incubateur</span>
+          <span class="pv-chip">Utilisés chaque jour dans l'industrie</span>
+          <span class="pv-chip">🇪🇺 Hébergé en Europe</span>
+        </div>
+      </div>
     </div>
-    <p class="note">Sans carte bancaire · Sans engagement · Vos données restent les vôtres</p>
-  </div>
-</div>
-
-<div class="wrap trust">
-  <span>Nés à l'atelier, pas dans un incubateur</span>
-  <span>Utilisés chaque jour dans l'industrie</span>
-  <span>Essai 30 jours sans carte</span>
-  <span>Données hébergées dans l'Union européenne</span>
-</div>
-
-<section>
-  <div class="wrap">
-    <h2 class="sec">Quatre outils. Un seul objectif : vous simplifier l'usine.</h2>
-    <p class="sec-sub">Chaque logiciel s'utilise seul et se souscrit seul. Ensemble, ils partagent vos clients, vos comptes et une connexion unique.</p>
-    <div class="grid c2">
-      <a class="card pcard" href="/stator/">
-        <span class="tag t-stator">CRM industriel</span>
-        <h3>Stator-CRM</h3>
-        <p>Clients, devis, relances, tournées commerciales, SAV, parc machines : le CRM pensé pour la vente de matériel et de services industriels — sans la complexité des géants du secteur.</p>
-        <span class="price">65 € / utilisateur / mois</span>
-        <span class="go">Découvrir Stator-CRM →</span>
-      </a>
-      <a class="card pcard" href="/rotor/">
-        <span class="tag t-rotor">Interventions terrain</span>
-        <h3>Rotor-FSM</h3>
-        <p>Planifiez les interventions, réalisez vos expertises machines sur site et remettez au client un rapport professionnel — même au fond de l'atelier, tablette à la main.</p>
-        <span class="price">55 € / mois</span>
-        <span class="go">Découvrir Rotor-FSM →</span>
-      </a>
-      <a class="card pcard" href="/vector/">
-        <span class="tag t-vector">Réunions &amp; IA</span>
-        <h3>Vector-MOM</h3>
-        <p>Enregistrez vos réunions et rendez-vous : l'IA transcrit, identifie qui parle et rédige le compte-rendu structuré. Vous restez concentré sur la discussion.</p>
-        <span class="price">12 € / mois</span>
-        <span class="go">Découvrir Vector-MOM →</span>
-      </a>
-      <a class="card pcard" href="/flux/">
-        <span class="tag t-flux">LinkedIn</span>
-        <h3>Flux-Link</h3>
-        <p>Dictez trois phrases, ajoutez les photos du chantier : l'IA rédige un post LinkedIn professionnel dans votre langue et le publie. Votre expertise mérite d'être vue.</p>
-        <span class="price">12 € / mois</span>
-        <span class="go">Découvrir Flux-Link →</span>
-      </a>
-    </div>
-    <div class="suite-note">
-      <span style="font-size:1.6rem">🔗</span>
-      <span><b style="color:var(--txt)">La suite complète à 99 € / utilisateur / mois</b> — les quatre outils reliés : connexion unique, fiches clients partagées, comptes-rendus qui remontent dans le CRM. <a href="/tarifs/" style="color:var(--acc);font-weight:600">Voir l'offre suite →</a></span>
+    <div class="pv-card suite-card" aria-label="La suite Indusiax en un coup d'œil">
+      <div class="ch"><span class="t">SUITE INDUSIAX</span><span class="a">4 outils · 1 connexion</span></div>
+      <div class="cb">
+        <div class="srow"><span class="dot" style="background:#E84C2B"></span><span class="nm">Stator-CRM</span><span class="rl">Ventes &amp; clients</span><span class="st">● ACTIF</span></div>
+        <div class="srow"><span class="dot" style="background:#3B82F6"></span><span class="nm">Rotor-FSM</span><span class="rl">Contrôles terrain</span><span class="st">● ACTIF</span></div>
+        <div class="srow"><span class="dot" style="background:#A78BFA"></span><span class="nm">Vector-MOM</span><span class="rl">Réunions IA</span><span class="st">● ACTIF</span></div>
+        <div class="srow"><span class="dot" style="background:#0EA5E9"></span><span class="nm">Flux-Link</span><span class="rl">LinkedIn</span><span class="st">● ACTIF</span></div>
+        <div class="sfoot">🔑 « Se connecter avec Stator »<span class="pill">SUITE 99 € /util/mois</span></div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PRODUITS -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Quatre outils, un même terrain</span>
+    <h2 class="sec" style="text-align:left;max-width:720px">Un seul objectif : vous simplifier l'industrie.</h2>
+    <p style="color:var(--mut);max-width:60ch;margin:12px 0 36px">Chaque logiciel s'utilise seul et se souscrit seul. Ensemble, ils partagent vos clients, vos comptes et une connexion unique.</p>
+    <div class="hp-grid">
+      <a class="hp-card" href="/stator/">
+        <div class="im"><img src="/assets/stator/card.jpg" alt="Commercial et cliente concluant une affaire, devis sur la table" loading="lazy"></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--stator)">CRM industriel</span>
+          <h3>Stator-CRM</h3>
+          <p>Clients, devis PDF, relances automatiques, tournées, SAV, parc machines : le CRM qui parle le langage de la vente de matériel — pas celui des « leads ».</p>
+          <span class="pr">65 € / utilisateur / mois</span>
+          <span class="go">Découvrir Stator-CRM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/rotor/">
+        <div class="im"><img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec chariot élévateur" loading="lazy"></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--rotor)">Contrôles &amp; VGP</span>
+          <h3>Rotor-FSM</h3>
+          <p>Vérifications et VGP sur tablette, fiches machines paramétrables, rapport PDF signé à votre marque, échéances suivies. Du contrôle terrain au rapport, sans ressaisie.</p>
+          <span class="pr">dès 39 € / mois</span>
+          <span class="go">Découvrir Rotor-FSM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/vector/">
+        <div class="im"><img src="/assets/vector/hero.jpg" alt="Réunion d'équipe enregistrée dans une PME industrielle" loading="lazy"></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--vector)">Réunions &amp; IA</span>
+          <h3>Vector-MOM</h3>
+          <p>L'IA transcrit vos réunions, distingue qui parle et rédige le compte-rendu structuré — sur nos serveurs européens, jamais chez un géant du cloud.</p>
+          <span class="pr">12 € / mois</span>
+          <span class="go">Découvrir Vector-MOM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/flux/">
+        <div class="im"><img src="/assets/flux/band.jpg" alt="Machine industrielle en inox parfaitement finie" loading="lazy"></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--flux)">Communication LinkedIn</span>
+          <h3>Flux-Link</h3>
+          <p>Dictez trois phrases, ajoutez les photos : l'IA rédige un post LinkedIn professionnel et le publie. Votre savoir-faire mérite d'être vu.</p>
+          <span class="pr">12 € / mois</span>
+          <span class="go">Découvrir Flux-Link →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BAND + SUITE CONNECTÉE -->
+<div class="pv-band">
+  <img src="/assets/home/band.jpg" alt="Équipe d'une PME industrielle en réunion devant l'atelier" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">La suite connectée</span>
+    <h2>Des outils qui se connaissent, comme vos équipes.</h2>
+    <p>Vos clients dans le CRM, vos comptes-rendus qui s'y rangent, vos rapports terrain reliés — sans double saisie.</p>
+  </div>
+</div>
+
 <section class="alt">
   <div class="wrap">
-    <h2 class="sec">Pourquoi Indusiax ?</h2>
-    <p class="sec-sub">Parce que les logiciels de gestion sont trop souvent pensés pour les bureaux — jamais pour l'atelier.</p>
-    <div class="grid c3">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Comment tout se relie</span>
+    <h2 class="sec">Stator-CRM au centre. Le reste s'y branche.</h2>
+    <div class="hub">
+      <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma : Stator-CRM au centre, relié à Vector-MOM, Rotor-FSM et Flux-Link">
+        <!-- liens -->
+        <line x1="360" y1="150" x2="168" y2="78"  stroke="#26303c" stroke-width="2"/>
+        <line x1="360" y1="150" x2="552" y2="78"  stroke="#26303c" stroke-width="2"/>
+        <line x1="360" y1="190" x2="360" y2="266" stroke="#26303c" stroke-width="2"/>
+        <!-- nœud central -->
+        <rect x="266" y="122" width="188" height="66" rx="12" fill="#10161d" stroke="#E84C2B" stroke-width="2.5"/>
+        <text x="360" y="150" font-family="Outfit,sans-serif" font-size="19" font-weight="800" fill="#E84C2B" text-anchor="middle">Stator-CRM</text>
+        <text x="360" y="172" font-family="JBMono,monospace" font-size="10.5" fill="#8b98a5" text-anchor="middle">LE CŒUR · CLIENTS &amp; VENTES</text>
+        <!-- Vector -->
+        <rect x="60" y="26" width="160" height="56" rx="12" fill="#10161d" stroke="#A78BFA" stroke-width="2"/>
+        <text x="140" y="50" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#A78BFA" text-anchor="middle">Vector-MOM</text>
+        <text x="140" y="68" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">RÉUNIONS IA</text>
+        <!-- Rotor -->
+        <rect x="500" y="26" width="160" height="56" rx="12" fill="#10161d" stroke="#3B82F6" stroke-width="2"/>
+        <text x="580" y="50" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#3B82F6" text-anchor="middle">Rotor-FSM</text>
+        <text x="580" y="68" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">CONTRÔLES TERRAIN</text>
+        <!-- Flux -->
+        <rect x="280" y="266" width="160" height="56" rx="12" fill="#10161d" stroke="#0EA5E9" stroke-width="2"/>
+        <text x="360" y="290" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#0EA5E9" text-anchor="middle">Flux-Link</text>
+        <text x="360" y="308" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">LINKEDIN</text>
+      </svg>
+    </div>
+    <div class="suite-note" style="margin-top:34px">
+      <span style="font-size:1.6rem">🔗</span>
+      <span><b style="color:var(--txt)">La suite complète à 99 € / utilisateur / mois</b> — les quatre outils reliés : connexion unique « Se connecter avec Stator », fiches clients partagées, comptes-rendus qui remontent dans le CRM. <a href="/tarifs/" style="color:var(--acc);font-weight:600">Voir l'offre suite →</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGINE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:22px">Pourquoi Indusiax existe</span>
+    <div class="pv-origin">
+      <p class="lead">Indusiax n'est pas né dans un incubateur. <b>Il est né dans une PME industrielle française</b> qui cherchait des logiciels pour son métier — et n'en trouvait pas.</p>
+      <p>Des CRM taillés pour la tech, des outils terrain hors de prix, des comptes-rendus expédiés sur des serveurs à l'autre bout du monde… Alors on a construit nos propres outils, à l'usage, avec nos commerciaux et nos techniciens. Ils font tourner notre activité chaque jour. Aujourd'hui, on les met entre vos mains.</p>
+      <div class="sig">By Industry, For Industry — l'équipe Indusiax</div>
+    </div>
+    <div class="grid c3" style="margin-top:40px">
       <div class="card">
         <span class="ic">🏭</span>
-        <h3>Conçus par un industriel</h3>
-        <p>Indusiax est né dans une PME française de mécanique industrielle qui ne trouvait pas d'outils adaptés. Nous avons construit les nôtres, ils font tourner notre activité chaque jour — et maintenant la vôtre.</p>
+        <h3>Conçus par des industriels</h3>
+        <p>Pas une promesse marketing : nos outils sont testés en conditions réelles, dans notre propre activité, avant d'arriver chez vous.</p>
       </div>
       <div class="card">
         <span class="ic">⚡</span>
@@ -131,18 +236,19 @@
   </div>
 </section>
 
-<section>
+<!-- PARCOURS -->
+<section class="alt">
   <div class="wrap">
     <h2 class="sec">Essayez, adoptez, adaptez.</h2>
     <p class="sec-sub">Chaque logiciel se personnalise à votre entreprise : votre nom, votre logo, vos métiers, vos modules.</p>
     <div class="steps">
       <div class="step">
         <h3>Essai gratuit 30 jours</h3>
-        <p>Accès complet, sans carte bancaire. Vector-MOM et Flux-Link : compte immédiat. Stator-CRM et Rotor-FSM : votre espace dédié est préparé sous 24 h ouvrées.</p>
+        <p>Accès complet, sans carte bancaire. Vector-MOM et Flux-Link : compte immédiat. Rotor-FSM : démo en libre accès. Stator-CRM : votre espace dédié préparé sous 24 h ouvrées.</p>
       </div>
       <div class="step">
         <h3>Personnalisation</h3>
-        <p>Vos secteurs d'activité, vos gammes de produits, vos modèles de documents, les modules dont vous avez besoin — rien de plus.</p>
+        <p>Vos secteurs d'activité, vos gammes, vos modèles de documents, les modules dont vous avez besoin — rien de plus.</p>
       </div>
       <div class="step">
         <h3>Adoption</h3>
@@ -154,8 +260,9 @@
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Le seul risque, c'est d'y prendre goût</span>
     <h2>30 jours pour vous faire votre propre avis.</h2>
-    <p>Gratuit, sans carte bancaire, sans engagement. Le seul risque, c'est d'y prendre goût.</p>
+    <p>Gratuit, sans carte bancaire, sans engagement.</p>
     <a class="btn btn-acc btn-big" href="/essai/">Démarrer mon essai gratuit</a>
   </div>
 </div>
@@ -179,6 +286,7 @@
       <div>
         <h4>Indusiax</h4>
         <a href="/tarifs/">Tarifs</a>
+        <a href="/blog/">Blog</a>
         <a href="/a-propos/">À propos</a>
         <a href="/contact/">Contact</a>
         <a href="/essai/">Essai gratuit</a>

@@ -4,15 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tarifs — Indusiax | Logiciels pour TPE &amp; PME industrielles</title>
-<meta name="description" content="Des tarifs simples et affichés : Stator-CRM 65 €/utilisateur/mois, Rotor-FSM 55 €/mois, Vector-MOM et Flux-Link 12 €/mois. Suite complète à 99 €/utilisateur/mois. Essai gratuit 30 jours sans carte.">
+<meta name="description" content="Des tarifs simples et affichés : Stator-CRM 65 €/utilisateur/mois, Rotor-FSM dès 39 €/mois, Vector-MOM et Flux-Link 12 €/mois. Suite complète à 99 €/utilisateur/mois. Essai gratuit 30 jours sans carte.">
 <link rel="canonical" href="https://indusiax.com/tarifs/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/tarifs/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tarifs Indusiax — simples, affichés, sans surprise">
 <meta property="og:description" content="De 12 € à 65 €/mois selon l'outil, suite complète à 99 €/utilisateur/mois. Essai gratuit 30 jours sans carte.">
 <meta property="og:url" content="https://indusiax.com/tarifs/">
+<meta property="og:image" content="https://indusiax.com/assets/tarifs/hero.jpg">
+<style>
+/* graphique comparatif d'économie */
+.sav{width:100%;max-width:620px;margin:0 auto;}
+.sav-row{display:grid;grid-template-columns:150px minmax(0,1fr) auto;align-items:center;gap:16px;padding:12px 0;}
+.sav-lb{font-family:var(--mono);font-size:.78rem;color:var(--mut);text-align:right;}
+.sav-bar{height:34px;border-radius:7px;background:linear-gradient(90deg,#3a4656,#4a5768);position:relative;}
+.sav-bar.hi{background:linear-gradient(90deg,var(--acc),#c23a1e);}
+.sav-amt{font-family:var(--mono);font-weight:700;font-size:.92rem;color:var(--txt);white-space:nowrap;}
+.sav-tag{margin-top:18px;text-align:center;font-family:var(--mono);font-size:.8rem;color:var(--acc);font-weight:700;}
+/* trust strip */
+.tr-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px;}
+</style>
 </head>
 <body>
 
@@ -26,22 +40,33 @@
       <a href="/vector/">Vector-MOM</a>
       <a href="/flux/">Flux-Link</a>
       <a class="on" href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
   </div>
 </header>
 
-<main>
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
-<div class="hero hero-product" style="padding-bottom:36px">
-  <div class="wrap">
-    <h1>Des tarifs <span class="grad">simples et affichés</span>.</h1>
-    <p class="sub">Chaque outil se souscrit seul, au mois, sans engagement de durée. Tous commencent par 30 jours d'essai gratuit, sans carte bancaire. Prix HT.</p>
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><img src="/assets/tarifs/hero.jpg" alt="Dirigeant et employée d'une PME industrielle examinant ensemble une grille tarifaire" fetchpriority="high"></div>
+  <div class="wrap" style="position:relative;z-index:2;padding:78px 0 82px;max-width:720px">
+    <span class="eb">Sans surprise, sans module caché</span>
+    <h1 style="font-size:clamp(2rem,4.6vw,3.2rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:16px 0 20px">Des tarifs <span class="ac">simples et affichés.</span></h1>
+    <p class="sub" style="max-width:56ch">Chaque outil se souscrit seul, au mois, sans engagement de durée. Tous commencent par 30 jours d'essai gratuit, sans carte bancaire. Prix HT, comme il est d'usage entre professionnels.</p>
+    <div class="pv-trust" style="border-top:none;padding-top:0;margin-top:26px">
+      <div class="pv-chips">
+        <span class="pv-chip">Prix HT affichés</span><span class="pv-chip">Carte ou virement</span>
+        <span class="pv-chip">Résiliable à tout moment</span><span class="pv-chip">🇪🇺 Données en Europe</span>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-<section style="padding-top:20px">
+<!-- CARTES TARIFS -->
+<section style="padding-top:44px">
   <div class="wrap">
     <div class="pricing">
       <div class="price-card">
@@ -60,16 +85,16 @@
       </div>
       <div class="price-card">
         <h3 class="t-rotor">Rotor-FSM</h3>
-        <div class="amount">55 €<small> HT</small></div>
-        <div class="per">par mois — techniciens illimités</div>
+        <div class="amount">39 €<small> HT</small></div>
+        <div class="per">à partir de — offre Solo, 1 technicien</div>
         <ul>
-          <li>Planification des interventions</li>
-          <li>Fiches d'expertise sur site</li>
-          <li>Photos &amp; mesures</li>
-          <li>Rapports client PDF</li>
-          <li>Historique par machine</li>
+          <li>Vérifications &amp; VGP sur tablette</li>
+          <li>Fiches machines paramétrables</li>
+          <li>Rapport PDF à votre marque</li>
+          <li>Suivi des échéances réglementaires</li>
+          <li>Équipe jusqu'à 5 techniciens : 149 €/mois</li>
         </ul>
-        <a class="btn btn-ghost" href="/essai/?produit=rotor">Essayer 30 jours</a>
+        <a class="btn btn-ghost" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Voir la démo</a>
       </div>
       <div class="price-card">
         <h3 class="t-vector">Vector-MOM</h3>
@@ -105,17 +130,41 @@
         <h3 style="margin-top:8px">Suite Indusiax complète</h3>
         <div class="amount" style="margin:4px auto 0">99 €<small> HT</small></div>
         <div class="per">par utilisateur / mois — les 4 outils</div>
-        <p style="color:var(--mut);font-size:.92rem;max-width:560px;margin:8px auto 18px">
+        <p style="color:var(--mut);font-size:.92rem;max-width:560px;margin:8px auto 4px">
           Stator-CRM + Rotor-FSM + Vector-MOM + Flux-Link, reliés entre eux : connexion unique
           « Se connecter avec Stator », fiches clients partagées, comptes-rendus de réunion
           qui remontent dans le CRM.
         </p>
-        <a class="btn btn-acc" style="align-self:center" href="/essai/?produit=suite">Essayer la suite 30 jours</a>
+        <div class="sav" style="margin-top:22px">
+          <div class="sav-row">
+            <span class="sav-lb">À la carte</span>
+            <div class="sav-bar" style="width:100%"></div>
+            <span class="sav-amt">≈ 144 € /util.</span>
+          </div>
+          <div class="sav-row">
+            <span class="sav-lb">Suite Indusiax</span>
+            <div class="sav-bar hi" style="width:69%"></div>
+            <span class="sav-amt">99 € /util.</span>
+          </div>
+        </div>
+        <div class="sav-tag">≈ 31 % d'économie, outils reliés en prime</div>
+        <a class="btn btn-acc" style="align-self:center;margin-top:26px" href="/essai/?produit=suite">Essayer la suite 30 jours</a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- BAND confiance -->
+<div class="pv-band">
+  <img src="/assets/home/band.jpg" alt="Équipe d'une PME industrielle en réunion devant l'atelier" loading="lazy">
+  <div class="wrap in">
+    <span class="eb">Pourquoi des prix affichés</span>
+    <h2>Parce qu'un devis à négocier, on en a déjà assez au bureau.</h2>
+    <p>Pas de « contactez-nous pour un devis », pas de palier caché. Le prix que vous voyez est celui que vous payez.</p>
+  </div>
+</div>
+
+<!-- FAQ -->
 <section class="alt">
   <div class="wrap">
     <h2 class="sec">Questions sur la facturation</h2>
@@ -131,6 +180,7 @@
 
 <div class="cta-final">
   <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Aucune carte demandée</span>
     <h2>Commencez par l'essai. Décidez après.</h2>
     <p>30 jours d'accès complet, sans carte bancaire.</p>
     <a class="btn btn-acc btn-big" href="/essai/">Démarrer mon essai gratuit</a>
@@ -156,6 +206,7 @@
       <div>
         <h4>Indusiax</h4>
         <a href="/tarifs/">Tarifs</a>
+        <a href="/blog/">Blog</a>
         <a href="/a-propos/">À propos</a>
         <a href="/contact/">Contact</a>
         <a href="/essai/">Essai gratuit</a>

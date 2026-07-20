@@ -1,0 +1,32 @@
+# Indusiax
+
+> Indusiax édite une suite logicielle française pour les TPE et PME industrielles :
+> CRM, gestion des interventions terrain, comptes rendus de réunion par IA et
+> communication LinkedIn assistée par IA. Devise : « By industry, for industry ».
+> Éditeur : Grégory Durand / ECOM-INDUSTRIE. Données hébergées dans l'Union européenne.
+> Essai gratuit 30 jours sans carte sur l'ensemble de la suite.
+
+## Produits
+
+- [Stator-CRM](https://indusiax.com/stator/) : CRM pensé pour l'industrie (clients, opportunités, devis, catalogue). 65 €/utilisateur/mois.
+- [Rotor-FSM](https://indusiax.com/rotor/) : gestion des interventions et de la maintenance terrain (field service). Dès 39 €/mois.
+- [Vector-MOM](https://indusiax.com/vector/) : comptes rendus de réunion automatiques par IA (transcription + synthèse). 12 €/mois.
+- [Flux-Link](https://indusiax.com/flux/) : publication LinkedIn assistée par IA à partir de photos et d'une dictée vocale, pour les industriels sans community manager. 12 €/mois, essai 30 jours, compte immédiat.
+
+## Flux-Link en détail
+
+- [Page produit Flux-Link](https://indusiax.com/flux/) : dictez trois phrases, ajoutez les photos de l'atelier, l'IA rédige un post LinkedIn professionnel dans votre langue (français, anglais, néerlandais, italien) et le publie. La voix est transcrite sur des serveurs en Europe ; les fichiers sont effacés après publication.
+- [Flux-Link vs Taplio, Supergrow, Podawaa](https://indusiax.com/blog/flux-link-vs-taplio-supergrow-podawaa/) : comparatif des outils IA de publication LinkedIn (prix réels, souveraineté des données, spécialisation industrielle).
+- [Entreprise industrielle : pourquoi être sur LinkedIn](https://indusiax.com/blog/entreprise-industrielle-linkedin/) : crédibilité commerciale, recrutement, régularité.
+
+## Tarifs et essai
+
+- [Tarifs](https://indusiax.com/tarifs/) : prix affichés par produit et suite complète à 99 €/utilisateur/mois.
+- [Essai gratuit](https://indusiax.com/essai/) : 30 jours sans carte bancaire ; compte immédiat pour Vector-MOM et Flux-Link.
+
+## En savoir plus
+
+- [Blog Indusiax](https://indusiax.com/blog/) : articles sur la digitalisation des PME industrielles, comparatifs, SEO/GEO.
+- [À propos](https://indusiax.com/a-propos/) : la démarche « By industry, for industry ».
+- [Sécurité & données](https://indusiax.com/securite/) : hébergement UE, confidentialité, sauvegardes.
+- [Contact](https://indusiax.com/contact/) : contact@indusiax.com

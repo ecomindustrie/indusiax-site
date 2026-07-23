@@ -87,3 +87,29 @@ table.compare-table tbody th{font-weight:600;color:var(--txt);white-space:nowrap
 table.compare-table tbody tr:last-child td,table.compare-table tbody tr:last-child th{border-bottom:none;}
 table.compare-table td.our{background:var(--acc-soft);color:var(--txt);font-weight:600;}
 table.compare-table tbody tr:hover td,table.compare-table tbody tr:hover th{background:var(--bg3);}
+
+/* ---------- Article : photo inline ---------- */
+.article-figure{margin:34px 0;}
+.article-figure img{width:100%;display:block;border-radius:14px;border:1px solid var(--bord);}
+.article-figure figcaption{font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:.78rem;
+  line-height:1.5;color:var(--mut2);margin-top:11px;padding-left:14px;border-left:2px solid var(--p,var(--acc));}
+
+/* ---------- Article : schéma explicatif SVG ---------- */
+.schema-fig{margin:36px 0;background:var(--bg2);border:1px solid var(--bord);border-radius:16px;
+  padding:24px 26px 20px;overflow:hidden;}
+.schema-fig .schema-title{font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:.72rem;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--p,var(--acc));margin-bottom:18px;
+  display:flex;align-items:center;gap:10px;}
+.schema-fig .schema-title::before{content:"";width:20px;height:2px;background:var(--p,var(--acc));flex-shrink:0;}
+.schema-fig svg{width:100%;height:auto;display:block;overflow:visible;}
+.schema-fig figcaption{font-size:.86rem;line-height:1.55;color:var(--mut);margin-top:16px;}
+.schema-fig .s-node{fill:var(--bg3);stroke:var(--bord);}
+.schema-fig .s-node-acc{fill:rgba(255,255,255,.03);stroke:var(--p,var(--acc));}
+.schema-fig .s-lbl{fill:var(--txt);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;font-weight:600;}
+.schema-fig .s-sub{fill:var(--mut);font-family:system-ui,-apple-system,'Segoe UI',sans-serif;}
+.schema-fig .s-mono{fill:var(--mut2);font-family:'JBMono',ui-monospace,Consolas,monospace;letter-spacing:.04em;}
+.schema-fig .s-acc{fill:var(--p,var(--acc));}
+.schema-fig .s-line{stroke:rgba(255,255,255,.28);fill:none;}
+.schema-fig .s-line-acc{stroke:var(--p,var(--acc));fill:none;}
+.schema-fig .s-dash{stroke:rgba(255,255,255,.22);fill:none;stroke-dasharray:5 5;}
+@media(max-width:560px){.schema-fig{padding:18px 16px 16px;}}

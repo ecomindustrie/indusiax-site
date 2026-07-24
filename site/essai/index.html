@@ -34,13 +34,38 @@
 .ec-card h3 small{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;display:block;margin-bottom:4px;}
 .ec-card p{font-size:.9rem;color:var(--mut);flex:1;}
 .ec-card .btn{align-self:flex-start;}
+/* quiz "par où commencer" */
+.quiz-box{max-width:720px;background:var(--bg2);border:1px solid var(--bord);border-radius:16px;padding:32px 34px 34px;}
+@media(max-width:640px){.quiz-box{padding:24px 20px 26px;}}
+.quiz-progress{display:flex;gap:8px;margin-bottom:22px;}
+.qp-dot{height:5px;flex:1;border-radius:3px;background:var(--bord);transition:background .3s;}
+.qp-dot.on{background:var(--acc);}
+.quiz-step h3{font-size:1.15rem;color:var(--txt);margin-bottom:18px;}
+.quiz-opts{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+@media(max-width:640px){.quiz-opts{grid-template-columns:1fr;}}
+.quiz-opt{display:flex;align-items:center;gap:12px;text-align:left;padding:14px 16px;border-radius:11px;border:1px solid var(--bord);background:var(--bg);color:var(--txt);font-size:.88rem;font-weight:600;cursor:pointer;transition:border-color .18s,transform .18s,background .18s;font-family:inherit;}
+.quiz-opt:hover{border-color:var(--acc);transform:translateY(-2px);background:var(--bg2);}
+.quiz-opt .qi{font-size:1.3rem;flex-shrink:0;}
+.quiz-step[hidden]{display:none;}
+.quiz-step{animation:quizIn .4s cubic-bezier(.22,1,.36,1) both;}
+@keyframes quizIn{from{opacity:0;transform:translateX(16px);}to{opacity:1;transform:none;}}
+.quiz-result{text-align:center;padding:8px 0 4px;animation:quizIn .5s cubic-bezier(.22,1,.36,1) both;}
+.qr-ic{font-size:2.4rem;margin-bottom:10px;}
+.quiz-result h3{font-size:1.4rem;color:var(--txt);margin:8px 0 8px;}
+.quiz-result p{color:var(--mut);max-width:480px;margin:0 auto;}
+.quiz-result .btn{margin-left:auto;margin-right:auto;}
+.quiz-result > div{justify-content:center;}
+@media(prefers-reduced-motion:reduce){.quiz-step,.quiz-result{animation:none;}}
+.ec-card.rec{border-color:var(--acc);box-shadow:0 0 0 3px color-mix(in srgb, var(--acc) 30%, transparent),0 12px 32px -12px color-mix(in srgb, var(--acc) 50%, transparent);animation:recPulse 1.8s ease-in-out 2;}
+@keyframes recPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.015);}}
+@media(prefers-reduced-motion:reduce){.ec-card.rec{animation:none;}}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap nav">
-    <a class="logo" href="/">Indusia<b>x</b></a>
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
     <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
       <a href="/stator/">Stator-CRM</a>
@@ -82,13 +107,67 @@
   </div>
 </section>
 
+<!-- QUIZ -->
+<section id="quiz" class="alt">
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">30 secondes chrono</span>
+    <h2 class="sec" style="text-align:left;max-width:660px">Vous hésitez ? Répondez à 3 questions.</h2>
+    <p class="sec-sub" style="text-align:left;max-width:660px;margin:0 0 32px">On vous indique par quel outil commencer — vous restez libre d'en choisir un autre juste après.</p>
+
+    <div class="quiz-box" id="quiz-box">
+      <div class="quiz-progress" aria-hidden="true"><span class="qp-dot on" data-step="0"></span><span class="qp-dot" data-step="1"></span><span class="qp-dot" data-step="2"></span></div>
+
+      <div class="quiz-step" data-step="0">
+        <h3>Qu'est-ce qui vous prend le plus de temps administratif ?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-scores="stator:2"><span class="qi">📇</span><span>Suivre mes clients et devis (papier, tableur, mémoire)</span></button>
+          <button type="button" class="quiz-opt" data-scores="rotor:2"><span class="qi">🛠️</span><span>Remplir des rapports d'intervention ou de contrôle terrain</span></button>
+          <button type="button" class="quiz-opt" data-scores="vector:2"><span class="qi">🗣️</span><span>Rédiger un compte-rendu après chaque réunion</span></button>
+          <button type="button" class="quiz-opt" data-scores="flux:2"><span class="qi">📣</span><span>Publier du contenu pour me faire connaître</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="1" hidden>
+        <h3>Où passez-vous le plus clair de votre temps ?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-scores="stator:1"><span class="qi">☎️</span><span>Au bureau, au téléphone avec des clients</span></button>
+          <button type="button" class="quiz-opt" data-scores="rotor:1"><span class="qi">🏭</span><span>Sur site, en atelier, chez le client</span></button>
+          <button type="button" class="quiz-opt" data-scores="vector:1"><span class="qi">🧑‍🤝‍🧑</span><span>En réunion, avec d'autres équipes</span></button>
+          <button type="button" class="quiz-opt" data-scores="flux:1"><span class="qi">💻</span><span>À chercher de la visibilité en ligne</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-step" data-step="2" hidden>
+        <h3>Quel est votre objectif principal cette année ?</h3>
+        <div class="quiz-opts">
+          <button type="button" class="quiz-opt" data-scores="stator:1"><span class="qi">🎯</span><span>Ne plus perdre une seule affaire</span></button>
+          <button type="button" class="quiz-opt" data-scores="rotor:1"><span class="qi">✅</span><span>Prouver la conformité, gagner du temps terrain</span></button>
+          <button type="button" class="quiz-opt" data-scores="vector:1"><span class="qi">📝</span><span>Ne plus ressaisir les décisions de réunion</span></button>
+          <button type="button" class="quiz-opt" data-scores="flux:1"><span class="qi">🔗</span><span>Être visible et crédible sur LinkedIn</span></button>
+        </div>
+      </div>
+
+      <div class="quiz-result" id="quiz-result" hidden>
+        <div class="qr-ic" id="qr-ic">🎯</div>
+        <span class="eb">Notre recommandation</span>
+        <h3 id="qr-title">Commencez par Stator-CRM</h3>
+        <p id="qr-txt">Le CRM industriel, pour ne plus jamais perdre le fil d'un client.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:10px">
+          <button type="button" class="btn btn-acc" id="qr-cta">Voir ma recommandation ↓</button>
+          <button type="button" class="btn btn-ghost" id="qr-restart">Recommencer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- POINTS DE DÉPART -->
 <section id="choix">
   <div class="wrap">
     <span class="eb" style="margin-bottom:14px">Quatre outils, trois façons de commencer</span>
     <h2 class="sec" style="text-align:left;max-width:660px">Choisissez votre point de départ.</h2>
     <div class="ec-grid" style="margin-top:36px">
-      <div class="ec-card">
+      <div class="ec-card" data-product="vector">
         <div class="im"><img src="/assets/vector/hero.jpg" alt="Réunion d'équipe enregistrée" loading="lazy"><span class="badge">⚡ COMPTE IMMÉDIAT</span></div>
         <div class="bd">
           <h3><small style="color:var(--vector)">Réunions &amp; IA</small>Vector-MOM</h3>
@@ -96,7 +175,7 @@
           <a class="btn btn-acc" href="https://vector.indusiax.com/register">Créer mon compte →</a>
         </div>
       </div>
-      <div class="ec-card">
+      <div class="ec-card" data-product="flux">
         <div class="im"><img src="/assets/flux/hero.jpg" alt="Artisan fier dans son atelier" loading="lazy"><span class="badge">⚡ COMPTE IMMÉDIAT</span></div>
         <div class="bd">
           <h3><small style="color:var(--flux)">Communication LinkedIn</small>Flux-Link</h3>
@@ -104,7 +183,7 @@
           <a class="btn btn-acc" href="https://flux.indusiax.com/login">Créer mon compte →</a>
         </div>
       </div>
-      <div class="ec-card">
+      <div class="ec-card" data-product="rotor">
         <div class="im"><img src="/assets/rotor/hero.jpg" alt="Technicien inspectant un chariot élévateur" loading="lazy"><span class="badge">🔓 DÉMO EN LIBRE ACCÈS</span></div>
         <div class="bd">
           <h3><small style="color:var(--rotor)">Contrôles &amp; VGP</small>Rotor-FSM</h3>
@@ -112,7 +191,7 @@
           <a class="btn btn-acc" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Ouvrir la démo →</a>
         </div>
       </div>
-      <div class="ec-card">
+      <div class="ec-card" data-product="stator">
         <div class="im"><img src="/assets/stator/card.jpg" alt="Commercial et cliente concluant une affaire" loading="lazy"><span class="badge">🏗️ ESPACE DÉDIÉ SOUS 24 H</span></div>
         <div class="bd">
           <h3><small style="color:var(--stator)">CRM industriel</small>Stator-CRM</h3>
@@ -214,7 +293,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/">Indusia<b>x</b></a>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
       <div>

@@ -45,6 +45,10 @@ def _init_db():
             payload TEXT NOT NULL,
             spam INTEGER DEFAULT 0,
             created_at TEXT NOT NULL)""")
+        c.execute("""CREATE TABLE IF NOT EXISTS newsletter (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL UNIQUE,
+            created_at TEXT NOT NULL)""")
 
 
 _init_db()
@@ -164,6 +168,25 @@ def rappel(data: RappelIn, request: Request):
             + "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
             + "\n\nPromesse faite au demandeur : rappel sous 24 h ouvrées, d'industriel à industriel.")
     return {"ok": True, "id": rid}
+
+
+class NewsletterIn(BaseModel):
+    email: EmailStr
+    site_web: str = ""  # pot de miel
+
+
+@app.post("/api/newsletter")
+def newsletter(data: NewsletterIn, request: Request):
+    _rate_limit(request)
+    if data.site_web.strip():
+        return {"ok": True}  # robot : réponse silencieuse, rien d'enregistré côté utile
+    with sqlite3.connect(DB_PATH) as c:
+        try:
+            c.execute("INSERT INTO newsletter (email, created_at) VALUES (?,?)",
+                       (data.email, datetime.now(timezone.utc).isoformat()))
+        except sqlite3.IntegrityError:
+            pass  # déjà inscrit — idempotent, pas d'erreur renvoyée au visiteur
+    return {"ok": True}
 
 
 @app.get("/api/demandes")

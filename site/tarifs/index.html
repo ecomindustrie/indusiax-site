@@ -14,7 +14,9 @@
 <meta property="og:title" content="Tarifs Indusiax — simples, affichés, sans surprise">
 <meta property="og:description" content="De 12 € à 65 €/mois selon l'outil, suite complète à 99 €/utilisateur/mois. Essai gratuit 30 jours sans carte.">
 <meta property="og:url" content="https://indusiax.com/tarifs/">
-<meta property="og:image" content="https://indusiax.com/assets/tarifs/hero.jpg">
+<meta property="og:image" content="https://indusiax.com/assets/social/tarifs.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/tarifs.jpg">
 <style>
 /* graphique comparatif d'économie */
 .sav{width:100%;max-width:620px;margin:0 auto;}
@@ -32,13 +34,46 @@
   .price-card.in .sav-bar{transform:scaleX(1);}
   .price-card.in .sav-bar.hi{transition-delay:.25s;}
 }
+/* calculateur d'économies */
+.calc-box{display:grid;grid-template-columns:1.15fr .85fr;gap:0;max-width:920px;margin:0 auto;
+  border:1px solid var(--bord);border-radius:18px;overflow:hidden;background:var(--bg2);}
+@media(max-width:800px){.calc-box{grid-template-columns:1fr;}}
+.calc-inputs{padding:32px 34px;display:flex;flex-direction:column;gap:20px;}
+.calc-row label{display:block;font-size:.86rem;color:var(--mut);margin-bottom:8px;}
+.calc-field{display:flex;align-items:center;gap:10px;}
+.calc-field input[type=number]{width:90px;padding:10px 12px;border-radius:8px;border:1.5px solid var(--bord);
+  background:var(--bg3);color:var(--txt);font-family:inherit;font-size:1rem;font-weight:700;outline:none;}
+.calc-field input[type=number]:focus{border-color:var(--acc);}
+.calc-field span{font-size:.82rem;color:var(--mut2);}
+.calc-users{padding-top:6px;border-top:1px solid var(--bord);}
+.calc-stepper{display:flex;align-items:center;gap:0;width:fit-content;border:1.5px solid var(--bord);border-radius:8px;overflow:hidden;}
+.calc-stepper button{width:38px;height:40px;background:var(--bg3);border:none;color:var(--txt);font-size:1.1rem;
+  cursor:pointer;transition:background .15s;}
+.calc-stepper button:hover{background:var(--acc);color:#fff;}
+.calc-stepper input{width:56px;height:40px;text-align:center;border:none;border-left:1px solid var(--bord);
+  border-right:1px solid var(--bord);background:var(--bg2);color:var(--txt);font-weight:700;font-size:1rem;
+  -moz-appearance:textfield;}
+.calc-result{background:linear-gradient(160deg,rgba(232,76,43,.12),var(--bg3) 60%);padding:32px 34px;
+  display:flex;flex-direction:column;justify-content:center;}
+.calc-r-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 0;
+  border-bottom:1px dashed var(--bord);font-size:.9rem;color:var(--mut);}
+.calc-r-row b{font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:1.15rem;color:var(--txt);}
+.calc-r-row b small{font-size:.7rem;color:var(--mut2);font-weight:400;}
+.calc-r-row.hi b{color:var(--acc);}
+.calc-r-diff{text-align:center;margin-top:18px;padding:16px;border-radius:12px;background:rgba(34,197,94,.1);
+  border:1px solid rgba(34,197,94,.3);}
+.calc-r-diff.calc-neg{background:rgba(255,255,255,.04);border-color:var(--bord);}
+.calc-diff-amt{display:block;font-family:'JBMono',ui-monospace,Consolas,monospace;font-weight:800;
+  font-size:1.7rem;color:var(--ok);margin-bottom:2px;}
+.calc-r-diff.calc-neg .calc-diff-amt{color:var(--txt);}
+#c-diff-label{font-size:.78rem;color:var(--mut);}
 </style>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap nav">
-    <a class="logo" href="/">Indusia<b>x</b></a>
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
     <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
       <a href="/stator/">Stator-CRM</a>
@@ -160,6 +195,52 @@
   </div>
 </section>
 
+<!-- CALCULATEUR D'ÉCONOMIES -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Faites le calcul sur votre cas</span>
+    <h2 class="sec">Ce que vous payez peut-être déjà, dispersé.</h2>
+    <p class="sec-sub">Ajustez les montants à votre réalité — les valeurs de départ sont des ordres de grandeur, pas des prix figés.</p>
+    <div class="calc-box">
+      <div class="calc-inputs">
+        <div class="calc-row">
+          <label for="c-crm">CRM commercial (généraliste ou spécialisé)</label>
+          <div class="calc-field"><input type="number" id="c-crm" min="0" step="1" value="65"><span>€ / mois / utilisateur</span></div>
+        </div>
+        <div class="calc-row">
+          <label for="c-terrain">Gestion des interventions terrain (Excel, papier, outil dédié)</label>
+          <div class="calc-field"><input type="number" id="c-terrain" min="0" step="1" value="45"><span>€ / mois / utilisateur</span></div>
+        </div>
+        <div class="calc-row">
+          <label for="c-cr">Transcription / compte-rendu de réunion</label>
+          <div class="calc-field"><input type="number" id="c-cr" min="0" step="1" value="15"><span>€ / mois / utilisateur</span></div>
+        </div>
+        <div class="calc-row">
+          <label for="c-li">Communication LinkedIn</label>
+          <div class="calc-field"><input type="number" id="c-li" min="0" step="1" value="35"><span>€ / mois / utilisateur</span></div>
+        </div>
+        <div class="calc-row calc-users">
+          <label for="c-users">Nombre d'utilisateurs</label>
+          <div class="calc-stepper">
+            <button type="button" id="c-users-minus" aria-label="Moins d'utilisateurs">−</button>
+            <input type="number" id="c-users" min="1" max="50" value="3">
+            <button type="button" id="c-users-plus" aria-label="Plus d'utilisateurs">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="calc-result">
+        <div class="calc-r-row"><span>Aujourd'hui, dispersé</span><b id="c-total-now">0 €<small>/mois</small></b></div>
+        <div class="calc-r-row hi"><span>Avec la Suite Indusiax</span><b id="c-total-suite">0 €<small>/mois</small></b></div>
+        <div class="calc-r-diff" id="c-diff">
+          <span class="calc-diff-amt" id="c-diff-amt">0 €</span>
+          <span id="c-diff-label">d'économie par mois</span>
+        </div>
+        <a class="btn btn-acc btn-big" href="/essai/?produit=suite" style="width:100%;text-align:center;margin-top:18px">Essayer la suite 30 jours</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BAND confiance -->
 <div class="pv-band">
   <img src="/assets/home/band.jpg" alt="Équipe d'une PME industrielle en réunion devant l'atelier" loading="lazy">
@@ -199,7 +280,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/">Indusia<b>x</b></a>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
       <div>

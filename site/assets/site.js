@@ -98,6 +98,126 @@
     });
   }
 
+  /* Calculateur d'économies (page /tarifs/). */
+  var calcCrm = document.getElementById('c-crm');
+  if (calcCrm) {
+    var calcIds = ['c-crm', 'c-terrain', 'c-cr', 'c-li', 'c-users'];
+    var calcEl = {};
+    calcIds.forEach(function (id) { calcEl[id] = document.getElementById(id); });
+    var cTotalNow = document.getElementById('c-total-now');
+    var cTotalSuite = document.getElementById('c-total-suite');
+    var cDiffAmt = document.getElementById('c-diff-amt');
+    var cDiffLabel = document.getElementById('c-diff-label');
+    var cDiffBox = document.getElementById('c-diff');
+    var SUITE_PRICE = 99;
+    function fmtEur(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+    function recalcSavings() {
+      var users = Math.max(1, parseInt(calcEl['c-users'].value, 10) || 1);
+      var perUser = ['c-crm', 'c-terrain', 'c-cr', 'c-li'].reduce(function (sum, id) {
+        return sum + Math.max(0, parseFloat(calcEl[id].value) || 0);
+      }, 0);
+      var now = perUser * users;
+      var suite = SUITE_PRICE * users;
+      cTotalNow.innerHTML = fmtEur(now) + '<small>/mois</small>';
+      cTotalSuite.innerHTML = fmtEur(suite) + '<small>/mois</small>';
+      var diff = now - suite;
+      if (diff > 0) {
+        cDiffAmt.textContent = fmtEur(diff);
+        cDiffLabel.textContent = "d'économie par mois avec la suite (" + fmtEur(diff * 12) + " par an)";
+        cDiffBox.classList.remove('calc-neg');
+      } else {
+        cDiffAmt.textContent = fmtEur(Math.abs(diff));
+        cDiffLabel.textContent = diff === 0
+          ? "à l'équilibre — et tout est relié, sans ressaisie"
+          : "de plus qu'aujourd'hui — mais tout est relié, sans ressaisie";
+        cDiffBox.classList.add('calc-neg');
+      }
+    }
+    calcIds.forEach(function (id) { calcEl[id].addEventListener('input', recalcSavings); });
+    var cMinus = document.getElementById('c-users-minus');
+    var cPlus = document.getElementById('c-users-plus');
+    if (cMinus) cMinus.addEventListener('click', function () {
+      calcEl['c-users'].value = Math.max(1, (parseInt(calcEl['c-users'].value, 10) || 1) - 1);
+      recalcSavings();
+    });
+    if (cPlus) cPlus.addEventListener('click', function () {
+      calcEl['c-users'].value = Math.min(50, (parseInt(calcEl['c-users'].value, 10) || 1) + 1);
+      recalcSavings();
+    });
+    recalcSavings();
+  }
+
+  /* Quiz "par où commencer" (page /essai/). */
+  var quizBox = document.getElementById('quiz-box');
+  if (quizBox) {
+    var QUIZ_INFO = {
+      stator: { title: 'Commencez par Stator-CRM', txt: "Le CRM industriel, pour ne plus jamais perdre le fil d'un client ou d'un devis.", icon: '📇' },
+      rotor: { title: 'Commencez par Rotor-FSM', txt: 'La démo en libre accès pour vos interventions et contrôles terrain — testez en 3 minutes.', icon: '🛠️' },
+      vector: { title: 'Commencez par Vector-MOM', txt: 'Créez votre compte et enregistrez votre première réunion dans 30 secondes.', icon: '🗣️' },
+      flux: { title: 'Commencez par Flux-Link', txt: "Créez votre compte et publiez votre premier post LinkedIn aujourd'hui.", icon: '📣' }
+    };
+    var qSteps = quizBox.querySelectorAll('.quiz-step');
+    var qDots = quizBox.querySelectorAll('.qp-dot');
+    var qResult = document.getElementById('quiz-result');
+    var qScores = { stator: 0, rotor: 0, vector: 0, flux: 0 };
+    var qCurrent = 0;
+
+    function showQuizStep(i) {
+      qSteps.forEach(function (s) { s.hidden = (parseInt(s.dataset.step, 10) !== i); });
+      qDots.forEach(function (d) { d.classList.toggle('on', parseInt(d.dataset.step, 10) <= i); });
+    }
+
+    quizBox.querySelectorAll('.quiz-opt').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var parts = btn.dataset.scores.split(':');
+        qScores[parts[0]] += parseInt(parts[1], 10);
+        qCurrent++;
+        if (qCurrent < qSteps.length) {
+          showQuizStep(qCurrent);
+        } else {
+          qSteps.forEach(function (s) { s.hidden = true; });
+          var winner = 'stator';
+          var best = -1;
+          ['stator', 'rotor', 'vector', 'flux'].forEach(function (k) {
+            if (qScores[k] > best) { best = qScores[k]; winner = k; }
+          });
+          var info = QUIZ_INFO[winner];
+          document.getElementById('qr-ic').textContent = info.icon;
+          document.getElementById('qr-title').textContent = info.title;
+          document.getElementById('qr-txt').textContent = info.txt;
+          qResult.dataset.winner = winner;
+          qResult.hidden = false;
+        }
+      });
+    });
+
+    var qRestart = document.getElementById('qr-restart');
+    if (qRestart) qRestart.addEventListener('click', function () {
+      qScores = { stator: 0, rotor: 0, vector: 0, flux: 0 };
+      qCurrent = 0;
+      qResult.hidden = true;
+      showQuizStep(0);
+    });
+
+    var qCta = document.getElementById('qr-cta');
+    if (qCta) qCta.addEventListener('click', function () {
+      var winner = qResult.dataset.winner || 'stator';
+      if (winner === 'stator') {
+        var selEl = document.getElementById('sel-produit');
+        if (selEl) selEl.value = 'stator';
+        var formSec = document.getElementById('formulaire');
+        if (formSec) formSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        var card = document.querySelector('.ec-card[data-product="' + winner + '"]');
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          card.classList.add('rec');
+          setTimeout(function () { card.classList.remove('rec'); }, 3600);
+        }
+      }
+    });
+  }
+
   /* Fondu d'apparition de la vidéo hero une fois prête à jouer. */
   var heroVideo = document.querySelector('.pv-hero .bg video');
   if (heroVideo) {

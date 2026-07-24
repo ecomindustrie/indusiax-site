@@ -63,8 +63,12 @@ header.site{
   border-bottom:1px solid var(--bord);
 }
 .nav{display:flex;align-items:center;gap:28px;height:64px;}
-.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;flex-shrink:0;}
+.logo{font-weight:800;font-size:1.25rem;letter-spacing:-.02em;flex-shrink:0;
+  display:inline-flex;align-items:center;gap:8px;}
 .logo b{color:var(--acc);}
+.logo-mark{flex-shrink:0;transition:transform .6s cubic-bezier(.34,1.56,.64,1);}
+.logo:hover .logo-mark{transform:rotate(90deg);}
+@media(prefers-reduced-motion:reduce){.logo-mark{transition:none;}.logo:hover .logo-mark{transform:none;}}
 .nav-links{display:flex;gap:22px;align-items:center;font-size:.92rem;color:var(--mut);flex:1;
   transition:max-height .35s ease;}
 .nav-links a{position:relative;transition:color .2s;}
@@ -244,6 +248,20 @@ form.f .row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 .form-ok .big{font-size:2.4rem;margin-bottom:12px;}
 .form-err{color:#f87171;font-size:.9rem;text-align:center;}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden;}
+
+/* ── Newsletter blog ─────────────────────── */
+.nl-block{background:var(--bg2);border-top:1px solid var(--bord);border-bottom:1px solid var(--bord);padding:44px 0;margin:56px 0 0;}
+.nl-in{display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+.nl-tx{max-width:420px;}
+.nl-tx h3{font-size:1.25rem;color:var(--txt);margin:6px 0 6px;}
+.nl-tx p{font-size:.88rem;color:var(--mut);}
+.nl-form{display:flex;gap:10px;flex:1;min-width:280px;max-width:420px;}
+.nl-form input[type=email]{flex:1;padding:12px 14px;border-radius:9px;border:1px solid var(--bord);background:var(--bg);color:var(--txt);font-size:.9rem;font-family:inherit;}
+.nl-form input[type=email]:focus{outline:2px solid var(--acc);outline-offset:1px;}
+.nl-ok{font-weight:700;color:var(--txt);}
+.nl-block .form-err{width:100%;text-align:left;margin:0;}
+.nl-block .form-err:not(:empty){margin-top:6px;}
+@media(max-width:720px){.nl-in{flex-direction:column;align-items:flex-start;}.nl-form{max-width:100%;width:100%;}}
 
 /* ── Bandeau confiance / footer CTA ─────────────────────── */
 .trust{display:flex;gap:12px 34px;justify-content:center;flex-wrap:wrap;

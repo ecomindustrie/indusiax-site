@@ -57,6 +57,20 @@
 /* ---- vidéo hero ---- */
 .pv-hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 @media (prefers-reduced-motion: reduce){.pv-hero .bg video{display:none;}}
+/* ---- section rappel ---- */
+.rappel-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+@media(max-width:860px){.rappel-grid{grid-template-columns:1fr;gap:32px;}}
+.rappel-txt h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 14px;line-height:1.2;}
+.rappel-sub{color:var(--mut);margin-bottom:22px;}
+.rappel-points{list-style:none;display:grid;gap:11px;}
+.rappel-points li{padding-left:30px;position:relative;color:var(--mut);font-size:.95rem;}
+.rappel-points li::before{content:'📞';position:absolute;left:0;top:0;font-size:.95rem;}
+.rappel-points b{color:var(--txt);}
+.rappel-card{background:var(--bg3);border:1px solid rgba(232,76,43,.35);border-radius:18px;padding:30px 28px;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);}
+.rappel-card form.f{max-width:none;}
+.rappel-note{font-size:.78rem;color:var(--mut2);text-align:center;margin-top:2px;}
+@media(max-width:560px){.rappel-card{padding:22px 18px;}}
 </style>
 </head>
 <body>
@@ -256,6 +270,60 @@
       <div class="step">
         <h3>Adoption</h3>
         <p>Un guide de démarrage accompagne chaque utilisateur à sa première connexion. Et un humain — un industriel — vous répond à contact@indusiax.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAPPEL — d'industriel à industriel -->
+<section class="alt" id="rappel">
+  <div class="wrap">
+    <div class="rappel-grid">
+      <div class="rappel-txt">
+        <span class="eb">D'industriel à industriel</span>
+        <h2>Demandez à être rappelé pour que nous parlions de votre projet.</h2>
+        <p class="rappel-sub">Pas de commercial au script téléphonique : c'est un industriel, qui utilise ces outils chaque jour dans sa propre activité, qui vous rappelle. On parle métier, contraintes réelles, et de ce que la suite peut — ou ne peut pas — faire pour vous.</p>
+        <ul class="rappel-points">
+          <li><b>Rappel sous 24 h ouvrées</b>, au créneau qui vous arrange</li>
+          <li><b>15 minutes</b>, sans engagement et sans relance insistante</li>
+          <li><b>Un pair, pas un vendeur</b> — mêmes ateliers, mêmes réalités</li>
+        </ul>
+      </div>
+      <div class="rappel-card">
+        <form class="f" data-endpoint="/api/rappel" data-success="rappel-ok">
+          <div class="row2">
+            <div><label for="r-nom">Votre nom</label><input id="r-nom" name="nom" required autocomplete="name"></div>
+            <div><label for="r-societe">Société</label><input id="r-societe" name="societe" required autocomplete="organization"></div>
+          </div>
+          <div><label for="r-tel">Téléphone</label><input id="r-tel" name="telephone" type="tel" required autocomplete="tel" placeholder="06 12 34 56 78"></div>
+          <div class="row2">
+            <div><label for="r-creneau">Créneau préféré</label>
+              <select id="r-creneau" name="creneau">
+                <option value="peu importe">Peu importe</option>
+                <option value="matin">Matin (9h–12h)</option>
+                <option value="midi">Midi (12h–14h)</option>
+                <option value="après-midi">Après-midi (14h–18h)</option>
+              </select></div>
+            <div><label for="r-produit">Votre intérêt</label>
+              <select id="r-produit" name="produit">
+                <option value="">Je ne sais pas encore</option>
+                <option value="suite">La suite complète</option>
+                <option value="stator">Stator-CRM (commerce)</option>
+                <option value="rotor">Rotor-FSM (terrain)</option>
+                <option value="vector">Vector-MOM (réunions)</option>
+                <option value="flux">Flux-Link (LinkedIn)</option>
+              </select></div>
+          </div>
+          <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-acc btn-big" type="submit">Être rappelé</button>
+          <p class="form-err" role="alert"></p>
+          <p class="rappel-note">Votre numéro sert uniquement à ce rappel — jamais revendu, jamais de démarchage.</p>
+        </form>
+        <div id="rappel-ok" class="form-ok" style="display:none">
+          <div class="big">📞</div>
+          <h3>Bien reçu !</h3>
+          <p>Un industriel vous rappelle sous 24 h ouvrées, sur le créneau demandé. À très vite.</p>
+        </div>
       </div>
     </div>
   </div>

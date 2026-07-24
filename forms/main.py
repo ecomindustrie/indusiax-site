@@ -109,6 +109,15 @@ class ContactIn(BaseModel):
     site_web: str = ""  # pot de miel
 
 
+class RappelIn(BaseModel):
+    nom: str
+    societe: str
+    telephone: str
+    creneau: str = ""      # matin / midi / après-midi / peu importe
+    produit: str = ""      # intérêt éventuel (stator/rotor/vector/flux/suite/"")
+    site_web: str = ""     # pot de miel
+
+
 @app.post("/api/essai")
 def essai(data: EssaiIn, request: Request):
     _rate_limit(request)
@@ -136,6 +145,24 @@ def contact(data: ContactIn, request: Request):
         _notify(
             f"[Indusiax] Message de {data.nom}" + (f" ({data.societe})" if data.societe else ""),
             "\n".join(f"{k} : {v}" for k, v in payload.items() if v))
+    return {"ok": True, "id": rid}
+
+
+@app.post("/api/rappel")
+def rappel(data: RappelIn, request: Request):
+    _rate_limit(request)
+    tel = data.telephone.strip()
+    if sum(ch.isdigit() for ch in tel) < 8:
+        raise HTTPException(400, "Numéro de téléphone incomplet.")
+    spam = bool(data.site_web.strip())
+    payload = data.model_dump(exclude={"site_web"})
+    rid = _store("rappel", payload, spam)
+    if not spam:
+        _notify(
+            f"[Indusiax] Demande de RAPPEL #{rid} — {data.societe} ({tel})",
+            "Nouvelle demande de rappel téléphonique :\n\n"
+            + "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
+            + "\n\nPromesse faite au demandeur : rappel sous 24 h ouvrées, d'industriel à industriel.")
     return {"ok": True, "id": rid}
 
 

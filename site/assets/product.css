@@ -8,6 +8,7 @@
 
 .pv{--p:#E84C2B;--p2:#c23a1e;--ok:#22c55e;--aa:#E0A128;--nc:#ef4444;
   --mono:'JBMono',ui-monospace,Consolas,monospace;--paper:#fff;--ink:#10161d;--pline:#c7d2dd;}
+.pv ::selection{background:var(--p);color:#fff;}
 .pv .mono{font-family:var(--mono);}
 .pv .eb{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--p);display:inline-flex;align-items:center;gap:9px;}
@@ -32,6 +33,19 @@
 .pv-chip{font-family:var(--mono);font-size:.72rem;color:var(--mut);border:1px solid var(--bord);border-radius:3px;padding:5px 10px;}
 @media(max-width:900px){.pv-hero-in{grid-template-columns:1fr;gap:26px;padding:52px 0 58px;}
   .pv-hero .bg::after{background:linear-gradient(180deg,#080b10e6,#080b10aa);}}
+
+/* ---------- Entrée animée du hero (toutes les pages pv-hero) ---------- */
+@media(prefers-reduced-motion:no-preference){
+  @keyframes pvUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:none;}}
+  @keyframes pvRight{from{opacity:0;transform:translateX(30px) rotate(1deg);}to{opacity:1;transform:none;}}
+  .pv-hero .eb{animation:pvUp .7s cubic-bezier(.22,1,.36,1) both;}
+  .pv-hero h1{animation:pvUp .7s cubic-bezier(.22,1,.36,1) .09s both;}
+  .pv-hero .sub{animation:pvUp .7s cubic-bezier(.22,1,.36,1) .17s both;}
+  .pv-hero .ctas{animation:pvUp .7s cubic-bezier(.22,1,.36,1) .25s both;}
+  .pv-hero .pv-trust{animation:pvUp .7s cubic-bezier(.22,1,.36,1) .33s both;}
+  .pv-hero .note{animation:pvUp .7s cubic-bezier(.22,1,.36,1) .33s both;}
+  .pv-hero .pv-card{animation:pvRight .8s cubic-bezier(.22,1,.36,1) .3s both;}
+}
 
 /* ---------- carte "device" blanche (maquette produit) ---------- */
 .pv-card{background:var(--paper);color:var(--ink);border-radius:9px;border:1px solid var(--pline);overflow:hidden;

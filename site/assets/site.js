@@ -1,9 +1,60 @@
-/* INDUSIAX — menu mobile + formulaires (essai / contact) */
+/* INDUSIAX — menu mobile + reveal au scroll + formulaires (essai / contact) */
 (function () {
   var burger = document.getElementById('burger');
   var links = document.querySelector('.nav-links');
   if (burger && links) {
-    burger.addEventListener('click', function () { links.classList.toggle('open'); });
+    burger.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    document.addEventListener('click', function (ev) {
+      if (links.classList.contains('open') && !links.contains(ev.target) && !burger.contains(ev.target)) {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+
+  /* Reveal au scroll — voir le bloc @media(scripting:enabled) de site.css.
+     Sans IntersectionObserver, on affiche tout directement (.no-io). */
+  if ('IntersectionObserver' in window) {
+    var revSel = 'h2.sec,p.sec-sub,.card,.step,.price-card,.pv-origin,.pv-aud-i,.hp-card,' +
+      '.blog-card,.schema-fig,.article-figure,.article-cta-inline,.faq-block details,' +
+      '.table-wrap,.checklist li,.rappel-card,.rappel-txt,.pv-two,.pv-band .in,' +
+      '.stat-strip .s,.tl-i,.article-sig,.article-related,.hub';
+    var revEls = document.querySelectorAll(revSel);
+    if (revEls.length) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+      revEls.forEach(function (el) { io.observe(el); });
+    }
+  } else {
+    document.documentElement.classList.add('no-io');
+  }
+
+  /* Fondu d'apparition de la vidéo hero une fois prête à jouer. */
+  var heroVideo = document.querySelector('.pv-hero .bg video');
+  if (heroVideo) {
+    heroVideo.style.transition = 'opacity 1s ease';
+    heroVideo.style.opacity = '0';
+    var revealVideo = function () { heroVideo.style.opacity = '1'; };
+    heroVideo.addEventListener('canplay', revealVideo, { once: true });
+    setTimeout(revealVideo, 2000);
   }
 
   /* Soumission des formulaires vers le service /api (même domaine).

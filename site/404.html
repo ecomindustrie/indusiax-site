@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>404 — Page introuvable | Indusiax</title>
+<meta name="robots" content="noindex,follow">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="stylesheet" href="/assets/site.css">
+<style>
+.err-wrap{min-height:64vh;display:flex;align-items:center;padding:60px 0;}
+.err-code{font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:.85rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--acc);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+.err-code::before{content:'';width:22px;height:2px;background:var(--acc);display:inline-block;}
+.err-big{font-family:'JBMono',ui-monospace,Consolas,monospace;font-weight:700;font-size:clamp(4rem,14vw,8rem);
+  line-height:1;color:var(--bg3);letter-spacing:-.03em;-webkit-text-stroke:1px var(--bord);margin-bottom:8px;}
+.err-links{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px;}
+.err-suggest{margin-top:38px;padding-top:28px;border-top:1px solid var(--bord);}
+.err-suggest h2{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--mut2);margin-bottom:14px;font-weight:600;}
+.err-suggest .grid{grid-template-columns:repeat(4,1fr);}
+@media(max-width:760px){.err-suggest .grid{grid-template-columns:repeat(2,1fr);}}
+.err-suggest a.card{display:block;font-size:.88rem;font-weight:600;color:var(--txt);text-decoration:none;}
+.err-suggest a.card span{display:block;font-weight:400;font-size:.8rem;color:var(--mut);margin-top:4px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/">Indusia<b>x</b></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <a href="/stator/">Stator-CRM</a>
+      <a href="/rotor/">Rotor-FSM</a>
+      <a href="/vector/">Vector-MOM</a>
+      <a href="/flux/">Flux-Link</a>
+      <a href="/tarifs/">Tarifs</a>
+      <a href="/blog/">Blog</a>
+      <a href="/a-propos/">À propos</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap err-wrap">
+  <div>
+    <span class="err-code">Erreur 404</span>
+    <div class="err-big">404</div>
+    <h1 style="font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin-bottom:14px">Pièce introuvable. Vérifiez la référence.</h1>
+    <p style="color:var(--mut);max-width:56ch">Cette page n'existe pas, ou plus. Le lien est peut-être mal recopié, ou la page a été déplacée pendant qu'on retapait le site.</p>
+    <div class="err-links">
+      <a class="btn btn-acc btn-big" href="/">Retour à l'accueil</a>
+      <a class="btn btn-ghost btn-big" href="/blog/">Voir le blog</a>
+    </div>
+    <div class="err-suggest">
+      <h2>Vous cherchiez peut-être</h2>
+      <div class="grid">
+        <a class="card" href="/stator/">Stator-CRM<span>CRM industriel</span></a>
+        <a class="card" href="/rotor/">Rotor-FSM<span>Interventions terrain</span></a>
+        <a class="card" href="/vector/">Vector-MOM<span>Réunions &amp; IA</span></a>
+        <a class="card" href="/flux/">Flux-Link<span>LinkedIn</span></a>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-base" style="border-top:none;padding-top:0">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

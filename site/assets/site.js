@@ -24,13 +24,34 @@
     });
   }
 
+  /* Compteur animé (easeOutCubic) — cible un span.cnum avec data-count. */
+  function animateCount(el) {
+    if (el.dataset.counted) return;
+    el.dataset.counted = '1';
+    var target = parseFloat(el.dataset.count);
+    if (isNaN(target)) return;
+    var prefix = el.dataset.prefix || '';
+    var suffix = el.dataset.suffix || '';
+    var dur = 900;
+    var t0 = null;
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = prefix + Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(frame);
+      else el.textContent = prefix + target + suffix;
+    }
+    requestAnimationFrame(frame);
+  }
+
   /* Reveal au scroll — voir le bloc @media(scripting:enabled) de site.css.
      Sans IntersectionObserver, on affiche tout directement (.no-io). */
   if ('IntersectionObserver' in window) {
     var revSel = 'h2.sec,p.sec-sub,.card,.step,.price-card,.pv-origin,.pv-aud-i,.hp-card,' +
       '.blog-card,.schema-fig,.article-figure,.article-cta-inline,.faq-block details,' +
       '.table-wrap,.checklist li,.rappel-card,.rappel-txt,.pv-two,.pv-band .in,' +
-      '.stat-strip .s,.tl-i,.article-sig,.article-related,.hub';
+      '.stat-strip .s,.tl-i,.article-sig,.article-related,.hub,.sectors-marquee';
     var revEls = document.querySelectorAll(revSel);
     if (revEls.length) {
       var io = new IntersectionObserver(function (entries) {
@@ -38,6 +59,7 @@
           if (entry.isIntersecting) {
             entry.target.classList.add('in');
             io.unobserve(entry.target);
+            entry.target.querySelectorAll('.cnum').forEach(animateCount);
           }
         });
       }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
@@ -45,6 +67,35 @@
     }
   } else {
     document.documentElement.classList.add('no-io');
+    document.querySelectorAll('.cnum').forEach(function (el) {
+      el.textContent = (el.dataset.prefix || '') + el.dataset.count + (el.dataset.suffix || '');
+    });
+  }
+
+  /* Fondu d'apparition des images en lazy-load une fois chargées. */
+  document.querySelectorAll('img[loading="lazy"]').forEach(function (img) {
+    if (img.complete && img.naturalWidth) { img.classList.add('loaded'); return; }
+    img.addEventListener('load', function () { img.classList.add('loaded'); });
+    img.addEventListener('error', function () { img.classList.add('loaded'); });
+  });
+
+  /* Filtres du blog par produit (chips au-dessus de la grille). */
+  var blogFilters = document.querySelectorAll('.bf-chip');
+  if (blogFilters.length) {
+    var blogCards = document.querySelectorAll('.blog-card');
+    blogFilters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        blogFilters.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+        btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
+        var f = btn.dataset.filter;
+        blogCards.forEach(function (card) {
+          var tagEl = card.querySelector('.bc-tag');
+          var show = f === 'all' || (tagEl && tagEl.classList.contains(f));
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
   }
 
   /* Fondu d'apparition de la vidéo hero une fois prête à jouer. */

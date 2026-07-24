@@ -318,6 +318,29 @@ footer.site a:hover{color:#fff;}
   .no-io .article-sig,.no-io .article-related{opacity:1!important;transform:none!important;}
 }
 
+/* ── Fondu d'apparition des images lazy ─────────────────── */
+@media(scripting:enabled){
+  img[loading="lazy"]{opacity:0;transition:opacity .6s ease;}
+  img[loading="lazy"].loaded{opacity:1;}
+  .no-io img[loading="lazy"]{opacity:1;}
+}
+@media(prefers-reduced-motion:reduce){img[loading="lazy"]{opacity:1!important;transition:none!important;}}
+
+/* ── Bande défilante des secteurs servis ───────────────────
+   Métiers/secteurs adressés par la suite — pas des témoignages,
+   pas de client nommé : une liste honnête de qui on sert. */
+.sectors-marquee{overflow:hidden;border-top:1px solid var(--bord);border-bottom:1px solid var(--bord);
+  padding:16px 0;background:var(--bg2);}
+.sectors-track{display:flex;width:max-content;}
+.sectors-track span{font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:.8rem;color:var(--mut);
+  padding:0 26px;white-space:nowrap;border-right:1px solid var(--bord);letter-spacing:.02em;}
+@media(scripting:enabled) and (prefers-reduced-motion:no-preference){
+  .sectors-track{animation:sectorsScroll 36s linear infinite;}
+  .sectors-marquee:hover .sectors-track{animation-play-state:paused;}
+  @keyframes sectorsScroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+}
+@media(max-width:640px){.sectors-track span{font-size:.74rem;padding:0 18px;}}
+
 /* ── Impression ─────────────────────────────────────────── */
 @media print{
   header.site,footer.site,#burger,.nav-cta,.cta-final,.pv-hero .bg video,

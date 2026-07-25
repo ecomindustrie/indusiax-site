@@ -74,7 +74,8 @@
 .hp-card{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--bord);border-radius:14px;
   overflow:hidden;text-decoration:none;transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;}
 .hp-card:hover{transform:translateY(-7px);border-color:var(--pc,#3a4656);box-shadow:0 22px 48px rgba(0,0,0,.45);}
-.hp-card .im{aspect-ratio:21/9;overflow:hidden;border-bottom:1px solid var(--bord);}
+.hp-card .im{aspect-ratio:21/9;overflow:hidden;border-bottom:0;position:relative;}
+.hp-card .im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--bg2) 100%);}
 .hp-card .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.6,.2,1);}
 .hp-card:hover .im img{transform:scale(1.08);}
 .hp-card .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1;}

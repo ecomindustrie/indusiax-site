@@ -87,6 +87,12 @@
     requestAnimationFrame(frame);
   }
 
+  /* Compteurs d'engagement de la maquette Flux (chargement, pas de scroll). */
+  var fluxEng = document.querySelectorAll('.post .eng .cnum');
+  if (fluxEng.length && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setTimeout(function () { fluxEng.forEach(animateCount); }, 2250);
+  }
+
   /* Jauge circulaire (conic-gradient) et barre de score — cible .gauge[data-pct] et .mk-bar[data-pct]. */
   function animateGauge(el) {
     if (el.dataset.animated) return;
@@ -379,6 +385,35 @@
     check();
     window.addEventListener('resize', check);
   });
+
+  /* Rail de partage social (articles de blog) — injecté en JS, pas de HTML à dupliquer. */
+  var shareArticleBody = document.querySelector('.article-body');
+  if (shareArticleBody && shareArticleBody.parentElement) {
+    var shareUrl = encodeURIComponent(location.href);
+    var shareTitle = encodeURIComponent(document.title);
+    var rail = document.createElement('div');
+    rail.className = 'share-rail';
+    rail.setAttribute('aria-label', 'Partager cet article');
+    rail.innerHTML =
+      '<a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl +
+      '" target="_blank" rel="noopener" aria-label="Partager sur LinkedIn">in</a>' +
+      '<a class="share-btn share-x" href="https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle +
+      '" target="_blank" rel="noopener" aria-label="Partager sur X">𝕏</a>' +
+      '<button type="button" class="share-btn share-copy" aria-label="Copier le lien">🔗</button>';
+    shareArticleBody.parentElement.insertBefore(rail, shareArticleBody);
+    var copyBtn = rail.querySelector('.share-copy');
+    copyBtn.addEventListener('click', function () {
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(location.href).then(function () {
+        copyBtn.textContent = '✓';
+        copyBtn.setAttribute('aria-label', 'Lien copié');
+        setTimeout(function () {
+          copyBtn.textContent = '🔗';
+          copyBtn.setAttribute('aria-label', 'Copier le lien');
+        }, 1800);
+      }).catch(function () {});
+    });
+  }
 
   /* Sommaire des articles — surlignage de la section active au scroll. */
   var articleToc = document.querySelector('.article-toc');

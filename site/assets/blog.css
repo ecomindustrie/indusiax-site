@@ -40,6 +40,7 @@
   .blog-card,.blog-card .thumb img,.blog-card .bc-read{transition:none;}
   .blog-card:hover{transform:none;}
 }
+@media(hover:none){.blog-card:active{transform:scale(.98);}}
 
 .blog-card.feat{grid-column:1/-1;display:grid;grid-template-columns:1.15fr 1fr;gap:0;}
 .blog-card.feat .thumb{aspect-ratio:auto;height:100%;}
@@ -92,6 +93,25 @@
 
 /* ---------- Article : intro / sommaire ---------- */
 .article-lede{max-width:700px;margin:0 auto 8px;font-size:1.14rem;color:var(--mut);}
+
+/* ---------- Article : sommaire cliquable ---------- */
+.article-toc{max-width:700px;margin:8px auto 34px;padding:20px 24px;
+  background:var(--bg2);border:1px solid var(--bord);border-radius:14px;}
+.article-toc .toc-title{display:block;font-family:'JBMono',ui-monospace,Consolas,monospace;font-size:.72rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--mut2);margin-bottom:12px;}
+.article-toc ol{list-style:none;margin:0;padding:0;counter-reset:toc;display:flex;flex-direction:column;gap:2px;}
+.article-toc li{counter-increment:toc;}
+.article-toc a{display:flex;gap:10px;align-items:baseline;padding:7px 8px;border-radius:8px;
+  color:var(--mut);text-decoration:none;font-size:.92rem;line-height:1.4;
+  transition:color .2s,background .2s;position:relative;}
+.article-toc a::before{content:counter(toc);font-family:'JBMono',ui-monospace,Consolas,monospace;
+  font-size:.72rem;color:var(--p,var(--acc));flex-shrink:0;width:1.4em;}
+.article-toc a:hover{color:var(--txt);background:var(--bg3);}
+.article-toc a.active{color:var(--txt);font-weight:600;}
+.article-toc a.active::after{content:"";position:absolute;left:0;top:4px;bottom:4px;width:2px;
+  background:var(--p,var(--acc));border-radius:2px;transition:top .2s,bottom .2s;}
+.article-body h2{scroll-margin-top:88px;}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth;}}
 
 /* ---------- Article : encadré "Sur le même sujet" ---------- */
 .article-related{max-width:700px;margin:56px auto 0;padding-top:36px;border-top:1px solid var(--bord);}
@@ -146,3 +166,20 @@ table.compare-table tbody tr:hover td,table.compare-table tbody tr:hover th{back
 .schema-fig .s-line-acc{stroke:var(--p,var(--acc));fill:none;}
 .schema-fig .s-dash{stroke:rgba(255,255,255,.22);fill:none;stroke-dasharray:5 5;}
 @media(max-width:560px){.schema-fig{padding:18px 16px 16px;}}
+
+/* ---------- Article : schéma SVG animé au premier passage dans le viewport ---------- */
+@media(prefers-reduced-motion:no-preference){
+  .schema-fig .s-line,.schema-fig .s-line-acc{
+    stroke-dasharray:700;stroke-dashoffset:700;transition:stroke-dashoffset 1.1s ease;}
+  .schema-fig.in .s-line,.schema-fig.in .s-line-acc{stroke-dashoffset:0;transition-delay:.2s;}
+  .schema-fig .s-node,.schema-fig .s-node-acc{
+    opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.92);
+    transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.56,.64,1);}
+  .schema-fig.in .s-node,.schema-fig.in .s-node-acc{opacity:1;transform:none;transition-delay:.05s;}
+  .schema-fig .s-lbl,.schema-fig .s-sub,.schema-fig .s-mono,.schema-fig .s-acc{
+    opacity:0;transition:opacity .5s ease;transition-delay:.4s;}
+  .schema-fig.in .s-lbl,.schema-fig.in .s-sub,.schema-fig.in .s-mono,.schema-fig.in .s-acc{opacity:1;}
+  .schema-fig .s-dash{opacity:0;transition:opacity .5s ease;transition-delay:.65s;}
+  .schema-fig.in .s-dash{opacity:1;animation:sDashFlow 1.8s linear infinite;animation-delay:.65s;}
+  @keyframes sDashFlow{to{stroke-dashoffset:-20;}}
+}

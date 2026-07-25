@@ -344,6 +344,27 @@
     updateSticky();
   }
 
+  /* Sommaire des articles — surlignage de la section active au scroll. */
+  var articleToc = document.querySelector('.article-toc');
+  if (articleToc && 'IntersectionObserver' in window) {
+    var tocLinks = {};
+    articleToc.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      tocLinks[a.getAttribute('href').slice(1)] = a;
+    });
+    var tocHeadings = document.querySelectorAll('.article-body h2[id]');
+    var tocIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var link = tocLinks[entry.target.id];
+        if (!link) return;
+        var prevActive = articleToc.querySelector('a.active');
+        if (prevActive) prevActive.classList.remove('active');
+        link.classList.add('active');
+      });
+    }, { rootMargin: '-90px 0px -70% 0px', threshold: 0 });
+    tocHeadings.forEach(function (h) { tocIO.observe(h); });
+  }
+
   /* Vidéo hero : chargée uniquement sur desktop + sans reduced-motion, mise en pause hors écran. */
   var heroVideo = document.querySelector('.pv-hero .bg video[data-src]');
   if (heroVideo) {
@@ -374,6 +395,41 @@
     }
   }
 
+  /* Validation en direct des champs de formulaire (au blur + à la frappe une fois en erreur). */
+  function fieldErrEl(field) {
+    var next = field.nextElementSibling;
+    if (next && next.classList.contains('f-field-err')) return next;
+    var el = document.createElement('div');
+    el.className = 'f-field-err';
+    field.insertAdjacentElement('afterend', el);
+    return el;
+  }
+  function showFieldError(field) {
+    field.classList.add('invalid');
+    field.classList.remove('shake');
+    void field.offsetWidth;
+    field.classList.add('shake');
+    fieldErrEl(field).textContent = field.validationMessage || 'Champ invalide.';
+    fieldErrEl(field).classList.add('show');
+  }
+  function clearFieldError(field) {
+    field.classList.remove('invalid');
+    var next = field.nextElementSibling;
+    if (next && next.classList.contains('f-field-err')) next.classList.remove('show');
+  }
+  document.querySelectorAll('form.f').forEach(function (form) {
+    form.querySelectorAll('input:not(.hp),select,textarea').forEach(function (field) {
+      field.addEventListener('blur', function () {
+        if (!field.value && !field.required) return;
+        if (!field.checkValidity()) showFieldError(field);
+        else clearFieldError(field);
+      });
+      field.addEventListener('input', function () {
+        if (field.classList.contains('invalid') && field.checkValidity()) clearFieldError(field);
+      });
+    });
+  });
+
   /* Soumission des formulaires vers le service /api (même domaine).
      data-endpoint="/api/essai" ou "/api/contact" sur la balise <form>. */
   document.querySelectorAll('form[data-endpoint]').forEach(function (form) {
@@ -382,7 +438,19 @@
       var btn = form.querySelector('button[type=submit]');
       var err = form.querySelector('.form-err');
       if (err) err.textContent = '';
+      var invalidField = null;
+      form.querySelectorAll('input:not(.hp),select,textarea').forEach(function (field) {
+        if (!field.checkValidity()) {
+          showFieldError(field);
+          if (!invalidField) invalidField = field;
+        }
+      });
+      if (invalidField) {
+        invalidField.focus();
+        return;
+      }
       btn.disabled = true;
+      btn.classList.add('loading');
       btn.dataset.label = btn.dataset.label || btn.textContent;
       btn.textContent = 'Envoi en cours…';
       var payload = {};
@@ -404,11 +472,15 @@
           if (mail && payload.email) mail.textContent = payload.email;
           form.style.display = 'none';
           ok.style.display = 'block';
+          requestAnimationFrame(function () {
+            requestAnimationFrame(function () { ok.classList.add('show'); });
+          });
           ok.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       } catch (e) {
         if (err) err.textContent = e.message;
         btn.disabled = false;
+        btn.classList.remove('loading');
         btn.textContent = btn.dataset.label;
       }
     });

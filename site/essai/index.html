@@ -65,6 +65,7 @@
   .ec-card,.ec-card .im img{transition:none;}
   .ec-card:hover{transform:none;}
 }
+@media(hover:none){.ec-card:active{transform:scale(.98);}}
 /* quiz "par où commencer" */
 .quiz-box{max-width:720px;background:var(--bg2);border:1px solid var(--bord);border-radius:16px;padding:32px 34px 34px;}
 @media(max-width:640px){.quiz-box{padding:24px 20px 26px;}}
@@ -137,6 +138,19 @@
     </div>
   </div>
 </section>
+
+<div class="sectors-marquee" aria-label="Secteurs et métiers utilisant Indusiax">
+  <div class="sectors-track">
+    <span>Mécanique générale</span><span>Chaudronnerie &amp; soudure</span><span>Levage &amp; manutention</span>
+    <span>Maintenance industrielle</span><span>Contrôle réglementaire · VGP</span><span>Usinage de précision</span>
+    <span>Métallerie &amp; serrurerie</span><span>Distribution de matériel industriel</span>
+    <span>Froid &amp; climatisation</span><span>Automatismes &amp; électrotechnique</span>
+    <span>Mécanique générale</span><span>Chaudronnerie &amp; soudure</span><span>Levage &amp; manutention</span>
+    <span>Maintenance industrielle</span><span>Contrôle réglementaire · VGP</span><span>Usinage de précision</span>
+    <span>Métallerie &amp; serrurerie</span><span>Distribution de matériel industriel</span>
+    <span>Froid &amp; climatisation</span><span>Automatismes &amp; électrotechnique</span>
+  </div>
+</div>
 
 <!-- QUIZ -->
 <section id="quiz" class="alt">
@@ -240,7 +254,7 @@
     <h2 class="sec" id="formulaire">Demander mon espace d'essai</h2>
     <p class="sec-sub">Pour Stator-CRM ou la suite complète (4 outils reliés).</p>
 
-    <form class="f" data-endpoint="/api/essai" data-success="form-ok">
+    <form class="f" data-endpoint="/api/essai" data-success="form-ok" novalidate>
       <div>
         <label for="sel-produit">Outil à essayer *</label>
         <select id="sel-produit" name="produit" required>
@@ -329,10 +343,10 @@
       </div>
       <div>
         <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
       </div>
       <div>
         <h4>Indusiax</h4>
@@ -352,6 +366,7 @@
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>
       <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Données hébergées en UE</span>
     </div>
   </div>
 </footer>

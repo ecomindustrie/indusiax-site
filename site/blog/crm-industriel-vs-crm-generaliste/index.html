@@ -89,7 +89,8 @@
 
 <p>Cet article compare les deux logiques structurellement, sans dénigrer personne, pour vous aider à choisir avec les bons critères.</p>
 
-<h2>Ce que les CRM généralistes font très bien</h2>
+<nav class="article-toc" aria-label="Sommaire de l'article"><span class="toc-title">Sommaire</span><ol><li><a href="#ce-que-les-crm-generalistes-font-tres-bien">Ce que les CRM généralistes font très bien</a></li><li><a href="#le-probleme-un-devis-industriel-n-est-pas-un-deal">Le problème : un devis industriel n'est pas un "deal"</a></li><li><a href="#le-parc-machines-la-donnee-que-salesforce-ne-sait-pas-suivre">Le parc machines : la donnée que Salesforce ne sait pas suivre</a></li><li><a href="#sav-et-vente-deux-metiers-qui-doivent-partager-la-meme-fiche-client">SAV et vente : deux métiers qui doivent partager la même fiche client</a></li><li><a href="#tournees-commerciales-et-terrain-la-geolocalisation-qui-manque">Tournées commerciales et terrain : la géolocalisation qui manque</a></li><li><a href="#le-vrai-cout-prix-modules-et-courbe-d-apprentissage">Le vrai coût : prix, modules et courbe d'apprentissage</a></li><li><a href="#comment-choisir-les-criteres-concrets">Comment choisir : les critères concrets</a></li></ol></nav>
+<h2 id="ce-que-les-crm-generalistes-font-tres-bien">Ce que les CRM généralistes font très bien</h2>
 <p>Il faut être honnête : Salesforce et HubSpot dominent leur marché pour de bonnes raisons. Ils excellent pour des organisations avec des dizaines, voire des centaines de commerciaux, des cycles de vente répétitifs et un besoin fort de marketing automation — scoring de leads, campagnes email, séquences de nurturing. Leur vocabulaire ("lead", "pipeline", "deal", "stage") colle parfaitement à la vente de logiciels, de services financiers ou de prestations standardisées.</p>
 <p>Leur écosystème de modules est immense, leurs intégrations couvrent quasiment tous les outils du marché, et leur puissance de reporting est réelle. Pour une équipe SaaS ou une direction commerciale généraliste de grande taille, ce sont souvent des choix pertinents.</p>
 
@@ -99,11 +100,11 @@
 <svg viewBox="0 0 680 262" xmlns="http://www.w3.org/2000/svg" role="img"><text x="170" y="20" class="s-mono" font-size="10.5" text-anchor="middle">CRM GÉNÉRALISTE</text><text x="510" y="20" class="s-mono" font-size="10.5" text-anchor="middle">CRM INDUSTRIEL</text><rect x="60" y="40" width="220" height="46" rx="9" class="s-node"/><text x="170.0" y="68.0" class="s-lbl" font-size="14.5" text-anchor="middle">Lead</text><line x1="170" y1="86" x2="170" y2="95" class="s-line" stroke-width="1.6"/><path d="M170,104 L166,96 L174,96 Z" fill="rgba(255,255,255,.42)"/><rect x="60" y="102" width="220" height="46" rx="9" class="s-node"/><text x="170.0" y="130.0" class="s-lbl" font-size="14.5" text-anchor="middle">Deal</text><line x1="170" y1="148" x2="170" y2="157" class="s-line" stroke-width="1.6"/><path d="M170,166 L166,158 L174,158 Z" fill="rgba(255,255,255,.42)"/><rect x="60" y="164" width="220" height="46" rx="9" class="s-node"/><text x="170.0" y="192.0" class="s-lbl" font-size="14.5" text-anchor="middle">€ Vente</text><text x="170" y="250" class="s-sub" font-size="11" text-anchor="middle">s'arrête à la signature</text><rect x="400" y="40" width="220" height="38" rx="9" class="s-node"/><text x="510.0" y="64.0" class="s-lbl" font-size="14.5" text-anchor="middle">Client</text><line x1="510" y1="78" x2="510" y2="79" class="s-line" stroke-width="1.6"/><path d="M510,88 L506,80 L514,80 Z" fill="rgba(255,255,255,.42)"/><rect x="400" y="87" width="220" height="38" rx="9" class="s-node"/><text x="510.0" y="111.0" class="s-lbl" font-size="14.5" text-anchor="middle">Devis technique</text><line x1="510" y1="125" x2="510" y2="126" class="s-line" stroke-width="1.6"/><path d="M510,135 L506,127 L514,127 Z" fill="rgba(255,255,255,.42)"/><rect x="400" y="134" width="220" height="38" rx="9" class="s-node-acc"/><text x="510.0" y="158.0" class="s-lbl" font-size="14.5" text-anchor="middle">Parc machines</text><line x1="510" y1="172" x2="510" y2="173" class="s-line" stroke-width="1.6"/><path d="M510,182 L506,174 L514,174 Z" fill="rgba(255,255,255,.42)"/><rect x="400" y="181" width="220" height="38" rx="9" class="s-node-acc"/><text x="510.0" y="205.0" class="s-lbl" font-size="14.5" text-anchor="middle">SAV & contrats</text><text x="510" y="250" class="s-acc" font-size="11" text-anchor="middle" font-weight="600">continue toute la vie du matériel</text><line x1="340" y1="30" x2="340" y2="235" class="s-dash"/></svg>
 <figcaption>Un CRM généraliste modélise une vente jusqu'à la signature. Un CRM industriel suit le client et son matériel installé sur des années — parc machines et SAV compris.</figcaption>
 </figure>
-<h2>Le problème : un devis industriel n'est pas un "deal"</h2>
+<h2 id="le-probleme-un-devis-industriel-n-est-pas-un-deal">Le problème : un devis industriel n'est pas un "deal"</h2>
 <p>Dans un CRM généraliste, une opportunité commerciale se résume à un montant, une probabilité de closing et une date. C'est suffisant quand on vend un abonnement à prix fixe. Ce ne l'est plus quand on vend une machine sur mesure, une pièce détachée technique ou une prestation avec plusieurs options de configuration.</p>
 <p><strong>Un devis technique industriel a besoin de lignes détaillées, de références produit, de spécifications, de délais de fabrication et souvent de plusieurs versions successives</strong> avant validation client. Faire vivre ça dans un champ de texte libre ou un module de devis générique, c'est passer son temps à contourner l'outil plutôt qu'à vendre. C'est pour cette raison que Stator-CRM intègre nativement la génération de devis PDF techniques, pensés pour ce métier — pas comme une fonctionnalité annexe greffée sur un pipeline générique.</p>
 
-<h2>Le parc machines : la donnée que Salesforce ne sait pas suivre</h2>
+<h2 id="le-parc-machines-la-donnee-que-salesforce-ne-sait-pas-suivre">Le parc machines : la donnée que Salesforce ne sait pas suivre</h2>
 <p>C'est sans doute la différence la plus structurante. Dans la vente industrielle, la relation client ne s'arrête pas à la signature. <strong>Chaque machine vendue reste installée chez le client, avec un historique, une maintenance, une durée de vie</strong> — et potentiellement de futures ventes de pièces ou de contrats d'entretien.</p>
 <p>Un CRM généraliste n'a tout simplement pas d'objet "machine installée chez le client". On peut bricoler ça avec des champs personnalisés ou des notes, mais ça reste fragile et personne dans l'équipe n'a une vue fiable du parc réellement en place. Un CRM pensé pour l'industrie, lui, rattache nativement chaque machine à la fiche client : date d'installation, interventions passées, pièces consommées. C'est ce qui transforme une fiche client en véritable historique métier plutôt qu'en simple carnet d'adresses.</p>
 
@@ -112,7 +113,7 @@
 <img src="/assets/blog/crm-industriel-vs-crm-generaliste/inline.jpg" alt="Bureau avec ordinateur portable, devis technique imprimé et pièces métalliques usinées posées à côté" loading="lazy">
 <figcaption>Un devis industriel n'est pas un simple montant : références, options, versions successives.</figcaption>
 </figure>
-<h2>SAV et vente : deux métiers qui doivent partager la même fiche client</h2>
+<h2 id="sav-et-vente-deux-metiers-qui-doivent-partager-la-meme-fiche-client">SAV et vente : deux métiers qui doivent partager la même fiche client</h2>
 <p>Dans beaucoup de PME industrielles, le SAV et le commercial travaillent avec deux outils différents, voire deux tableurs différents. Résultat : le commercial ne sait pas qu'une machine tombe en panne régulièrement chez un client, et le technicien ne sait pas qu'un devis de remplacement est en cours. <strong>Cette étanchéité coûte cher</strong> — en ventes manquées comme en clients mécontents.</p>
 <p>C'est exactement l'articulation que couvre la suite Indusiax : Stator-CRM porte la relation client et les devis, Rotor-FSM gère les interventions terrain et les expertises machines, et les deux se rejoignent sur la même fiche client. Nous détaillons cette complémentarité dans <a href="/blog/stator-vs-rotor-difference/">notre comparatif Stator vs Rotor</a>. Un CRM généraliste, de son côté, n'a simplement pas vocation à couvrir cette dimension terrain — ce n'est pas son métier.</p>
 
@@ -120,15 +121,15 @@
 
 <div class="article-cta-inline"><p>Voyez par vous-même ce que change un CRM pensé pour l'industrie.</p><a class="btn btn-acc" href="/essai/?produit=stator">Essayer Stator-CRM gratuitement</a></div>
 
-<h2>Tournées commerciales et terrain : la géolocalisation qui manque</h2>
+<h2 id="tournees-commerciales-et-terrain-la-geolocalisation-qui-manque">Tournées commerciales et terrain : la géolocalisation qui manque</h2>
 <p>Un commercial industriel ne travaille pas depuis un bureau à distance avec des appels et des visios. Il roule, visite des ateliers, planifie des tournées sur un secteur géographique. Les CRM généralistes proposent parfois une carte, mais elle reste souvent un module secondaire, pensé pour visualiser des comptes plutôt que pour organiser une journée de terrain réelle.</p>
 <p>Stator-CRM intègre la cartographie et les tournées commerciales comme une fonction centrale : voir ses clients sur une carte, organiser sa journée par secteur, enregistrer un compte-rendu de visite directement depuis le terrain. Ce n'est pas un gadget — c'est le quotidien d'un commercial qui vend du matériel industriel.</p>
 
-<h2>Le vrai coût : prix, modules et courbe d'apprentissage</h2>
+<h2 id="le-vrai-cout-prix-modules-et-courbe-d-apprentissage">Le vrai coût : prix, modules et courbe d'apprentissage</h2>
 <p>Les CRM généralistes affichent souvent un prix d'entrée attractif, puis le coût grimpe avec les modules nécessaires pour approcher les besoins réels — reporting avancé, automatisation, intégrations. Pour une PME industrielle qui n'a pas besoin de marketing automation ni de scoring de leads sophistiqué, une bonne partie de cette puissance reste inutilisée, tout en étant payée.</p>
 <p>La courbe d'apprentissage pèse aussi. Un outil généraliste demande souvent des semaines de paramétrage avant de coller au métier — quand il y arrive. Un CRM déjà structuré autour des objets métier de l'industrie réduit ce temps de mise en route, puisqu'il n'y a pas de traduction à faire entre le vocabulaire de l'outil et celui du métier. Nous comparons plus largement les logiciels adaptés aux PME industrielles dans <a href="/blog/logiciels-pme-industrielle-comparatif/">notre comparatif dédié</a>, et le détail des formules est disponible sur la page <a href="/tarifs/">tarifs</a>.</p>
 
-<h2>Comment choisir : les critères concrets</h2>
+<h2 id="comment-choisir-les-criteres-concrets">Comment choisir : les critères concrets</h2>
 <p>Plutôt que de trancher sur la notoriété d'un éditeur, posez-vous ces questions concrètes :</p>
 <p><strong>Vendez-vous du matériel ou des services techniques avec des devis détaillés ?</strong> Si oui, vérifiez que l'outil gère nativement les lignes de devis techniques et pas seulement un montant global.</p>
 <p><strong>Vos clients gardent-ils du matériel installé sur la durée ?</strong> Si oui, un objet "parc machines" rattaché à la fiche client n'est pas un luxe, c'est une nécessité.</p>
@@ -210,10 +211,10 @@
       </div>
       <div>
         <h4>Produits</h4>
-        <a href="/stator/">Stator-CRM</a>
-        <a href="/rotor/">Rotor-FSM</a>
-        <a href="/vector/">Vector-MOM</a>
-        <a href="/flux/">Flux-Link</a>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
       </div>
       <div>
         <h4>Indusiax</h4>
@@ -233,6 +234,7 @@
     <div class="foot-base">
       <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>
       <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Données hébergées en UE</span>
     </div>
   </div>
 </footer>

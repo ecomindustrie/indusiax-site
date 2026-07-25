@@ -375,8 +375,8 @@
     updateSticky();
   }
 
-  /* Indicateur de scroll sur les tableaux comparatifs (masque le dégradé en fin de scroll). */
-  document.querySelectorAll('.table-wrap').forEach(function (wrap) {
+  /* Indicateur de scroll sur les tableaux comparatifs et schémas (masque le dégradé en fin de scroll). */
+  document.querySelectorAll('.table-wrap, .schema-fig').forEach(function (wrap) {
     var check = function () {
       var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
       wrap.classList.toggle('at-end', atEnd || wrap.scrollWidth <= wrap.clientWidth);
@@ -385,6 +385,77 @@
     check();
     window.addEventListener('resize', check);
   });
+
+  /* Commutateur de segment (accueil) — réordonne les 4 cartes produit par pertinence. */
+  var segSwitch = document.querySelector('.seg-switch');
+  var hpGrid = document.querySelector('.hp-grid');
+  if (segSwitch && hpGrid) {
+    var SEG_ORDER = {
+      fabricant: ['stator', 'rotor', 'vector', 'flux'],
+      distributeur: ['stator', 'flux', 'vector', 'rotor'],
+      maintien: ['rotor', 'stator', 'vector', 'flux'],
+      service: ['rotor', 'vector', 'stator', 'flux']
+    };
+    segSwitch.querySelectorAll('.seg-chip').forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        segSwitch.querySelectorAll('.seg-chip').forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        var order = SEG_ORDER[chip.dataset.segment];
+        if (!order) return;
+        order.forEach(function (prod, i) {
+          var card = hpGrid.querySelector('.hp-card[data-product="' + prod + '"]');
+          if (card) card.style.order = i;
+        });
+        hpGrid.classList.remove('reordering');
+        void hpGrid.offsetWidth;
+        hpGrid.classList.add('reordering');
+      });
+    });
+  }
+
+  /* Bouton magnétique — les CTA principaux suivent légèrement le curseur. */
+  if (window.matchMedia('(hover: hover)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.querySelectorAll('.btn-big').forEach(function (btn) {
+      var reset = function () { btn.style.transform = ''; };
+      btn.addEventListener('mousemove', function (ev) {
+        var r = btn.getBoundingClientRect();
+        var mx = ev.clientX - (r.left + r.width / 2);
+        var my = ev.clientY - (r.top + r.height / 2);
+        btn.style.transform = 'translate(' + (mx * 0.15).toFixed(1) + 'px,' + (my * 0.25).toFixed(1) + 'px)';
+      });
+      btn.addEventListener('mouseleave', reset);
+      btn.addEventListener('mousedown', reset);
+    });
+  }
+
+  /* Parallaxe légère sur les grandes bandes photo et héros statiques (desktop uniquement). */
+  if (window.matchMedia('(min-width: 900px)').matches &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var parallaxImgs = document.querySelectorAll('.pv-band img, .pv-hero .bg img');
+    if (parallaxImgs.length) {
+      var pxTicking = false;
+      var updateParallax = function () {
+        pxTicking = false;
+        var vh = window.innerHeight;
+        parallaxImgs.forEach(function (img) {
+          var host = img.closest('.pv-band, .bg');
+          if (!host) return;
+          var rect = host.getBoundingClientRect();
+          var mid = rect.top + rect.height / 2;
+          var progress = (mid - vh / 2) / vh;
+          var offset = Math.max(-7, Math.min(7, progress * 7));
+          img.style.setProperty('--px', offset + '%');
+        });
+      };
+      var onPxScroll = function () {
+        if (!pxTicking) { pxTicking = true; requestAnimationFrame(updateParallax); }
+      };
+      window.addEventListener('scroll', onPxScroll, { passive: true });
+      window.addEventListener('resize', onPxScroll);
+      updateParallax();
+    }
+  }
 
   /* Rail de partage social (articles de blog) — injecté en JS, pas de HTML à dupliquer. */
   var shareArticleBody = document.querySelector('.article-body');

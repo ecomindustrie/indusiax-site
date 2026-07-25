@@ -68,6 +68,19 @@
   @keyframes suiteSheen{0%,85%,100%{left:-60%;}93%{left:130%;}}
   .suite-card:hover{animation-play-state:paused;transform:perspective(900px) rotateY(-2deg) rotateX(1deg);}
 }
+/* ---- commutateur de segment ---- */
+.seg-switch{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:28px;}
+.seg-lb{font-family:var(--mono);font-size:.76rem;color:var(--mut2);margin-right:2px;}
+.seg-chip{font-family:var(--mono);font-size:.78rem;padding:8px 16px;border-radius:99px;
+  border:1px solid var(--bord);background:var(--bg2);color:var(--mut);cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s,transform .15s;font-family:inherit;}
+.seg-chip:hover{border-color:var(--acc);color:var(--txt);}
+.seg-chip:active{transform:scale(.96);}
+.seg-chip.active{background:var(--acc);border-color:var(--acc);color:#fff;}
+@media(prefers-reduced-motion:no-preference){
+  .hp-grid.reordering .hp-card{animation:hpReorder .5s ease;}
+  @keyframes hpReorder{0%{opacity:.4;transform:scale(.97);}100%{opacity:1;transform:none;}}
+}
 /* ---- cartes produits avec photo ---- */
 .hp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
 @media(max-width:820px){.hp-grid{grid-template-columns:1fr;}}
@@ -192,14 +205,20 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
         <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
-  </div>
+      <div class="mega-panel">
+      <a class="mp-card" href="/stator/" style="--mc:var(--stator)"><b>Stator-CRM</b><span>Clients, devis, relances, tournées, SAV</span></a>
+      <a class="mp-card" href="/rotor/" style="--mc:var(--rotor)"><b>Rotor-FSM</b><span>Contrôles et interventions terrain, rapports PDF</span></a>
+      <a class="mp-card" href="/vector/" style="--mc:var(--vector)"><b>Vector-MOM</b><span>Comptes-rendus de réunion par IA, en Europe</span></a>
+      <a class="mp-card" href="/flux/" style="--mc:var(--flux)"><b>Flux-Link</b><span>Publication LinkedIn dictée et rédigée par IA</span></a>
+    </div>
+</div>
 </header>
 
 <main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
 <!-- HERO -->
 <section class="pv-hero">
-  <div class="bg"><img src="/assets/home/hero.jpg" alt="Dirigeant de PME industrielle traversant son atelier, tablette en main" fetchpriority="high"><video autoplay muted loop playsinline preload="none" poster="/assets/home/hero.jpg" aria-hidden="true" data-src="/assets/home/hero.mp4"></video>
+  <div class="bg"><picture><source srcset="/assets/home/hero.webp" type="image/webp"><img src="/assets/home/hero.jpg" alt="Dirigeant de PME industrielle traversant son atelier, tablette en main" fetchpriority="high"></picture><video autoplay muted loop playsinline preload="none" poster="/assets/home/hero.jpg" aria-hidden="true" data-src="/assets/home/hero.mp4"></video>
     <button type="button" id="hero-video-toggle" class="hero-video-toggle" aria-label="Mettre en pause la vidéo" hidden>❚❚</button>
   </div>
   <div class="wrap pv-hero-in">
@@ -252,10 +271,17 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
   <div class="wrap">
     <span class="eb" style="margin-bottom:14px">Quatre outils, un même terrain</span>
     <h2 class="sec" style="text-align:left;max-width:720px">Un seul objectif : vous simplifier l'industrie.</h2>
-    <p style="color:var(--mut);max-width:60ch;margin:12px 0 36px">Chaque logiciel s'utilise seul et se souscrit seul. Ensemble, ils partagent vos clients, vos comptes et une connexion unique.</p>
+    <p style="color:var(--mut);max-width:60ch;margin:12px 0 30px">Chaque logiciel s'utilise seul et se souscrit seul. Ensemble, ils partagent vos clients, vos comptes et une connexion unique.</p>
+    <div class="seg-switch" role="group" aria-label="Filtrer par activité">
+      <span class="seg-lb">Votre activité :</span>
+      <button type="button" class="seg-chip active" data-segment="fabricant">Je fabrique</button>
+      <button type="button" class="seg-chip" data-segment="distributeur">Je distribue</button>
+      <button type="button" class="seg-chip" data-segment="maintien">Je maintiens</button>
+      <button type="button" class="seg-chip" data-segment="service">Je fournis des services</button>
+    </div>
     <div class="hp-grid">
-      <a class="hp-card" href="/stator/" style="--pc:var(--stator)">
-        <div class="im"><img src="/assets/stator/card.jpg" alt="Commercial et cliente concluant une affaire, devis sur la table" loading="lazy"></div>
+      <a class="hp-card" href="/stator/" data-product="stator" style="--pc:var(--stator)">
+        <div class="im"><picture><source srcset="/assets/stator/card.webp" type="image/webp"><img src="/assets/stator/card.jpg" alt="Commercial et cliente concluant une affaire, devis sur la table" loading="lazy"></picture></div>
         <div class="bd">
           <span class="tg" style="color:var(--stator)">CRM industriel</span>
           <h3>Stator-CRM</h3>
@@ -264,8 +290,8 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="go">Découvrir Stator-CRM →</span>
         </div>
       </a>
-      <a class="hp-card" href="/rotor/" style="--pc:var(--rotor)">
-        <div class="im"><img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec chariot élévateur" loading="lazy"></div>
+      <a class="hp-card" href="/rotor/" data-product="rotor" style="--pc:var(--rotor)">
+        <div class="im"><picture><source srcset="/assets/rotor/band.webp" type="image/webp"><img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec chariot élévateur" loading="lazy"></picture></div>
         <div class="bd">
           <span class="tg" style="color:var(--rotor)">Contrôles &amp; VGP</span>
           <h3>Rotor-FSM</h3>
@@ -274,8 +300,8 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="go">Découvrir Rotor-FSM →</span>
         </div>
       </a>
-      <a class="hp-card" href="/vector/" style="--pc:var(--vector)">
-        <div class="im"><img src="/assets/vector/hero.jpg" alt="Réunion d'équipe enregistrée dans une PME industrielle" loading="lazy"></div>
+      <a class="hp-card" href="/vector/" data-product="vector" style="--pc:var(--vector)">
+        <div class="im"><picture><source srcset="/assets/vector/hero.webp" type="image/webp"><img src="/assets/vector/hero.jpg" alt="Réunion d'équipe enregistrée dans une PME industrielle" loading="lazy"></picture></div>
         <div class="bd">
           <span class="tg" style="color:var(--vector)">Réunions &amp; IA</span>
           <h3>Vector-MOM</h3>
@@ -284,8 +310,8 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="go">Découvrir Vector-MOM →</span>
         </div>
       </a>
-      <a class="hp-card" href="/flux/" style="--pc:var(--flux)">
-        <div class="im"><img src="/assets/flux/band.jpg" alt="Machine industrielle en inox parfaitement finie" loading="lazy"></div>
+      <a class="hp-card" href="/flux/" data-product="flux" style="--pc:var(--flux)">
+        <div class="im"><picture><source srcset="/assets/flux/band.webp" type="image/webp"><img src="/assets/flux/band.jpg" alt="Machine industrielle en inox parfaitement finie" loading="lazy"></picture></div>
         <div class="bd">
           <span class="tg" style="color:var(--flux)">Communication LinkedIn</span>
           <h3>Flux-Link</h3>
@@ -300,7 +326,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
 
 <!-- BAND + SUITE CONNECTÉE -->
 <div class="pv-band">
-  <img src="/assets/home/band.jpg" alt="Équipe d'une PME industrielle en réunion devant l'atelier" loading="lazy">
+  <picture><source srcset="/assets/home/band.webp" type="image/webp"><img src="/assets/home/band.jpg" alt="Équipe d'une PME industrielle en réunion devant l'atelier" loading="lazy"></picture>
   <div class="wrap in">
     <span class="eb">La suite connectée</span>
     <h2>Des outils qui se connaissent, comme vos équipes.</h2>

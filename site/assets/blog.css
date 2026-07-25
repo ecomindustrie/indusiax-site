@@ -206,7 +206,13 @@ table.compare-table tbody tr:hover td,table.compare-table tbody tr:hover th{back
 .schema-fig .s-line{stroke:rgba(255,255,255,.28);fill:none;}
 .schema-fig .s-line-acc{stroke:var(--p,var(--acc));fill:none;}
 .schema-fig .s-dash{stroke:rgba(255,255,255,.22);fill:none;stroke-dasharray:5 5;}
-@media(max-width:560px){.schema-fig{padding:18px 16px 16px;}}
+@media(max-width:560px){
+  .schema-fig{padding:18px 16px 16px;overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative;}
+  .schema-fig svg{width:auto;min-width:540px;}
+  .schema-fig::after{content:"";position:absolute;top:0;right:0;bottom:0;width:28px;pointer-events:none;
+    background:linear-gradient(90deg,transparent,var(--bg2));opacity:1;transition:opacity .25s ease;}
+  .schema-fig.at-end::after{opacity:0;}
+}
 
 /* ---------- Article : schéma SVG animé au premier passage dans le viewport ---------- */
 @media(prefers-reduced-motion:no-preference){

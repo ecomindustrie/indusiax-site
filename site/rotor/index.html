@@ -133,8 +133,20 @@ table.mk .pastille{margin:0 auto;}
 @media(max-width:860px){.r-rep{grid-template-columns:1fr;gap:32px;}}
 
 /* parc */
-.r-parc{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(220px,1fr);gap:16px;overflow-x:auto;padding-bottom:10px;scroll-snap-type:x proximity;}
-.r-parc::-webkit-scrollbar{height:8px;}.r-parc::-webkit-scrollbar-thumb{background:var(--bord);border-radius:4px;}
+.r-parc{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.r-parc-track{display:flex;gap:16px;width:max-content;}
+.r-parc-track .mc{flex:0 0 220px;}
+@media(prefers-reduced-motion:no-preference){
+  .r-parc-track{animation:rParcScroll 32s linear infinite;}
+  @keyframes rParcScroll{to{transform:translateX(-50%);}}
+  .r-parc:hover .r-parc-track,.r-parc:focus-within .r-parc-track{animation-play-state:paused;}
+}
+@media(prefers-reduced-motion:reduce){
+  .r-parc{overflow-x:auto;padding-bottom:10px;-webkit-mask-image:none;mask-image:none;}
+  .r-parc-track{scroll-snap-type:x proximity;}
+  .r-parc-track .mc[aria-hidden]{display:none;}
+}
 .mc{scroll-snap-align:start;background:var(--paper);border:1px solid var(--pline);border-radius:6px;overflow:hidden;}
 .mc .im{background:#fff;padding:10px;}.mc .im img{width:100%;height:auto;}
 .mc .cap{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-top:1px solid #e7ecf1;}
@@ -177,14 +189,20 @@ table.mk .pastille{margin:0 auto;}
         <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Voir la démo</a>
-  </div>
+      <div class="mega-panel">
+      <a class="mp-card" href="/stator/" style="--mc:var(--stator)"><b>Stator-CRM</b><span>Clients, devis, relances, tournées, SAV</span></a>
+      <a class="mp-card" href="/rotor/" style="--mc:var(--rotor)"><b>Rotor-FSM</b><span>Contrôles et interventions terrain, rapports PDF</span></a>
+      <a class="mp-card" href="/vector/" style="--mc:var(--vector)"><b>Vector-MOM</b><span>Comptes-rendus de réunion par IA, en Europe</span></a>
+      <a class="mp-card" href="/flux/" style="--mc:var(--flux)"><b>Flux-Link</b><span>Publication LinkedIn dictée et rédigée par IA</span></a>
+    </div>
+</div>
 </header>
 
 <main class="r">
 
 <!-- HERO -->
 <section class="r-hero">
-  <div class="bg"><img src="/assets/rotor/hero.jpg" alt="Technicien inspectant un chariot élévateur avec une tablette dans un entrepôt" fetchpriority="high"></div>
+  <div class="bg"><picture><source srcset="/assets/rotor/hero.webp" type="image/webp"><img src="/assets/rotor/hero.jpg" alt="Technicien inspectant un chariot élévateur avec une tablette dans un entrepôt" fetchpriority="high"></picture></div>
   <div class="wrap r-hero-in">
     <div>
       <span class="eb">By Industry, For Industry</span>
@@ -240,7 +258,7 @@ table.mk .pastille{margin:0 auto;}
     <span class="eb" style="margin-bottom:14px">Comment ça marche</span>
     <h2 class="sec" style="text-align:left;max-width:640px">Trois gestes. Du parking du client à sa boîte mail.</h2>
     <div class="r-two" style="margin-top:44px">
-      <div class="r-shot"><img src="/assets/rotor/tablet.jpg" alt="Mains gantées tenant une tablette industrielle sur site" loading="lazy"></div>
+      <div class="r-shot"><picture><source srcset="/assets/rotor/tablet.webp" type="image/webp"><img src="/assets/rotor/tablet.jpg" alt="Mains gantées tenant une tablette industrielle sur site" loading="lazy"></picture></div>
       <div class="r-steps">
         <div class="r-step"><div class="n">1</div><div><h3>Contrôlez sur tablette</h3><p>Cochez l'état, saisissez les mesures, prenez les photos. Tout tient dans la main — même sans réseau : atelier, sous-sol, zone blanche.</p></div></div>
         <div class="r-step"><div class="n">2</div><div><h3>Rotor-FSM rédige</h3><p>Pastilles conforme / non conforme, score de conformité calculé, synthèse des anomalies proposée par l'IA. Vous relisez, vous validez.</p></div></div>
@@ -252,7 +270,7 @@ table.mk .pastille{margin:0 auto;}
 
 <!-- BAND -->
 <div class="r-band">
-  <img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec rayonnages et chariot élévateur" loading="lazy">
+  <picture><source srcset="/assets/rotor/band.webp" type="image/webp"><img src="/assets/rotor/band.jpg" alt="Entrepôt industriel avec rayonnages et chariot élévateur" loading="lazy"></picture>
   <div class="wrap in">
     <span class="eb">Le suivi qui rapporte</span>
     <h2>Chaque équipement de vos clients a une échéance. Rotor-FSM ne l'oublie jamais.</h2>
@@ -302,12 +320,20 @@ table.mk .pastille{margin:0 auto;}
     <h2 class="sec" style="text-align:left;max-width:640px">Chaque machine a sa fiche. Déjà prête.</h2>
     <p style="color:var(--mut);max-width:56ch;margin:12px 0 36px">Des gabarits pensés pour le terrain et alignés sur les périodicités réglementaires. Et un éditeur pour créer les vôtres — sans écrire une ligne de code.</p>
     <div class="r-parc">
+      <div class="r-parc-track">
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="Schéma chariot élévateur" loading="lazy"></div><div class="cap"><span class="l">Chariot élévateur</span><span class="f">VGP 6 mois</span></div></div>
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="Schéma pont roulant" loading="lazy"></div><div class="cap"><span class="l">Pont roulant / palan</span><span class="f">VGP 12 mois</span></div></div>
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="Schéma nacelle PEMP" loading="lazy"></div><div class="cap"><span class="l">Nacelle PEMP</span><span class="f">VGP 6 mois</span></div></div>
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="Schéma rayonnage" loading="lazy"></div><div class="cap"><span class="l">Rayonnage</span><span class="f">EN 15635</span></div></div>
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="Schéma extincteur" loading="lazy"></div><div class="cap"><span class="l">Extincteur</span><span class="f">Vérif. annuelle</span></div></div>
       <div class="mc"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="Schéma EPI antichute" loading="lazy"></div><div class="cap"><span class="l">EPI antichute</span><span class="f">Vérif. annuelle</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Chariot élévateur</span><span class="f">VGP 6 mois</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Pont roulant / palan</span><span class="f">VGP 12 mois</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Nacelle PEMP</span><span class="f">VGP 6 mois</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Rayonnage</span><span class="f">EN 15635</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Extincteur</span><span class="f">Vérif. annuelle</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="" loading="lazy"></div><div class="cap"><span class="l">EPI antichute</span><span class="f">Vérif. annuelle</span></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -337,7 +363,7 @@ table.mk .pastille{margin:0 auto;}
     <h2 class="sec" style="text-align:left;max-width:640px">Conçu pour les indépendants et les PME du contrôle.</h2>
     <div class="r-aud" style="margin-top:40px">
       <div class="r-photo">
-        <img src="/assets/rotor/audience.jpg" alt="Technicien de contrôle avec sa tablette dans une installation industrielle" loading="lazy">
+        <picture><source srcset="/assets/rotor/audience.webp" type="image/webp"><img src="/assets/rotor/audience.jpg" alt="Technicien de contrôle avec sa tablette dans une installation industrielle" loading="lazy"></picture>
         <div class="badge">
           <span class="eb">Le marché</span>
           <h3>La VGP n'exige qu'une « personne qualifiée ».</h3>

@@ -21,10 +21,10 @@
 /* ---------- HERO photo ---------- */
 .pv-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bord);}
 .pv-hero .bg{position:absolute;inset:0;z-index:0;}
-.pv-hero .bg img{width:100%;height:100%;object-fit:cover;}
+.pv-hero .bg img{width:100%;height:100%;object-fit:cover;--px:0px;}
 @media(prefers-reduced-motion:no-preference){
   .pv-hero .bg img{animation:pvHeroKB 22s ease-in-out both;}
-  @keyframes pvHeroKB{from{transform:scale(1.1);}to{transform:scale(1);}}
+  @keyframes pvHeroKB{from{transform:translateY(var(--px,0px)) scale(1.1);}to{transform:translateY(var(--px,0px)) scale(1);}}
 }
 .pv-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 62%,#080b1020 100%);}
 .pv-hero-in{position:relative;z-index:2;padding:78px 0 84px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;}
@@ -73,10 +73,10 @@
 
 /* ---------- bande image pleine largeur ---------- */
 .pv-band{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center;}
-.pv-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.pv-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;--px:0px;}
 @media(prefers-reduced-motion:no-preference){
   .pv-band img{animation:pvBandKB 24s ease-in-out infinite alternate;}
-  @keyframes pvBandKB{from{transform:scale(1);}to{transform:scale(1.07);}}
+  @keyframes pvBandKB{from{transform:translateY(var(--px,0px)) scale(1);}to{transform:translateY(var(--px,0px)) scale(1.07);}}
 }
 .pv-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#080b10ec 0%,#080b10b0 46%,#080b1055 100%);}
 @media(max-width:700px){
@@ -89,7 +89,13 @@
 
 /* ---------- récit fondateur (manifeste) ---------- */
 .pv-origin{position:relative;border:1px solid var(--bord);border-radius:18px;background:
-  linear-gradient(180deg,rgba(255,255,255,.03),transparent);padding:44px 46px;max-width:900px;margin:0 auto;overflow:hidden;}
+  linear-gradient(180deg,rgba(255,255,255,.03),transparent),
+  repeating-linear-gradient(135deg,color-mix(in srgb, var(--p) 5%, transparent) 0 2px,transparent 2px 26px);
+  background-size:auto,140px 140px;padding:44px 46px;max-width:900px;margin:0 auto;overflow:hidden;}
+@media(prefers-reduced-motion:no-preference){
+  .pv-origin{animation:pvOriginDrift 30s linear infinite;}
+  @keyframes pvOriginDrift{to{background-position:0 0,140px 140px;}}
+}
 .pv-origin::before{content:"\201C";position:absolute;top:-26px;left:22px;font-size:150px;line-height:1;color:var(--p);opacity:.16;font-family:Georgia,serif;}
 .pv-origin .lead{font-size:clamp(1.15rem,2.3vw,1.5rem);font-weight:700;letter-spacing:-.015em;line-height:1.35;}
 .pv-origin .lead b{color:var(--p);}

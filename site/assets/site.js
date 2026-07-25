@@ -1,5 +1,30 @@
 /* INDUSIAX — menu mobile + reveal au scroll + formulaires (essai / contact) */
 (function () {
+  try {
+    console.log('%c Indusiax ', 'background:#E84C2B;color:#fff;font-weight:800;padding:3px 8px;border-radius:3px;',
+      '— By Industry, For Industry. Cet outil aussi, on l\'a fabriqué nous-mêmes.');
+  } catch (e) {}
+
+  /* Header à deux états (transparent → posé) + masqué au scroll vers le bas en mobile. */
+  var siteHeader = document.querySelector('header.site');
+  if (siteHeader) {
+    var lastY = window.scrollY;
+    var isMobile = window.matchMedia('(max-width: 820px)').matches;
+    var onHeaderScroll = function () {
+      var y = window.scrollY;
+      siteHeader.classList.toggle('scrolled', y > 24);
+      if (isMobile && !document.querySelector('.nav-links.open')) {
+        if (y > lastY && y > 140) siteHeader.classList.add('hide');
+        else siteHeader.classList.remove('hide');
+      } else {
+        siteHeader.classList.remove('hide');
+      }
+      lastY = y;
+    };
+    window.addEventListener('scroll', onHeaderScroll, { passive: true });
+    onHeaderScroll();
+  }
+
   var burger = document.getElementById('burger');
   var links = document.querySelector('.nav-links');
   if (burger && links) {
@@ -134,10 +159,10 @@
   /* Reveal au scroll — voir le bloc @media(scripting:enabled) de site.css.
      Sans IntersectionObserver, on affiche tout directement (.no-io). */
   if ('IntersectionObserver' in window) {
-    var revSel = 'h2.sec,p.sec-sub,.card,.step,.price-card,.pv-origin,.pv-aud-i,.hp-card,' +
+    var revSel = 'h2.sec,p.sec-sub,.card,.step,.pv-step,.price-card,.pv-origin,.pv-aud-i,.hp-card,' +
       '.blog-card,.schema-fig,.article-figure,.article-cta-inline,.faq-block details,' +
       '.table-wrap,.checklist li,.rappel-card,.rappel-txt,.pv-two,.pv-band .in,' +
-      '.stat-strip .s,.tl-i,.article-sig,.article-related,.hub,.sectors-marquee';
+      '.stat-strip .s,.tl-i,.article-sig,.article-related,.hub,.sectors-marquee,table.mk';
     var revEls = document.querySelectorAll(revSel);
     if (revEls.length) {
       var io = new IntersectionObserver(function (entries) {
@@ -344,6 +369,17 @@
     updateSticky();
   }
 
+  /* Indicateur de scroll sur les tableaux comparatifs (masque le dégradé en fin de scroll). */
+  document.querySelectorAll('.table-wrap').forEach(function (wrap) {
+    var check = function () {
+      var atEnd = wrap.scrollLeft + wrap.clientWidth >= wrap.scrollWidth - 2;
+      wrap.classList.toggle('at-end', atEnd || wrap.scrollWidth <= wrap.clientWidth);
+    };
+    wrap.addEventListener('scroll', check, { passive: true });
+    check();
+    window.addEventListener('resize', check);
+  });
+
   /* Sommaire des articles — surlignage de la section active au scroll. */
   var articleToc = document.querySelector('.article-toc');
   if (articleToc && 'IntersectionObserver' in window) {
@@ -381,14 +417,24 @@
       var revealVideo = function () { heroVideo.style.opacity = '1'; };
       heroVideo.addEventListener('canplay', revealVideo, { once: true });
       setTimeout(revealVideo, 2000);
+      var heroVideoPaused = false;
       if ('IntersectionObserver' in window) {
         var heroVideoIO = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
-            if (entry.isIntersecting) heroVideo.play().catch(function () {});
+            if (entry.isIntersecting) { if (!heroVideoPaused) heroVideo.play().catch(function () {}); }
             else heroVideo.pause();
           });
         }, { threshold: 0 });
         heroVideoIO.observe(heroVideo);
+      }
+      var heroVideoToggle = document.getElementById('hero-video-toggle');
+      if (heroVideoToggle) {
+        heroVideoToggle.hidden = false;
+        heroVideoToggle.addEventListener('click', function () {
+          heroVideoPaused = !heroVideo.paused;
+          if (heroVideoPaused) { heroVideo.pause(); heroVideoToggle.textContent = '►'; heroVideoToggle.setAttribute('aria-label', 'Lire la vidéo'); }
+          else { heroVideo.play().catch(function () {}); heroVideoToggle.textContent = '❚❚'; heroVideoToggle.setAttribute('aria-label', 'Mettre en pause la vidéo'); }
+        });
       }
     } else {
       heroVideo.remove();

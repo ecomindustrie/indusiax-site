@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://indusiax.com/vector/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
@@ -30,6 +31,19 @@
 .mom .dec .d{display:flex;align-items:center;gap:9px;font-size:.8rem;color:#24303c;padding:4px 0;}
 .mom .dec .d .pastille{width:12px;height:12px;}
 .mom .tag{margin-top:13px;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;color:#5a8f5f;}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes momIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .mom .who,.mom .dec,.mom .tag{opacity:0;animation:momIn .4s ease forwards;}
+  .mom .who:nth-of-type(1){animation-delay:.9s;}
+  .mom .who:nth-of-type(2){animation-delay:1.15s;}
+  .mom .who:nth-of-type(3){animation-delay:1.4s;}
+  .mom .dec{animation-delay:1.65s;}
+  .mom .dec .d{opacity:0;transform:scale(.7);animation:decPop .3s cubic-bezier(.34,1.56,.64,1) forwards;}
+  @keyframes decPop{to{opacity:1;transform:scale(1);}}
+  .mom .dec .d:nth-of-type(1){animation-delay:1.85s;}
+  .mom .dec .d:nth-of-type(2){animation-delay:2s;}
+  .mom .tag{animation-delay:2.2s;}
+}
 </style>
 </head>
 <body>

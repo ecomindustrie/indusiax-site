@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://indusiax.com/rotor/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
 <link rel="stylesheet" href="/assets/site.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Rotor-FSM — Le logiciel des prestataires de contrôle & VGP">
@@ -40,9 +41,25 @@
 .r .mono{font-family:var(--mono);}
 .r .eb{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
   color:var(--r);display:inline-flex;align-items:center;gap:9px;}
-.r .eb::before{content:"";width:22px;height:2px;background:var(--acc);display:inline-block;}
+.r .eb::before{content:"";width:22px;height:2px;background:var(--r);display:inline-block;}
 .pastille{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);display:inline-block;}
 .p-ok{background:var(--ok);}.p-aa{background:var(--aa);}.p-nc{background:var(--nc);}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes pastillePop{from{transform:scale(0);}60%{transform:scale(1.2);}to{transform:scale(1);}}
+  .vrow .pastille{transform:scale(0);animation:pastillePop .4s cubic-bezier(.34,1.56,.64,1) forwards;}
+  .vrow:nth-of-type(1) .pastille{animation-delay:.9s;}
+  .vrow:nth-of-type(2) .pastille{animation-delay:1.05s;}
+  .vrow:nth-of-type(3) .pastille{animation-delay:1.2s;}
+  .vrow:nth-of-type(4) .pastille{animation-delay:1.35s;}
+  table.mk tbody tr .pastille{opacity:0;transform:scale(0);
+    transition:opacity .3s ease,transform .35s cubic-bezier(.34,1.56,.64,1);}
+  table.mk.in tbody tr .pastille{opacity:1;transform:scale(1);}
+  table.mk.in tbody tr:nth-child(1) .pastille{transition-delay:.05s;}
+  table.mk.in tbody tr:nth-child(2) .pastille{transition-delay:.15s;}
+  table.mk.in tbody tr:nth-child(3) .pastille{transition-delay:.25s;}
+  table.mk.in tbody tr:nth-child(4) .pastille{transition-delay:.35s;}
+  table.mk.in tbody tr:nth-child(5) .pastille{transition-delay:.45s;}
+}
 
 /* HERO photo */
 .r-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bord);}
@@ -210,9 +227,9 @@ table.mk .pastille{margin:0 auto;}
     <h2 class="sec">Au revoir pertes de temps, bonjour rapidité et rigueur.</h2>
     <p class="sec-sub">Le contrôle, c'est votre expertise. La ressaisie, la mise en page et les relances, c'est ce qui grignote vos marges et retarde vos factures. Rotor-FSM efface tout ce qui n'est pas votre métier.</p>
     <div class="grid c3">
-      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">01 · TEMPS PERDU</span><h3 style="margin-top:10px">Fini la double saisie</h3><p>Notes sur le terrain le jour, ressaisie Word ou Excel le soir : chaque rapport vous coûtait deux fois. Ici, il n'existe qu'une seule fois — sur place.</p></div>
-      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">02 · CRÉDIBILITÉ</span><h3 style="margin-top:10px">Un rendu irréprochable</h3><p>C'est sur le document reçu que le client juge votre sérieux — et décide de vous reprendre l'an prochain. Offrez-lui un rapport net, identique à chaque intervention.</p></div>
-      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--acc);letter-spacing:.08em">03 · SUIVI</span><h3 style="margin-top:10px">Plus une échéance oubliée</h3><p>Qui recontrôler, et quand ? Rotor-FSM suit les périodicités pour vous. Une échéance ratée, c'est un contrat qui file : ne le laissez plus passer.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">01 · TEMPS PERDU</span><h3 style="margin-top:10px">Fini la double saisie</h3><p>Notes sur le terrain le jour, ressaisie Word ou Excel le soir : chaque rapport vous coûtait deux fois. Ici, il n'existe qu'une seule fois — sur place.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">02 · CRÉDIBILITÉ</span><h3 style="margin-top:10px">Un rendu irréprochable</h3><p>C'est sur le document reçu que le client juge votre sérieux — et décide de vous reprendre l'an prochain. Offrez-lui un rapport net, identique à chaque intervention.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">03 · SUIVI</span><h3 style="margin-top:10px">Plus une échéance oubliée</h3><p>Qui recontrôler, et quand ? Rotor-FSM suit les périodicités pour vous. Une échéance ratée, c'est un contrat qui file : ne le laissez plus passer.</p></div>
     </div>
   </div>
 </section>

@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://indusiax.com/stator/">
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/stator/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
 <link rel="stylesheet" href="/assets/site.css">
 <link rel="stylesheet" href="/assets/product.css">
 <meta property="og:type" content="website">
@@ -31,6 +32,15 @@
 .crm .pipe i.on{background:var(--p);}
 .crm .foot{display:flex;align-items:center;gap:8px;margin-top:13px;padding-top:12px;border-top:2px solid var(--pline);font-family:var(--mono);font-size:.68rem;color:#67717c;}
 .crm .pill{margin-left:auto;background:rgba(232,76,43,.12);color:var(--p2);font-weight:700;border-radius:3px;padding:4px 8px;font-size:.64rem;}
+@media(prefers-reduced-motion:no-preference){
+  .crm .pipe i.on{background:#e4eaf0;opacity:0;animation:pipeFill .4s ease forwards;}
+  .crm .pipe i.on:nth-child(1){animation-delay:.9s;}
+  .crm .pipe i.on:nth-child(2){animation-delay:1.15s;}
+  .crm .pipe i.on:nth-child(3){animation-delay:1.4s;}
+  @keyframes pipeFill{to{background:var(--p);opacity:1;}}
+  @keyframes crmPillPulse{0%,100%{opacity:1;}50%{opacity:.68;}}
+  .crm .pill{animation:crmPillPulse 2.6s ease-in-out infinite;animation-delay:1.7s;}
+}
 </style>
 </head>
 <body>

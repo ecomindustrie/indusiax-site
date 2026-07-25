@@ -95,6 +95,27 @@
 /* ---- vidéo hero ---- */
 .pv-hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
 @media (prefers-reduced-motion: reduce){.pv-hero .bg video{display:none;}}
+/* CTA du hero : sur un fond vidéo en mouvement, il doit se distinguer même immobile */
+@media(prefers-reduced-motion:no-preference){
+  .pv-hero .ctas .btn-acc.btn-big{animation:ctaPulse 2.4s ease-in-out infinite;}
+  .pv-hero .ctas .btn-acc.btn-big:hover{animation-play-state:paused;}
+}
+/* voile renforcé : la vidéo varie en luminosité, le texte doit rester lisible sur toute frame */
+.pv-hero .bg::before{content:"";position:absolute;inset:0;background:rgba(8,11,16,.38);}
+.pv-hero .bg::after{
+  background:
+    linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 62%,#080b1055 100%),
+    linear-gradient(180deg,#080b10cc 0%,transparent 30%,transparent 70%,#0b0d12 100%);
+}
+/* mobile / reduced-motion : pas de vidéo (retirée en JS) — l'image compense un peu de vie */
+@media(max-width:899px){
+  @media(prefers-reduced-motion:no-preference){
+    .pv-hero .bg img{animation:homeKB 16s ease-in-out infinite alternate;}
+    @keyframes homeKB{from{transform:scale(1);}to{transform:scale(1.06);}}
+    .pv-hero .bg::before{animation:heroBreathe 6s ease-in-out infinite;}
+    @keyframes heroBreathe{0%,100%{opacity:.85;}50%{opacity:1;}}
+  }
+}
 /* ---- section rappel ---- */
 .rappel-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
 @media(max-width:860px){.rappel-grid{grid-template-columns:1fr;gap:32px;}}
@@ -125,6 +146,7 @@
       <a href="/tarifs/">Tarifs</a>
       <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
+        <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
   </div>
@@ -134,7 +156,7 @@
 
 <!-- HERO -->
 <section class="pv-hero">
-  <div class="bg"><img src="/assets/home/hero.jpg" alt="Dirigeant de PME industrielle traversant son atelier, tablette en main" fetchpriority="high"><video autoplay muted loop playsinline preload="metadata" poster="/assets/home/hero.jpg" aria-hidden="true"><source src="/assets/home/hero.mp4" type="video/mp4"></video></div>
+  <div class="bg"><img src="/assets/home/hero.jpg" alt="Dirigeant de PME industrielle traversant son atelier, tablette en main" fetchpriority="high"><video autoplay muted loop playsinline preload="none" poster="/assets/home/hero.jpg" aria-hidden="true" data-src="/assets/home/hero.mp4"></video></div>
   <div class="wrap pv-hero-in">
     <div>
       <span class="eb">By Industry, For Industry</span>

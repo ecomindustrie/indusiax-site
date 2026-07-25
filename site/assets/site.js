@@ -24,6 +24,23 @@
     });
   }
 
+  /* Effet ripple au clic des boutons (.btn). */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.addEventListener('mousedown', function (ev) {
+      var btn = ev.target.closest ? ev.target.closest('.btn') : null;
+      if (!btn) return;
+      var r = btn.getBoundingClientRect();
+      var size = Math.max(r.width, r.height) * 1.4;
+      var span = document.createElement('span');
+      span.className = 'btn-ripple';
+      span.style.width = span.style.height = size + 'px';
+      span.style.left = (ev.clientX - r.left - size / 2) + 'px';
+      span.style.top = (ev.clientY - r.top - size / 2) + 'px';
+      btn.appendChild(span);
+      span.addEventListener('animationend', function () { span.remove(); });
+    });
+  }
+
   /* Compteur animé (easeOutCubic) — cible un span.cnum avec data-count. */
   function animateCount(el) {
     if (el.dataset.counted) return;
@@ -43,6 +60,75 @@
       else el.textContent = prefix + target + suffix;
     }
     requestAnimationFrame(frame);
+  }
+
+  /* Jauge circulaire (conic-gradient) et barre de score — cible .gauge[data-pct] et .mk-bar[data-pct]. */
+  function animateGauge(el) {
+    if (el.dataset.animated) return;
+    el.dataset.animated = '1';
+    var target = parseFloat(el.dataset.pct);
+    if (isNaN(target)) return;
+    var span = el.querySelector('span');
+    var dur = 1100;
+    var t0 = null;
+    function frame(ts) {
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = target * eased;
+      el.style.background = 'conic-gradient(var(--ok) ' + val + '%, var(--pline) 0)';
+      if (span) span.textContent = Math.round(val) + '%';
+      if (p < 1) requestAnimationFrame(frame);
+      else {
+        el.style.background = 'conic-gradient(var(--ok) ' + target + '%, var(--pline) 0)';
+        if (span) span.textContent = target + '%';
+      }
+    }
+    requestAnimationFrame(frame);
+  }
+  function animateMkBar(el) {
+    if (el.dataset.animated) return;
+    el.dataset.animated = '1';
+    var target = parseFloat(el.dataset.pct);
+    if (isNaN(target)) return;
+    var bar = el.querySelector('i');
+    var scEl = el.parentElement ? el.parentElement.querySelector('.sc') : null;
+    if (bar) {
+      bar.style.width = '0%';
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+          bar.style.transition = 'width 1s cubic-bezier(.22,1,.36,1)';
+          bar.style.width = target + '%';
+        });
+      });
+    }
+    if (scEl) {
+      var dur = 1000, t0 = null;
+      function frame(ts) {
+        if (t0 === null) t0 = ts;
+        var p = Math.min(1, (ts - t0) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        scEl.textContent = Math.round(target * eased) + '%';
+        if (p < 1) requestAnimationFrame(frame);
+        else scEl.textContent = target + '%';
+      }
+      requestAnimationFrame(frame);
+    }
+  }
+  var gaugeEls = document.querySelectorAll('.gauge[data-pct]');
+  var barEls = document.querySelectorAll('.mk-bar[data-pct]');
+  if ((gaugeEls.length || barEls.length) && 'IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var gaugeIO = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        if (entry.target.classList.contains('gauge')) animateGauge(entry.target);
+        else animateMkBar(entry.target);
+        gaugeIO.unobserve(entry.target);
+      });
+    }, { threshold: 0.4 });
+    gaugeEls.forEach(function (el) { gaugeIO.observe(el); });
+    barEls.forEach(function (el) { gaugeIO.observe(el); });
   }
 
   /* Reveal au scroll — voir le bloc @media(scripting:enabled) de site.css.
@@ -218,14 +304,74 @@
     });
   }
 
-  /* Fondu d'apparition de la vidéo hero une fois prête à jouer. */
-  var heroVideo = document.querySelector('.pv-hero .bg video');
+  /* Barre de progression de lecture (articles de blog). */
+  var readBar = document.querySelector('.read-progress');
+  var articleBody = document.querySelector('.article-body');
+  if (readBar && articleBody) {
+    var onReadScroll = function () {
+      var rect = articleBody.getBoundingClientRect();
+      var total = articleBody.offsetHeight - window.innerHeight;
+      var scrolled = -rect.top;
+      var p = total > 0 ? Math.min(1, Math.max(0, scrolled / total)) : 0;
+      readBar.style.transform = 'scaleX(' + p + ')';
+    };
+    window.addEventListener('scroll', onReadScroll, { passive: true });
+    onReadScroll();
+  }
+
+  /* Barre CTA sticky mobile — apparaît après le hero, s'efface près du CTA final. */
+  if (window.matchMedia('(max-width: 820px)').matches &&
+      !/^\/essai\/?/.test(location.pathname)) {
+    var stickyBar = document.createElement('div');
+    stickyBar.className = 'sticky-cta';
+    stickyBar.innerHTML = '<a class="btn btn-acc" href="/essai/">Essai gratuit 30 jours</a>';
+    document.body.appendChild(stickyBar);
+    var ctaTarget = document.querySelector('.cta-final, #formulaire, #choix');
+    var stickyVisible = false;
+    var updateSticky = function () {
+      var shouldShow = window.scrollY > 500;
+      if (shouldShow && ctaTarget) {
+        var r = ctaTarget.getBoundingClientRect();
+        if (r.top < window.innerHeight && r.bottom > 0) shouldShow = false;
+      }
+      if (shouldShow !== stickyVisible) {
+        stickyVisible = shouldShow;
+        stickyBar.classList.toggle('show', shouldShow);
+      }
+    };
+    window.addEventListener('scroll', updateSticky, { passive: true });
+    window.addEventListener('resize', updateSticky);
+    updateSticky();
+  }
+
+  /* Vidéo hero : chargée uniquement sur desktop + sans reduced-motion, mise en pause hors écran. */
+  var heroVideo = document.querySelector('.pv-hero .bg video[data-src]');
   if (heroVideo) {
-    heroVideo.style.transition = 'opacity 1s ease';
-    heroVideo.style.opacity = '0';
-    var revealVideo = function () { heroVideo.style.opacity = '1'; };
-    heroVideo.addEventListener('canplay', revealVideo, { once: true });
-    setTimeout(revealVideo, 2000);
+    var wantsVideo = window.matchMedia('(min-width: 900px)').matches &&
+      window.matchMedia('(prefers-reduced-motion: no-preference)').matches;
+    if (wantsVideo) {
+      var srcEl = document.createElement('source');
+      srcEl.src = heroVideo.dataset.src;
+      srcEl.type = 'video/mp4';
+      heroVideo.appendChild(srcEl);
+      heroVideo.load();
+      heroVideo.style.transition = 'opacity 1s ease';
+      heroVideo.style.opacity = '0';
+      var revealVideo = function () { heroVideo.style.opacity = '1'; };
+      heroVideo.addEventListener('canplay', revealVideo, { once: true });
+      setTimeout(revealVideo, 2000);
+      if ('IntersectionObserver' in window) {
+        var heroVideoIO = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) heroVideo.play().catch(function () {});
+            else heroVideo.pause();
+          });
+        }, { threshold: 0 });
+        heroVideoIO.observe(heroVideo);
+      }
+    } else {
+      heroVideo.remove();
+    }
   }
 
   /* Soumission des formulaires vers le service /api (même domaine).

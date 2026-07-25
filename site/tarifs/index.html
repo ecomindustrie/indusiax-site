@@ -26,6 +26,12 @@
 .sav-bar.hi{background:linear-gradient(90deg,var(--acc),#c23a1e);}
 .sav-amt{font-family:var(--mono);font-weight:700;font-size:.92rem;color:var(--txt);white-space:nowrap;}
 .sav-tag{margin-top:18px;text-align:center;font-family:var(--mono);font-size:.8rem;color:var(--acc);font-weight:700;}
+@media(max-width:560px){
+  .sav-row{display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px;padding:10px 0;}
+  .sav-lb{order:1;flex:1 1 auto;text-align:left;}
+  .sav-amt{order:2;}
+  .sav-bar{order:3;flex-basis:100%;height:28px;}
+}
 /* trust strip */
 .tr-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:30px;}
 /* barres d'économie animées */
@@ -83,6 +89,7 @@
       <a class="on" href="/tarifs/">Tarifs</a>
       <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
+        <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
   </div>
@@ -180,12 +187,12 @@
           <div class="sav-row">
             <span class="sav-lb">À la carte</span>
             <div class="sav-bar" style="width:100%"></div>
-            <span class="sav-amt">≈ 144 € /util.</span>
+            <span class="sav-amt">≈ <span class="cnum" data-count="144" data-suffix=" €">144 €</span> /util.</span>
           </div>
           <div class="sav-row">
             <span class="sav-lb">Suite Indusiax</span>
             <div class="sav-bar hi" style="width:69%"></div>
-            <span class="sav-amt">99 € /util.</span>
+            <span class="sav-amt"><span class="cnum" data-count="99" data-suffix=" €">99 €</span> /util.</span>
           </div>
         </div>
         <div class="sav-tag">≈ 31 % d'économie, outils reliés en prime</div>

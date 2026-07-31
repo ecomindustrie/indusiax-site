@@ -27,7 +27,7 @@
   --acc:#E84C2B;
   --acc-soft:rgba(232,76,43,.12);
   --ok:#22c55e;
-  --stator:#E84C2B;--rotor:#3B82F6;--vector:#A78BFA;--flux:#0EA5E9;
+  --stator:#E84C2B;--rotor:#3B82F6;--vector:#A78BFA;--flux:#0EA5E9;--contiax:#10B981;
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0;}

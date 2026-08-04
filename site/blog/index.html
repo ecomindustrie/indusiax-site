@@ -9,9 +9,9 @@
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0b0d12">
-<link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/product.css">
-<link rel="stylesheet" href="/assets/blog.css">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<link rel="stylesheet" href="/assets/blog.css?v=2a4e1386">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Blog Indusiax — Logiciels &amp; digitalisation pour l'industrie">
 <meta property="og:description" content="CRM industriel, gestion d'interventions terrain, comptes-rendus IA, communication LinkedIn : comparatifs et conseils pour l'industrie.">
@@ -28,32 +28,28 @@
   "publisher": {"@type": "Organization", "name": "Indusiax", "url": "https://indusiax.com"}
 }
 </script>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap nav">
-    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
     <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
-      <a href="/stator/">Stator-CRM</a>
-      <a href="/rotor/">Rotor-FSM</a>
-      <a href="/vector/">Vector-MOM</a>
-      <a href="/flux/">Flux-Link</a>
-      <a href="/contiax/">Contiax</a>
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Clients, devis, relances, tournées, SAV</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Contrôles et interventions terrain, rapports PDF</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Comptes-rendus de réunion par IA, en Europe</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>Publication LinkedIn dictée et rédigée par IA</i></span></span>
+      <span class="nav-item"><a href="/contiax/">Contiax</a><span class="np" style="--mc:var(--contiax)"><b>Contiax</b><i>Scanner de cartes de visite — gratuit</i></span></span>
       <a href="/tarifs/">Tarifs</a>
       <a class="on" href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
         <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
-      <div class="mega-panel">
-      <a class="mp-card" href="/stator/" style="--mc:var(--stator)"><b>Stator-CRM</b><span>Clients, devis, relances, tournées, SAV</span></a>
-      <a class="mp-card" href="/rotor/" style="--mc:var(--rotor)"><b>Rotor-FSM</b><span>Contrôles et interventions terrain, rapports PDF</span></a>
-      <a class="mp-card" href="/vector/" style="--mc:var(--vector)"><b>Vector-MOM</b><span>Comptes-rendus de réunion par IA, en Europe</span></a>
-      <a class="mp-card" href="/flux/" style="--mc:var(--flux)"><b>Flux-Link</b><span>Publication LinkedIn dictée et rédigée par IA</span></a>
-      <a class="mp-card" href="/contiax/" style="--mc:var(--contiax)"><b>Contiax</b><span>Scanner de cartes de visite — gratuit</span></a>
-    </div>
 </div>
 </header>
 
@@ -79,6 +75,46 @@
       <button class="bf-chip" data-filter="tag-contiax" aria-pressed="false">Contiax</button>
     </div>
     <div class="blog-grid">
+      <a class="blog-card" href="/blog/contiax-vs-applis-scan-cartes-visite/">
+        <div class="thumb"><picture><source srcset="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.webp" type="image/webp"><img src="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.jpg" alt="Main tenant un smartphone au-dessus d'une carte de visite vierge posée sur un bureau sombre, le soir" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-contiax bc-tag">Contiax · Scan de cartes</span>
+          <h3>Scan de cartes de visite : où finissent vos contacts ?</h3>
+          <p>Quatre familles d'outils comparées sur trois critères concrets : le compte, le réseau, et la destination du contact.</p>
+          <span class="bc-meta">8 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/alternatives-praxedo-logiciel-intervention/">
+        <div class="thumb"><picture><source srcset="/assets/blog/alternatives-praxedo-logiciel-intervention/hero.webp" type="image/webp"><img src="/assets/blog/alternatives-praxedo-logiciel-intervention/hero.jpg" alt="Technicien de maintenance en tenue de travail devant une machine industrielle, tablette durcie à la main" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-rotor bc-tag">Rotor-FSM · Interventions terrain</span>
+          <h3>Alternatives à Praxedo : la grille de décision</h3>
+          <p>Ce qu'il faut réellement comparer avant de changer de logiciel d'intervention, et à qui convient chaque option du marché français.</p>
+          <span class="bc-meta">9 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/cout-reel-heure-technicien-terrain/">
+        <div class="thumb"><picture><source srcset="/assets/blog/cout-reel-heure-technicien-terrain/hero.webp" type="image/webp"><img src="/assets/blog/cout-reel-heure-technicien-terrain/hero.jpg" alt="Fourgon d'intervention aux portes ouvertes devant un bâtiment industriel à l'aube, technicien chargeant sa caisse à outils" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-rotor bc-tag">Rotor-FSM · Rentabilité</span>
+          <h3>Le coût réel d'une heure de technicien</h3>
+          <p>Salaire chargé, véhicule, heures non facturables : la méthode complète pour calculer le coût de revient d'une heure facturable.</p>
+          <span class="bc-meta">8 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/calendrier-verifications-periodiques-parc/">
+        <div class="thumb"><picture><source srcset="/assets/blog/calendrier-verifications-periodiques-parc/hero.webp" type="image/webp"><img src="/assets/blog/calendrier-verifications-periodiques-parc/hero.jpg" alt="Crochet de pont roulant portant une étiquette de contrôle vierge dans un entrepôt rangé, chariot élévateur et racks en arrière-plan" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-rotor bc-tag">Rotor-FSM · Vérifications réglementaires</span>
+          <h3>Le calendrier des vérifications périodiques</h3>
+          <p>Inventaire, texte applicable, périodicité, responsable, preuve : la méthode en cinq étapes pour tenir les échéances de votre parc.</p>
+          <span class="bc-meta">9 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
       <a class="blog-card feat" href="/blog/logiciels-pme-industrielle-comparatif/">
         <div class="thumb"><picture><source srcset="/assets/blog/logiciels-pme-industrielle-comparatif/hero.webp" type="image/webp"><img src="/assets/blog/logiciels-pme-industrielle-comparatif/hero.jpg" alt="Dirigeant d'une PME industrielle consultant un ordinateur et une tablette dans son bureau donnant sur l'atelier" loading="lazy"></picture></div>
         <div class="bc-in">
@@ -364,7 +400,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
       <div>
@@ -397,6 +433,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js"></script>
+<script src="/assets/site.js?v=ee8f6e28"></script>
 </body>
 </html>

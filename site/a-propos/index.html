@@ -9,8 +9,8 @@
 <link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0b0d12">
-<link rel="stylesheet" href="/assets/site.css">
-<link rel="stylesheet" href="/assets/product.css">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="À propos — Indusiax, des outils construits par nécessité">
 <meta property="og:description" content="On cherchait des logiciels pour notre industrie. On ne les a pas trouvés. On les a construits nous-mêmes.">
@@ -18,17 +18,23 @@
 <meta property="og:image" content="https://indusiax.com/assets/apropos/hero.jpg">
 <style>
 /* timeline en 4 temps */
-.tl{max-width:900px;margin:44px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;}
-.tl::before{content:"";position:absolute;top:19px;left:calc(12.5% - 1px);right:calc(12.5% - 1px);height:2px;
-  background:linear-gradient(90deg,var(--acc),rgba(232,76,43,.15) 60%,var(--acc));z-index:0;
-  transform:scaleX(0);transform-origin:left;transition:transform 1.1s ease-out;}
-@media(prefers-reduced-motion:no-preference){.tl:has(.tl-i.in)::before{transform:scaleX(1);transition-delay:.15s;}}
+/* Chronologie verticale — l'accueil présente la même histoire à l'horizontale ;
+   ici on prend le temps de la dérouler, un temps par ligne. */
+.tl{max-width:660px;margin:44px auto 0;position:relative;padding-left:8px;}
+.tl::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;
+  background:linear-gradient(180deg,var(--acc),rgba(232,76,43,.18) 55%,var(--acc));
+  transform:scaleY(0);transform-origin:top;transition:transform 2.4s cubic-bezier(.22,1,.36,1) .2s;}
+@media(prefers-reduced-motion:no-preference){.tl:has(.tl-i.in)::before{transform:scaleY(1);}}
 @media(prefers-reduced-motion:reduce){.tl::before{transform:none;}}
-.tl-i{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 10px;}
-.tl-i .dot{width:40px;height:40px;border-radius:50%;background:#10161d;border:2px solid var(--acc);display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--acc);margin-bottom:16px;}
-.tl-i h3{font-size:.98rem;margin-bottom:6px;}
-.tl-i p{font-size:.82rem;color:var(--mut);}
-@media(max-width:760px){.tl{grid-template-columns:1fr;gap:28px;}.tl::before{display:none;}}
+.tl-i{position:relative;display:grid;grid-template-columns:56px 1fr;align-items:start;
+  column-gap:20px;padding:0 0 34px;text-align:left;}
+.tl-i:last-child{padding-bottom:0;}
+.tl-i .dot{width:44px;height:44px;border-radius:50%;background:#10161d;border:2px solid var(--acc);
+  display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--acc);}
+.tl-i h3{grid-column:2;font-size:1.05rem;margin:10px 0 6px;}
+.tl-i p{grid-column:2;font-size:.9rem;color:var(--mut);max-width:52ch;}
+@media(max-width:560px){.tl{padding-left:0;}.tl::before{left:21px;}
+  .tl-i{grid-template-columns:44px 1fr;column-gap:16px;}}
 /* chiffres */
 .stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:880px;margin:0 auto;}
 .stat-strip .s{text-align:center;}
@@ -36,32 +42,28 @@
 .stat-strip .l{font-size:.82rem;color:var(--mut);margin-top:4px;}
 @media(max-width:640px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:26px;}}
 </style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
 </head>
 <body>
 
 <header class="site">
   <div class="wrap nav">
-    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
     <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav class="nav-links">
-      <a href="/stator/">Stator-CRM</a>
-      <a href="/rotor/">Rotor-FSM</a>
-      <a href="/vector/">Vector-MOM</a>
-      <a href="/flux/">Flux-Link</a>
-      <a href="/contiax/">Contiax</a>
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Clients, devis, relances, tournées, SAV</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Contrôles et interventions terrain, rapports PDF</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Comptes-rendus de réunion par IA, en Europe</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>Publication LinkedIn dictée et rédigée par IA</i></span></span>
+      <span class="nav-item"><a href="/contiax/">Contiax</a><span class="np" style="--mc:var(--contiax)"><b>Contiax</b><i>Scanner de cartes de visite — gratuit</i></span></span>
       <a href="/tarifs/">Tarifs</a>
       <a href="/blog/">Blog</a>
       <a class="on" href="/a-propos/">À propos</a>
         <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
-      <div class="mega-panel">
-      <a class="mp-card" href="/stator/" style="--mc:var(--stator)"><b>Stator-CRM</b><span>Clients, devis, relances, tournées, SAV</span></a>
-      <a class="mp-card" href="/rotor/" style="--mc:var(--rotor)"><b>Rotor-FSM</b><span>Contrôles et interventions terrain, rapports PDF</span></a>
-      <a class="mp-card" href="/vector/" style="--mc:var(--vector)"><b>Vector-MOM</b><span>Comptes-rendus de réunion par IA, en Europe</span></a>
-      <a class="mp-card" href="/flux/" style="--mc:var(--flux)"><b>Flux-Link</b><span>Publication LinkedIn dictée et rédigée par IA</span></a>
-      <a class="mp-card" href="/contiax/" style="--mc:var(--contiax)"><b>Contiax</b><span>Scanner de cartes de visite — gratuit</span></a>
-    </div>
 </div>
 </header>
 
@@ -81,7 +83,7 @@
 <section style="padding:52px 0">
   <div class="wrap">
     <div class="stat-strip">
-      <div class="s"><div class="n"><span class="cnum" data-count="4">4</span></div><div class="l">outils, une seule suite connectée</div></div>
+      <div class="s"><div class="n"><span class="cnum" data-count="5">5</span></div><div class="l">outils, dont un entièrement gratuit</div></div>
       <div class="s"><div class="n"><span class="cnum" data-count="1">1</span></div><div class="l">PME industrielle à l'origine de tout</div></div>
       <div class="s"><div class="n">🇪🇺</div><div class="l">hébergement 100 % européen</div></div>
       <div class="s"><div class="n"><span class="cnum" data-count="30">30</span></div><div class="l">jours d'essai, 0 carte bancaire</div></div>
@@ -165,7 +167,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg>Indusia<b>x</b></a>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
         <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
       </div>
       <div>
@@ -198,6 +200,6 @@
   </div>
 </footer>
 
-<script src="/assets/site.js"></script>
+<script src="/assets/site.js?v=ee8f6e28"></script>
 </body>
 </html>

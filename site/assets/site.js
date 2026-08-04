@@ -413,6 +413,39 @@
     });
   }
 
+  /* Comparateur avant / après (accueil) — le <input type=range> pilote la
+     variable --x ; tout le rendu (rognage, trait, poignée) est en CSS.
+     On garde donc clavier et lecteurs d'écran sans code supplémentaire. */
+  document.querySelectorAll('.ba').forEach(function (ba) {
+    var curseur = ba.querySelector('.ba-curseur');
+    if (!curseur) return;
+    var appliquer = function () { ba.style.setProperty('--x', curseur.value + '%'); };
+    curseur.addEventListener('input', appliquer);
+    appliquer();
+    /* Petite invite au premier passage : la séparation balaie une fois pour
+       montrer qu'elle bouge, puis on rend la main dès que l'on y touche. */
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    var invite = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        invite.disconnect();
+        var etapes = [50, 74, 30, 50], i = 0, touche = false;
+        var stop = function () { touche = true; };
+        curseur.addEventListener('pointerdown', stop, { once: true });
+        curseur.addEventListener('keydown', stop, { once: true });
+        var suivant = function () {
+          if (touche || i >= etapes.length) { ba.style.transition = ''; return; }
+          ba.style.transition = '--x 1.1s cubic-bezier(.22,1,.36,1)';
+          curseur.value = etapes[i++];
+          appliquer();
+          setTimeout(suivant, 1240);
+        };
+        setTimeout(suivant, 900);
+      });
+    }, { threshold: 0.45 });
+    invite.observe(ba);
+  });
+
   /* Bouton magnétique — les CTA principaux suivent légèrement le curseur. */
   if (window.matchMedia('(hover: hover)').matches &&
       !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {

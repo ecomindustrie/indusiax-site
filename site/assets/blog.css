@@ -95,8 +95,11 @@
 .article-body ul,.article-body ol{margin:0 0 19px 22px;}
 .article-body li{margin-bottom:9px;}
 .article-body strong{color:var(--txt);}
-.article-body a{color:var(--acc);text-decoration:underline;text-underline-offset:3px;}
-.article-body a:hover{color:#f0603f;}
+/* Les liens de l'article sont orange soulignés — mais surtout PAS les boutons :
+   `.article-body a` bat `.btn-acc` en spécificité, ce qui rendait le libellé
+   orange sur fond orange, donc invisible, dans tous les encarts d'appel. */
+.article-body a:not(.btn){color:var(--acc);text-decoration:underline;text-underline-offset:3px;}
+.article-body a:not(.btn):hover{color:#f0603f;}
 .article-body blockquote{border-left:3px solid var(--acc);padding:2px 0 2px 22px;margin:30px 0;
   font-size:1.14rem;line-height:1.5;color:var(--txt);font-weight:600;letter-spacing:-.01em;}
 

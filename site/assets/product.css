@@ -35,6 +35,8 @@
 .pv-trust{margin-top:32px;padding-top:20px;border-top:1px solid var(--bord);}
 .pv-trust .lb{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);}
 .pv-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+/* saut de ligne forcé : sans lui la 3e pastille tombait seule sur sa ligne */
+.pv-chips-br{flex-basis:100%;height:0;margin:0;}
 .pv-chip{font-family:var(--mono);font-size:.72rem;color:var(--mut);border:1px solid var(--bord);border-radius:3px;padding:5px 10px;}
 @media(max-width:900px){.pv-hero-in{grid-template-columns:1fr;gap:26px;padding:52px 0 58px;}
   .pv-hero .bg::after{background:linear-gradient(180deg,#080b10e6,#080b10aa);}}

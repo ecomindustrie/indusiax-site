@@ -1,1 +1,4 @@
 __pycache__/
+# Police reconstruite depuis le woff2 du site à la première exécution
+# de outils/carte_sociale.py — rien à versionner.
+outils/.outfit.ttf

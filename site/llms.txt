@@ -30,6 +30,12 @@ Indusiax plus qu'à dégager une marge.
 - [Lecteur de badge, appli ou saisie à la main : le vrai coût d'un contact de salon](https://indusiax.com/blog/recuperer-contacts-salon-badge-ou-scan/) : comparatif des quatre méthodes de captation sur les deux critères qui décident — délai avant de pouvoir rappeler, et propriété de la donnée.
 - [Application de scan de cartes de visite : où partent vos contacts ?](https://indusiax.com/blog/application-scan-carte-visite-rgpd/) : statut RGPD d'une carte de visite, les quatre modèles économiques du « gratuit », et les cinq questions à poser avant d'installer une application.
 
+## Cartes de visite NFC en détail
+
+- [Page produit Cartes NFC](https://indusiax.com/cartes-nfc/) : 5 € la carte, sans abonnement. La puce ne contient qu'une adresse web, jamais les coordonnées : c'est ce qui permet de corriger un numéro sans refaire les cartes, et de réattribuer une carte à un remplaçant puisque l'adresse gravée ne porte pas le nom de son titulaire. Chaque collaborateur reçoit un lien personnel pour compléter sa propre fiche. Pages exclues des moteurs de recherche, identifiants de douze caractères non devinables, aucun cookie déposé sur les fiches.
+- [Carte de visite NFC : comment ça marche, et ce qu'elle ne fait pas](https://indusiax.com/blog/carte-visite-nfc-comment-ca-marche/) : le contenu réel de la puce NTAG (une adresse, ~130 octets), la compatibilité iPhone et Android détaillée par génération, les cinq cas où la lecture échoue — NFC désactivé, téléphone trop ancien, coque métallique, écran verrouillé, absence de réseau — et les six questions à poser à un fournisseur avant de commander, à commencer par l'existence d'un abonnement et la propriété de l'adresse.
+- [Le vrai coût d'une carte de visite papier](https://indusiax.com/blog/cout-reel-carte-de-visite-papier/) : pourquoi le prix unitaire de l'imprimeur est trompeur, la date de péremption d'une carte selon l'information la plus instable qu'elle porte, le stock mort, le coût invisible d'une carte fausse qui circule, et une méthode en quatre chiffres pour calculer son propre coût réel.
+
 ## Flux-Link en détail
 
 - [Page produit Flux-Link](https://indusiax.com/flux/) : dictez trois phrases, ajoutez les photos de l'atelier, l'IA rédige un post LinkedIn professionnel dans votre langue (français, anglais, néerlandais, italien) et le publie. La voix est transcrite sur des serveurs en Europe ; les fichiers sont effacés après publication.

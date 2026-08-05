@@ -28,6 +28,10 @@
   --acc-soft:rgba(232,76,43,.12);
   --ok:#22c55e;
   --stator:#E84C2B;--rotor:#3B82F6;--vector:#A78BFA;--flux:#0EA5E9;--contiax:#10B981;
+  /* Les cartes NFC prennent l'ambre : la seule teinte encore libre qui se
+     distingue nettement du vert de Contiax dans les filtres du blog, alors
+     que les deux vivent côte à côte dans la rubrique « Outils ». */
+  --cartes:#F59E0B;
   color-scheme:dark;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
@@ -523,6 +527,16 @@ footer.site a[href="/stator/"]:hover{color:var(--stator);}
 footer.site a[href="/rotor/"]:hover{color:var(--rotor);}
 footer.site a[href="/vector/"]:hover{color:var(--vector);}
 footer.site a[href="/flux/"]:hover{color:var(--flux);}
+footer.site a[href="/contiax/"]:hover{color:var(--contiax);}
+footer.site a[href="/cartes-nfc/"]:hover{color:var(--cartes);}
+
+/* Sous-rubrique du pied de page.
+   Contiax et les cartes NFC ne sont pas des produits de la suite : ce sont
+   les portes d'entrée. Les ranger sous un intitulé subordonné, dans la
+   colonne des produits plutôt que dans une cinquième colonne, dit cette
+   hiérarchie sans les cacher — et laisse à chacun son lien direct depuis
+   les 44 pages du site, ce dont l'indexation a besoin. */
+footer.site h4.foot-sous{margin-top:18px;font-size:.72rem;opacity:.72;}
 .fdot{width:6px;height:6px;border-radius:50%;background:var(--dc,var(--acc));flex-shrink:0;}
 .foot-base{border-top:1px solid var(--bord);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .foot-eu{font-family:var(--mono);font-size:.72rem;color:var(--mut2);display:inline-flex;align-items:center;gap:5px;}

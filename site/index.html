@@ -331,7 +331,6 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
       <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Contrôles et interventions terrain, rapports PDF</i></span></span>
       <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Comptes-rendus de réunion par IA, en Europe</i></span></span>
       <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>Publication LinkedIn dictée et rédigée par IA</i></span></span>
-      <span class="nav-item"><a href="/contiax/">Contiax</a><span class="np" style="--mc:var(--contiax)"><b>Contiax</b><i>Scanner de cartes de visite — gratuit</i></span></span>
       <a href="/tarifs/">Tarifs</a>
       <a href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
@@ -340,6 +339,54 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
     <a class="btn btn-acc nav-cta" href="/essai/">Essai gratuit 30 jours</a>
 </div>
 </header>
+
+<!-- Bandeau d'accueil des visiteurs venus d'une carte de visite NFC.
+
+     Ces gens-là n'ont rien demandé : on leur a tendu une carte, ils l'ont
+     approchée d'un téléphone, ils ont vu « Propulsé par Indusiax » et ils ont
+     cliqué par curiosité. Leur première question est « c'est quoi, ce truc
+     qui a fait cette page ? ». Sans réponse, ils repartent perplexes ; avec
+     une tuile produit permanente sur l'accueil, les cartes voleraient
+     l'attention des quatre logiciels pour tous les autres visiteurs.
+
+     Le bandeau règle les deux : il ne s'affiche que pour ce visiteur-là, et
+     il disparaît pour tout le monde d'autre. -->
+<div id="bandeau-nfc" hidden>
+  <div class="wrap">
+    <span class="pt" aria-hidden="true"></span>
+    <span>Vous arrivez d'une carte de visite NFC&nbsp;?
+      <b>C'est nous qui la faisons.</b></span>
+    <a href="/cartes-nfc/">En avoir pour votre équipe&nbsp;→</a>
+  </div>
+</div>
+<style>
+  #bandeau-nfc{background:rgba(245,158,11,.09);border-bottom:1px solid rgba(245,158,11,.26);
+    font-size:.88rem;}
+  #bandeau-nfc .wrap{display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+    padding-top:11px;padding-bottom:11px;color:var(--mut);}
+  #bandeau-nfc .pt{width:7px;height:7px;border-radius:50%;background:var(--cartes);flex:none;}
+  #bandeau-nfc b{color:var(--txt);font-weight:650;}
+  #bandeau-nfc a{color:var(--cartes);font-weight:650;white-space:nowrap;}
+  #bandeau-nfc a:hover{text-decoration:underline;}
+  /* Sur un téléphone, la phrase passe sur trois lignes et le bandeau finit
+     par occuper un tiers de l'écran avant même le titre de la page. On
+     resserre : le message reste entier, la place qu'il prend redevient
+     celle d'une mention. */
+  @media(max-width:620px){
+    #bandeau-nfc{font-size:.8rem;}
+    #bandeau-nfc .wrap{gap:4px 9px;padding-top:9px;padding-bottom:9px;line-height:1.4;}
+  }
+</style>
+<script>
+  /* Deux signaux, parce que le premier peut manquer : le paramètre de suivi
+     posé par le pied des fiches, et le référent quand un navigateur ou une
+     messagerie a mangé la query string. */
+  (function () {
+    var attendu = new URLSearchParams(location.search).get("utm_source") === "carte-nfc";
+    var vient = document.referrer.indexOf("cards.indusiax.com") !== -1;
+    if (attendu || vient) document.getElementById("bandeau-nfc").hidden = false;
+  })();
+</script>
 
 <main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
 
@@ -698,7 +745,10 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
         <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
         <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
         <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
-        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
+        <h4 class="foot-sous">Outils</h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">Cartes NFC</a>
       </div>
       <div>
         <h4>Indusiax</h4>

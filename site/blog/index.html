@@ -43,7 +43,6 @@
       <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Contrôles et interventions terrain, rapports PDF</i></span></span>
       <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Comptes-rendus de réunion par IA, en Europe</i></span></span>
       <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>Publication LinkedIn dictée et rédigée par IA</i></span></span>
-      <span class="nav-item"><a href="/contiax/">Contiax</a><span class="np" style="--mc:var(--contiax)"><b>Contiax</b><i>Scanner de cartes de visite — gratuit</i></span></span>
       <a href="/tarifs/">Tarifs</a>
       <a class="on" href="/blog/">Blog</a>
       <a href="/a-propos/">À propos</a>
@@ -73,18 +72,14 @@
       <button class="bf-chip" data-filter="tag-vector" aria-pressed="false">Vector-MOM</button>
       <button class="bf-chip" data-filter="tag-flux" aria-pressed="false">Flux-Link</button>
       <button class="bf-chip" data-filter="tag-contiax" aria-pressed="false">Contiax</button>
+      <!-- Le filtre « Cartes NFC » attend ses articles : une catégorie qui
+           ne renvoie rien passe pour un filtre cassé, pas pour une rubrique
+           à venir. La couleur (--cartes) et la règle .tag-cartes sont déjà
+           en place dans blog.css, il n'y aura que cette ligne à décommenter.
+      <button class="bf-chip" data-filter="tag-cartes" aria-pressed="false">Cartes NFC</button>
+      -->
     </div>
     <div class="blog-grid">
-      <a class="blog-card" href="/blog/contiax-vs-applis-scan-cartes-visite/">
-        <div class="thumb"><picture><source srcset="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.webp" type="image/webp"><img src="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.jpg" alt="Main tenant un smartphone au-dessus d'une carte de visite vierge posée sur un bureau sombre, le soir" loading="lazy"></picture></div>
-        <div class="bc-in">
-          <span class="tag-contiax bc-tag">Contiax · Scan de cartes</span>
-          <h3>Scan de cartes de visite : où finissent vos contacts ?</h3>
-          <p>Quatre familles d'outils comparées sur trois critères concrets : le compte, le réseau, et la destination du contact.</p>
-          <span class="bc-meta">8 min de lecture</span>
-          <span class="bc-read">Lire l'article &#8594;</span>
-        </div>
-      </a>
       <a class="blog-card" href="/blog/alternatives-praxedo-logiciel-intervention/">
         <div class="thumb"><picture><source srcset="/assets/blog/alternatives-praxedo-logiciel-intervention/hero.webp" type="image/webp"><img src="/assets/blog/alternatives-praxedo-logiciel-intervention/hero.jpg" alt="Technicien de maintenance en tenue de travail devant une machine industrielle, tablette durcie à la main" loading="lazy"></picture></div>
         <div class="bc-in">
@@ -122,36 +117,6 @@
           <h3>Quels logiciels choisir pour digitaliser une PME industrielle en 2026 ?</h3>
           <p>CRM, terrain, réunions, LinkedIn : le comparatif complet des logiciels pour digitaliser une PME industrielle en 2026, catégorie par catégorie.</p>
           <span class="bc-meta">7 min de lecture</span>
-          <span class="bc-read">Lire l'article &#8594;</span>
-        </div>
-      </a>
-      <a class="blog-card" href="/blog/relance-apres-salon-professionnel/">
-        <div class="thumb"><picture><source srcset="/assets/blog/relance-apres-salon-professionnel/hero.webp" type="image/webp"><img src="/assets/blog/relance-apres-salon-professionnel/hero.jpg" alt="Fin de journee sur un salon industriel : un exposant range sa documentation derriere le comptoir de son stand, une pile de cartes de visite posee devant lui" loading="lazy"></picture></div>
-        <div class="bc-in">
-          <span class="tag-contiax bc-tag">Contiax &middot; Salons &amp; prospection</span>
-          <h3>Quarante cartes dans la poche : pourquoi la moiti&eacute; ne sera jamais rappel&eacute;e</h3>
-          <p>Le salon s'est bien pass&eacute;, et trois semaines plus tard la pile est toujours sur le bureau. Le trou entre la conversation et le CRM, et les trois gestes qui le comblent.</p>
-          <span class="bc-meta">8 min de lecture</span>
-          <span class="bc-read">Lire l'article &#8594;</span>
-        </div>
-      </a>
-      <a class="blog-card" href="/blog/recuperer-contacts-salon-badge-ou-scan/">
-        <div class="thumb"><picture><source srcset="/assets/blog/recuperer-contacts-salon-badge-ou-scan/hero.webp" type="image/webp"><img src="/assets/blog/recuperer-contacts-salon-badge-ou-scan/hero.jpg" alt="Comptoir de stand de salon industriel avec un badge visiteur sur son cordon, une pile de cartes de visite vierges et un smartphone pose face contre table" loading="lazy"></picture></div>
-        <div class="bc-in">
-          <span class="tag-contiax bc-tag">Contiax &middot; Salons &amp; prospection</span>
-          <h3>Lecteur de badge, appli, saisie &agrave; la main : le vrai co&ucirc;t d'un contact de salon</h3>
-          <p>Quatre fa&ccedil;ons de r&eacute;cup&eacute;rer un contact sur un stand, compar&eacute;es sur les deux seuls crit&egrave;res qui d&eacute;cident : le d&eacute;lai avant de rappeler, et chez qui la donn&eacute;e atterrit.</p>
-          <span class="bc-meta">9 min de lecture</span>
-          <span class="bc-read">Lire l'article &#8594;</span>
-        </div>
-      </a>
-      <a class="blog-card" href="/blog/application-scan-carte-visite-rgpd/">
-        <div class="thumb"><picture><source srcset="/assets/blog/application-scan-carte-visite-rgpd/hero.webp" type="image/webp"><img src="/assets/blog/application-scan-carte-visite-rgpd/hero.jpg" alt="Sur le comptoir d'un stand de salon industriel, une exposante photographie avec son telephone une carte de visite posee devant elle" loading="lazy"></picture></div>
-        <div class="bc-in">
-          <span class="tag-contiax bc-tag">Contiax &middot; Donn&eacute;es &amp; confiance</span>
-          <h3>Une appli de scan gratuite : o&ugrave; partent vos contacts ?</h3>
-          <p>Une carte de visite est la donn&eacute;e de celui qui vous l'a tendue. Les quatre mod&egrave;les &eacute;conomiques du gratuit, et les cinq questions &agrave; poser avant d'installer.</p>
-          <span class="bc-meta">9 min de lecture</span>
           <span class="bc-read">Lire l'article &#8594;</span>
         </div>
       </a>
@@ -365,70 +330,46 @@
           <span class="bc-read">Lire l'article &#8594;</span>
         </div>
       </a>
-    </div>
-  </div>
-</section>
-
-<div class="nl-block">
-  <div class="wrap nl-in">
-    <div class="nl-tx">
-      <span class="eb">Newsletter</span>
-      <h3>Un article par mois, pas un de plus.</h3>
-      <p>Nos analyses sur la digitalisation industrielle, par email. Pas de spam, désinscription en un clic.</p>
-    </div>
-    <form class="nl-form" data-endpoint="/api/newsletter" data-success="nl-ok">
-      <input type="email" name="email" required placeholder="vous@votre-societe.fr" maxlength="255">
-      <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <button class="btn btn-acc" type="submit">S'abonner</button>
-      <p class="form-err" role="alert"></p>
-    </form>
-    <div id="nl-ok" class="nl-ok" style="display:none">✅ Inscription confirmée — merci !</div>
-  </div>
-</div>
-
-<div class="cta-final">
-  <div class="wrap">
-    <h2>Envie de voir ça tourner sur votre propre activité ?</h2>
-    <p>30 jours d'essai gratuit, sans carte bancaire, sans engagement.</p>
-    <a class="btn btn-acc btn-big" href="/essai/">Démarrer mon essai gratuit</a>
-  </div>
-</div>
-
-</main>
-
-<footer class="site">
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
-        <p style="margin-top:10px;max-width:280px">La suite logicielle des TPE &amp; PME industrielles.<br>By industry, for industry.</p>
-      </div>
-      <div>
-        <h4>Produits</h4>
-        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
-        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
-        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
-        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
-      </div>
-      <div>
-        <h4>Indusiax</h4>
-        <a href="/tarifs/">Tarifs</a>
-        <a href="/blog/">Blog</a>
-        <a href="/a-propos/">À propos</a>
-        <a href="/contact/">Contact</a>
-        <a href="/essai/">Essai gratuit</a>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <a href="/mentions-legales/">Mentions légales</a>
-        <a href="/confidentialite/">Confidentialité</a>
-        <a href="/securite/">Sécurité &amp; données</a>
-      </div>
-    </div>
-    <div class="foot-base">
-      <span>© 2026 Indusiax — ECOM INDUSTRIE. Tous droits réservés.</span>
-      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
-          <span class="foot-eu">🇪🇺 Données hébergées en UE</span>
+      <a class="blog-card" href="/blog/contiax-vs-applis-scan-cartes-visite/">
+        <div class="thumb"><picture><source srcset="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.webp" type="image/webp"><img src="/assets/blog/contiax-vs-applis-scan-cartes-visite/hero.jpg" alt="Main tenant un smartphone au-dessus d'une carte de visite vierge posée sur un bureau sombre, le soir" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-contiax bc-tag">Contiax · Scan de cartes</span>
+          <h3>Scan de cartes de visite : où finissent vos contacts ?</h3>
+          <p>Quatre familles d'outils comparées sur trois critères concrets : le compte, le réseau, et la destination du contact.</p>
+          <span class="bc-meta">8 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/relance-apres-salon-professionnel/">
+        <div class="thumb"><picture><source srcset="/assets/blog/relance-apres-salon-professionnel/hero.webp" type="image/webp"><img src="/assets/blog/relance-apres-salon-professionnel/hero.jpg" alt="Fin de journee sur un salon industriel : un exposant range sa documentation derriere le comptoir de son stand, une pile de cartes de visite posee devant lui" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-contiax bc-tag">Contiax &middot; Salons &amp; prospection</span>
+          <h3>Quarante cartes dans la poche : pourquoi la moiti&eacute; ne sera jamais rappel&eacute;e</h3>
+          <p>Le salon s'est bien pass&eacute;, et trois semaines plus tard la pile est toujours sur le bureau. Le trou entre la conversation et le CRM, et les trois gestes qui le comblent.</p>
+          <span class="bc-meta">8 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/recuperer-contacts-salon-badge-ou-scan/">
+        <div class="thumb"><picture><source srcset="/assets/blog/recuperer-contacts-salon-badge-ou-scan/hero.webp" type="image/webp"><img src="/assets/blog/recuperer-contacts-salon-badge-ou-scan/hero.jpg" alt="Comptoir de stand de salon industriel avec un badge visiteur sur son cordon, une pile de cartes de visite vierges et un smartphone pose face contre table" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-contiax bc-tag">Contiax &middot; Salons &amp; prospection</span>
+          <h3>Lecteur de badge, appli, saisie &agrave; la main : le vrai co&ucirc;t d'un contact de salon</h3>
+          <p>Quatre fa&ccedil;ons de r&eacute;cup&eacute;rer un contact sur un stand, compar&eacute;es sur les deux seuls crit&egrave;res qui d&eacute;cident : le d&eacute;lai avant de rappeler, et chez qui la donn&eacute;e atterrit.</p>
+          <span class="bc-meta">9 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
+      <a class="blog-card" href="/blog/application-scan-carte-visite-rgpd/">
+        <div class="thumb"><picture><source srcset="/assets/blog/application-scan-carte-visite-rgpd/hero.webp" type="image/webp"><img src="/assets/blog/application-scan-carte-visite-rgpd/hero.jpg" alt="Sur le comptoir d'un stand de salon industriel, une exposante photographie avec son telephone une carte de visite posee devant elle" loading="lazy"></picture></div>
+        <div class="bc-in">
+          <span class="tag-contiax bc-tag">Contiax &middot; Donn&eacute;es &amp; confiance</span>
+          <h3>Une appli de scan gratuite : o&ugrave; partent vos contacts ?</h3>
+          <p>Une carte de visite est la donn&eacute;e de celui qui vous l'a tendue. Les quatre mod&egrave;les &eacute;conomiques du gratuit, et les cinq questions &agrave; poser avant d'installer.</p>
+          <span class="bc-meta">9 min de lecture</span>
+          <span class="bc-read">Lire l'article &#8594;</span>
+        </div>
+      </a>
     </div>
   </div>
 </footer>

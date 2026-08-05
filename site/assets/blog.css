@@ -25,6 +25,7 @@
 .blog-card:has(.tag-vector){--card-acc:var(--vector);}
 .blog-card:has(.tag-flux){--card-acc:var(--flux);}
 .blog-card:has(.tag-contiax){--card-acc:var(--contiax);}
+.blog-card:has(.tag-cartes){--card-acc:var(--cartes);}
 .blog-card .thumb{aspect-ratio:16/9;overflow:hidden;background:var(--bg3);}
 .blog-card .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1);}
 .blog-card:hover .thumb img{transform:scale(1.06);}
@@ -171,6 +172,7 @@
 .tag-stator{color:var(--stator);} .tag-rotor{color:var(--rotor);}
 .tag-vector{color:var(--vector);} .tag-flux{color:var(--flux);} .tag-suite{color:var(--acc);}
 .tag-contiax{color:var(--contiax);}
+.tag-cartes{color:var(--cartes);}
 
 /* ---------- Article : tableau comparatif ---------- */
 .table-wrap{overflow-x:auto;margin:28px 0;border:1px solid var(--bord);border-radius:14px;position:relative;}

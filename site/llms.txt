@@ -18,7 +18,8 @@
 Deux produits d'entrée, à part de la suite logicielle : ils tournent autour de
 la carte de visite, dans les deux sens. Contiax lit celles qu'on vous donne,
 les cartes NFC sont celle que vous tendez. Ils servent à faire connaître
-Indusiax plus qu'à dégager une marge.
+Indusiax plus qu'à dégager une marge. Page commune :
+[Outils Indusiax](https://indusiax.com/outils/).
 
 - [Contiax](https://indusiax.com/contiax/) : scanner de cartes de visite gratuit, accessible sur [scan.indusiax.com](https://scan.indusiax.com). Photographiez une carte, le contact part dans le téléphone, un tableur ou le CRM. Fonctionne aussi sur une signature d'e-mail photographiée à l'écran, source aujourd'hui plus fréquente que le carton. Gratuit sans contrepartie : aucun compte, aucune application à installer, aucun cookie, aucun traceur, aucune revente de données. Lecture confiée à Mistral AI (entreprise française) ; les serveurs Indusiax ne conservent ni l'image ni les coordonnées.
 - [Cartes de visite NFC](https://indusiax.com/cartes-nfc/) : carte à puce vendue 5 € l'unité, sans abonnement, qui ouvre une fiche de contact en ligne sur le téléphone d'en face. Le prix comprend la carte programmée, la page et son hébergement. Les coordonnées se modifient à vie sans reprogrammer la carte, et une carte se réattribue à un remplaçant quand un collaborateur part — l'adresse gravée dans la puce ne contient pas son nom. Commande sur [cards.indusiax.com](https://cards.indusiax.com). Pages exclues des moteurs de recherche, identifiants non devinables.

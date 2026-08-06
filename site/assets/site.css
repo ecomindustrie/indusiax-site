@@ -537,6 +537,14 @@ footer.site a[href="/cartes-nfc/"]:hover{color:var(--cartes);}
    hiérarchie sans les cacher — et laisse à chacun son lien direct depuis
    les 44 pages du site, ce dont l'indexation a besoin. */
 footer.site h4.foot-sous{margin-top:18px;font-size:.72rem;opacity:.72;}
+/* L'intitulé mène à la page qui raconte le couple des deux outils. Sans ces
+   trois règles, le lien hériterait du `display:flex` appliqué à tous les
+   liens du pied de page et se détacherait du titre au lieu d'en faire
+   partie. */
+footer.site h4.foot-sous a{display:inline;color:inherit;padding:0;
+  text-transform:inherit;letter-spacing:inherit;}
+footer.site h4.foot-sous a:hover{color:var(--txt);transform:none;
+  text-decoration:underline;}
 .fdot{width:6px;height:6px;border-radius:50%;background:var(--dc,var(--acc));flex-shrink:0;}
 .foot-base{border-top:1px solid var(--bord);padding-top:20px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 .foot-eu{font-family:var(--mono);font-size:.72rem;color:var(--mut2);display:inline-flex;align-items:center;gap:5px;}

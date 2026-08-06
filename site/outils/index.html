@@ -50,17 +50,33 @@
   .ot-hero .sub{font-size:clamp(1rem,1.9vw,1.14rem);color:var(--mut);max-width:58ch;}
 
   /* Les deux outils, côte à côte : c'est la mise en page qui raconte le
-     couple. Empilés, ils redeviendraient deux bricoles sans rapport. */
-  .ot-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:38px;}
-  @media(max-width:840px){.ot-duo{grid-template-columns:1fr;gap:16px;}}
+     couple. Empilés, ils redeviendraient deux bricoles sans rapport.
+     La grille porte quatre cellules : les deux photos en première ligne,
+     les deux encarts en seconde. */
+  .ot-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px;}
+  @media(max-width:840px){
+    .ot-duo{grid-template-columns:1fr;gap:16px;}
+    /* Sur une colonne, l'ordre du document mettrait les deux photos avant
+       les deux encarts. On remet chaque photo juste au-dessus de l'outil
+       qu'elle met en scène — sans quoi la démonstration se perd. */
+    .ot-photo-1{order:1;} .ot-c1{order:2;}
+    .ot-photo-2{order:3;} .ot-c2{order:4;}
+  }
+
+  .ot-photo{margin:0;border:1px solid var(--bord);border-radius:16px;
+    overflow:hidden;background:var(--bg2);}
+  .ot-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
+  .ot-photo figcaption{padding:11px 15px;font-size:.83rem;color:var(--mut2);
+    border-top:1px solid var(--bord);}
+  .ot-photo figcaption b{color:var(--oc);font-weight:650;}
+
   .ot-carte{
+    position:relative;cursor:pointer;
     border:1px solid var(--bord);border-radius:18px;padding:26px 25px 24px;
     background:var(--bg2);display:flex;flex-direction:column;gap:11px;
     border-top:2px solid var(--oc);transition:border-color .2s,transform .2s;
   }
-  .ot-carte:hover{transform:translateY(-3px);}
-  .ot-sens{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;
-    text-transform:uppercase;color:var(--oc);}
+  .ot-carte:hover,.ot-carte:focus-within{transform:translateY(-3px);border-color:var(--oc);}
   .ot-carte h2{font-size:1.4rem;font-weight:750;letter-spacing:-.02em;}
   .ot-carte h2 b{color:var(--oc);}
   .ot-prix{font-family:var(--mono);font-size:.82rem;color:var(--mut2);}
@@ -68,7 +84,56 @@
   .ot-liste{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px;}
   .ot-liste li{display:flex;gap:9px;font-size:.9rem;color:var(--mut);}
   .ot-liste li::before{content:"—";color:var(--oc);flex:none;}
-  .ot-carte .btn{align-self:flex-start;margin-top:auto;}
+  /* Tout l'encart est cliquable, avec un SEUL vrai lien : celui du titre,
+     dont un pseudo-élément s'étend sur toute la carte. Imbriquer un <a>
+     dans un <a> serait invalide, et un gestionnaire de clic sur le bloc
+     priverait le clavier et les lecteurs d'écran du lien.
+     Le lien n'est volontairement pas porté par le bouton : la feuille du
+     site donne à `.btn` un `position:relative` et un `overflow:hidden`, qui
+     enfermeraient la superposition dans le bouton lui-même. */
+  .ot-lien{color:inherit;}
+  .ot-lien::after{content:"";position:absolute;inset:0;border-radius:18px;z-index:2;}
+  .ot-carte:focus-within{outline:2px solid var(--oc);outline-offset:3px;}
+
+  /* Le bouton n'est plus qu'un repère visuel : c'est le titre qui est
+     cliquable. `pointer-events:none` garantit qu'il n'intercepte jamais le
+     clic destiné à la carte. */
+  .ot-bouton{align-self:flex-start;margin-top:auto;pointer-events:none;}
+  .ot-carte:hover .ot-bouton,.ot-carte:focus-within .ot-bouton{
+    background:var(--oc);border-color:var(--oc);color:#0b0d12;}
+
+  .ot-sens{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--oc);}
+
+  @media(prefers-reduced-motion:no-preference){
+    /* Le bouton respire pour attirer l'œil, mais s'immobilise dès que la
+       souris arrive : une cible qui bouge au moment du clic est un défaut,
+       pas une animation. */
+    .ot-bouton{animation:otRespire 2.8s ease-in-out infinite;}
+    .ot-c2 .ot-bouton{animation-delay:1.4s;}
+    .ot-carte:hover .ot-bouton,.ot-carte:focus-within .ot-bouton{animation-play-state:paused;}
+    @keyframes otRespire{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+  }
+
+  /* Reflet qui balaie l'intitulé, puis se repose sur la couleur pleine.
+     Le dégradé est découpé sur le texte : sans la garde `@supports`, un
+     navigateur qui ignore `background-clip:text` afficherait un texte
+     transparent, c'est-à-dire rien du tout. */
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    @media(prefers-reduced-motion:no-preference){
+      .ot-sens{
+        background-image:linear-gradient(100deg,
+          var(--oc) 0%, var(--oc) 42%, #ffffff 50%, var(--oc) 58%, var(--oc) 100%);
+        background-size:300% 100%;background-repeat:no-repeat;
+        -webkit-background-clip:text;background-clip:text;
+        -webkit-text-fill-color:transparent;color:transparent;
+        animation:otBrille 5.4s ease-in-out infinite;
+      }
+      .ot-c2 .ot-sens{animation-delay:2.7s;}
+      @keyframes otBrille{0%{background-position:100% 0;}
+        42%,100%{background-position:0 0;}}
+    }
+  }
 
   .ot-pourquoi{border:1px solid var(--bord);border-radius:16px;padding:24px 26px;
     background:var(--bg2);margin-top:34px;max-width:64ch;}
@@ -99,6 +164,7 @@
       <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>Publication LinkedIn dictée et rédigée par IA</i></span></span>
       <a href="/tarifs/">Tarifs</a>
       <a href="/blog/">Blog</a>
+      <a class="on" href="/outils/">Outils</a>
       <a href="/a-propos/">À propos</a>
       <a class="nav-cta-mobile" href="/essai/">Essai gratuit 30 jours</a>
     </nav>
@@ -118,9 +184,30 @@
       problèmes.</p>
 
     <div class="ot-duo">
-      <article class="ot-carte" style="--oc:var(--contiax)">
+      <figure class="ot-photo ot-photo-1" style="--oc:var(--contiax)">
+        <picture>
+          <source srcset="/assets/outils/scene-contiax.webp" type="image/webp">
+          <img src="/assets/outils/scene-contiax.jpg" width="960" height="720"
+               fetchpriority="high"
+               alt="Sur l'allée d'un salon industriel, un commercial d'une cinquantaine d'années tend une carte de visite en papier ; son interlocuteur d'une trentaine d'années la photographie avec son smartphone.">
+        </picture>
+        <figcaption>On vous tend une carte&nbsp;: <b>Contiax</b> la lit et le
+          contact est enregistré avant que la conversation ne reprenne.</figcaption>
+      </figure>
+
+      <figure class="ot-photo ot-photo-2" style="--oc:var(--cartes)">
+        <picture>
+          <source srcset="/assets/outils/scene-cartes.webp" type="image/webp">
+          <img src="/assets/outils/scene-cartes.jpg" width="960" height="720" loading="lazy"
+               alt="Même scène : le plus jeune des deux commerciaux tend à son tour une carte de visite noire à puce, que son interlocuteur approche de son téléphone d'un air agréablement surpris.">
+        </picture>
+        <figcaption>À votre tour&nbsp;: la <b>carte NFC</b> ouvre votre fiche sur
+          son téléphone, à jour, sans qu'il ait rien à taper.</figcaption>
+      </figure>
+
+      <article class="ot-carte ot-c1" style="--oc:var(--contiax)">
         <span class="ot-sens">Celles qu'on vous donne</span>
-        <h2><b>Contiax</b></h2>
+        <h2><a class="ot-lien" href="/contiax/"><b>Contiax</b></a></h2>
         <span class="ot-prix">Gratuit · sans compte · sans cookie</span>
         <p>Photographiez une carte de visite — ou la signature d'un e-mail
           affichée à l'écran — et le contact part dans votre téléphone, un
@@ -131,12 +218,12 @@
           <li>Rien n'est conservé sur nos serveurs</li>
           <li>Six langues</li>
         </ul>
-        <a class="btn btn-ghost" href="/contiax/">Découvrir Contiax</a>
+        <span class="btn btn-ghost ot-bouton">Découvrir Contiax</span>
       </article>
 
-      <article class="ot-carte" style="--oc:var(--cartes)">
+      <article class="ot-carte ot-c2" style="--oc:var(--cartes)">
         <span class="ot-sens">Celle que vous tendez</span>
-        <h2>Cartes de visite <b>NFC</b></h2>
+        <h2><a class="ot-lien" href="/cartes-nfc/">Cartes de visite <b>NFC</b></a></h2>
         <span class="ot-prix">5 € la carte · sans abonnement</span>
         <p>Une carte à puce qu'on approche d'un téléphone : votre fiche s'ouvre,
           le contact s'enregistre. Le jour où votre numéro change, vous modifiez
@@ -147,7 +234,7 @@
           <li>Réattribuable à un remplaçant</li>
           <li>Page et hébergement compris</li>
         </ul>
-        <a class="btn btn-ghost" href="/cartes-nfc/">Découvrir les cartes NFC</a>
+        <span class="btn btn-ghost ot-bouton">Découvrir les cartes NFC</span>
       </article>
     </div>
 
@@ -208,6 +295,7 @@
         <h4>Indusiax</h4>
         <a href="/tarifs/">Tarifs</a>
         <a href="/blog/">Blog</a>
+        <a href="/outils/">Outils</a>
         <a href="/a-propos/">À propos</a>
         <a href="/contact/">Contact</a>
         <a href="/essai/">Essai gratuit</a>

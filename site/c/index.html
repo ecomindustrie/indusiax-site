@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>indusiax.com</title>
+<!-- Page de comptage des scans du QR code imprimé (cartes NFC, supports papier).
+     Elle n'existe que pour attribuer la visite à l'origine « /c/ » dans Umami,
+     puis renvoyer aussitôt vers l'accueil. Volontairement hors sitemap et en
+     noindex : ce n'est pas une page de contenu.
+     ⚠️ Ne pas la remplacer par une redirection 301 côté nginx : la mesure Umami
+     est faite par le navigateur, un 301 ne déclencherait aucun script et ferait
+     donc perdre exactement ce que cette page sert à compter. -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://indusiax.com/">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<noscript><meta http-equiv="refresh" content="0;url=https://indusiax.com/"></noscript>
+<style>
+  html,body{height:100%;}
+  body{margin:0;display:flex;align-items:center;justify-content:center;
+    background:#0b0d12;color:rgba(255,255,255,.58);
+    font:500 .95rem/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    text-align:center;padding:24px;}
+  a{color:#E84C2B;}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. Chargé sans `defer`,
+     contrairement aux autres pages : la visite doit être enregistrée avant que
+     la redirection ne parte. -->
+<script src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+<p>Redirection vers <a href="https://indusiax.com/">indusiax.com</a>…</p>
+<script>
+(function(){
+  var parti = false;
+  function go(){ if (parti) { return; } parti = true; location.replace('/'); }
+  // Plafond de sécurité : le visiteur n'est jamais retenu plus de 1,2 s, même si
+  // analytics.indusiax.com est lent, bloqué par un filtre ou hors service.
+  var secours = setTimeout(go, 1200);
+  // Cas normal : `load` signifie que le script Umami a été exécuté et que la
+  // visite est partie ; on laisse 250 ms au réseau puis on redirige.
+  window.addEventListener('load', function(){
+    setTimeout(function(){ clearTimeout(secours); go(); }, 250);
+  });
+})();
+</script>
+</body>
+</html>

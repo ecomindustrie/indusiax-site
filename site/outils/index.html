@@ -15,7 +15,14 @@
 <meta property="og:title" content="Outils Indusiax — la carte de visite, dans les deux sens">
 <meta property="og:description" content="Contiax lit celles qu'on vous donne. Nos cartes NFC sont celle que vous tendez.">
 <meta property="og:url" content="https://indusiax.com/outils/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://indusiax.com/assets/outils/scene-cartes.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/outils/scene-cartes.jpg">
+<!-- Page de rubrique : simple liste de liens pour Google, pas une fiche produit.
+     Elle décrivait auparavant la carte NFC comme un Product avec son prix, ce qui
+     créait une deuxième fiche marchande concurrente de /cartes-nfc/ — incomplète,
+     donc signalée en erreur par la Search Console. La fiche produit vit à un seul
+     endroit : /cartes-nfc/. Ici on se contente de pointer vers les deux outils. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -24,23 +31,23 @@
   "description": "Deux outils d'entrée autour de la carte de visite : Contiax, scanner gratuit des cartes que l'on vous donne, et les cartes de visite NFC Indusiax, celle que vous tendez.",
   "url": "https://indusiax.com/outils/",
   "isPartOf": {"@type": "WebSite", "name": "Indusiax", "url": "https://indusiax.com"},
-  "hasPart": [
-    {
-      "@type": "SoftwareApplication",
-      "name": "Contiax",
-      "applicationCategory": "BusinessApplication",
-      "url": "https://indusiax.com/contiax/",
-      "isAccessibleForFree": true,
-      "description": "Scanner de cartes de visite gratuit : photographiez une carte, le contact part dans votre téléphone, un tableur ou votre CRM."
-    },
-    {
-      "@type": "Product",
-      "name": "Carte de visite NFC Indusiax",
-      "url": "https://indusiax.com/cartes-nfc/",
-      "description": "Carte à puce qui ouvre votre fiche de contact sur le téléphone d'en face. Coordonnées modifiables à vie sans refaire la carte.",
-      "offers": {"@type": "Offer", "price": "5.00", "priceCurrency": "EUR"}
-    }
-  ]
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 2,
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "name": "Contiax — scanner de cartes de visite",
+        "url": "https://indusiax.com/contiax/"
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "name": "Cartes de visite NFC Indusiax",
+        "url": "https://indusiax.com/cartes-nfc/"
+      }
+    ]
+  }
 }
 </script>
 <style>

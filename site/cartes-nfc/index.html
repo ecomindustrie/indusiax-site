@@ -15,7 +15,17 @@
 <meta property="og:title" content="Cartes de visite NFC — 5 € la carte, sans abonnement">
 <meta property="og:description" content="On approche la carte d'un téléphone, votre fiche s'ouvre, le contact s'enregistre. Quand votre numéro change, vous modifiez la page — pas la carte.">
 <meta property="og:url" content="https://indusiax.com/cartes-nfc/">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg">
+<!-- Fiche produit lue par Google (rapport "Fiches de marchand" de la Search Console).
+     "image" est le seul champ vraiment obligatoire : sans lui, Google refuse la fiche.
+     Les deux visuels sont volontairement dans deux formats différents (16/9 et 4/3),
+     Google recommande de lui laisser le choix du cadrage.
+     "priceValidUntil" doit rester dans le futur : une date dépassée fait disparaître
+     l'offre des résultats. À repousser avant le 31/12/2027 si le prix ne change pas.
+     "shippingDetails" reflète la configuration Stripe réelle : aucun frais de port
+     n'est facturé, et la liste des pays est celle de shipping_address_collection. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -23,6 +33,10 @@
   "name": "Carte de visite NFC Indusiax",
   "description": "Carte de visite à puce NFC programmée avec l'adresse d'une fiche de contact en ligne. Approchée d'un téléphone, elle ouvre la fiche et permet d'enregistrer le contact en un geste. Les coordonnées restent modifiables à vie sans reprogrammer la carte, et une carte peut être réattribuée à un remplaçant.",
   "url": "https://indusiax.com/cartes-nfc/",
+  "image": [
+    "https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg",
+    "https://indusiax.com/assets/outils/scene-cartes.jpg"
+  ],
   "category": "Cartes de visite connectées",
   "brand": {
     "@type": "Brand",
@@ -32,9 +46,32 @@
     "@type": "Offer",
     "price": "5.00",
     "priceCurrency": "EUR",
+    "priceValidUntil": "2027-12-31",
     "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
     "url": "https://cards.indusiax.com/commander",
     "description": "5 € par carte. Comprend la carte à puce programmée, la page de contact en ligne, son hébergement et les modifications à vie. Aucun abonnement.",
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        { "@type": "DefinedRegion", "addressCountry": "FR" },
+        { "@type": "DefinedRegion", "addressCountry": "BE" },
+        { "@type": "DefinedRegion", "addressCountry": "LU" },
+        { "@type": "DefinedRegion", "addressCountry": "CH" },
+        { "@type": "DefinedRegion", "addressCountry": "DE" },
+        { "@type": "DefinedRegion", "addressCountry": "ES" },
+        { "@type": "DefinedRegion", "addressCountry": "IT" },
+        { "@type": "DefinedRegion", "addressCountry": "NL" },
+        { "@type": "DefinedRegion", "addressCountry": "PT" },
+        { "@type": "DefinedRegion", "addressCountry": "AT" },
+        { "@type": "DefinedRegion", "addressCountry": "MC" }
+      ]
+    },
     "seller": {
       "@type": "Organization",
       "name": "Indusiax",

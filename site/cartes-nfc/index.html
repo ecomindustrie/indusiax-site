@@ -25,7 +25,11 @@
      "priceValidUntil" doit rester dans le futur : une date dépassée fait disparaître
      l'offre des résultats. À repousser avant le 31/12/2027 si le prix ne change pas.
      "shippingDetails" reflète la configuration Stripe réelle : aucun frais de port
-     n'est facturé, et la liste des pays est celle de shipping_address_collection. -->
+     n'est facturé, et la liste des pays est celle de shipping_address_collection.
+     "hasMerchantReturnPolicy" reprend la première règle des mentions légales : le
+     délai de rétractation de quatorze jours, celui qui vaut au moment de l'achat.
+     La condition « tant que les cartes n'ont pas été programmées » ne s'exprime pas
+     dans le format de Google — ce sont les CGV qui font foi, pas ce balisage. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,6 +55,13 @@
     "itemCondition": "https://schema.org/NewCondition",
     "url": "https://cards.indusiax.com/commander",
     "description": "5 € par carte. Comprend la carte à puce programmée, la page de contact en ligne, son hébergement et les modifications à vie. Aucun abonnement.",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "FR",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnByMail"
+    },
     "shippingDetails": {
       "@type": "OfferShippingDetails",
       "shippingRate": {

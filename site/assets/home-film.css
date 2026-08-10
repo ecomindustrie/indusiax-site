@@ -1,0 +1,281 @@
+/* ══════════════════════════════════════════════════════════════════
+   INDUSIAX — film d'accueil « Comment tout se relie »
+   Composition 1920×1080 jouée en boucle (46 s), remise à l'échelle du
+   conteneur. Tout ce qui est FIXE vit ici ; home-film.js ne touche que
+   ce qui bouge d'une image à l'autre.
+   ══════════════════════════════════════════════════════════════════ */
+
+.fx{
+  --fx-bg:#0b0d12;
+  --fx-surface:#12151d;
+  --fx-surface2:#171b25;
+  --fx-line:rgba(255,255,255,.09);
+  --fx-text:#f2f4f8;
+  --fx-muted:#98a0b0;
+  --fx-dim:#6b7280;
+  --fx-h:'Outfit',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fx-m:'JBMono',ui-monospace,Consolas,monospace;
+
+  /* Masqué tant que home-film.js ne l'a pas monté : sans JavaScript, ou
+     sur un écran trop étroit, c'est le schéma statique qui reste en place
+     plutôt qu'un cadre noir vide. */
+  display:none;
+  position:relative;
+  width:100%;
+  max-width:1180px;
+  margin:38px auto 0;
+  aspect-ratio:16/9;
+  border-radius:18px;
+  border:1px solid var(--fx-line);
+  background:var(--fx-bg);
+  box-shadow:0 40px 90px rgba(0,0,0,.55);
+  overflow:hidden;
+  contain:paint;
+}
+.fx.fx-ready{display:block;}
+/* Le schéma statique cède la place dès que le film est monté. */
+.fx.fx-ready ~ .fx-fallback{display:none;}
+
+.fx-stage{
+  position:absolute;left:0;top:0;
+  width:1920px;height:1080px;
+  transform-origin:0 0;
+  font-family:var(--fx-h);
+  color:var(--fx-text);
+  line-height:1.6;
+}
+.fx-cam{position:absolute;inset:0;transform-origin:50% 50%;}
+.fx-stage *{box-sizing:border-box;}
+
+/* ── décors de fond ───────────────────────────────────────────── */
+.fx-grid{position:absolute;inset:0;width:100%;height:100%;opacity:.5;}
+.fx-glow-a,.fx-glow-b{position:absolute;border-radius:50%;pointer-events:none;}
+.fx-glow-a{left:620px;top:-320px;width:1500px;height:1500px;}
+.fx-glow-b{
+  left:-300px;top:300px;width:1100px;height:1100px;opacity:.7;
+  background:radial-gradient(circle,rgba(34,167,222,.16) 0%,transparent 62%);
+}
+.fx-sweep{
+  position:absolute;top:-400px;width:420px;height:1900px;pointer-events:none;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.035),transparent);
+  transform:rotate(14deg);
+}
+.fx-dust,.fx-net{position:absolute;inset:0;width:100%;height:100%;}
+
+/* ── pastilles produits ───────────────────────────────────────── */
+.fx-pill{position:absolute;left:0;top:0;}
+.fx-disc{
+  position:absolute;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+}
+.fx-disc span{font-weight:800;color:#0b0d12;line-height:1;}
+.fx-ring{position:absolute;border-radius:50%;border-width:2px;border-style:solid;pointer-events:none;}
+.fx-pname{position:absolute;width:400px;text-align:center;font-weight:700;font-size:28px;color:var(--fx-text);}
+
+/* ── balayage coloré au changement de produit ─────────────────── */
+.fx-swipe{
+  position:absolute;top:-160px;width:560px;height:1400px;pointer-events:none;
+  transform:skewX(-11deg);
+}
+
+/* ── ouverture ────────────────────────────────────────────────── */
+.fx-open{position:absolute;left:130px;top:330px;width:1400px;}
+.fx-eb{
+  display:inline-flex;padding:11px 24px;border-radius:999px;
+  border:1px solid var(--fx-line);background:rgba(255,255,255,.04);
+  font-family:var(--fx-m);font-size:20px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--fx-muted);
+}
+.fx-title{
+  font-weight:800;font-size:122px;line-height:1.03;letter-spacing:-.03em;
+  margin:32px 0 28px;
+}
+.fx-title .ac{color:#e84c2b;}
+.fx-lede{font-size:34px;line-height:1.45;margin:0;color:var(--fx-muted);max-width:1000px;text-wrap:pretty;}
+.fx-lede b{color:var(--fx-text);}
+
+/* ── blocs produits : question → réponse ──────────────────────── */
+.fx-prod{position:absolute;inset:0;pointer-events:none;}
+.fx-q{position:absolute;left:130px;}
+.fx-qhead{display:flex;align-items:center;gap:16px;}
+.fx-qnum{font-weight:800;font-size:26px;}
+.fx-qbar{height:2px;border-radius:999px;opacity:.7;}
+.fx-qtag{font-family:var(--fx-m);font-size:19px;letter-spacing:.14em;text-transform:uppercase;color:var(--fx-muted);}
+.fx-qmark{
+  position:absolute;left:-46px;top:-186px;
+  font-weight:800;font-size:420px;line-height:1;pointer-events:none;
+}
+.fx-qtext{position:relative;font-weight:700;line-height:1.3;letter-spacing:-.02em;text-wrap:pretty;}
+.fx-a{position:absolute;left:130px;top:380px;width:800px;}
+.fx-aname{font-weight:800;font-size:96px;line-height:1.02;letter-spacing:-.03em;margin:0 0 28px;}
+.fx-atext{font-size:31px;line-height:1.5;margin:0;color:var(--fx-text);text-wrap:pretty;}
+.fx-price{
+  margin-top:40px;display:inline-flex;padding:13px 28px;border-radius:999px;
+  font-size:25px;font-weight:700;
+}
+
+/* ── cartes graphiques ────────────────────────────────────────── */
+.fx-card{
+  position:absolute;left:1000px;top:228px;width:800px;height:624px;
+  background:var(--fx-surface);border:1px solid var(--fx-line);border-radius:22px;
+  overflow:hidden;
+}
+.fx-card::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:2px;opacity:.5;
+  background:linear-gradient(90deg,transparent,var(--fx-c),transparent);
+}
+.fx-ceb{
+  position:absolute;left:46px;top:40px;font-family:var(--fx-m);font-size:18px;
+  letter-spacing:.14em;color:var(--fx-dim);text-transform:uppercase;
+}
+.fx-chip{padding:9px 18px;border-radius:999px;font-weight:700;font-size:18px;}
+
+/* Stator */
+.fx-st-kpi{position:absolute;left:46px;top:78px;font-weight:800;font-size:44px;color:var(--fx-text);white-space:nowrap;}
+.fx-st-kpi span{font-size:22px;color:var(--fx-muted);font-weight:600;}
+.fx-st-col{position:absolute;top:176px;width:168px;}
+.fx-st-lab{font-weight:700;font-size:19px;margin-bottom:12px;}
+.fx-st-box{height:264px;border-radius:16px;background:var(--fx-surface2);border:1px solid var(--fx-line);padding:12px;}
+.fx-st-bar{height:54px;border-radius:10px;background:rgba(255,255,255,.05);margin-bottom:10px;}
+.fx-st-card{
+  position:absolute;top:231px;width:144px;height:54px;border-radius:10px;
+  display:flex;align-items:center;padding:0 14px;
+  font-weight:700;font-size:17px;color:#0b0d12;
+}
+.fx-st-foot{position:absolute;left:46px;top:556px;display:flex;gap:10px;align-items:center;white-space:nowrap;}
+.fx-st-foot .fx-note{font-size:18px;color:var(--fx-muted);}
+
+/* Rotor */
+.fx-ro-h{position:absolute;left:46px;top:76px;font-weight:800;font-size:40px;color:var(--fx-text);}
+.fx-ro-row{
+  position:absolute;left:46px;width:708px;height:60px;border-radius:14px;
+  background:var(--fx-surface2);border:1px solid var(--fx-line);
+  display:flex;align-items:center;gap:16px;padding:0 18px;
+}
+.fx-ro-box{
+  width:30px;height:30px;border-radius:9px;border:2px solid var(--fx-dim);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fx-ro-lab{font-size:21px;}
+.fx-ro-foot{position:absolute;left:46px;top:528px;display:flex;align-items:center;gap:14px;white-space:nowrap;}
+.fx-ro-pdf{padding:11px 20px;border-radius:12px;color:#0b0d12;font-weight:800;font-size:19px;}
+.fx-ro-foot .fx-note{font-size:19px;color:var(--fx-muted);}
+
+/* Vector */
+.fx-ve-wave{position:absolute;left:46px;top:92px;width:708px;height:96px;display:flex;align-items:center;gap:4px;}
+.fx-ve-wave i{flex:1;border-radius:999px;}
+.fx-ve-rule{position:absolute;left:46px;right:46px;top:206px;height:1px;background:var(--fx-line);}
+.fx-ve-line{position:absolute;left:46px;width:708px;}
+.fx-ve-who{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.fx-ve-ini{
+  width:26px;height:26px;border-radius:50%;font-weight:700;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fx-ve-name{font-weight:700;font-size:18px;}
+.fx-ve-clip{overflow:hidden;}
+.fx-ve-txt{font-size:23px;color:var(--fx-text);white-space:nowrap;}
+.fx-ve-foot{position:absolute;left:46px;top:552px;display:flex;gap:12px;white-space:nowrap;}
+.fx-ve-foot .fx-eu{padding:9px 18px;border-radius:999px;border:1px solid var(--fx-line);color:var(--fx-muted);font-size:18px;}
+
+/* Flux */
+.fx-fl-head{position:absolute;left:46px;top:40px;display:flex;align-items:center;gap:14px;}
+.fx-fl-av{
+  width:46px;height:46px;border-radius:12px;font-weight:800;font-size:20px;
+  display:flex;align-items:center;justify-content:center;
+}
+.fx-fl-who{display:block;font-weight:700;font-size:21px;color:var(--fx-text);}
+.fx-fl-sub{display:block;font-size:16px;color:var(--fx-dim);}
+.fx-fl-wave{position:absolute;left:46px;top:122px;width:708px;height:44px;display:flex;align-items:center;gap:4px;}
+.fx-fl-wave i{flex:1;border-radius:999px;opacity:.6;}
+.fx-fl-post{position:absolute;left:46px;top:122px;width:708px;font-size:25px;line-height:1.45;color:var(--fx-text);}
+.fx-fl-photo{
+  position:absolute;left:46px;top:300px;width:708px;height:210px;border-radius:16px;overflow:hidden;
+  border:1px solid var(--fx-line);display:flex;align-items:center;justify-content:center;
+  font-family:var(--fx-m);font-size:17px;letter-spacing:.18em;color:var(--fx-muted);text-transform:uppercase;
+}
+.fx-fl-foot{position:absolute;left:46px;top:534px;display:flex;align-items:center;gap:24px;white-space:nowrap;}
+.fx-fl-pub{padding:11px 22px;border-radius:999px;color:#0b0d12;font-weight:800;font-size:18px;}
+.fx-fl-stat{font-weight:800;font-size:30px;color:var(--fx-text);}
+.fx-fl-stat span{font-weight:600;font-size:19px;color:var(--fx-muted);}
+
+/* ── la suite connectée ───────────────────────────────────────── */
+.fx-suite-t{position:absolute;left:130px;top:96px;width:1660px;}
+.fx-suite-t .fx-k{font-family:var(--fx-m);font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--fx-muted);margin-bottom:16px;}
+/* Volontairement un div et non un h2 : le film redit ce que la page dit
+   déjà en texte réel — il ne doit pas peser sur le plan du document. */
+.fx-suite-t .fx-h2{font-weight:800;font-size:72px;line-height:1.05;letter-spacing:-.03em;}
+.fx-suite-t .fx-h2 .ac{color:#e84c2b;}
+.fx-suite-p{position:absolute;left:130px;top:330px;width:380px;}
+.fx-suite-p > div{margin-bottom:30px;}
+.fx-suite-p b{display:block;font-weight:800;font-size:27px;color:var(--fx-text);}
+.fx-suite-p i{display:block;font-style:normal;font-size:21px;color:var(--fx-muted);}
+.fx-suite-c{
+  position:absolute;left:130px;top:936px;display:flex;flex-direction:column;
+  align-items:flex-start;gap:14px;
+}
+.fx-suite-c .fx-badge{
+  padding:14px 28px;border-radius:999px;background:#e84c2b;color:#0b0d12;
+  font-weight:800;font-size:26px;box-shadow:0 0 40px rgba(232,76,43,.45);
+}
+.fx-suite-c .fx-note{font-size:26px;color:var(--fx-muted);}
+
+/* ── signature ────────────────────────────────────────────────── */
+.fx-sig{position:absolute;left:0;right:0;top:340px;text-align:center;}
+.fx-sig-dots{display:flex;justify-content:center;gap:14px;margin-bottom:46px;}
+.fx-sig-dots span{width:24px;height:24px;border-radius:50%;}
+.fx-logo{
+  font-weight:800;font-size:168px;line-height:1;letter-spacing:-.04em;color:var(--fx-text);
+  text-shadow:0 0 90px rgba(232,76,43,.35);
+  display:flex;justify-content:center;align-items:baseline;
+}
+.fx-logo .ac{color:#e84c2b;}
+.fx-logo .fx-i{position:relative;display:inline-block;}
+.fx-logo .fx-i i{
+  position:absolute;left:50%;bottom:.70em;width:22px;height:22px;border-radius:50%;
+  transform-origin:50% 50%;font-style:normal;
+}
+.fx-baseline{
+  margin-top:40px;font-family:var(--fx-m);font-size:36px;letter-spacing:.28em;text-transform:uppercase;
+  background-image:linear-gradient(100deg,#e84c2b 0%,#e84c2b 38%,#FFE7CC 47%,#FFFFFF 50%,#FFE7CC 53%,#e84c2b 62%,#e84c2b 100%);
+  background-size:300% 100%;
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.fx-rule{margin:48px auto 0;height:2px;border-radius:999px;background:linear-gradient(90deg,transparent,#e84c2b,transparent);}
+
+/* ── habillage final ──────────────────────────────────────────── */
+.fx-vignette{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at 50% 50%,transparent 42%,rgba(0,0,0,.55) 100%);
+}
+.fx-fade{position:absolute;inset:0;background:var(--fx-bg);pointer-events:none;}
+
+/* ── commande lecture / pause ─────────────────────────────────── */
+.fx-ctrl{
+  position:absolute;right:14px;bottom:14px;z-index:3;
+  display:inline-flex;align-items:center;gap:7px;
+  padding:8px 14px;border-radius:999px;cursor:pointer;
+  border:1px solid rgba(255,255,255,.16);background:rgba(11,13,18,.72);
+  backdrop-filter:blur(6px);
+  font-family:var(--fx-m);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;
+  color:rgba(255,255,255,.72);
+  opacity:0;transition:opacity .25s ease,color .2s ease,border-color .2s ease;
+}
+.fx:hover .fx-ctrl,.fx-ctrl:focus-visible{opacity:1;}
+.fx-ctrl:hover{color:#fff;border-color:rgba(255,255,255,.34);}
+.fx-ctrl svg{width:11px;height:11px;fill:currentColor;}
+@media(hover:none){.fx-ctrl{opacity:1;}}
+
+/* ── écrans étroits ───────────────────────────────────────────── */
+/* La composition est écrite en 1920×1080 : sous ~860 px de large, le
+   facteur d'échelle tombe sous 0,45 et les mentions de 18-19 px passent
+   à 8 px — illisibles. home-film.js ne monte donc le film qu'au-delà,
+   et le schéma statique reprend la main en dessous. */
+@media(max-width:1100px){
+  .fx{border-radius:14px;margin-top:26px;}
+}
+
+/* Mouvement réduit : home-film.js peint une seule image (le réseau formé)
+   et n'anime rien ; la commande n'a plus d'objet. */
+@media(prefers-reduced-motion:reduce){
+  .fx-ctrl{display:none;}
+}

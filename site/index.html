@@ -13,6 +13,7 @@
 <link rel="preload" href="/assets/fonts/outfit-1.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/site.css?v=a864cafc">
 <link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<link rel="stylesheet" href="/assets/home-film.css?v=62b14a75">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Indusiax — Logiciels de gestion pour TPE & PME industrielles">
 <meta property="og:description" content="CRM, contrôles terrain, réunions IA, LinkedIn : des outils simples créés dans une PME industrielle, pour l'industrie. Essai gratuit 30 jours.">
@@ -423,7 +424,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
         <div class="srow"><span class="dot" style="background:#A78BFA"></span><span class="nm">Vector-MOM</span><span class="rl">Réunions IA</span><span class="st"><span class="live-dot"></span>ACTIF</span></div>
         <div class="srow"><span class="dot" style="background:#0EA5E9"></span><span class="nm">Flux-Link</span><span class="rl">LinkedIn</span><span class="st"><span class="live-dot"></span>ACTIF</span></div>
         <div class="srow free"><span class="dot" style="background:#10B981"></span><span class="nm">Contiax</span><span class="rl">Cartes de visite</span><span class="st">GRATUIT</span></div>
-        <div class="sfoot">🔑 « Se connecter avec Stator »<span class="pill">SUITE 99 € /util/mois</span></div>
+        <div class="sfoot">🔑 « Se connecter avec Stator »<span class="pill">SUITE 990 € /util/an</span></div>
       </div>
     </div>
   </div>
@@ -510,7 +511,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="tg" style="color:var(--stator)">CRM industriel</span>
           <h3>Stator-CRM</h3>
           <p>Clients, devis PDF, relances automatiques, tournées, SAV, parc machines : le CRM qui parle le langage de la vente de matériel — pas celui des « leads ».</p>
-          <span class="pr">65 € / utilisateur / mois</span>
+          <span class="pr">650 € /utilisateur/an — 2 mois offerts <span style="opacity:.65">· ou 65 €/mois</span></span>
           <span class="go">Découvrir Stator-CRM →</span>
         </div>
       </a>
@@ -520,7 +521,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="tg" style="color:var(--rotor)">Contrôles &amp; VGP</span>
           <h3>Rotor-FSM</h3>
           <p>Vérifications et VGP sur tablette, fiches machines paramétrables, rapport PDF signé à votre marque, échéances suivies. Du contrôle terrain au rapport, sans ressaisie.</p>
-          <span class="pr">39 € / utilisateur / mois</span>
+          <span class="pr">390 € /utilisateur/an — 2 mois offerts <span style="opacity:.65">· ou 39 €/mois</span></span>
           <span class="go">Découvrir Rotor-FSM →</span>
         </div>
       </a>
@@ -530,7 +531,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="tg" style="color:var(--vector)">Réunions &amp; IA</span>
           <h3>Vector-MOM</h3>
           <p>L'IA transcrit vos réunions, distingue qui parle et rédige le compte-rendu structuré — sur nos serveurs européens, jamais chez un géant du cloud.</p>
-          <span class="pr">12 € / utilisateur / mois</span>
+          <span class="pr">120 € /utilisateur/an — 2 mois offerts <span style="opacity:.65">· ou 12 €/mois</span></span>
           <span class="go">Découvrir Vector-MOM →</span>
         </div>
       </a>
@@ -540,7 +541,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
           <span class="tg" style="color:var(--flux)">Communication LinkedIn</span>
           <h3>Flux-Link</h3>
           <p>Dictez trois phrases, ajoutez les photos : l'IA rédige un post LinkedIn professionnel et le publie. Votre savoir-faire mérite d'être vu.</p>
-          <span class="pr">12 € / utilisateur / mois</span>
+          <span class="pr">120 € /utilisateur/an — 2 mois offerts <span style="opacity:.65">· ou 12 €/mois</span></span>
           <span class="go">Découvrir Flux-Link →</span>
         </div>
       </a>
@@ -572,7 +573,12 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
   <div class="wrap">
     <span class="eb c" style="display:flex;margin-bottom:14px">Comment tout se relie</span>
     <h2 class="sec">Stator-CRM au centre. Le reste s'y branche.</h2>
-    <div class="hub">
+    <!-- Le film (home-film.js) prend la place du schéma dès qu'il est monté :
+         écran d'au moins 860 px et JavaScript actif. En dessous, le schéma
+         statique reste seul — la composition est écrite en 1920×1080 et
+         deviendrait illisible une fois réduite à la largeur d'un téléphone. -->
+    <div class="fx"></div>
+    <div class="hub fx-fallback">
       <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schéma : Stator-CRM au centre, relié à Vector-MOM, Rotor-FSM et Flux-Link">
         <!-- liens -->
         <line x1="360" y1="150" x2="168" y2="78"  stroke="#26303c" stroke-width="2"/>
@@ -604,7 +610,7 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
     </div>
     <div class="suite-note" style="margin-top:34px">
       <span style="font-size:1.6rem">🔗</span>
-      <span><b style="color:var(--txt)">La suite complète à 99 € / utilisateur / mois</b> — les quatre outils reliés : connexion unique « Se connecter avec Stator », fiches clients partagées, comptes-rendus qui remontent dans le CRM. <a href="/tarifs/" style="color:var(--acc);font-weight:600">Voir l'offre suite →</a></span>
+      <span><b style="color:var(--txt)">La suite complète à 990 € / utilisateur / an</b> — 2 mois offerts, jusqu'à 546 € d'économie par utilisateur et par an vs les outils au mois (ou 99 €/mois). Les quatre outils reliés : connexion unique « Se connecter avec Stator », fiches clients partagées, comptes-rendus qui remontent dans le CRM. <a href="/tarifs/" style="color:var(--acc);font-weight:600">Voir l'offre suite →</a></span>
     </div>
   </div>
 </section>
@@ -776,5 +782,6 @@ section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
 </footer>
 
 <script src="/assets/site.js?v=ee8f6e28"></script>
+<script src="/assets/home-film.js?v=ff5ff5b3" defer></script>
 </body>
 </html>

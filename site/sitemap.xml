@@ -12,6 +12,9 @@
   <url><loc>https://indusiax.com/contiax/</loc><priority>0.7</priority></url>
   <url><loc>https://indusiax.com/cartes-nfc/</loc><priority>0.7</priority></url>
   <url><loc>https://indusiax.com/tarifs/</loc><priority>0.9</priority></url>
+  <!-- Le devis est devenu la porte d'entrée principale des offres à
+       engagement (Stator, Rotor, Suite) ; l'essai reste la voie secondaire. -->
+  <url><loc>https://indusiax.com/devis/</loc><priority>0.8</priority></url>
   <url><loc>https://indusiax.com/essai/</loc><priority>0.8</priority></url>
   <url><loc>https://indusiax.com/a-propos/</loc><priority>0.5</priority></url>
   <url><loc>https://indusiax.com/securite/</loc><priority>0.6</priority></url>

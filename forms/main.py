@@ -102,6 +102,15 @@ class EssaiIn(BaseModel):
     effectif: str = ""
     activite: str = ""
     message: str = ""
+    # « essai » ou « devis » : les deux formulaires postent ici, mais ce ne
+    # sont pas les mêmes demandes. Sans ce champ, une demande de devis arrivait
+    # intitulée « Demande d'essai » — et le seul indice était un « [DEVIS] »
+    # collé au début du message par un script de la page.
+    origine: str = "essai"
+    # SIRET : sert à créer la fiche client chez la plateforme de facturation
+    # avant d'émettre le devis. Facultatif — un prospect ne l'a pas toujours
+    # sous la main, et le lui imposer coûterait des demandes.
+    siret: str = ""
     site_web: str = ""  # pot de miel — humain = vide
 
 
@@ -124,18 +133,38 @@ class RappelIn(BaseModel):
 
 @app.post("/api/essai")
 def essai(data: EssaiIn, request: Request):
+    """Demande d'essai OU demande de devis — deux parcours, un seul endpoint.
+
+    Ils partagent les mêmes champs ; seul `origine` les distingue. C'est lui qui
+    décide de l'objet du courriel et de la façon dont la demande est rangée :
+    une demande de devis annonce un client qui va commander, elle ne doit pas se
+    confondre avec un essai au milieu de la boîte de réception.
+    """
     _rate_limit(request)
     if data.produit not in ("stator", "rotor", "suite"):
         raise HTTPException(400, "Produit inconnu.")
+    origine = data.origine if data.origine in ("essai", "devis") else "essai"
     spam = bool(data.site_web.strip())
     payload = data.model_dump(exclude={"site_web"})
-    rid = _store("essai", payload, spam)
+    rid = _store(origine, payload, spam)
     if not spam:
-        _notify(
-            f"[Indusiax] Demande d'essai #{rid} — {data.produit} — {data.societe}",
-            "Nouvelle demande d'essai 30 jours :\n\n"
-            + "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
-            + "\n\nÀ traiter sous 24 h ouvrées (promesse faite au demandeur).")
+        detail = "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
+        if origine == "devis":
+            _notify(
+                f"[Indusiax] Demande de DEVIS #{rid} — {data.produit} — {data.societe}",
+                "Nouvelle demande de devis (abonnement annuel) :\n\n"
+                + detail
+                + "\n\nSuite à donner : devis → bon de commande du client → facture"
+                  "\n(n° de commande en référence) → virement → provisionnement de"
+                  "\nl'instance et envoi des accès."
+                + ("\n\n⚠ SIRET non renseigné : le demander avant d'établir le devis."
+                   if not data.siret.strip() else ""))
+        else:
+            _notify(
+                f"[Indusiax] Demande d'essai #{rid} — {data.produit} — {data.societe}",
+                "Nouvelle demande d'essai 30 jours :\n\n"
+                + detail
+                + "\n\nÀ traiter sous 24 h ouvrées (promesse faite au demandeur).")
     return {"ok": True, "id": rid}
 
 

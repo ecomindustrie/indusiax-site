@@ -6,14 +6,14 @@
 <title>Demander un devis | Indusiax</title>
 <meta name="description" content="Recevez sous 24 h ouvrees une proposition chiffree pour Stator-CRM, Rotor-FSM ou la suite Indusiax : abonnement annuel, 2 mois offerts, prete a passer en commande.">
 <link rel="canonical" href="https://indusiax.com/devis/">
-<link rel="alternate" hreflang="fr" href="https://indusiax.com/essai/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/devis/">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <meta name="theme-color" content="#0b0d12">
 <link rel="stylesheet" href="/assets/site.css?v=a864cafc">
 <link rel="stylesheet" href="/assets/product.css?v=6098aea2">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Demander un devis | Indusiax">
-<meta property="og:description" content="30 jours d'accès complet, sans carte bancaire. Compte immédiat, démo libre ou espace dédié : choisissez votre point de départ.">
+<meta property="og:description" content="Recevez sous 24 h ouvrées une proposition chiffrée pour Stator-CRM, Rotor-FSM ou la suite Indusiax : abonnement annuel, 2 mois offerts, prête à passer en commande.">
 <meta property="og:url" content="https://indusiax.com/devis/">
 <meta property="og:image" content="https://indusiax.com/assets/essai/hero.jpg">
 <meta name="robots" content="index,follow">
@@ -198,12 +198,21 @@
           <input id="f-activite" name="activite" maxlength="160" placeholder="Ex. : contrôle réglementaire, maintenance industrielle…">
         </div>
       </div>
+      <div class="row2">
+        <div>
+          <label for="f-siret">SIRET</label>
+          <input id="f-siret" name="siret" maxlength="20" inputmode="numeric"
+                 placeholder="14 chiffres — pour établir le devis">
+        </div>
+        <div></div>
+      </div>
       <div>
         <label for="f-msg">Combien d&rsquo;utilisateurs, et pour quels équipements ? *</label>
         <textarea id="f-msg" name="message" rows="4" maxlength="2000" required
           placeholder="Ex. : 4 techniciens et 1 responsable. Nous contrôlons des chariots élévateurs, des ponts roulants et des racks. Nous aimerions être rappelés en fin de journée."></textarea>
       </div>
       <!-- pot de miel anti-robots : rempli = ignoré -->
+      <input type="hidden" name="origine" value="devis">
       <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
       <p class="form-err" role="alert"></p>
       <button class="btn btn-acc btn-big" type="submit">Demander mon devis</button>
@@ -272,15 +281,5 @@
 
 <script src="/assets/site.js?v=ee8f6e28"></script>
 
-<script>
-  (function () {
-    var f = document.querySelector('form[data-endpoint]');
-    if (!f) return;
-    f.addEventListener('submit', function () {
-      var m = f.querySelector('[name=message]');
-      if (m && m.value.indexOf('[DEVIS]') !== 0) m.value = '[DEVIS] ' + m.value;
-    }, true);
-  })();
-</script>
 </body>
 </html>

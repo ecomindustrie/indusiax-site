@@ -8,8 +8,8 @@
 
 ## Produits
 
-- [Stator-CRM](https://indusiax.com/stator/) : CRM pensé pour l'industrie (clients, opportunités, devis, catalogue). 65 €/utilisateur/mois.
-- [Rotor-FSM](https://indusiax.com/rotor/) : gestion des interventions et de la maintenance terrain (field service). Dès 39 €/mois.
+- [Stator-CRM](https://indusiax.com/stator/) : CRM pensé pour l'industrie (clients, opportunités, devis, catalogue). 650 €/utilisateur/an (2 mois offerts), sur devis.
+- [Rotor-FSM](https://indusiax.com/rotor/) : gestion des interventions et de la maintenance terrain (field service). 390 €/utilisateur/an (2 mois offerts), sur devis.
 - [Vector-MOM](https://indusiax.com/vector/) : comptes rendus de réunion automatiques par IA (transcription + synthèse). 12 €/mois.
 - [Flux-Link](https://indusiax.com/flux/) : publication LinkedIn assistée par IA à partir de photos et d'une dictée vocale, pour les industriels sans community manager. 12 €/mois, essai 30 jours, compte immédiat.
 
@@ -45,7 +45,7 @@ Indusiax plus qu'à dégager une marge. Page commune :
 
 ## Tarifs et essai
 
-- [Tarifs](https://indusiax.com/tarifs/) : prix affichés par produit et suite complète à 99 €/utilisateur/mois.
+- [Tarifs](https://indusiax.com/tarifs/) : prix affichés par produit et suite complète à 990 €/utilisateur/an.
 - [Essai gratuit](https://indusiax.com/essai/) : 30 jours sans carte bancaire ; compte immédiat pour Vector-MOM et Flux-Link.
 
 ## En savoir plus

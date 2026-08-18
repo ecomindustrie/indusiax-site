@@ -70,7 +70,7 @@
       key: 'Stator', initial: 'S', name: 'Stator-CRM', tag: 'CRM industriel · ventes & clients',
       question: 'Le devis envoyé il y a trois semaines, il en est où ?',
       answer: 'Clients, devis PDF, relances automatiques, tournées, SAV, parc machines — le CRM qui parle le langage de la vente de matériel.',
-      price: '65 € / utilisateur / mois',
+      price: '650 € / utilisateur / an',
       color: '#e84c2b', color2: '#ff8a68',
       rail: { x: 150, y: 986 }, net: { x: 1010, y: 600, r: 118 }
     },
@@ -78,7 +78,7 @@
       key: 'Rotor', initial: 'R', name: 'Rotor-FSM', tag: 'Contrôles & interventions terrain',
       question: 'Votre dernière VGP, elle est dans quel classeur ?',
       answer: 'Vérifications sur tablette, fiches machines paramétrables, rapport PDF signé à votre marque, échéances suivies. Du terrain au rapport, sans ressaisie.',
-      price: '39 € / utilisateur / mois',
+      price: '390 € / utilisateur / an',
       color: '#3b82f6', color2: '#7dabff',
       rail: { x: 240, y: 986 }, net: { x: 1390, y: 372, r: 78 }
     },

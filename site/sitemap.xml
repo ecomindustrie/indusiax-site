@@ -23,6 +23,7 @@
        elles manquaient au sitemap. -->
   <url><loc>https://indusiax.com/cgv-stator/</loc><priority>0.4</priority></url>
   <url><loc>https://indusiax.com/cgv-rotor/</loc><priority>0.4</priority></url>
+  <url><loc>https://indusiax.com/cgv-suite/</loc><priority>0.4</priority></url>
   <url><loc>https://indusiax.com/mentions-legales/</loc><priority>0.3</priority></url>
   <url><loc>https://indusiax.com/confidentialite/</loc><priority>0.3</priority></url>
   <url><loc>https://indusiax.com/blog/</loc><priority>0.8</priority></url>

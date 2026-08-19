@@ -19,6 +19,12 @@
   <url><loc>https://indusiax.com/a-propos/</loc><priority>0.5</priority></url>
   <url><loc>https://indusiax.com/securite/</loc><priority>0.6</priority></url>
   <url><loc>https://indusiax.com/contact/</loc><priority>0.5</priority></url>
+  <!-- Pages légales : publiées le 18/08 et liées depuis les 49 pieds de page,
+       elles manquaient au sitemap. -->
+  <url><loc>https://indusiax.com/cgv-stator/</loc><priority>0.4</priority></url>
+  <url><loc>https://indusiax.com/cgv-rotor/</loc><priority>0.4</priority></url>
+  <url><loc>https://indusiax.com/mentions-legales/</loc><priority>0.3</priority></url>
+  <url><loc>https://indusiax.com/confidentialite/</loc><priority>0.3</priority></url>
   <url><loc>https://indusiax.com/blog/</loc><priority>0.8</priority></url>
   <url><loc>https://indusiax.com/blog/logiciels-pme-industrielle-comparatif/</loc><priority>0.7</priority></url>
   <url><loc>https://indusiax.com/blog/logiciel-gestion-interventions-terrain/</loc><priority>0.7</priority></url>

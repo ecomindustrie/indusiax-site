@@ -26,6 +26,19 @@ scp -r site/* root@76.13.138.23:/var/www/indusiax-landing/
 
 (nginx sert les fichiers directement, aucun redémarrage nécessaire)
 
+## Déployer une modification de la configuration nginx
+
+La configuration du conteneur `indusiax-landing` vit dans `deploy/default.conf`
+(montée en lecture seule depuis `/docker/indusiax-landing/default.conf`). Elle
+n'existait que sur le serveur jusqu'au 19/08/2026 : c'est ce qui a laissé passer
+l'absence de `charset utf-8`, qui faisait servir `llms.txt` et `sitemap.xml` sans
+encodage déclaré — donc en mojibake pour tout client qui ne devine pas l'UTF-8.
+
+```bash
+scp deploy/default.conf root@76.13.138.23:/docker/indusiax-landing/default.conf
+ssh root@76.13.138.23 "docker exec indusiax-landing nginx -t && docker restart indusiax-landing"
+```
+
 ## Déployer une modification du service formulaires
 
 ```bash

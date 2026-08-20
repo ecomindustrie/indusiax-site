@@ -226,7 +226,12 @@
     var cDiffAmt = document.getElementById('c-diff-amt');
     var cDiffLabel = document.getElementById('c-diff-label');
     var cDiffBox = document.getElementById('c-diff');
-    var SUITE_PRICE = 99;
+    // Equivalence MENSUELLE du tarif annuel (990 EUR/utilisateur/an / 12),
+    // et non un prix mensuel : la Suite ne se vend plus au mois depuis la
+    // decision D1 du 14/08/2026. Le calculateur compare des depenses
+    // mensuelles saisies par le visiteur, d'ou la conversion plutot que
+    // l'affichage brut de 990. La precision figure sous le resultat.
+    var SUITE_PRICE = 82.5;
     function fmtEur(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
     function recalcSavings() {
       var users = Math.max(1, parseInt(calcEl['c-users'].value, 10) || 1);
@@ -240,7 +245,7 @@
       var diff = now - suite;
       if (diff > 0) {
         cDiffAmt.textContent = fmtEur(diff);
-        cDiffLabel.textContent = "d'économie par mois avec la suite (" + fmtEur(diff * 12) + " par an)";
+        cDiffLabel.textContent = "d'économie par mois au tarif annuel de la Suite (" + fmtEur(diff * 12) + " par an)";
         cDiffBox.classList.remove('calc-neg');
       } else {
         cDiffAmt.textContent = fmtEur(Math.abs(diff));

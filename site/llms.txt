@@ -57,3 +57,11 @@ Indusiax plus qu'à dégager une marge. Page commune :
 - [À propos](https://indusiax.com/a-propos/) : la démarche « By industry, for industry ».
 - [Sécurité & données](https://indusiax.com/securite/) : hébergement UE, confidentialité, sauvegardes.
 - [Contact](https://indusiax.com/contact/) : contact@indusiax.com
+
+## Other languages / Andere talen
+
+The whole site is also available in English and Dutch, page for page.
+
+- [Indusiax in English](https://indusiax.com/en/) : [Pricing](https://indusiax.com/en/pricing/), [Free trial](https://indusiax.com/en/free-trial/), [Quote request](https://indusiax.com/en/quote/), [Blog](https://indusiax.com/en/blog/).
+- [Indusiax in het Nederlands](https://indusiax.com/nl/) : [Prijzen](https://indusiax.com/nl/prijzen/), [Gratis proberen](https://indusiax.com/nl/gratis-proberen/), [Offerteaanvraag](https://indusiax.com/nl/offerte/), [Blog](https://indusiax.com/nl/blog/).
+- The French terms of sale are the only legally binding version; English and Dutch translations are provided for information.

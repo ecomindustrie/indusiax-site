@@ -1,8 +1,79 @@
 /* INDUSIAX — menu mobile + reveal au scroll + formulaires (essai / contact) */
 (function () {
+  /* Langue de la page (fr / en / nl), lue sur <html lang>. Toute chaîne
+     affichée par ce script passe par T() : une modification de texte doit
+     être faite dans les trois langues (règle du 14/10/2026). */
+  var LANG = (document.documentElement.lang || 'fr').slice(0, 2).toLowerCase();
+  if (LANG !== 'en' && LANG !== 'nl') LANG = 'fr';
+  var I18N = {
+    console: {
+      fr: "— By Industry, For Industry. Cet outil aussi, on l'a fabriqué nous-mêmes.",
+      en: '— By Industry, For Industry. We built this tool ourselves too.',
+      nl: '— By Industry, For Industry. Ook deze tool hebben we zelf gebouwd.' },
+    perMonth: { fr: '/mois', en: '/month', nl: '/maand' },
+    saving: {
+      fr: "d'économie par mois au tarif annuel de la Suite ({y} par an)",
+      en: 'saved per month at the Suite annual rate ({y} per year)',
+      nl: 'besparing per maand tegen het jaartarief van de Suite ({y} per jaar)' },
+    even: {
+      fr: "à l'équilibre — et tout est relié, sans ressaisie",
+      en: 'break-even — and everything is connected, no re-keying',
+      nl: 'break-even — en alles is gekoppeld, zonder dubbele invoer' },
+    more: {
+      fr: "de plus qu'aujourd'hui — mais tout est relié, sans ressaisie",
+      en: 'more than today — but everything is connected, no re-keying',
+      nl: 'meer dan nu — maar alles is gekoppeld, zonder dubbele invoer' },
+    trial: { fr: 'Essai gratuit 30 jours', en: '30-day free trial', nl: '30 dagen gratis proberen' },
+    share: { fr: 'Partager cet article', en: 'Share this article', nl: 'Dit artikel delen' },
+    shareLi: { fr: 'Partager sur LinkedIn', en: 'Share on LinkedIn', nl: 'Delen op LinkedIn' },
+    shareX: { fr: 'Partager sur X', en: 'Share on X', nl: 'Delen op X' },
+    copy: { fr: 'Copier le lien', en: 'Copy link', nl: 'Link kopiëren' },
+    copied: { fr: 'Lien copié', en: 'Link copied', nl: 'Link gekopieerd' },
+    play: { fr: 'Lire la vidéo', en: 'Play video', nl: 'Video afspelen' },
+    pause: { fr: 'Mettre en pause la vidéo', en: 'Pause video', nl: 'Video pauzeren' },
+    invalid: { fr: 'Champ invalide.', en: 'Invalid field.', nl: 'Ongeldig veld.' },
+    sending: { fr: 'Envoi en cours…', en: 'Sending…', nl: 'Bezig met verzenden…' },
+    sendFail: {
+      fr: 'Envoi impossible pour le moment — écrivez-nous à contact@indusiax.com',
+      en: 'Unable to send right now — please email us at contact@indusiax.com',
+      nl: 'Verzenden is nu niet mogelijk — mail ons op contact@indusiax.com' },
+    tooMany: {
+      fr: 'Trop de demandes — réessayez dans une heure ou écrivez à contact@indusiax.com',
+      en: 'Too many requests — try again in an hour or email contact@indusiax.com',
+      nl: 'Te veel aanvragen — probeer het over een uur opnieuw of mail naar contact@indusiax.com' },
+    qStator: {
+      fr: ['Commencez par Stator-CRM', "Le CRM industriel, pour ne plus jamais perdre le fil d'un client ou d'un devis."],
+      en: ['Start with Stator-CRM', 'The industrial CRM, so you never lose track of a customer or a quote again.'],
+      nl: ['Begin met Stator-CRM', 'De industriële CRM, zodat u nooit meer het overzicht over een klant of offerte verliest.'] },
+    qRotor: {
+      fr: ['Commencez par Rotor-FSM', 'La démo en libre accès pour vos interventions et contrôles terrain — testez en 3 minutes.'],
+      en: ['Start with Rotor-FSM', 'The open-access demo for your field jobs and inspections — try it in 3 minutes.'],
+      nl: ['Begin met Rotor-FSM', 'De vrij toegankelijke demo voor uw interventies en keuringen — test het in 3 minuten.'] },
+    qVector: {
+      fr: ['Commencez par Vector-MOM', 'Créez votre compte et enregistrez votre première réunion dans 30 secondes.'],
+      en: ['Start with Vector-MOM', 'Create your account and record your first meeting in 30 seconds.'],
+      nl: ['Begin met Vector-MOM', 'Maak uw account aan en neem uw eerste vergadering op binnen 30 seconden.'] },
+    qFlux: {
+      fr: ['Commencez par Flux-Link', "Créez votre compte et publiez votre premier post LinkedIn aujourd'hui."],
+      en: ['Start with Flux-Link', 'Create your account and publish your first LinkedIn post today.'],
+      nl: ['Begin met Flux-Link', 'Maak uw account aan en publiceer vandaag nog uw eerste LinkedIn-post.'] }
+  };
+  function T(key) { var e = I18N[key]; return e ? (e[LANG] || e.fr) : key; }
+  /* Chemin de la page d'essai dans la langue courante (cf. i18n/slugs.json). */
+  var TRIAL_PATH = { fr: '/essai/', en: '/en/free-trial/', nl: '/nl/gratis-proberen/' }[LANG];
+
+  /* Sélecteur de langue : le choix explicite du visiteur est mémorisé dans un
+     cookie « lang » que nginx consulte avant l'en-tête Accept-Language. Sans
+     lui, un néerlandophone qui choisit le français serait renvoyé vers /nl/. */
+  document.querySelectorAll('.lang-sw a[hreflang]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      document.cookie = 'lang=' + a.getAttribute('hreflang') + ';path=/;max-age=31536000;SameSite=Lax';
+    });
+  });
+
   try {
     console.log('%c Indusiax ', 'background:#E84C2B;color:#fff;font-weight:800;padding:3px 8px;border-radius:3px;',
-      '— By Industry, For Industry. Cet outil aussi, on l\'a fabriqué nous-mêmes.');
+      T('console'));
   } catch (e) {}
 
   /* Header à deux états (transparent → posé) + masqué au scroll vers le bas en mobile. */
@@ -232,7 +303,10 @@
     // mensuelles saisies par le visiteur, d'ou la conversion plutot que
     // l'affichage brut de 990. La precision figure sous le resultat.
     var SUITE_PRICE = 82.5;
-    function fmtEur(n) { return Math.round(n).toLocaleString('fr-FR') + ' €'; }
+    function fmtEur(n) {
+      var v = Math.round(n).toLocaleString({ fr: 'fr-FR', en: 'en-GB', nl: 'nl-NL' }[LANG]);
+      return LANG === 'en' ? '€' + v : (LANG === 'nl' ? '€ ' + v : v + ' €');
+    }
     function recalcSavings() {
       var users = Math.max(1, parseInt(calcEl['c-users'].value, 10) || 1);
       var perUser = ['c-crm', 'c-terrain', 'c-cr', 'c-li'].reduce(function (sum, id) {
@@ -240,18 +314,18 @@
       }, 0);
       var now = perUser * users;
       var suite = SUITE_PRICE * users;
-      cTotalNow.innerHTML = fmtEur(now) + '<small>/mois</small>';
-      cTotalSuite.innerHTML = fmtEur(suite) + '<small>/mois</small>';
+      cTotalNow.innerHTML = fmtEur(now) + '<small>' + T('perMonth') + '</small>';
+      cTotalSuite.innerHTML = fmtEur(suite) + '<small>' + T('perMonth') + '</small>';
       var diff = now - suite;
       if (diff > 0) {
         cDiffAmt.textContent = fmtEur(diff);
-        cDiffLabel.textContent = "d'économie par mois au tarif annuel de la Suite (" + fmtEur(diff * 12) + " par an)";
+        cDiffLabel.textContent = T('saving').replace('{y}', fmtEur(diff * 12));
         cDiffBox.classList.remove('calc-neg');
       } else {
         cDiffAmt.textContent = fmtEur(Math.abs(diff));
         cDiffLabel.textContent = diff === 0
-          ? "à l'équilibre — et tout est relié, sans ressaisie"
-          : "de plus qu'aujourd'hui — mais tout est relié, sans ressaisie";
+          ? T('even')
+          : T('more');
         cDiffBox.classList.add('calc-neg');
       }
     }
@@ -273,10 +347,10 @@
   var quizBox = document.getElementById('quiz-box');
   if (quizBox) {
     var QUIZ_INFO = {
-      stator: { title: 'Commencez par Stator-CRM', txt: "Le CRM industriel, pour ne plus jamais perdre le fil d'un client ou d'un devis.", icon: '📇' },
-      rotor: { title: 'Commencez par Rotor-FSM', txt: 'La démo en libre accès pour vos interventions et contrôles terrain — testez en 3 minutes.', icon: '🛠️' },
-      vector: { title: 'Commencez par Vector-MOM', txt: 'Créez votre compte et enregistrez votre première réunion dans 30 secondes.', icon: '🗣️' },
-      flux: { title: 'Commencez par Flux-Link', txt: "Créez votre compte et publiez votre premier post LinkedIn aujourd'hui.", icon: '📣' }
+      stator: { title: T('qStator')[0], txt: T('qStator')[1], icon: '📇' },
+      rotor: { title: T('qRotor')[0], txt: T('qRotor')[1], icon: '🛠️' },
+      vector: { title: T('qVector')[0], txt: T('qVector')[1], icon: '🗣️' },
+      flux: { title: T('qFlux')[0], txt: T('qFlux')[1], icon: '📣' }
     };
     var qSteps = quizBox.querySelectorAll('.quiz-step');
     var qDots = quizBox.querySelectorAll('.qp-dot');
@@ -357,10 +431,10 @@
 
   /* Barre CTA sticky mobile — apparaît après le hero, s'efface près du CTA final. */
   if (window.matchMedia('(max-width: 820px)').matches &&
-      !/^\/essai\/?/.test(location.pathname)) {
+      location.pathname.indexOf(TRIAL_PATH) !== 0) {
     var stickyBar = document.createElement('div');
     stickyBar.className = 'sticky-cta';
-    stickyBar.innerHTML = '<a class="btn btn-acc" href="/essai/">Essai gratuit 30 jours</a>';
+    stickyBar.innerHTML = '<a class="btn btn-acc" href="' + TRIAL_PATH + '">' + T('trial') + '</a>';
     document.body.appendChild(stickyBar);
     var ctaTarget = document.querySelector('.cta-final, #formulaire, #choix');
     var stickyVisible = false;
@@ -502,23 +576,23 @@
     var shareTitle = encodeURIComponent(document.title);
     var rail = document.createElement('div');
     rail.className = 'share-rail';
-    rail.setAttribute('aria-label', 'Partager cet article');
+    rail.setAttribute('aria-label', T('share'));
     rail.innerHTML =
       '<a class="share-btn share-li" href="https://www.linkedin.com/sharing/share-offsite/?url=' + shareUrl +
-      '" target="_blank" rel="noopener" aria-label="Partager sur LinkedIn">in</a>' +
+      '" target="_blank" rel="noopener" aria-label="' + T('shareLi') + '">in</a>' +
       '<a class="share-btn share-x" href="https://twitter.com/intent/tweet?url=' + shareUrl + '&text=' + shareTitle +
-      '" target="_blank" rel="noopener" aria-label="Partager sur X">𝕏</a>' +
-      '<button type="button" class="share-btn share-copy" aria-label="Copier le lien">🔗</button>';
+      '" target="_blank" rel="noopener" aria-label="' + T('shareX') + '">𝕏</a>' +
+      '<button type="button" class="share-btn share-copy" aria-label="' + T('copy') + '">🔗</button>';
     shareArticleBody.parentElement.insertBefore(rail, shareArticleBody);
     var copyBtn = rail.querySelector('.share-copy');
     copyBtn.addEventListener('click', function () {
       if (!navigator.clipboard) return;
       navigator.clipboard.writeText(location.href).then(function () {
         copyBtn.textContent = '✓';
-        copyBtn.setAttribute('aria-label', 'Lien copié');
+        copyBtn.setAttribute('aria-label', T('copied'));
         setTimeout(function () {
           copyBtn.textContent = '🔗';
-          copyBtn.setAttribute('aria-label', 'Copier le lien');
+          copyBtn.setAttribute('aria-label', T('copy'));
         }, 1800);
       }).catch(function () {});
     });
@@ -576,8 +650,8 @@
         heroVideoToggle.hidden = false;
         heroVideoToggle.addEventListener('click', function () {
           heroVideoPaused = !heroVideo.paused;
-          if (heroVideoPaused) { heroVideo.pause(); heroVideoToggle.textContent = '►'; heroVideoToggle.setAttribute('aria-label', 'Lire la vidéo'); }
-          else { heroVideo.play().catch(function () {}); heroVideoToggle.textContent = '❚❚'; heroVideoToggle.setAttribute('aria-label', 'Mettre en pause la vidéo'); }
+          if (heroVideoPaused) { heroVideo.pause(); heroVideoToggle.textContent = '►'; heroVideoToggle.setAttribute('aria-label', T('play')); }
+          else { heroVideo.play().catch(function () {}); heroVideoToggle.textContent = '❚❚'; heroVideoToggle.setAttribute('aria-label', T('pause')); }
         });
       }
     } else {
@@ -599,7 +673,7 @@
     field.classList.remove('shake');
     void field.offsetWidth;
     field.classList.add('shake');
-    fieldErrEl(field).textContent = field.validationMessage || 'Champ invalide.';
+    fieldErrEl(field).textContent = field.validationMessage || T('invalid');
     fieldErrEl(field).classList.add('show');
   }
   function clearFieldError(field) {
@@ -642,9 +716,12 @@
       btn.disabled = true;
       btn.classList.add('loading');
       btn.dataset.label = btn.dataset.label || btn.textContent;
-      btn.textContent = 'Envoi en cours…';
+      btn.textContent = T('sending');
       var payload = {};
       new FormData(form).forEach(function (v, k) { payload[k] = v; });
+      /* Langue du visiteur : un prospect néerlandais doit recevoir sa réponse
+         en néerlandais. Le service /api l'indique dans l'objet de l'email. */
+      payload.langue = LANG;
       try {
         var r = await fetch(form.dataset.endpoint, {
           method: 'POST',
@@ -654,7 +731,10 @@
         if (!r.ok) {
           var d = {};
           try { d = await r.json(); } catch (e) {}
-          throw new Error(d.detail || 'Envoi impossible pour le moment — écrivez-nous à contact@indusiax.com');
+          /* Les messages d'erreur du service sont en français : hors FR, on
+             affiche le nôtre, traduit. */
+          if (LANG !== 'fr') throw new Error(r.status === 429 ? T('tooMany') : T('sendFail'));
+          throw new Error(d.detail || T('sendFail'));
         }
         var ok = document.getElementById(form.dataset.success || 'form-ok');
         if (ok) {

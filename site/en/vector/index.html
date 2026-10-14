@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vector-MOM — AI meeting minutes, hosted in Europe | Indusiax</title>
+<meta name="description" content="Stay in the conversation while the AI takes the notes. Vector-MOM transcribes your meetings (who said what) and writes the minutes — and your recordings never leave our European servers. €120/user/year (2 months free) or €12/month, 30-day trial, instant account.">
+<link rel="canonical" href="https://indusiax.com/en/vector/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/">
+<link rel="alternate" hreflang="en" href="https://indusiax.com/en/vector/">
+<link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/vector/">
+<link rel="alternate" hreflang="x-default" href="https://indusiax.com/vector/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=35e9a8dd">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vector-MOM — AI meeting minutes, hosted in Europe">
+<meta property="og:description" content="The AI transcribes your meetings and writes structured minutes. Your recordings stay in Europe. 30-day trial, instant account.">
+<meta property="og:url" content="https://indusiax.com/en/vector/">
+<meta property="og:image" content="https://indusiax.com/assets/social/vector.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/vector.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vector-MOM","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Automatic AI meeting minutes: transcription, speaker identification, structured notes, sharing and CRM integration. Data hosted in Europe.","url":"https://indusiax.com/en/vector/","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR","description":"€120 excl. VAT per user per year (2 months free), or €12 excl. VAT per month; 30-day free trial"}}
+</script>
+<style>
+/* maquette compte-rendu (transcript + décisions) */
+.mom .who{display:flex;gap:10px;padding:8px 0;font-size:.8rem;color:#2a3742;align-items:flex-start;}
+.mom .who .sp{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.03em;color:#fff;background:var(--p2);border-radius:3px;padding:3px 6px;white-space:nowrap;flex-shrink:0;}
+.mom .who .sp.b{background:#5b6b7a;}
+.mom .dec{margin-top:12px;padding-top:12px;border-top:2px solid var(--pline);}
+.mom .dec .h{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:#67717c;margin-bottom:8px;}
+.mom .dec .d{display:flex;align-items:center;gap:9px;font-size:.8rem;color:#24303c;padding:4px 0;}
+.mom .dec .d .pastille{width:12px;height:12px;}
+.mom .tag{margin-top:13px;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;color:#5a8f5f;}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes momIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .mom .who,.mom .dec,.mom .tag{opacity:0;animation:momIn .4s ease forwards;}
+  .mom .who:nth-of-type(1){animation-delay:.9s;}
+  .mom .who:nth-of-type(2){animation-delay:1.15s;}
+  .mom .who:nth-of-type(3){animation-delay:1.4s;}
+  .mom .dec{animation-delay:1.65s;}
+  .mom .dec .d{opacity:0;transform:scale(.7);animation:decPop .3s cubic-bezier(.34,1.56,.64,1) forwards;}
+  @keyframes decPop{to{opacity:1;transform:scale(1);}}
+  .mom .dec .d:nth-of-type(1){animation-delay:1.85s;}
+  .mom .dec .d:nth-of-type(2){animation-delay:2s;}
+  .mom .tag{animation-delay:2.2s;}
+}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/en/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales</i></span></span>
+      <span class="nav-item"><a href="/en/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field service jobs, PDF reports</i></span></span>
+      <span class="nav-item"><a class="on" href="/en/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, in Europe</i></span></span>
+      <span class="nav-item"><a href="/en/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts dictated and written by AI</i></span></span>
+      <a href="/en/pricing/">Pricing</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/tools/">Tools</a>
+      <a href="/en/about/">About</a>
+        <a class="nav-cta-mobile" href="/en/free-trial/">30-day free trial</a>
+      <!--i18n-sw--><div class="lang-sw lang-sw-m" role="navigation" aria-label="Language"><a href="/vector/" hreflang="fr" lang="fr">FR</a><a href="/en/vector/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/vector/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    </nav>
+    <!--i18n-sw--><div class="lang-sw" role="navigation" aria-label="Language"><a href="/vector/" hreflang="fr" lang="fr">FR</a><a href="/en/vector/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/vector/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    <a class="btn btn-acc nav-cta" href="https://vector.indusiax.com/register">30-day free trial</a>
+</div>
+</header>
+
+<main class="pv" style="--p:#A78BFA;--p2:#7c3aed">
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/vector/hero.webp" type="image/webp"><img src="/assets/vector/hero.jpg" alt="Team meeting at an industrial SME, with a smartphone recording" fetchpriority="high"></picture></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Stay in the conversation. <span class="ac">The AI takes the notes.</span></h1>
+      <p class="sub">Customer meeting, team catch-up, Teams or Meet call: Vector-MOM records, transcribes with speaker labels, and writes structured minutes using your own templates. You review, you share — and your recordings never leave Europe.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Create my account — start right away</a>
+        <a class="btn btn-ghost btn-big" href="/en/pricing/">€120 /user/year — 2 months free</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Account ready in 30 seconds · no card</div>
+        <div class="pv-chips">
+          <span class="pv-chip">🇪🇺 Hosted in Europe</span><span class="pv-chip">Who said what</span>
+          <span class="pv-chip">Teams · Meet · Zoom</span><span class="pv-chip">Word export</span>
+        </div>
+      </div>
+    </div>
+    <div class="pv-card mom" aria-label="Preview of meeting minutes">
+      <div class="ch"><span class="t">MINUTES</span><span class="a">Site meeting</span></div>
+      <div class="cb">
+        <div class="who"><span class="sp">YOU</span><span>We need the aerial platform delivered before the 14th, otherwise the schedule falls apart.</span></div>
+        <div class="who"><span class="sp b">CUSTOMER</span><span>The 14th is fine, provided we sign off on HGV access.</span></div>
+        <div class="who"><span class="sp b">WORKSHOP MANAGER</span><span>I'll sort out the access and confirm tomorrow morning.</span></div>
+        <div class="dec">
+          <div class="h">Decisions &amp; actions</div>
+          <div class="d"><span class="pastille p-ok"></span> Platform delivery confirmed — 14 June</div>
+          <div class="d"><span class="pastille p-aa"></span> Sign off HGV access — workshop manager, D+1</div>
+        </div>
+        <div class="tag">🔒 Transcribed &amp; stored on our European servers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN STORY -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:22px">Why Vector exists</span>
+    <div class="pv-origin">
+      <p class="lead">Our meetings are our own business: job sites, disputes, prices, staff. The kind of thing you <b>do not send to an American cloud giant</b> to be transcribed.</p>
+      <p>Every meeting-minutes tool we tested shipped our recordings off who knows where. Unacceptable when the subject is a confidential quote or an HR case. So we built our own: transcription runs on our own servers, in Europe, and nothing leaves. It is automatic minutes an industrial company can use with a clear conscience.</p>
+      <div class="sig">By Industry, For Industry — the Indusiax team</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIDENTIALITÉ -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Your meetings stay yours</span>
+    <h2 class="sec" style="text-align:left;max-width:680px">Confidential. And they stay that way.</h2>
+    <div class="grid c3" style="margin-top:36px">
+      <div class="card"><span class="ic">🎧</span><h3>Transcribed in-house</h3><p>Audio is transcribed <b style="color:var(--txt)">on our own servers</b>, in Europe. Never sent to a third-party transcription service — unlike most tools on the market.</p></div>
+      <div class="card"><span class="ic">🇪🇺</span><h3>Stored in Europe</h3><p>Recordings, transcripts and minutes live on servers in the EU, subject to European law. Backed up every night, with an off-site copy. <a href="/en/security/" style="color:var(--acc);font-weight:600">Security page →</a></p></div>
+      <div class="card"><span class="ic">🗑️</span><h3>Truly yours</h3><p>One-click export (Word, Markdown, transcript), permanent deletion at any time — audio included. If you leave, you take everything with you, and nothing is left behind.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="pv-band">
+  <picture><source srcset="/assets/vector/band.webp" type="image/webp"><img src="/assets/vector/band.jpg" alt="Two professionals in a technical discussion over workshop drawings" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">From speech to minutes</span>
+    <h2>You run the meeting. Vector writes while you do.</h2>
+    <p>Microphone only for in-person meetings, or microphone + call audio to capture everyone — and the AI files each decision in the right place.</p>
+  </div>
+</div>
+
+<!-- COMMENT / FONCTIONS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">How it works</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">From speech to minutes, without a keyboard.</h2>
+    <div class="grid c3" style="margin-top:36px">
+      <div class="card"><span class="ic">🎙️</span><h3>Simple recording</h3><p>Microphone only for in-person meetings, or microphone + call audio (Meet, Teams, Zoom web) to capture every participant.</p></div>
+      <div class="card"><span class="ic">🗣️</span><h3>Who said what</h3><p>The transcript tells your voice apart from the other speakers' — so the minutes attribute decisions to the right people.</p></div>
+      <div class="card"><span class="ic">📝</span><h3>Structured notes</h3><p>The AI writes to your templates: decision log, action list, visit report… you choose the format.</p></div>
+      <div class="card"><span class="ic">📅</span><h3>Linked to your calendar</h3><p>Connect Google or Outlook: today's appointments appear, and the meeting is created in one click with the right participants.</p></div>
+      <div class="card"><span class="ic">🔗</span><h3>Share with a link</h3><p>Send read-only minutes to anyone who was not there — no attachments, no copy and paste.</p></div>
+      <div class="card"><span class="ic">🧲</span><h3>Into your CRM</h3><p>With Stator-CRM, the minutes of a customer meeting go straight into that customer's record.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Who it is for</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Made for meetings where decisions get made.</h2>
+    <div class="pv-aud" style="margin-top:40px">
+      <div class="pv-photo">
+        <picture><source srcset="/assets/vector/audience.webp" type="image/webp"><img src="/assets/vector/audience.jpg" alt="Site meeting in hard hats, reviewing on a tablet" loading="lazy"></picture>
+        <div class="badge">
+          <span class="eb">What really matters</span>
+          <h3>Clear minutes mean one dispute fewer.</h3>
+          <p>“So what did we agree, again?” — the question that costs money. Attributed, dated and shared minutes settle it for everyone.</p>
+        </div>
+      </div>
+      <div class="pv-audlist">
+        <div class="pv-aud-i"><div class="k">01</div><div><h3>Managing directors &amp; project managers</h3><p>Site meetings, deal reviews, supplier meetings: decisions in writing, without spending the evening on it.</p></div></div>
+        <div class="pv-aud-i"><div class="k">02</div><div><h3>Technical sales reps</h3><p>Visit report dictated on the way out of the meeting, filed in the right place (and in the CRM with Stator).</p></div></div>
+        <div class="pv-aud-i"><div class="k">03</div><div><h3>Engineering &amp; quality departments</h3><p>Long technical meetings: the structured template produces a decision log you can actually use.</p></div></div>
+        <div class="pv-aud-i"><div class="k">04</div><div><h3>Anyone who values confidentiality</h3><p>HR, management, legal: sensitive subjects that must stay in Europe, on our servers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIF + CTA -->
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Pricing</span>
+    <h2 class="sec">Start right away, at a down-to-earth price.</h2>
+    <div style="max-width:440px;margin:32px auto 0">
+      <div class="price-card bundle" style="position:relative;text-align:center">
+        <span class="badge-eco">Instant account · no card</span>
+        <h3 class="t-vector" style="margin-top:6px">Vector-MOM</h3>
+        <div class="amount" style="margin:4px auto 0">€120<small> excl. VAT / user / year</small></div>
+        <div class="per"><b style="color:var(--txt)">2 months free on annual billing</b> — that is €10/month. Or €12/month on monthly billing. Unlimited meetings, everything included.</div>
+        <ul style="text-align:left">
+          <li>“Who said what” transcription</li>
+          <li>Structured AI minutes</li>
+          <li>Google &amp; Outlook calendars</li>
+          <li>🇪🇺 Hosting &amp; transcription in Europe</li>
+          <li>French, English, Dutch</li>
+        </ul>
+        <a class="btn btn-acc" style="align-self:center" href="https://vector.indusiax.com/register">Create my free account</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Refer a colleague: +15 days for them, 1 month free for you.</p>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">We built it for our meetings. Use it for yours.</span>
+    <h2>Your next meeting deserves proper minutes.</h2>
+    <p>Account ready in 30 seconds, 30-day full trial.</p>
+    <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Create my free account</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div><h4>Products</h4><span class="fdot" style="--dc:var(--stator)"></span><a href="/en/stator/">Stator-CRM</a><span class="fdot" style="--dc:var(--rotor)"></span><a href="/en/rotor/">Rotor-FSM</a><span class="fdot" style="--dc:var(--vector)"></span><a href="/en/vector/">Vector-MOM</a><span class="fdot" style="--dc:var(--flux)"></span><a href="/en/flux/">Flux-Link</a><h4 class="foot-sous"><a href="/en/tools/">Tools</a></h4><span class="fdot" style="--dc:var(--contiax)"></span><a href="/en/contiax/">Contiax</a><span class="fdot" style="--dc:var(--cartes)"></span><a href="/en/nfc-cards/">NFC cards</a></div>
+      <div><h4>Indusiax</h4><a href="/en/pricing/">Pricing</a><a href="/en/blog/">Blog</a><a href="/en/tools/">Tools</a><a href="/en/about/">About</a><a href="/en/contact/">Contact</a><a href="/en/free-trial/">Free trial</a></div>
+      <div><h4>Legal</h4><a href="/en/legal-notice/">Legal notice</a><a href="/en/privacy/">Privacy</a><a href="/en/security/">Security &amp; data</a><a href="/en/terms-stator/">Stator-CRM terms of sale</a><a href="/en/terms-rotor/">Rotor-FSM terms of sale</a><a href="/en/terms-suite/">Full suite terms of sale</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=86b04177"></script>
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotor-FSM — De software voor keuringsbedrijven & VGP | Indusiax</title>
+<meta name="description" content="Van keuring ter plaatse tot ondertekend pdf-rapport, zonder dubbele invoer. Rotor-FSM zet uw controles ter plaatse om in professionele rapporten in uw eigen huisstijl. Voor VGP-dienstverleners (VGP: verplichte periodieke keuringen in Frankrijk), onderhoudsbedrijven en keuringsinstanties. € 390/gebruiker/jaar (2 maanden gratis), op offerte. 30 dagen proberen.">
+<link rel="canonical" href="https://indusiax.com/rotor/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rotor-FSM — De software voor keuringsbedrijven & VGP">
+<meta property="og:description" content="Van keuring ter plaatse tot ondertekend rapport, zonder dubbele invoer. In uw huisstijl, klaar voor de klant. Directe online demo.">
+<meta property="og:url" content="https://indusiax.com/rotor/">
+<meta property="og:image" content="https://indusiax.com/assets/social/rotor.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/rotor.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Rotor-FSM",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "Keurings- en VGP-software (verplichte periodieke keuringen in Frankrijk) voor industriële dienstverleners: controles ter plaatse op tablet, instelbare keuringsfiches, pdf-rapporten in de huisstijl van de dienstverlener, opvolging van wettelijke vervaldata.",
+  "url": "https://indusiax.com/rotor/",
+  "offers": {"@type": "Offer", "price": "390.00", "priceCurrency": "EUR", "description": "€ 390 excl. btw per gebruiker per jaar (2 maanden gratis), vooraf betaald; uitsluitend voor professionals, abonnement op offerte; 30 dagen gratis proberen"}
+}
+</script>
+<style>
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-500.woff2') format('woff2');font-weight:500;font-display:swap;}
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-700.woff2') format('woff2');font-weight:700;font-display:swap;}
+/* ── Page ROTOR : éléments riches (charte site + accent bleu rotor) ── */
+.r{--r:#3B82F6;--r-deep:#2563EB;--ok:#22c55e;--aa:#E0A128;--nc:#ef4444;
+  --mono:'JBMono',ui-monospace,Consolas,monospace;--paper:#fff;--pink:#10161d;--pline:#c7d2dd;}
+.r .mono{font-family:var(--mono);}
+.r .eb{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--r);display:inline-flex;align-items:center;gap:9px;}
+.r .eb::before{content:"";width:22px;height:2px;background:var(--r);display:inline-block;}
+.pastille{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);display:inline-block;}
+.p-ok{background:var(--ok);}.p-aa{background:var(--aa);}.p-nc{background:var(--nc);}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes pastillePop{from{transform:scale(0);}60%{transform:scale(1.2);}to{transform:scale(1);}}
+  .vrow .pastille{transform:scale(0);animation:pastillePop .4s cubic-bezier(.34,1.56,.64,1) forwards;}
+  .vrow:nth-of-type(1) .pastille{animation-delay:.9s;}
+  .vrow:nth-of-type(2) .pastille{animation-delay:1.05s;}
+  .vrow:nth-of-type(3) .pastille{animation-delay:1.2s;}
+  .vrow:nth-of-type(4) .pastille{animation-delay:1.35s;}
+  table.mk tbody tr .pastille{opacity:0;transform:scale(0);
+    transition:opacity .3s ease,transform .35s cubic-bezier(.34,1.56,.64,1);}
+  table.mk.in tbody tr .pastille{opacity:1;transform:scale(1);}
+  table.mk.in tbody tr:nth-child(1) .pastille{transition-delay:.05s;}
+  table.mk.in tbody tr:nth-child(2) .pastille{transition-delay:.15s;}
+  table.mk.in tbody tr:nth-child(3) .pastille{transition-delay:.25s;}
+  table.mk.in tbody tr:nth-child(4) .pastille{transition-delay:.35s;}
+  table.mk.in tbody tr:nth-child(5) .pastille{transition-delay:.45s;}
+}
+
+/* HERO photo */
+.r-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bord);}
+.r-hero .bg{position:absolute;inset:0;z-index:0;}
+.r-hero .bg img{width:100%;height:100%;object-fit:cover;}
+.r-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 60%,#080b1020 100%);}
+.r-hero-in{position:relative;z-index:2;padding:78px 0 84px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;}
+.r-hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin:16px 0 20px;}
+.r-hero h1 .ac{color:var(--r);}
+.r-hero .sub{font-size:clamp(1rem,1.9vw,1.18rem);color:var(--mut);max-width:52ch;}
+.r-hero .ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.r-trust{margin-top:34px;padding-top:20px;border-top:1px solid var(--bord);}
+.r-trust .lb{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);}
+.r-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.r-chip{font-family:var(--mono);font-size:.72rem;color:var(--mut);border:1px solid var(--bord);border-radius:3px;padding:5px 10px;}
+/* verdict card */
+.verdict{background:var(--paper);color:var(--pink);border-radius:8px;border:1px solid var(--pline);overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);justify-self:end;width:100%;max-width:390px;}
+.verdict .vh{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;background:var(--r);color:#fff;}
+.verdict .vh .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;}
+.verdict .vh .a{font-family:var(--mono);font-size:.66rem;opacity:.85;}
+.verdict .vb{padding:15px 17px 17px;}
+.vrow{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed var(--pline);font-size:.82rem;color:#24303c;}
+.vrow:last-of-type{border-bottom:0;}.vrow .l{flex:1;}
+.vsc{display:flex;align-items:center;gap:13px;margin-top:12px;padding-top:13px;border-top:2px solid var(--pline);}
+.gauge{width:56px;height:56px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--ok) 94%,var(--pline) 0);display:grid;place-items:center;}
+.gauge span{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.82rem;}
+.vsc .m{font-family:var(--mono);font-size:.7rem;color:#556;line-height:1.5;}.vsc .m b{color:var(--ok);}
+.stamp{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.08em;color:var(--ok);border:2px solid var(--ok);border-radius:3px;padding:6px 9px;transform:rotate(-4deg);}
+@media(max-width:900px){.r-hero-in{grid-template-columns:1fr;gap:28px;padding:52px 0 60px;}.verdict{justify-self:start;max-width:410px;}.r-hero .bg::after{background:linear-gradient(180deg,#080b10e6,#080b10aa);}}
+
+/* comment + tablet */
+.r-two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+.r-shot{border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);}
+.r-shot img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
+.r-steps{display:grid;gap:20px;}
+.r-step{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;}
+.r-step .n{font-family:var(--mono);font-weight:700;font-size:.9rem;color:#fff;background:var(--r);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;}
+.r-step h3{font-size:1.05rem;margin:2px 0 5px;}.r-step p{font-size:.92rem;color:var(--mut);}
+@media(max-width:860px){.r-two{grid-template-columns:1fr;gap:30px;}.r-two .r-shot{order:-1;}}
+
+/* image band */
+.r-band{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center;}
+.r-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.r-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#080b10ec 0%,#080b10b0 46%,#080b1055 100%);}
+.r-band .in{position:relative;z-index:2;padding:64px 0;max-width:620px;}
+.r-band h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 12px;}
+.r-band p{font-family:var(--mono);font-size:.86rem;color:var(--mut);}
+
+/* report mockup */
+.r-rep{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;}
+.r-legend{display:grid;gap:10px;margin-top:24px;}
+.r-legend .lg{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--mut);}
+.r-legend code{font-family:var(--mono);font-size:.72rem;color:var(--mut2);margin-left:auto;}
+.mock{background:var(--paper);color:var(--pink);border:1px solid var(--pline);border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.5);padding:24px;}
+.mock .mh{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:13px;border-bottom:2px solid var(--r);}
+.mock .lg2{font-weight:800;font-size:1.05rem;color:var(--r);}
+.mock .lg2 small{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:#8794a1;font-weight:500;}
+.mock .tt{text-align:right;font-weight:800;font-size:.9rem;color:var(--r);}
+.mock .tt small{display:block;font-family:var(--mono);font-size:.58rem;color:#8794a1;font-weight:500;}
+table.mk{width:100%;border-collapse:collapse;margin-top:14px;font-size:.72rem;}
+table.mk th{background:var(--r);color:#fff;font-family:var(--mono);font-weight:500;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 9px;text-align:left;}
+table.mk th:last-child,table.mk td:last-child{text-align:center;width:60px;}
+table.mk td{padding:7px 9px;border-bottom:1px solid #e4eaf0;color:#2a3742;}
+table.mk .sub td{background:#eef2f6;font-weight:700;font-family:var(--mono);font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;color:var(--r);}
+table.mk .pastille{margin:0 auto;}
+.mk-f{display:flex;align-items:center;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid #e4eaf0;}
+.mk-bar{flex:1;height:11px;background:#eef2f6;border-radius:6px;overflow:hidden;}
+.mk-bar i{display:block;height:100%;width:91%;background:linear-gradient(90deg,var(--ok),#37b06e);}
+.mk-f .sc{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ok);}
+@media(max-width:860px){.r-rep{grid-template-columns:1fr;gap:32px;}}
+
+/* parc */
+.r-parc{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.r-parc-track{display:flex;gap:16px;width:max-content;}
+.r-parc-track .mc{flex:0 0 220px;}
+@media(prefers-reduced-motion:no-preference){
+  .r-parc-track{animation:rParcScroll 32s linear infinite;}
+  @keyframes rParcScroll{to{transform:translateX(-50%);}}
+  .r-parc:hover .r-parc-track,.r-parc:focus-within .r-parc-track{animation-play-state:paused;}
+}
+@media(prefers-reduced-motion:reduce){
+  .r-parc{overflow-x:auto;padding-bottom:10px;-webkit-mask-image:none;mask-image:none;}
+  .r-parc-track{scroll-snap-type:x proximity;}
+  .r-parc-track .mc[aria-hidden]{display:none;}
+}
+.mc{scroll-snap-align:start;background:var(--paper);border:1px solid var(--pline);border-radius:6px;overflow:hidden;}
+.mc .im{background:#fff;padding:10px;}.mc .im img{width:100%;height:auto;}
+.mc .cap{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-top:1px solid #e7ecf1;}
+.mc .cap .l{font-weight:700;font-size:.86rem;color:var(--pink);}
+.mc .cap .f{font-family:var(--mono);font-size:.62rem;color:#fff;background:var(--r);border-radius:2px;padding:3px 7px;}
+
+/* pour qui */
+.r-aud{display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;align-items:stretch;}
+.r-photo{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);min-height:100%;}
+.r-photo img{width:100%;height:100%;object-fit:cover;}
+.r-photo .badge{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(8,11,16,.82);backdrop-filter:blur(6px);border:1px solid var(--bord);border-radius:10px;padding:15px 17px;}
+.r-photo .badge h3{font-size:1.02rem;margin:8px 0 6px;}
+.r-photo .badge p{font-size:.82rem;color:var(--mut);}
+.r-photo .badge .ref{margin-top:9px;font-family:var(--mono);font-size:.64rem;color:var(--r);}
+.r-audlist{display:grid;gap:13px;align-content:center;}
+.r-aud-i{display:flex;gap:14px;background:var(--bg2);border:1px solid var(--bord);border-radius:12px;padding:17px 19px;}
+.r-aud-i .k{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--r);}
+.r-aud-i h3{font-size:1rem;margin-bottom:3px;}.r-aud-i p{font-size:.88rem;color:var(--mut);}
+@media(max-width:860px){.r-aud{grid-template-columns:1fr;}.r-photo{min-height:340px;}}
+
+/* pricing 2-cols */
+.r-prices{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:780px;margin:0 auto;}
+@media(max-width:640px){.r-prices{grid-template-columns:1fr;}}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Klanten, offertes, opvolging, routes, after-sales</i></span></span>
+      <span class="nav-item"><a class="on" href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Keuringen en buitendienstopdrachten, pdf-rapporten</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Vergaderverslagen met AI, in Europa</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn-berichten, ingesproken en door AI uitgeschreven</i></span></span>
+      <a href="/tarifs/">Prijzen</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">Over ons</a>
+        <a class="nav-cta-mobile" href="/essai/">30 dagen gratis proberen</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Demo bekijken</a>
+</div>
+</header>
+
+<main class="r">
+
+<!-- HERO -->
+<section class="r-hero">
+  <div class="bg"><picture><source srcset="/assets/rotor/hero.webp" type="image/webp"><img src="/assets/rotor/hero.jpg" alt="Technicus die met een tablet een heftruck inspecteert in een magazijn" fetchpriority="high"></picture></div>
+  <div class="wrap r-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Van keuring ter plaatse tot ondertekend rapport. <span class="ac">Zonder dubbele invoer.</span></h1>
+      <p class="sub">Keur ter plaatse, laat ondertekenen, verstuur. Rotor-FSM stelt het rapport op terwijl u uw materiaal opruimt — professioneel, in uw huisstijl, klaar voor de klant. Uw avonden zijn niet langer voor papierwerk.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Bekijk de live demo →</a>
+        <a class="btn btn-ghost btn-big" href="/devis/?produit=rotor">Offerte aanvragen</a>
+      </div>
+      <p style="margin-top:12px;font-size:.85rem;color:var(--mut2)">
+        € 390 /gebruiker/jaar — 2 maanden gratis · <a href="#tarifs" style="color:var(--acc);text-decoration:underline;text-underline-offset:3px">prijzen bekijken</a>
+      </p>
+      <div class="r-trust">
+        <div class="lb">Eén tool voor uw hele machinepark</div>
+        <div class="r-chips">
+          <span class="r-chip">VGP hijsmiddelen</span><span class="r-chip">Automatische deuren</span>
+          <span class="r-chip">Stellingen</span><span class="r-chip">Perslucht</span>
+          <span class="r-chip">Brandbeveiliging</span><span class="r-chip">Valbeveiliging (PBM)</span>
+        </div>
+      </div>
+    </div>
+    <div class="verdict" aria-label="Voorbeeld van een keuringsrapport">
+      <div class="vh"><span class="t">KEURINGSFICHE</span><span class="a">ARC · 2026-0142</span></div>
+      <div class="vb">
+        <div class="vrow"><span class="l">Lastplaat &amp; capaciteit</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Bedrijfsrem (test onder last)</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Hydraulisch circuit / lekken</span><span class="pastille p-aa"></span></div>
+        <div class="vrow"><span class="l">Eindschakelaars &amp; lastbegrenzer</span><span class="pastille p-ok"></span></div>
+        <div class="vsc">
+          <div class="gauge" data-pct="94"><span>94%</span></div>
+          <div class="m">Conformiteits-<br>score<br><b>GESCHIKT</b></div>
+          <div class="stamp">CONFORM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEME -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Wat er verandert, vanaf morgen</span>
+    <h2 class="sec">Vaarwel tijdverlies, welkom snelheid en nauwkeurigheid.</h2>
+    <p class="sec-sub">Keuren is uw expertise. Dubbele invoer, opmaak en opvolging zijn wat aan uw marges knaagt en uw facturen vertraagt. Rotor-FSM schrapt alles wat niet tot uw vak behoort.</p>
+    <div class="grid c3">
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">01 · TIJDVERLIES</span><h3 style="margin-top:10px">Gedaan met dubbele invoer</h3><p>Overdag notities ter plaatse, 's avonds alles overtikken in Word of Excel: elk rapport kostte u twee keer. Hier bestaat het maar één keer — ter plaatse.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">02 · GELOOFWAARDIGHEID</span><h3 style="margin-top:10px">Een onberispelijk resultaat</h3><p>Op het document dat de klant ontvangt, beoordeelt hij uw professionaliteit — en beslist hij of hij u volgend jaar opnieuw inschakelt. Geef hem een verzorgd rapport, bij elke opdracht identiek.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">03 · OPVOLGING</span><h3 style="margin-top:10px">Nooit meer een vervaldatum vergeten</h3><p>Wie moet opnieuw gekeurd worden, en wanneer? Rotor-FSM volgt de keuringstermijnen voor u op. Een gemiste vervaldatum is een contract dat wegglipt: laat het niet meer gebeuren.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Hoe het werkt</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Drie handelingen. Van de parkeerplaats van de klant tot in zijn mailbox.</h2>
+    <div class="r-two" style="margin-top:44px">
+      <div class="r-shot"><picture><source srcset="/assets/rotor/tablet.webp" type="image/webp"><img src="/assets/rotor/tablet.jpg" alt="Gehandschoende handen met een industriële tablet ter plaatse" loading="lazy"></picture></div>
+      <div class="r-steps">
+        <div class="r-step"><div class="n">1</div><div><h3>Keur op tablet</h3><p>Vink de toestand aan, voer de metingen in, neem de foto's. Alles past in uw hand — zelfs zonder netwerk: werkplaats, kelder, gebied zonder bereik.</p></div></div>
+        <div class="r-step"><div class="n">2</div><div><h3>Rotor-FSM schrijft</h3><p>Markeringen conform / niet-conform, berekende conformiteitsscore, samenvatting van de gebreken voorgesteld door AI. U leest na, u keurt goed.</p></div></div>
+        <div class="r-step"><div class="n">3</div><div><h3>Onderteken, verstuur</h3><p>De klant tekent op het scherm. De pdf gaat per mail weg, in uw huisstijl. Niets meer in het net overschrijven, niet meer terug naar kantoor.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="r-band">
+  <picture><source srcset="/assets/rotor/band.webp" type="image/webp"><img src="/assets/rotor/band.jpg" alt="Industrieel magazijn met stellingen en een heftruck" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">Opvolging die loont</span>
+    <h2>Elk toestel van uw klanten heeft een vervaldatum. Rotor-FSM vergeet ze nooit.</h2>
+    <p>VGP-termijnen (verplichte periodieke keuringen in Frankrijk) automatisch opgevolgd — u belt de klant terug voordat hij aan een concurrent denkt.</p>
+  </div>
+</div>
+
+<!-- RAPPORT -->
+<section class="alt">
+  <div class="wrap r-rep">
+    <div>
+      <span class="eb" style="margin-bottom:14px">Het eindproduct</span>
+      <h2 class="sec" style="text-align:left">Het rapport waarmee u het volgende contract binnenhaalt.</h2>
+      <p style="color:var(--mut);max-width:52ch;margin-top:14px">Wettelijke VGP-structuur, heldere kleurcode, schema van het toestel, conformiteitsscore. Het document dat u boven de Word-rapporten uittilt — en dat de klant zorgvuldig bewaart.</p>
+      <div class="r-legend">
+        <div class="lg"><span class="pastille p-ok"></span> Correct — geschikt voor gebruik <code>C</code></div>
+        <div class="lg"><span class="pastille p-aa"></span> Te verbeteren — onder toezicht <code>AA</code></div>
+        <div class="lg"><span class="pastille p-nc"></span> Niet-conform — actie vereist <code>NC</code></div>
+      </div>
+    </div>
+    <div class="mock" aria-label="Fragment uit een pdf-keuringsrapport">
+      <div class="mh">
+        <div class="lg2">UW MERK<small>IN UW KLEUREN</small></div>
+        <div class="tt">KEURINGSRAPPORT<small>PERIODIEK — VGP</small></div>
+      </div>
+      <table class="mk">
+        <thead><tr><th>Onderdelen</th><th>Toestand</th></tr></thead>
+        <tbody>
+          <tr class="sub"><td colspan="2">Hijsorganen</td></tr>
+          <tr><td>Slijtage van de vorkhiel</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Kettingen, assen en kettingwielen</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Hydraulisch circuit, lekken</td><td><span class="pastille p-aa"></span></td></tr>
+          <tr class="sub"><td colspan="2">Remmen &amp; veiligheid</td></tr>
+          <tr><td>Bedrijfsrem onder last</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Beschermdak, veiligheidsgordel</td><td><span class="pastille p-ok"></span></td></tr>
+        </tbody>
+      </table>
+      <div class="mk-f"><span class="mono" style="font-size:.62rem;color:#54636f">CONFORMITEITSSCORE</span><div class="mk-bar" data-pct="91"><i></i></div><span class="sc">91%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARC -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Eén machinepark, één app</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Elke machine heeft haar fiche. Kant-en-klaar.</h2>
+    <p style="color:var(--mut);max-width:56ch;margin:12px 0 36px">Sjablonen ontworpen voor het werk ter plaatse en afgestemd op de wettelijke keuringstermijnen. En een editor om uw eigen sjablonen te maken — zonder één regel code te schrijven.</p>
+    <div class="r-parc">
+      <div class="r-parc-track">
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="Schema heftruck" loading="lazy"></div><div class="cap"><span class="l">Heftruck</span><span class="f">VGP 6 maanden</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="Schema rolbrug" loading="lazy"></div><div class="cap"><span class="l">Rolbrug / takel</span><span class="f">VGP 12 maanden</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="Schema hoogwerker" loading="lazy"></div><div class="cap"><span class="l">Hoogwerker</span><span class="f">VGP 6 maanden</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="Schema stelling" loading="lazy"></div><div class="cap"><span class="l">Stelling</span><span class="f">EN 15635</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="Schema brandblusser" loading="lazy"></div><div class="cap"><span class="l">Brandblusser</span><span class="f">Jaarlijkse keuring</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="Schema valbeveiligings-PBM" loading="lazy"></div><div class="cap"><span class="l">Valbeveiliging (PBM)</span><span class="f">Jaarlijkse keuring</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Heftruck</span><span class="f">VGP 6 maanden</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Rolbrug / takel</span><span class="f">VGP 12 maanden</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Hoogwerker</span><span class="f">VGP 6 maanden</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Stelling</span><span class="f">EN 15635</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Brandblusser</span><span class="f">Jaarlijkse keuring</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Valbeveiliging (PBM)</span><span class="f">Jaarlijkse keuring</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Functies</span>
+    <h2 class="sec">Alles wat een keuringsbedrijf verwacht van een tool voor op het terrein.</h2>
+    <div class="grid c4" style="margin-top:40px">
+      <div class="card"><span class="ic">🧩</span><h3>Instelbare fiches</h3><p>Maak en pas uw machinetypes en keuringspunten aan, zonder ontwikkelaar.</p></div>
+      <div class="card"><span class="ic">🎨</span><h3>In uw kleuren</h3><p>Logo, titel, thema: het rapport draagt uw merk, nooit het onze.</p></div>
+      <div class="card"><span class="ic">🤖</span><h3>AI-assistent</h3><p>Gebreken en conclusies opgesteld op basis van uw metingen — u keurt goed.</p></div>
+      <div class="card"><span class="ic">📄</span><h3>Directe pdf</h3><p>Gegenereerd op het toestel, klaar om naar de klant te sturen — niets meer in het net over te schrijven.</p></div>
+      <div class="card"><span class="ic">👥</span><h3>Meerdere technici</h3><p>Het hele team op dezelfde database, elk rapport gekoppeld aan de technicus die de opdracht uitvoerde.</p></div>
+      <div class="card"><span class="ic">📅</span><h3>VGP-planning</h3><p>De keuringstermijnen voor u opgevolgd: u weet wie opnieuw gekeurd moet worden, en wanneer.</p></div>
+      <div class="card"><span class="ic">✍️</span><h3>Handtekening ter plaatse</h3><p>De klant tekent op de tablet; zijn handtekening staat op de definitieve pdf.</p></div>
+      <div class="card"><span class="ic">📶</span><h3>Offline</h3><p>Werkplaats, kelder, gebied zonder bereik: de invoer gaat door, de synchronisatie volgt zodra er netwerk is.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Voor wie</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Ontworpen voor zelfstandige keurders en keuringsbedrijven uit het mkb.</h2>
+    <div class="r-aud" style="margin-top:40px">
+      <div class="r-photo">
+        <picture><source srcset="/assets/rotor/audience.webp" type="image/webp"><img src="/assets/rotor/audience.jpg" alt="Keuringstechnicus met zijn tablet in een industriële installatie" loading="lazy"></picture>
+        <div class="badge">
+          <span class="eb">De markt</span>
+          <h3>De VGP vereist alleen een „bekwaam persoon” (personne qualifiée).</h3>
+          <p>Geen verplichte accreditatie voor de gewone keuring. Daardoor is in Frankrijk een dicht netwerk van zelfstandige dienstverleners ontstaan — en precies voor hen is Rotor-FSM ontworpen.</p>
+          <div class="ref">Art. R4323-24 · arrêté du 1ᵉʳ mars 2004 · NF EN 15635</div>
+        </div>
+      </div>
+      <div class="r-audlist">
+        <div class="r-aud-i"><div class="k">01</div><div><h3>Zelfstandige VGP-keurders</h3><p>8 tot 10 keuringen per dag, op ronde. Een professioneel rapport meteen overhandigd, zonder ooit terug naar kantoor te gaan.</p></div></div>
+        <div class="r-aud-i"><div class="k">02</div><div><h3>Mkb-keuringsbedrijven voor hijs- &amp; heftoestellen</h3><p>Heftrucks, hoogwerkers, rolbruggen: meerdere technici, één gedeelde database.</p></div></div>
+        <div class="r-aud-i"><div class="k">03</div><div><h3>Onderhoudsbedrijven voor deuren &amp; poorten</h3><p>Halfjaarlijkse onderhoudscontracten: historiek, vervaldata en herinneringen op één plek.</p></div></div>
+        <div class="r-aud-i"><div class="k">04</div><div><h3>Keurings- &amp; veiligheidsinstanties</h3><p>Brandblussers, PBM, stellingen: rondes met grote volumes, rapporten in serie, moeiteloos.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="alt" id="tarifs">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Prijzen</span>
+    <h2 class="sec">Eén duidelijke prijs. Terugverdiend vanaf het eerste rapport.</h2>
+    <div class="r-prices" style="margin-top:40px;justify-content:center">
+      <div class="price-card bundle" style="position:relative;max-width:420px;margin:0 auto">
+        <h3>Eén tarief</h3>
+        <div class="amount">€ 390<small> excl. btw / gebruiker / jaar</small></div>
+        <div class="per"><b style="color:var(--txt)">2 maanden gratis bij jaarbetaling</b> — ofwel € 32,50/maand. Alleen of met een team: u kiest uw aantal technici, de prijs volgt. Verder hoeft u niets te beslissen.</div>
+        <ul>
+          <li>Onbeperkt rapporten</li>
+          <li>Alle machinefiches</li>
+          <li>Pdf-rapport in uw kleuren</li>
+          <li>Gedeelde teamdatabase &amp; opvolging van VGP-vervaldata</li>
+          <li>AI-assistent &amp; offlinemodus</li>
+          <li><b>12 maanden voor de prijs van 10</b> — € 78 besparing</li>
+        </ul>
+        <a class="btn btn-acc" href="/devis/?produit=rotor">Offerte aanvragen</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Offerte binnen 24 werkuren · of <a href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener" style="color:var(--acc);text-decoration:underline;text-underline-offset:3px">probeer de demo</a>, zonder creditcard</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:12px">Zien is geloven</span>
+    <h2>Geloof ons niet op ons woord. Test het.</h2>
+    <p>De online demo is een volledige omgeving, gevuld met echte keuringsscenario's. Open een fiche, vink aan, genereer de pdf. Binnen 3 minuten weet u genoeg.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Open de live demo →</a>
+      <a class="btn btn-ghost btn-big" href="#tarifs">Prijzen bekijken</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">De softwaresuite voor industriële mkb-bedrijven.<br>By industry, for industry.</p>
+      </div>
+      <div><h4>Producten</h4><span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a><span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a><span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a><span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><h4 class="foot-sous"><a href="/outils/">Tools</a></h4><span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a><span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC-kaarten</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Prijzen</a><a href="/blog/">Blog</a><a href="/outils/">Tools</a><a href="/a-propos/">Over ons</a><a href="/contact/">Contact</a><a href="/essai/">Gratis proberen</a></div>
+      <div><h4>Juridisch</h4><a href="/mentions-legales/">Wettelijke vermeldingen</a><a href="/confidentialite/">Privacy</a><a href="/securite/">Beveiliging &amp; gegevens</a><a href="/cgv-stator/">Verkoopvoorwaarden Stator-CRM</a><a href="/cgv-rotor/">Verkoopvoorwaarden Rotor-FSM</a><a href="/cgv-suite/">Verkoopvoorwaarden volledige Suite</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Alle rechten voorbehouden.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Gegevens gehost in de EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6"></script>
+</body>
+</html>

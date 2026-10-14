@@ -1,0 +1,790 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indusiax — Beheersoftware voor industriële mkb-bedrijven</title>
+<meta name="description" content="Sales-CRM, keuringen &amp; interventies op locatie, vergaderverslagen met AI, LinkedIn-communicatie: eenvoudige software, ontwikkeld binnen een Frans industrieel mkb-bedrijf voor industriële mkb-bedrijven. 30 dagen gratis proberen, zonder creditcard.">
+<link rel="canonical" href="https://indusiax.com/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="preload" href="/assets/fonts/outfit-0.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/outfit-1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<link rel="stylesheet" href="/assets/home-film.css?v=62b14a75">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Indusiax — Beheersoftware voor industriële mkb-bedrijven">
+<meta property="og:description" content="CRM, keuringen op locatie, AI-vergaderingen, LinkedIn: eenvoudige tools, ontwikkeld binnen een industrieel mkb-bedrijf, voor de industrie. 30 dagen gratis proberen.">
+<meta property="og:url" content="https://indusiax.com/">
+<meta property="og:image" content="https://indusiax.com/assets/social/home.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/home.jpg">
+<meta property="og:locale" content="fr_FR">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Indusiax",
+  "url": "https://indusiax.com",
+  "email": "contact@indusiax.com",
+  "slogan": "By industry, for industry.",
+  "description": "Suite van beheersoftware voor industriële mkb-bedrijven: CRM, keuringen en interventies op locatie, vergaderverslagen met AI, LinkedIn-communicatie."
+}
+</script>
+<style>
+/* ---- carte suite (héros) ---- */
+.suite-card .srow{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px dashed var(--pline);}
+.suite-card .srow:last-of-type{border-bottom:0;}
+.suite-card .dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.suite-card .nm{font-weight:700;font-size:.85rem;color:#1a2530;width:112px;flex-shrink:0;}
+.suite-card .rl{font-family:var(--mono);font-size:.64rem;color:#67717c;letter-spacing:.03em;}
+.suite-card .st{margin-left:auto;font-family:var(--mono);font-size:.6rem;color:#22c55e;font-weight:700;
+  display:inline-flex;align-items:center;gap:5px;}
+.live-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#22c55e;flex-shrink:0;}
+@media(prefers-reduced-motion:no-preference){
+  /* Le titre est frappé, pas glissé : il arrive légèrement agrandi et flou,
+     puis se cale net — et la promesse s'allume en orange juste après l'impact. */
+  @keyframes hpFrappe{from{opacity:0;transform:translateY(15px) scale(1.04);filter:blur(7px);}
+    to{opacity:1;transform:none;filter:blur(0);}}
+  .pv-hero h1{animation:hpFrappe 1.2s cubic-bezier(.16,1,.3,1) .12s both;}
+  @keyframes hpAllume{from{color:var(--txt);}to{color:var(--p);}}
+  .pv-hero h1 .ac{animation:hpAllume .9s ease 1.16s both;}
+  /* Le reste du héros vient de product.css, partagé avec les pages produit :
+     on n'y touche pas, on ne redéfinit ici que les durées, pour que toute
+     l'arrivée de l'accueil garde le même tempo que le titre. */
+  .pv-hero .eb{animation-duration:1.4s;}
+  .pv-hero .sub{animation-duration:1.4s;animation-delay:.34s;}
+  .pv-hero .ctas{animation-duration:1.4s;animation-delay:.5s;}
+  .pv-hero .pv-trust{animation-duration:1.4s;animation-delay:.66s;}
+  .pv-hero .note{animation-duration:1.4s;animation-delay:.66s;}
+  .pv-hero .pv-card{animation-duration:1.6s;animation-delay:.6s;}
+
+  @keyframes livePulse{0%{box-shadow:0 0 0 0 rgba(34,197,94,.55);}70%{box-shadow:0 0 0 6px rgba(34,197,94,0);}100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}}
+  .live-dot{animation:livePulse 4.4s ease-out 3.3s infinite;}
+  .suite-card .srow:nth-child(2) .live-dot{animation-delay:3.9s;}
+  .suite-card .srow:nth-child(3) .live-dot{animation-delay:4.5s;}
+  .suite-card .srow:nth-child(4) .live-dot{animation-delay:5.1s;}
+  @keyframes srowIn{from{opacity:0;transform:translateX(-10px);}to{opacity:1;transform:none;}}
+  .suite-card .srow{opacity:0;animation:srowIn .9s ease forwards;}
+  .suite-card .srow:nth-child(1){animation-delay:2.1s;}
+  .suite-card .srow:nth-child(2){animation-delay:2.36s;}
+  .suite-card .srow:nth-child(3){animation-delay:2.62s;}
+  .suite-card .srow:nth-child(4){animation-delay:2.88s;}
+  .suite-card .srow:nth-child(5){animation-delay:3.14s;}
+  /* chaque état s'allume APRÈS que sa ligne soit posée : les voyants
+     s'enclenchent l'un après l'autre, comme un tableau qui se met sous tension */
+  @keyframes stOn{from{opacity:0;transform:translateX(7px);}to{opacity:1;transform:none;}}
+  .suite-card .st{opacity:0;animation:stOn .6s ease forwards;}
+  .suite-card .srow:nth-child(1) .st{animation-delay:2.7s;}
+  .suite-card .srow:nth-child(2) .st{animation-delay:2.96s;}
+  .suite-card .srow:nth-child(3) .st{animation-delay:3.22s;}
+  .suite-card .srow:nth-child(4) .st{animation-delay:3.48s;}
+  .suite-card .srow:nth-child(5) .st{animation-delay:3.74s;}
+  .suite-card .sfoot{opacity:0;animation:srowIn .9s ease forwards;animation-delay:4.04s;}
+}
+/* Contiax : offert, donc pas de pastille « ACTIF » verte mais un vrai « GRATUIT ».
+   La ligne est séparée des quatre outils payants. */
+.suite-card .srow:has(+ .srow.free){border-bottom:0;}
+.suite-card .srow.free{border-top:2px solid var(--pline);border-bottom:0;margin-top:3px;padding-top:11px;}
+.suite-card .srow.free .st{color:#0f9b72;}
+.suite-card .sfoot{display:flex;align-items:center;gap:9px;margin-top:12px;padding-top:12px;border-top:2px solid var(--pline);font-family:var(--mono);font-size:.66rem;color:#67717c;}
+.suite-card .sfoot .pill{margin-left:auto;background:rgba(232,76,43,.12);color:#c23a1e;font-weight:700;border-radius:3px;padding:4px 8px;font-size:.62rem;white-space:nowrap;}
+@media(prefers-reduced-motion:no-preference){
+  .suite-card{position:relative;box-shadow:0 30px 70px rgba(0,0,0,.5),0 0 90px -20px rgba(232,76,43,.35);
+    animation:suiteFloat 14s ease-in-out infinite;transition:transform .7s ease;}
+  @keyframes suiteFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+  .suite-card::before{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.09),transparent);
+    transform:skewX(-18deg);pointer-events:none;z-index:1;animation:suiteSheen 13s ease-in-out infinite;}
+  @keyframes suiteSheen{0%,85%,100%{left:-60%;}93%{left:130%;}}
+  .suite-card:hover{animation-play-state:paused;transform:perspective(900px) rotateY(-2deg) rotateX(1deg);}
+}
+/* ---- commutateur de segment ---- */
+.seg-switch{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:28px;}
+.seg-lb{font-family:var(--mono);font-size:.76rem;color:var(--mut2);margin-right:2px;}
+.seg-chip{font-family:var(--mono);font-size:.78rem;padding:8px 16px;border-radius:99px;
+  border:1px solid var(--bord);background:var(--bg2);color:var(--mut);cursor:pointer;
+  transition:border-color .2s,color .2s,background .2s,transform .15s;font-family:inherit;}
+.seg-chip:hover{border-color:var(--acc);color:var(--txt);}
+.seg-chip:active{transform:scale(.96);}
+.seg-chip.active{background:var(--acc);border-color:var(--acc);color:#fff;}
+@media(prefers-reduced-motion:no-preference){
+  .hp-grid.reordering .hp-card{animation:hpReorder 1s ease;}
+  @keyframes hpReorder{0%{opacity:.4;transform:scale(.97);}100%{opacity:1;transform:none;}}
+}
+/* ---- cartes produits avec photo ---- */
+.hp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media(max-width:820px){.hp-grid{grid-template-columns:1fr;}}
+/* Contiax est offert : il ferme la grille sur toute la largeur, sous les quatre
+   outils payants. `order:9` le maintient en dernier — le commutateur d'activité
+   ne réordonne que les quatre autres, à qui il attribue les ordres 0 à 3. */
+/* ── Comparateur avant / après ────────────────────────────────
+   Deux calques superposés : « après » dessous en entier, « avant » dessus,
+   rogné à la position du curseur. Le curseur est un vrai <input type=range>
+   rendu invisible — on garde ainsi le clavier et les lecteurs d'écran, et
+   le trait orange n'est qu'un décor piloté par la variable --x. */
+/* --x doit être typée pour pouvoir être animée ; sans cette déclaration le
+   balayage d'invite sauterait d'un coup au lieu de glisser. */
+@property --x{syntax:"<percentage>";inherits:true;initial-value:50%;}
+.ba{max-width:980px;margin:32px auto 0;}
+.ba-scene{position:relative;border:1px solid var(--bord);border-radius:16px;overflow:hidden;
+  background:var(--bg2);aspect-ratio:16/9;user-select:none;}
+@media(max-width:760px){.ba-scene{aspect-ratio:3/4;}}
+.ba-cote{position:absolute;inset:0;padding:30px 32px;display:flex;flex-direction:column;}
+@media(max-width:760px){.ba-cote{padding:22px 20px;}}
+.ba-avant{background:#0c0f15;clip-path:inset(0 calc(100% - var(--x,50%)) 0 0);}
+.ba-etiq{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--mut2);margin-bottom:auto;}
+.ba-etiq b{color:var(--mut);font-weight:700;}
+.ba-note{font-family:var(--mono);font-size:.7rem;line-height:1.5;color:var(--mut2);margin-top:auto;}
+.ba-avant .ba-note b{color:#e0623f;font-weight:700;}
+.ba-apres .ba-note b{color:var(--ok,#22c55e);font-weight:700;}
+/* côté gauche : des bouts épars, penchés, sans lien entre eux */
+.ba-eparpille{display:flex;flex-wrap:wrap;gap:9px;align-items:center;justify-content:center;flex:1;
+  max-width:440px;margin:0 auto;}
+.ba-bout{transform:rotate(var(--r,0deg));background:#151a22;border:1px solid #2a313d;border-radius:7px;
+  padding:8px 12px;font-size:.78rem;color:#8892a2;white-space:nowrap;box-shadow:0 6px 16px rgba(0,0,0,.35);}
+/* côté droit : un bus unique, tout y est raccordé */
+.ba-hub{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;}
+.ba-fiche{background:rgba(232,76,43,.12);border:1px solid rgba(232,76,43,.4);color:var(--acc);
+  border-radius:8px;padding:9px 18px;font-size:.82rem;font-weight:700;}
+.ba-tige{width:2px;height:22px;background:linear-gradient(180deg,rgba(232,76,43,.55),var(--bord));}
+.ba-bus{height:2px;background:var(--bord);width:min(100%,430px);}
+.ba-noeuds{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 10px;width:min(100%,460px);padding-top:16px;position:relative;}
+.ba-noeud{position:relative;border:1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  background:color-mix(in srgb, var(--c) 12%, transparent);color:var(--c);
+  border-radius:7px;padding:7px 11px;font-size:.76rem;font-weight:700;white-space:nowrap;}
+.ba-noeud::before{content:"";position:absolute;top:-16px;left:50%;width:1px;height:16px;background:var(--bord);}
+/* le curseur */
+.ba-poignee{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--acc);
+  transform:translateX(-1px);pointer-events:none;}
+.ba-poignee::after{content:"";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:42px;height:42px;border-radius:50%;background:var(--acc);
+  box-shadow:0 4px 18px rgba(0,0,0,.5),inset 0 0 0 2px rgba(255,255,255,.22);}
+.ba-fleches{position:absolute;top:50%;left:var(--x,50%);transform:translate(-50%,-50%);
+  color:#fff;font-size:.9rem;letter-spacing:2px;pointer-events:none;font-weight:700;}
+.ba-curseur{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:ew-resize;
+  -webkit-appearance:none;appearance:none;background:transparent;}
+.ba-curseur::-webkit-slider-thumb{-webkit-appearance:none;width:52px;height:100%;cursor:ew-resize;}
+.ba-curseur::-moz-range-thumb{width:52px;height:100%;border:0;background:transparent;cursor:ew-resize;}
+.ba-curseur:focus-visible~.ba-poignee::after{outline:3px solid #fff;outline-offset:3px;}
+.ba-legende{display:flex;justify-content:space-between;margin-top:12px;font-family:var(--mono);
+  font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--mut2);}
+
+/* ── Ligne de vie (accueil) ───────────────────────────────────
+   L'histoire en quatre temps de la page À propos, reprise ici sous forme
+   animée : le trait se dessine, puis chaque jalon s'allume à son tour. */
+.hp-tl{max-width:920px;margin:44px auto 4px;display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+.hp-tl::before{content:"";position:absolute;top:23px;left:calc(12.5% - 1px);right:calc(12.5% - 1px);height:2px;
+  background:linear-gradient(90deg,var(--acc),rgba(232,76,43,.22) 55%,var(--acc));z-index:0;}
+.hp-tl .tl-i{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 12px;}
+.hp-tl .dot{position:relative;width:48px;height:48px;border-radius:50%;background:#10161d;border:2px solid var(--acc);
+  display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.88rem;color:var(--acc);margin-bottom:16px;}
+.hp-tl h3{font-size:1rem;margin-bottom:6px;}
+.hp-tl p{font-size:.85rem;color:var(--mut);}
+.hp-tl p a{color:var(--acc);font-weight:600;white-space:nowrap;}
+@media(max-width:760px){.hp-tl{grid-template-columns:1fr;gap:30px;}.hp-tl::before{display:none;}}
+@media(scripting:enabled) and (prefers-reduced-motion:no-preference){
+  .hp-tl::before{transform:scaleX(0);transform-origin:left;}
+  .hp-tl:has(.tl-i.in)::before{transform:scaleX(1);transition:transform 2.4s cubic-bezier(.22,1,.36,1) .2s;}
+  .hp-tl .tl-i:nth-child(2){transition-delay:.26s;} .hp-tl .tl-i:nth-child(3){transition-delay:.52s;}
+  .hp-tl .tl-i:nth-child(4){transition-delay:.78s;}
+  .hp-tl .dot{opacity:0;transform:scale(.5);}
+  .hp-tl .tl-i.in .dot{animation:hpDotIn 1s cubic-bezier(.34,1.56,.64,1) forwards;}
+  .hp-tl .tl-i:nth-child(1).in .dot{animation-delay:.40s;} .hp-tl .tl-i:nth-child(2).in .dot{animation-delay:.94s;}
+  .hp-tl .tl-i:nth-child(3).in .dot{animation-delay:1.48s;} .hp-tl .tl-i:nth-child(4).in .dot{animation-delay:2.02s;}
+  @keyframes hpDotIn{to{opacity:1;transform:scale(1);}}
+  /* onde qui s'échappe de chaque jalon au moment où il s'allume */
+  .hp-tl .tl-i.in .dot::after{content:"";position:absolute;inset:-2px;border-radius:50%;
+    border:2px solid var(--acc);opacity:0;animation:hpDotOnde 1.7s ease-out forwards;}
+  .hp-tl .tl-i:nth-child(1).in .dot::after{animation-delay:.60s;} .hp-tl .tl-i:nth-child(2).in .dot::after{animation-delay:1.14s;}
+  .hp-tl .tl-i:nth-child(3).in .dot::after{animation-delay:1.68s;} .hp-tl .tl-i:nth-child(4).in .dot::after{animation-delay:2.22s;}
+  @keyframes hpDotOnde{from{opacity:.7;transform:scale(1);}to{opacity:0;transform:scale(2);}}
+  /* le dernier jalon, c'est aujourd'hui : il continue de respirer */
+  .hp-tl .tl-i:nth-child(4).in{animation:hpDernier 6.4s ease-in-out 3.8s infinite;}
+  @keyframes hpDernier{0%,100%{filter:none;}50%{filter:drop-shadow(0 0 9px rgba(232,76,43,.5));}}
+}
+.no-io .hp-tl .dot{opacity:1!important;transform:none!important;animation:none!important;}
+.no-io .hp-tl::before{transform:none!important;}
+
+.hp-card.hp-free{grid-column:1/-1;order:9;border-color:rgba(16,185,129,.32);}
+@media(min-width:821px){.hp-card.hp-free{flex-direction:row;}
+  .hp-card.hp-free .im{aspect-ratio:auto;width:40%;flex-shrink:0;}
+  .hp-card.hp-free .im::after{background:linear-gradient(90deg,transparent 55%,var(--bg2) 100%);}
+  .hp-card.hp-free .bd{justify-content:center;}}
+.hp-card{display:flex;flex-direction:column;background:var(--bg2);border:1px solid var(--bord);border-radius:14px;
+  overflow:hidden;text-decoration:none;transition:transform .3s cubic-bezier(.22,1,.36,1),border-color .3s,box-shadow .3s;}
+.hp-card:hover{transform:translateY(-7px);border-color:var(--pc,#3a4656);box-shadow:0 22px 48px rgba(0,0,0,.45);}
+.hp-card .im{aspect-ratio:21/9;overflow:hidden;border-bottom:0;position:relative;}
+.hp-card .im::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,var(--bg2) 100%);}
+.hp-card .im img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.6,.2,1);}
+.hp-card:hover .im img{transform:scale(1.08);}
+.hp-card .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:8px;flex:1;}
+.hp-card .tg{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;}
+.hp-card h3{font-size:1.25rem;color:var(--txt);}
+.hp-card p{font-size:.92rem;color:var(--mut);flex:1;}
+.hp-card .pr{font-family:var(--mono);font-size:.78rem;color:var(--txt);font-weight:700;}
+.hp-card .go{color:var(--acc);font-weight:600;font-size:.92rem;display:inline-block;transition:transform .25s;}
+.hp-card:hover .go{transform:translateX(6px);}
+@media(prefers-reduced-motion:reduce){.hp-card,.hp-card .im img,.hp-card .go{transition:none;}
+  .hp-card:hover{transform:none;} .hp-card:hover .im img{transform:none;} .hp-card:hover .go{transform:none;}}
+@media(hover:none){.hp-card:active{transform:scale(.98);}}
+/* ---- fond quadrillé « plan industriel » derrière le schéma hub ---- */
+section.alt:has(.hub){
+  position:relative;
+  background-image:
+    linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+  background-size:34px 34px;
+  background-position:center;
+}
+section.alt:has(.hub)::before{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(ellipse at 50% 45%, transparent 30%, var(--bg2) 78%);
+}
+section.alt:has(.hub) > .wrap{position:relative;z-index:1;}
+/* ---- schéma suite (animé au scroll) ---- */
+.hub{max-width:760px;margin:38px auto 0;}
+.hub svg{width:100%;height:auto;display:block;}
+@media(scripting:enabled) and (prefers-reduced-motion:no-preference){
+  .hub line:not(.hub-flow){stroke-dasharray:220;stroke-dashoffset:220;transition:stroke-dashoffset 1s ease;}
+  .hub.in line:not(.hub-flow){stroke-dashoffset:0;}
+  .hub.in line:not(.hub-flow):nth-of-type(2){transition-delay:.15s;}
+  .hub.in line:not(.hub-flow):nth-of-type(3){transition-delay:.3s;}
+  .hub rect,.hub text{opacity:0;transform-box:fill-box;transform-origin:center;transform:scale(.9);
+    transition:opacity .5s ease,transform .5s cubic-bezier(.34,1.56,.64,1);}
+  .hub.in rect,.hub.in text{opacity:1;transform:none;}
+  .hub rect:nth-of-type(1),.hub text:nth-of-type(1),.hub text:nth-of-type(2){transition-delay:.5s;}
+  .hub rect:nth-of-type(2),.hub text:nth-of-type(3),.hub text:nth-of-type(4){transition-delay:.65s;}
+  .hub rect:nth-of-type(3),.hub text:nth-of-type(5),.hub text:nth-of-type(6){transition-delay:.8s;}
+  .hub rect:nth-of-type(4),.hub text:nth-of-type(7),.hub text:nth-of-type(8){transition-delay:.95s;}
+  .hub-flow{opacity:0;transition:opacity .5s ease;}
+  .hub.in .hub-flow{opacity:.85;animation:hubDash 1.4s linear infinite;transition-delay:1.05s;}
+  @keyframes hubDash{to{stroke-dashoffset:64;}}
+  .hub-pulse{opacity:0;}
+  .hub.in .hub-pulse{animation:hubPulse 2.6s ease-out infinite;animation-delay:1.1s;}
+  @keyframes hubPulse{0%{opacity:.55;stroke-width:2.5;transform:scale(1);}100%{opacity:0;stroke-width:.5;transform:scale(1.55);}}
+}
+.no-io .hub line,.no-io .hub rect,.no-io .hub text{opacity:1!important;transform:none!important;stroke-dashoffset:0!important;}
+.no-io .hub-flow,.no-io .hub-pulse{display:none;}
+.hub-pulse{transform-box:fill-box;transform-origin:center;}
+/* ---- vidéo hero ---- */
+.pv-hero .bg video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+@media (prefers-reduced-motion: reduce){.pv-hero .bg video{display:none;}}
+/* CTA du hero : sur un fond vidéo en mouvement, il doit se distinguer même immobile */
+@media(prefers-reduced-motion:no-preference){
+  .pv-hero .ctas .btn-acc.btn-big{animation:ctaPulse 2.4s ease-in-out infinite;}
+  .pv-hero .ctas .btn-acc.btn-big:hover{animation-play-state:paused;}
+}
+/* voile renforcé : la vidéo varie en luminosité, le texte doit rester lisible sur toute frame */
+.pv-hero .bg::before{content:"";position:absolute;inset:0;background:rgba(8,11,16,.38);}
+.pv-hero .bg::after{
+  background:
+    linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 62%,#080b1055 100%),
+    linear-gradient(180deg,#080b10cc 0%,transparent 30%,transparent 70%,#0b0d12 100%);
+}
+.hero-video-toggle{
+  position:absolute;right:20px;bottom:20px;z-index:3;width:36px;height:36px;border-radius:50%;
+  background:rgba(8,11,16,.6);backdrop-filter:blur(4px);border:1px solid rgba(255,255,255,.2);
+  color:#fff;font-size:.7rem;cursor:pointer;display:grid;place-items:center;
+  opacity:0;transition:opacity .25s ease,background .2s;
+}
+.pv-hero:hover .hero-video-toggle,.hero-video-toggle:focus-visible{opacity:1;}
+.hero-video-toggle:hover{background:rgba(8,11,16,.85);}
+/* mobile / reduced-motion : pas de vidéo (retirée en JS) — l'image compense un peu de vie */
+@media(max-width:899px){
+  @media(prefers-reduced-motion:no-preference){
+    .pv-hero .bg img{animation:homeKB 16s ease-in-out infinite alternate;}
+    @keyframes homeKB{from{transform:scale(1);}to{transform:scale(1.06);}}
+    .pv-hero .bg::before{animation:heroBreathe 6s ease-in-out infinite;}
+    @keyframes heroBreathe{0%,100%{opacity:.85;}50%{opacity:1;}}
+  }
+}
+/* ---- section rappel ---- */
+.rappel-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+@media(max-width:860px){.rappel-grid{grid-template-columns:1fr;gap:32px;}}
+.rappel-txt h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 14px;line-height:1.2;}
+.rappel-sub{color:var(--mut);margin-bottom:22px;}
+.rappel-points{list-style:none;display:grid;gap:11px;}
+.rappel-points li{padding-left:30px;position:relative;color:var(--mut);font-size:.95rem;}
+.rappel-points li::before{content:'📞';position:absolute;left:0;top:0;font-size:.95rem;}
+.rappel-points b{color:var(--txt);}
+.rappel-card{background:var(--bg3);border:1px solid rgba(232,76,43,.35);border-radius:18px;padding:30px 28px;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);}
+.rappel-card form.f{max-width:none;}
+.rappel-note{font-size:.78rem;color:var(--mut2);text-align:center;margin-top:2px;}
+@media(max-width:560px){.rappel-card{padding:22px 18px;}}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Klanten, offertes, opvolging, routes, after-sales</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Keuringen en interventies op locatie, pdf-rapporten</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Vergaderverslagen met AI, in Europa</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn-berichten, ingesproken en door AI geschreven</i></span></span>
+      <a href="/tarifs/">Prijzen</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">Over ons</a>
+        <a class="nav-cta-mobile" href="/essai/">30 dagen gratis proberen</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="/essai/">30 dagen gratis proberen</a>
+</div>
+</header>
+
+<!-- Bandeau d'accueil des visiteurs venus d'une carte de visite NFC.
+
+     Ces gens-là n'ont rien demandé : on leur a tendu une carte, ils l'ont
+     approchée d'un téléphone, ils ont vu « Propulsé par Indusiax » et ils ont
+     cliqué par curiosité. Leur première question est « c'est quoi, ce truc
+     qui a fait cette page ? ». Sans réponse, ils repartent perplexes ; avec
+     une tuile produit permanente sur l'accueil, les cartes voleraient
+     l'attention des quatre logiciels pour tous les autres visiteurs.
+
+     Le bandeau règle les deux : il ne s'affiche que pour ce visiteur-là, et
+     il disparaît pour tout le monde d'autre. -->
+<div id="bandeau-nfc" hidden>
+  <div class="wrap">
+    <span class="pt" aria-hidden="true"></span>
+    <span>Komt u hier via een NFC-visitekaartje?
+      <b>Die maken wij.</b></span>
+    <a href="/cartes-nfc/">Ook voor uw team&nbsp;→</a>
+  </div>
+</div>
+<style>
+  #bandeau-nfc{background:rgba(245,158,11,.09);border-bottom:1px solid rgba(245,158,11,.26);
+    font-size:.88rem;}
+  #bandeau-nfc .wrap{display:flex;align-items:center;gap:11px;flex-wrap:wrap;
+    padding-top:11px;padding-bottom:11px;color:var(--mut);}
+  #bandeau-nfc .pt{width:7px;height:7px;border-radius:50%;background:var(--cartes);flex:none;}
+  #bandeau-nfc b{color:var(--txt);font-weight:650;}
+  #bandeau-nfc a{color:var(--cartes);font-weight:650;white-space:nowrap;}
+  #bandeau-nfc a:hover{text-decoration:underline;}
+  /* Sur un téléphone, la phrase passe sur trois lignes et le bandeau finit
+     par occuper un tiers de l'écran avant même le titre de la page. On
+     resserre : le message reste entier, la place qu'il prend redevient
+     celle d'une mention. */
+  @media(max-width:620px){
+    #bandeau-nfc{font-size:.8rem;}
+    #bandeau-nfc .wrap{gap:4px 9px;padding-top:9px;padding-bottom:9px;line-height:1.4;}
+  }
+</style>
+<script>
+  /* Deux signaux, parce que le premier peut manquer : le paramètre de suivi
+     posé par le pied des fiches, et le référent quand un navigateur ou une
+     messagerie a mangé la query string. */
+  (function () {
+    var attendu = new URLSearchParams(location.search).get("utm_source") === "carte-nfc";
+    var vient = document.referrer.indexOf("cards.indusiax.com") !== -1;
+    if (attendu || vient) document.getElementById("bandeau-nfc").hidden = false;
+  })();
+</script>
+
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/home/hero.webp" type="image/webp"><img src="/assets/home/hero.jpg" alt="Directeur van een industrieel mkb-bedrijf loopt door zijn werkplaats, tablet in de hand" fetchpriority="high"></picture><video autoplay muted loop playsinline preload="none" poster="/assets/home/hero.jpg" aria-hidden="true" data-src="/assets/home/hero.mp4"></video>
+    <button type="button" id="hero-video-toggle" class="hero-video-toggle" aria-label="Video pauzeren" hidden>❚❚</button>
+  </div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>De software waar uw <span class="ac">industrieel bedrijf</span> op wachtte.</h1>
+      <p class="sub">Sales-CRM, keuringen &amp; interventies op locatie, vergaderverslagen met AI, LinkedIn-communicatie, gratis visitekaartjesscanner: eenvoudige tools, ontwikkeld <b>binnen</b> een Frans industrieel mkb-bedrijf, <b>voor</b> industriële mkb-bedrijven — fabrikanten, distributeurs, onderhoudsbedrijven, dienstverleners.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="/essai/">Start mijn gratis proefperiode<span class="ar">→</span></a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">Bekijk de prijzen</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Zonder creditcard · zonder verplichtingen</div>
+        <div class="pv-chips">
+          <span class="pv-chip">Ontstaan in een mkb-bedrijf, niet in een incubator</span>
+          <span class="pv-chips-br"></span>
+          <span class="pv-chip">Dagelijks gebruikt in de industrie</span>
+          <span class="pv-chip">🇪🇺 Gehost in Europa</span>
+        </div>
+      </div>
+    </div>
+    <div class="pv-card suite-card" aria-label="De Indusiax Suite in één oogopslag">
+      <div class="ch"><span class="t">INDUSIAX SUITE</span><span class="a">4 tools · 1 login · 1 gratis</span></div>
+      <div class="cb">
+        <div class="srow"><span class="dot" style="background:#E84C2B"></span><span class="nm">Stator-CRM</span><span class="rl">Verkoop &amp; klanten</span><span class="st"><span class="live-dot"></span>ACTIEF</span></div>
+        <div class="srow"><span class="dot" style="background:#3B82F6"></span><span class="nm">Rotor-FSM</span><span class="rl">Keuringen op locatie</span><span class="st"><span class="live-dot"></span>ACTIEF</span></div>
+        <div class="srow"><span class="dot" style="background:#A78BFA"></span><span class="nm">Vector-MOM</span><span class="rl">AI-vergaderingen</span><span class="st"><span class="live-dot"></span>ACTIEF</span></div>
+        <div class="srow"><span class="dot" style="background:#0EA5E9"></span><span class="nm">Flux-Link</span><span class="rl">LinkedIn</span><span class="st"><span class="live-dot"></span>ACTIEF</span></div>
+        <div class="srow free"><span class="dot" style="background:#10B981"></span><span class="nm">Contiax</span><span class="rl">Visitekaartjes</span><span class="st">GRATIS</span></div>
+        <div class="sfoot">🔑 „Inloggen met Stator”<span class="pill">SUITE € 990 /gebr./jaar</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTEURS SERVIS -->
+<div class="sectors-marquee" aria-label="Sectoren en vakgebieden die Indusiax gebruiken">
+  <div class="sectors-track">
+    <span>Algemene mechanica</span><span>Plaatbewerking &amp; lassen</span><span>Hijs- &amp; heftechniek</span>
+    <span>Industrieel onderhoud</span><span>Wettelijke keuringen · VGP</span><span>Precisieverspaning</span>
+    <span>Metaal- &amp; slotenmakerij</span><span>Distributie van industrieel materieel</span>
+    <span>Koeltechniek &amp; airconditioning</span><span>Automatisering &amp; elektrotechniek</span>
+    <span>Algemene mechanica</span><span>Plaatbewerking &amp; lassen</span><span>Hijs- &amp; heftechniek</span>
+    <span>Industrieel onderhoud</span><span>Wettelijke keuringen · VGP</span><span>Precisieverspaning</span>
+    <span>Metaal- &amp; slotenmakerij</span><span>Distributie van industrieel materieel</span>
+    <span>Koeltechniek &amp; airconditioning</span><span>Automatisering &amp; elektrotechniek</span>
+  </div>
+</div>
+
+<!-- AVANT / APRÈS -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Dezelfde week, twee manieren van werken</span>
+    <h2 class="sec">Versleep de schuifregelaar.</h2>
+    <p class="sec-sub">Links: zoals de meeste industriële mkb-bedrijven vandaag werken. Rechts: dezelfde week met tools die met elkaar praten.</p>
+    <div class="ba" style="--x:50%">
+      <div class="ba-scene">
+        <div class="ba-cote ba-apres">
+          <span class="ba-etiq"><b>Met de suite</b> · één enkele keten</span>
+          <div class="ba-hub">
+            <span class="ba-fiche">Klantfiche</span>
+            <span class="ba-tige"></span>
+            <span class="ba-bus"></span>
+            <div class="ba-noeuds">
+              <span class="ba-noeud" style="--c:var(--stator)">Stator-CRM</span>
+              <span class="ba-noeud" style="--c:var(--rotor)">Rotor-FSM</span>
+              <span class="ba-noeud" style="--c:var(--vector)">Vector-MOM</span>
+              <span class="ba-noeud" style="--c:var(--flux)">Flux-Link</span>
+              <span class="ba-noeud" style="--c:var(--contiax)">Contiax</span>
+            </div>
+          </div>
+          <p class="ba-note">Eén login, één klantfiche. <b>De gegevens stromen vanzelf door</b> — het vergaderverslag wordt opgeborgen, het interventierapport vult de historiek aan.</p>
+        </div>
+        <div class="ba-cote ba-avant">
+          <span class="ba-etiq"><b>Vandaag</b> · zeven plekken</span>
+          <div class="ba-eparpille">
+            <span class="ba-bout" style="--r:-5deg">Opvolgingsspreadsheet</span>
+            <span class="ba-bout" style="--r:3deg">Mailbox</span>
+            <span class="ba-bout" style="--r:-2deg">Papieren map</span>
+            <span class="ba-bout" style="--r:4deg">Foto's op de telefoon</span>
+            <span class="ba-bout" style="--r:-3deg">Offertes in Word</span>
+            <span class="ba-bout" style="--r:2deg">Wandplanning</span>
+            <span class="ba-bout" style="--r:-4deg">Berichten</span>
+          </div>
+          <p class="ba-note">Zeven plekken, geen enkele koppeling. <b>Alles wordt met de hand overgetypt</b> — en wat niet wordt overgetypt, gaat verloren.</p>
+        </div>
+        <input class="ba-curseur" type="range" min="0" max="100" value="50" step="1"
+               aria-label="Vergelijken: sleep naar rechts voor de huidige werkwijze, naar links voor de gekoppelde suite">
+        <div class="ba-poignee" aria-hidden="true"></div>
+        <div class="ba-fleches" aria-hidden="true">‹ ›</div>
+      </div>
+      <div class="ba-legende"><span>← Met de suite</span><span>Vandaag →</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUITS -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Vijf tools, één werkvloer</span>
+    <h2 class="sec" style="text-align:left;max-width:720px">Eén doel: uw industriële werk eenvoudiger maken.</h2>
+    <p style="color:var(--mut);max-width:60ch;margin:12px 0 30px">Elke applicatie is los te gebruiken en los af te nemen — en de laatste is gratis. Samen delen ze uw klanten, uw accounts en één enkele login.</p>
+    <div class="seg-switch" role="group" aria-label="Filteren op activiteit">
+      <span class="seg-lb">Uw activiteit:</span>
+      <button type="button" class="seg-chip active" data-segment="fabricant">Ik produceer</button>
+      <button type="button" class="seg-chip" data-segment="distributeur">Ik distribueer</button>
+      <button type="button" class="seg-chip" data-segment="maintien">Ik onderhoud</button>
+      <button type="button" class="seg-chip" data-segment="service">Ik lever diensten</button>
+    </div>
+    <div class="hp-grid">
+      <a class="hp-card" href="/stator/" data-product="stator" style="--pc:var(--stator)">
+        <div class="im"><picture><source srcset="/assets/stator/card.webp" type="image/webp"><img src="/assets/stator/card.jpg" alt="Verkoper en klant sluiten een deal, offerte op tafel" loading="lazy"></picture></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--stator)">Industriële CRM</span>
+          <h3>Stator-CRM</h3>
+          <p>Klanten, pdf-offertes, automatische opvolging, routes, after-sales, machinepark: de CRM die de taal van de verkoop van materieel spreekt — niet die van „leads”.</p>
+          <span class="pr">€ 650 /gebruiker/jaar — 2 maanden gratis <span style="opacity:.65">· op offerte</span></span>
+          <span class="go">Ontdek Stator-CRM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/rotor/" data-product="rotor" style="--pc:var(--rotor)">
+        <div class="im"><picture><source srcset="/assets/rotor/band.webp" type="image/webp"><img src="/assets/rotor/band.jpg" alt="Industrieel magazijn met een vorkheftruck" loading="lazy"></picture></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--rotor)">Keuringen &amp; VGP</span>
+          <h3>Rotor-FSM</h3>
+          <p>Keuringen en VGP (de in Frankrijk verplichte periodieke keuringen van arbeidsmiddelen) op een tablet, configureerbare machinefiches, ondertekend pdf-rapport in uw huisstijl, opgevolgde vervaldata. Van keuring op locatie tot rapport, zonder dubbele invoer.</p>
+          <span class="pr">€ 390 /gebruiker/jaar — 2 maanden gratis <span style="opacity:.65">· op offerte</span></span>
+          <span class="go">Ontdek Rotor-FSM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/vector/" data-product="vector" style="--pc:var(--vector)">
+        <div class="im"><picture><source srcset="/assets/vector/hero.webp" type="image/webp"><img src="/assets/vector/hero.jpg" alt="Teamvergadering die wordt opgenomen in een industrieel mkb-bedrijf" loading="lazy"></picture></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--vector)">Vergaderingen &amp; AI</span>
+          <h3>Vector-MOM</h3>
+          <p>AI transcribeert uw vergaderingen, herkent wie er spreekt en stelt een gestructureerd verslag op — op onze Europese servers, nooit bij een cloudgigant.</p>
+          <span class="pr">€ 120 /gebruiker/jaar — 2 maanden gratis <span style="opacity:.65">· of € 12/maand</span></span>
+          <span class="go">Ontdek Vector-MOM →</span>
+        </div>
+      </a>
+      <a class="hp-card" href="/flux/" data-product="flux" style="--pc:var(--flux)">
+        <div class="im"><picture><source srcset="/assets/flux/band.webp" type="image/webp"><img src="/assets/flux/band.jpg" alt="Perfect afgewerkte industriële machine in roestvrij staal" loading="lazy"></picture></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--flux)">LinkedIn-communicatie</span>
+          <h3>Flux-Link</h3>
+          <p>Spreek drie zinnen in, voeg de foto's toe: AI schrijft een professioneel LinkedIn-bericht en publiceert het. Uw vakmanschap verdient het om gezien te worden.</p>
+          <span class="pr">€ 120 /gebruiker/jaar — 2 maanden gratis <span style="opacity:.65">· of € 12/maand</span></span>
+          <span class="go">Ontdek Flux-Link →</span>
+        </div>
+      </a>
+      <a class="hp-card hp-free" href="/contiax/" data-product="contiax" style="--pc:var(--contiax)">
+        <div class="im"><picture><source srcset="/assets/contiax/card.webp" type="image/webp"><img src="/assets/contiax/card.jpg" alt="Visitekaartjes op de balie van een beursstand, één ervan wordt gefotografeerd met een smartphone" loading="lazy"></picture></div>
+        <div class="bd">
+          <span class="tg" style="color:var(--contiax)">Visitekaartjes · gratis</span>
+          <h3>Contiax</h3>
+          <p>U komt terug van een vakbeurs met veertig kaartjes op zak. Fotografeer ze: het contact gaat naar uw telefoon, een spreadsheet of uw CRM. Zonder account aan te maken, zonder app te installeren.</p>
+          <span class="pr">Gratis, onbeperkt</span>
+          <span class="go">Ontdek Contiax →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- BAND + SUITE CONNECTÉE -->
+<div class="pv-band">
+  <picture><source srcset="/assets/home/band.webp" type="image/webp"><img src="/assets/home/band.jpg" alt="Team van een industrieel mkb-bedrijf in overleg voor de werkplaats" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">De gekoppelde suite</span>
+    <h2>Tools die elkaar kennen, net als uw teams.</h2>
+    <p>Uw klanten in de CRM, uw vergaderverslagen die daar terechtkomen, uw interventierapporten gekoppeld — zonder dubbele invoer.</p>
+  </div>
+</div>
+
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Hoe alles samenhangt</span>
+    <h2 class="sec">Stator-CRM in het midden. De rest sluit erop aan.</h2>
+    <!-- Le film (home-film.js) prend la place du schéma dès qu'il est monté :
+         écran d'au moins 860 px et JavaScript actif. En dessous, le schéma
+         statique reste seul — la composition est écrite en 1920×1080 et
+         deviendrait illisible une fois réduite à la largeur d'un téléphone. -->
+    <div class="fx"></div>
+    <div class="hub fx-fallback">
+      <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Schema: Stator-CRM in het midden, gekoppeld aan Vector-MOM, Rotor-FSM en Flux-Link">
+        <!-- liens -->
+        <line x1="360" y1="150" x2="168" y2="78"  stroke="#26303c" stroke-width="2"/>
+        <line x1="360" y1="150" x2="552" y2="78"  stroke="#26303c" stroke-width="2"/>
+        <line x1="360" y1="190" x2="360" y2="266" stroke="#26303c" stroke-width="2"/>
+        <!-- flux de données (satellites → Stator) -->
+        <line class="hub-flow" x1="360" y1="150" x2="168" y2="78"  stroke="#A78BFA" stroke-width="2" stroke-dasharray="6 10"/>
+        <line class="hub-flow" x1="360" y1="150" x2="552" y2="78"  stroke="#3B82F6" stroke-width="2" stroke-dasharray="6 10"/>
+        <line class="hub-flow" x1="360" y1="190" x2="360" y2="266" stroke="#0EA5E9" stroke-width="2" stroke-dasharray="6 10"/>
+        <!-- halo pulsant du nœud central -->
+        <circle class="hub-pulse" cx="360" cy="150" r="46" fill="none" stroke="#E84C2B" stroke-width="2"/>
+        <!-- nœud central -->
+        <rect x="266" y="122" width="188" height="66" rx="12" fill="#10161d" stroke="#E84C2B" stroke-width="2.5"/>
+        <text x="360" y="150" font-family="Outfit,sans-serif" font-size="19" font-weight="800" fill="#E84C2B" text-anchor="middle">Stator-CRM</text>
+        <text x="360" y="172" font-family="JBMono,monospace" font-size="10.5" fill="#8b98a5" text-anchor="middle">DE KERN · KLANTEN &amp; VERKOOP</text>
+        <!-- Vector -->
+        <rect x="60" y="26" width="160" height="56" rx="12" fill="#10161d" stroke="#A78BFA" stroke-width="2"/>
+        <text x="140" y="50" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#A78BFA" text-anchor="middle">Vector-MOM</text>
+        <text x="140" y="68" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">AI-VERGADERINGEN</text>
+        <!-- Rotor -->
+        <rect x="500" y="26" width="160" height="56" rx="12" fill="#10161d" stroke="#3B82F6" stroke-width="2"/>
+        <text x="580" y="50" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#3B82F6" text-anchor="middle">Rotor-FSM</text>
+        <text x="580" y="68" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">KEURINGEN OP LOCATIE</text>
+        <!-- Flux -->
+        <rect x="280" y="266" width="160" height="56" rx="12" fill="#10161d" stroke="#0EA5E9" stroke-width="2"/>
+        <text x="360" y="290" font-family="Outfit,sans-serif" font-size="16" font-weight="700" fill="#0EA5E9" text-anchor="middle">Flux-Link</text>
+        <text x="360" y="308" font-family="JBMono,monospace" font-size="10" fill="#8b98a5" text-anchor="middle">LINKEDIN</text>
+      </svg>
+    </div>
+    <div class="suite-note" style="margin-top:34px">
+      <span style="font-size:1.6rem">🔗</span>
+      <span><b style="color:var(--txt)">De volledige suite voor € 990 per gebruiker per jaar</b> — 2 maanden gratis, tot € 546 besparing per gebruiker per jaar ten opzichte van de vier tools afzonderlijk. De vier tools gekoppeld: één login via „Inloggen met Stator”, gedeelde klantfiches, vergaderverslagen die in de CRM terechtkomen. <a href="/tarifs/" style="color:var(--acc);font-weight:600">Bekijk het suite-aanbod →</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGINE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:22px">Waarom Indusiax bestaat</span>
+    <div class="pv-origin">
+      <p class="lead">Indusiax is niet ontstaan in een incubator. <b>Het is ontstaan in een Frans industrieel mkb-bedrijf</b> dat software zocht voor zijn vak — en die niet vond.</p>
+      <p>CRM's op maat van de techsector, onbetaalbare tools voor de buitendienst, vergaderverslagen die naar servers aan de andere kant van de wereld worden gestuurd… Dus bouwden we onze eigen tools, al doende, samen met onze verkopers en technici. Ze draaien elke dag onze activiteit. Vandaag leggen we ze in uw handen.</p>
+      <div class="sig">By Industry, For Industry — het Indusiax-team</div>
+    </div>
+
+    <div class="hp-tl" aria-label="Het verhaal van Indusiax in vier stappen">
+      <div class="tl-i"><div class="dot">01</div><h3>Het probleem</h3><p>Geen enkele software op de markt spreekt echt de taal van onze industrie.</p></div>
+      <div class="tl-i"><div class="dot">02</div><h3>We bouwen voor onszelf</h3><p>Zonder externe financiering, zonder marketingroadmap — gewoon onze eigen werkdag oplossen.</p></div>
+      <div class="tl-i"><div class="dot">03</div><h3>Het werkt, echt</h3><p>Elke dag gebruikt, in de praktijk, door onze eigen teams — de beste test die er is.</p></div>
+      <div class="tl-i"><div class="dot">04</div><h3>We delen het</h3><p>Indusiax is geboren: deze tools in handen geven van bedrijven die dezelfde realiteit kennen. <a href="/a-propos/">Ons verhaal →</a></p></div>
+    </div>
+
+    <div class="grid c3" style="margin-top:40px">
+      <div class="card">
+        <span class="ic">🏭</span>
+        <h3>Ontworpen door mensen uit de industrie</h3>
+        <p>Geen marketingbelofte: onze tools worden in de praktijk getest, in ons eigen bedrijf, voordat ze bij u terechtkomen.</p>
+      </div>
+      <div class="card">
+        <span class="ic">⚡</span>
+        <h3>Operationeel vanaf dag één</h3>
+        <p>Geen integratieproject van zes maanden. Uw teams loggen in, volgen de startgids en gaan aan de slag. Als een verkoper of technicus er niet uit komt, dan hebben wij gefaald.</p>
+      </div>
+      <div class="card">
+        <span class="ic">💶</span>
+        <h3>Een eerlijke, duidelijke prijs</h3>
+        <p>Gepubliceerde prijzen, zonder verborgen modules of verrassingen op de factuur. Stator-CRM, Rotor-FSM en de suite betaalt u per overschrijving op factuur, zoals u al met uw leveranciers werkt; Vector-MOM en Flux-Link neemt u online af met een kaart.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARCOURS -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="sec">Uitproberen, in gebruik nemen, aanpassen.</h2>
+    <p class="sec-sub">Elke applicatie wordt afgestemd op uw bedrijf: uw naam, uw logo, uw vakgebieden, uw modules.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>30 dagen gratis proberen</h3>
+        <p>Volledige toegang, zonder creditcard. Vector-MOM en Flux-Link: direct een account. Rotor-FSM: vrij toegankelijke demo. Stator-CRM: uw eigen omgeving klaar binnen 24 werkuren.</p>
+      </div>
+      <div class="step">
+        <h3>Personalisatie</h3>
+        <p>Uw sectoren, uw productgamma's, uw documentsjablonen, de modules die u nodig hebt — niets meer.</p>
+      </div>
+      <div class="step">
+        <h3>Ingebruikname</h3>
+        <p>Een startgids begeleidt elke gebruiker bij de eerste login. En een mens — iemand uit de industrie — antwoordt u via contact@indusiax.com.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RAPPEL — d'industriel à industriel -->
+<section class="alt" id="rappel">
+  <div class="wrap">
+    <div class="rappel-grid">
+      <div class="rappel-txt">
+        <span class="eb">Van industrieel tot industrieel</span>
+        <h2>Vraag om teruggebeld te worden, dan bespreken we uw project.</h2>
+        <p class="rappel-sub">Geen verkoper met een belscript: u wordt teruggebeld door iemand uit de industrie die deze tools elke dag in zijn eigen bedrijf gebruikt. We praten over uw vak, uw echte beperkingen, en over wat de suite wel — of niet — voor u kan doen.</p>
+        <ul class="rappel-points">
+          <li><b>Teruggebeld binnen 24 werkuren</b>, op het moment dat u schikt</li>
+          <li><b>15 minuten</b>, vrijblijvend en zonder opdringerige opvolging</li>
+          <li><b>Een vakgenoot, geen verkoper</b> — dezelfde werkplaatsen, dezelfde realiteit</li>
+        </ul>
+      </div>
+      <div class="rappel-card">
+        <form class="f" data-endpoint="/api/rappel" data-success="rappel-ok" novalidate>
+          <div class="row2">
+            <div><label for="r-nom">Uw naam</label><input id="r-nom" name="nom" required autocomplete="name"></div>
+            <div><label for="r-societe">Bedrijf</label><input id="r-societe" name="societe" required autocomplete="organization"></div>
+          </div>
+          <div><label for="r-tel">Telefoon</label><input id="r-tel" name="telephone" type="tel" required autocomplete="tel" placeholder="+31 6 12345678"></div>
+          <div class="row2">
+            <div><label for="r-creneau">Voorkeurstijdstip</label>
+              <select id="r-creneau" name="creneau">
+                <option value="peu importe">Maakt niet uit</option>
+                <option value="matin">Ochtend (9.00–12.00 uur)</option>
+                <option value="midi">Middag (12.00–14.00 uur)</option>
+                <option value="après-midi">Namiddag (14.00–18.00 uur)</option>
+              </select></div>
+            <div><label for="r-produit">Uw interesse</label>
+              <select id="r-produit" name="produit">
+                <option value="">Weet ik nog niet</option>
+                <option value="suite">De volledige suite</option>
+                <option value="stator">Stator-CRM (verkoop)</option>
+                <option value="rotor">Rotor-FSM (buitendienst)</option>
+                <option value="vector">Vector-MOM (vergaderingen)</option>
+                <option value="flux">Flux-Link (LinkedIn)</option>
+              </select></div>
+          </div>
+          <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn btn-acc btn-big" type="submit">Bel mij terug</button>
+          <p class="form-err" role="alert"></p>
+          <p class="rappel-note">Uw nummer wordt alleen voor dit terugbelverzoek gebruikt — nooit doorverkocht, nooit voor telefonische verkoop.</p>
+        </form>
+        <div id="rappel-ok" class="form-ok" style="display:none">
+          <div class="big">📞</div>
+          <h3>Goed ontvangen!</h3>
+          <p>Iemand uit de industrie belt u binnen 24 werkuren terug, op het gevraagde tijdstip. Tot binnenkort.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Het enige risico: dat u er niet meer zonder kunt</span>
+    <h2>30 dagen om zelf te oordelen.</h2>
+    <p>Gratis, zonder creditcard, zonder verplichtingen.</p>
+    <a class="btn btn-acc btn-big" href="/essai/">Start mijn gratis proefperiode<span class="ar">→</span></a>
+    <p style="font-size:.8rem;color:var(--mut2);margin-top:14px">Zonder creditcard · zonder verplichtingen</p>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">De softwaresuite voor industriële mkb-bedrijven.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Producten</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/outils/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC-kaarten</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/tarifs/">Prijzen</a>
+        <a href="/blog/">Blog</a>
+        <a href="/outils/">Tools</a>
+        <a href="/a-propos/">Over ons</a>
+        <a href="/contact/">Contact</a>
+        <a href="/essai/">Gratis proberen</a>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <a href="/mentions-legales/">Wettelijke vermeldingen</a>
+        <a href="/confidentialite/">Privacy</a>
+        <a href="/securite/">Beveiliging &amp; gegevens</a>
+        <a href="/cgv-stator/">Verkoopvoorwaarden Stator-CRM</a>
+        <a href="/cgv-rotor/">Verkoopvoorwaarden Rotor-FSM</a>
+        <a href="/cgv-suite/">Verkoopvoorwaarden volledige suite</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Alle rechten voorbehouden.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data gehost in de EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6"></script>
+<script src="/assets/home-film.js?v=ff5ff5b3" defer></script>
+</body>
+</html>

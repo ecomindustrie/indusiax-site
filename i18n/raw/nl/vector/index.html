@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vector-MOM — Vergaderverslagen met AI, gehost in Europa | Indusiax</title>
+<meta name="description" content="Blijf bij het gesprek, de AI maakt de notities. Vector-MOM zet uw vergaderingen om in tekst (wie zei wat) en schrijft het verslag — en uw opnames verlaten nooit onze Europese servers. € 120/gebruiker/jaar (2 maanden gratis) of € 12/maand, 30 dagen proberen, direct een account.">
+<link rel="canonical" href="https://indusiax.com/vector/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vector-MOM — Vergaderverslagen met AI, gehost in Europa">
+<meta property="og:description" content="De AI zet uw vergaderingen om in tekst en schrijft een gestructureerd verslag. Uw opnames blijven in Europa. 30 dagen proberen, direct een account.">
+<meta property="og:url" content="https://indusiax.com/vector/">
+<meta property="og:image" content="https://indusiax.com/assets/social/vector.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/vector.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Vector-MOM","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"Automatische vergaderverslagen met AI: transcriptie, sprekerherkenning, gestructureerde notities, delen en CRM-koppeling. Gegevens gehost in Europa.","url":"https://indusiax.com/vector/","offers":{"@type":"Offer","price":"12.00","priceCurrency":"EUR","description":"€ 120 excl. btw per gebruiker per jaar (2 maanden gratis), of € 12 excl. btw per maand; 30 dagen gratis proberen"}}
+</script>
+<style>
+/* maquette compte-rendu (transcript + décisions) */
+.mom .who{display:flex;gap:10px;padding:8px 0;font-size:.8rem;color:#2a3742;align-items:flex-start;}
+.mom .who .sp{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.03em;color:#fff;background:var(--p2);border-radius:3px;padding:3px 6px;white-space:nowrap;flex-shrink:0;}
+.mom .who .sp.b{background:#5b6b7a;}
+.mom .dec{margin-top:12px;padding-top:12px;border-top:2px solid var(--pline);}
+.mom .dec .h{font-family:var(--mono);font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:#67717c;margin-bottom:8px;}
+.mom .dec .d{display:flex;align-items:center;gap:9px;font-size:.8rem;color:#24303c;padding:4px 0;}
+.mom .dec .d .pastille{width:12px;height:12px;}
+.mom .tag{margin-top:13px;display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.64rem;color:#5a8f5f;}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes momIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .mom .who,.mom .dec,.mom .tag{opacity:0;animation:momIn .4s ease forwards;}
+  .mom .who:nth-of-type(1){animation-delay:.9s;}
+  .mom .who:nth-of-type(2){animation-delay:1.15s;}
+  .mom .who:nth-of-type(3){animation-delay:1.4s;}
+  .mom .dec{animation-delay:1.65s;}
+  .mom .dec .d{opacity:0;transform:scale(.7);animation:decPop .3s cubic-bezier(.34,1.56,.64,1) forwards;}
+  @keyframes decPop{to{opacity:1;transform:scale(1);}}
+  .mom .dec .d:nth-of-type(1){animation-delay:1.85s;}
+  .mom .dec .d:nth-of-type(2){animation-delay:2s;}
+  .mom .tag{animation-delay:2.2s;}
+}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Klanten, offertes, opvolging, routes, after-sales</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Keuringen en buitendienstopdrachten, pdf-rapporten</i></span></span>
+      <span class="nav-item"><a class="on" href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Vergaderverslagen met AI, in Europa</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn-berichten ingesproken en geschreven met AI</i></span></span>
+      <a href="/tarifs/">Prijzen</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">Over ons</a>
+        <a class="nav-cta-mobile" href="/essai/">30 dagen gratis proberen</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="https://vector.indusiax.com/register">30 dagen gratis proberen</a>
+</div>
+</header>
+
+<main class="pv" style="--p:#A78BFA;--p2:#7c3aed">
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/vector/hero.webp" type="image/webp"><img src="/assets/vector/hero.jpg" alt="Teamvergadering in een industrieel mkb-bedrijf, met een smartphone die opneemt" fetchpriority="high"></picture></div>
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>Blijf bij het gesprek. <span class="ac">De AI maakt de notities.</span></h1>
+      <p class="sub">Klantgesprek, teamoverleg, videocall via Teams of Meet: Vector-MOM neemt op, zet om in tekst met vermelding van wie er spreekt, en schrijft een gestructureerd verslag volgens uw eigen sjablonen. U leest na, u deelt — en uw opnames verlaten Europa nooit.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Account aanmaken — direct proberen</a>
+        <a class="btn btn-ghost btn-big" href="/tarifs/">€ 120 /gebruiker/jaar — 2 maanden gratis</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Account aangemaakt in 30 seconden · zonder creditcard</div>
+        <div class="pv-chips">
+          <span class="pv-chip">🇪🇺 Gehost in Europa</span><span class="pv-chip">Wie zei wat</span>
+          <span class="pv-chip">Teams · Meet · Zoom</span><span class="pv-chip">Export naar Word</span>
+        </div>
+      </div>
+    </div>
+    <div class="pv-card mom" aria-label="Voorbeeld van een vergaderverslag">
+      <div class="ch"><span class="t">VERSLAG</span><span class="a">Werfvergadering</span></div>
+      <div class="cb">
+        <div class="who"><span class="sp">U</span><span>De hoogwerker moet vóór de 14e geleverd zijn, anders ligt de planning in duigen.</span></div>
+        <div class="who"><span class="sp b">KLANT</span><span>De 14e is goed, op voorwaarde dat we de toegang voor vrachtwagens goedkeuren.</span></div>
+        <div class="who"><span class="sp b">WERKPLAATSCHEF</span><span>Ik regel de toegang en bevestig morgenochtend.</span></div>
+        <div class="dec">
+          <div class="h">Besluiten &amp; acties</div>
+          <div class="d"><span class="pastille p-ok"></span> Levering hoogwerker bevestigd — 14 juni</div>
+          <div class="d"><span class="pastille p-aa"></span> Toegang vrachtwagens goedkeuren — werkplaatschef, D+1</div>
+        </div>
+        <div class="tag">🔒 Omgezet &amp; opgeslagen op onze Europese servers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ORIGIN STORY -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:22px">Waarom Vector bestaat</span>
+    <div class="pv-origin">
+      <p class="lead">Onze vergaderingen zijn van ons: bouwplaatsen, geschillen, prijzen, personeel. Het soort zaken dat u <b>niet naar een Amerikaanse cloudreus stuurt</b> om het te laten uittypen.</p>
+      <p>De verslagtools die we testten, stuurden onze opnames allemaal naar God weet waar. Onaanvaardbaar als het over een vertrouwelijke offerte of een HR-dossier gaat. Dus bouwden we onze eigen tool: de transcriptie draait op onze eigen servers, in Europa, en er gaat niets naar buiten. Het automatische verslag dat een industrieel bedrijf met een gerust geweten kan gebruiken.</p>
+      <div class="sig">By Industry, For Industry — het Indusiax-team</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONFIDENTIALITÉ -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Uw vergaderingen blijven van u</span>
+    <h2 class="sec" style="text-align:left;max-width:680px">Vertrouwelijk. En dat blijft zo.</h2>
+    <div class="grid c3" style="margin-top:36px">
+      <div class="card"><span class="ic">🎧</span><h3>Transcriptie bij ons</h3><p>De audio wordt omgezet <b style="color:var(--txt)">op onze eigen servers</b>, in Europa. Nooit doorgestuurd naar een externe transcriptiedienst — anders dan bij de meeste tools op de markt.</p></div>
+      <div class="card"><span class="ic">🇪🇺</span><h3>Opgeslagen in Europa</h3><p>Opnames, transcripties en verslagen staan op servers in de EU, onder Europees recht. Elke nacht geback-upt, met een kopie op een andere locatie. <a href="/securite/" style="color:var(--acc);font-weight:600">Pagina Beveiliging →</a></p></div>
+      <div class="card"><span class="ic">🗑️</span><h3>Echt van u</h3><p>Export met één klik (Word, Markdown, transcriptie), definitief verwijderen op elk moment — inclusief de audio. Als u vertrekt, neemt u alles mee en blijft er niets achter.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="pv-band">
+  <picture><source srcset="/assets/vector/band.webp" type="image/webp"><img src="/assets/vector/band.jpg" alt="Twee professionals in technisch overleg over werkplaatstekeningen" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">Van gesproken woord tot verslag</span>
+    <h2>U leidt de vergadering. Vector schrijft intussen mee.</h2>
+    <p>Alleen de microfoon bij een fysieke vergadering, of microfoon + geluid van de videocall om iedereen op te nemen — en de AI zet de besluiten op de juiste plek.</p>
+  </div>
+</div>
+
+<!-- COMMENT / FONCTIONS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Hoe het werkt</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Van gesproken woord tot verslag, zonder toetsenbord.</h2>
+    <div class="grid c3" style="margin-top:36px">
+      <div class="card"><span class="ic">🎙️</span><h3>Eenvoudig opnemen</h3><p>Alleen de microfoon bij een fysieke vergadering, of microfoon + geluid van de videocall (Meet, Teams, Zoom web) om alle deelnemers op te nemen.</p></div>
+      <div class="card"><span class="ic">🗣️</span><h3>Wie zei wat</h3><p>De transcriptie onderscheidt uw stem van die van uw gesprekspartners — het verslag kent de besluiten toe aan de juiste personen.</p></div>
+      <div class="card"><span class="ic">📝</span><h3>Gestructureerde notities</h3><p>De AI schrijft volgens uw sjablonen: besluitenlijst, actiepunten, bezoekverslag… u kiest zelf de opbouw.</p></div>
+      <div class="card"><span class="ic">📅</span><h3>Gekoppeld aan uw agenda</h3><p>Verbind Google of Outlook: uw afspraken van de dag verschijnen, en de vergadering wordt met één klik aangemaakt met de juiste deelnemers.</p></div>
+      <div class="card"><span class="ic">🔗</span><h3>Delen via een link</h3><p>Stuur het verslag alleen-lezen naar wie er niet bij was — zonder bijlage of knip-en-plakwerk.</p></div>
+      <div class="card"><span class="ic">🧲</span><h3>Naar uw CRM</h3><p>Met Stator-CRM komt het verslag van het klantgesprek rechtstreeks in de fiche van de betreffende klant.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Voor wie</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Gemaakt voor vergaderingen waar beslist wordt.</h2>
+    <div class="pv-aud" style="margin-top:40px">
+      <div class="pv-photo">
+        <picture><source srcset="/assets/vector/audience.webp" type="image/webp"><img src="/assets/vector/audience.jpg" alt="Werfvergadering met veiligheidshelmen, bespreking op een tablet" loading="lazy"></picture>
+        <div class="badge">
+          <span class="eb">Waar het echt om gaat</span>
+          <h3>Een helder verslag is een geschil minder.</h3>
+          <p>“Wat hadden we nu ook alweer afgesproken?” — de vraag die geld kost. Een verslag met namen, datum en gedeeld met iedereen, zorgt dat iedereen op één lijn zit.</p>
+        </div>
+      </div>
+      <div class="pv-audlist">
+        <div class="pv-aud-i"><div class="k">01</div><div><h3>Directeuren &amp; projectleiders</h3><p>Werfvergaderingen, dealreviews, leveranciersoverleg: de besluiten op papier, zonder er uw avond aan te verliezen.</p></div></div>
+        <div class="pv-aud-i"><div class="k">02</div><div><h3>Technisch verkopers</h3><p>Bezoekverslag ingesproken bij het verlaten van de afspraak, op de juiste plek opgeslagen (en in het CRM met Stator).</p></div></div>
+        <div class="pv-aud-i"><div class="k">03</div><div><h3>Engineering &amp; kwaliteit</h3><p>Lange technische vergaderingen: de gestructureerde opbouw levert een bruikbare besluitenlijst op.</p></div></div>
+        <div class="pv-aud-i"><div class="k">04</div><div><h3>Iedereen die discretie belangrijk vindt</h3><p>HR, directie, juridische zaken: gevoelige onderwerpen die in Europa moeten blijven, op onze servers.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIF + CTA -->
+<section class="alt">
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Prijs</span>
+    <h2 class="sec">Direct proberen, tegen een eerlijke prijs.</h2>
+    <div style="max-width:440px;margin:32px auto 0">
+      <div class="price-card bundle" style="position:relative;text-align:center">
+        <span class="badge-eco">Direct een account · zonder creditcard</span>
+        <h3 class="t-vector" style="margin-top:6px">Vector-MOM</h3>
+        <div class="amount" style="margin:4px auto 0">€ 120<small> excl. btw / gebruiker / jaar</small></div>
+        <div class="per"><b style="color:var(--txt)">2 maanden gratis bij jaarbetaling</b> — dus € 10/maand. Of € 12/maand bij maandbetaling. Onbeperkt aantal vergaderingen, alles inbegrepen.</div>
+        <ul style="text-align:left">
+          <li>Transcriptie “wie zei wat”</li>
+          <li>Gestructureerde AI-verslagen</li>
+          <li>Agenda's van Google &amp; Outlook</li>
+          <li>🇪🇺 Hosting &amp; transcriptie in Europa</li>
+          <li>Frans, Engels, Nederlands</li>
+        </ul>
+        <a class="btn btn-acc" style="align-self:center" href="https://vector.indusiax.com/register">Gratis account aanmaken</a>
+      </div>
+    </div>
+    <p style="margin-top:20px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Verwijs een collega door: +15 dagen voor hem of haar, 1 maand gratis voor u.</p>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">We maakten het voor onze vergaderingen. Gebruik het voor de uwe.</span>
+    <h2>Uw volgende vergadering verdient een echt verslag.</h2>
+    <p>Account aangemaakt in 30 seconden, 30 dagen volledig proberen.</p>
+    <a class="btn btn-acc btn-big" href="https://vector.indusiax.com/register">Gratis account aanmaken</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">De softwaresuite voor industriële mkb-bedrijven.<br>By industry, for industry.</p>
+      </div>
+      <div><h4>Producten</h4><span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a><span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a><span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a><span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><h4 class="foot-sous"><a href="/outils/">Tools</a></h4><span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a><span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC-kaarten</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Prijzen</a><a href="/blog/">Blog</a><a href="/outils/">Tools</a><a href="/a-propos/">Over ons</a><a href="/contact/">Contact</a><a href="/essai/">Gratis proberen</a></div>
+      <div><h4>Juridisch</h4><a href="/mentions-legales/">Wettelijke vermeldingen</a><a href="/confidentialite/">Privacy</a><a href="/securite/">Beveiliging &amp; gegevens</a><a href="/cgv-stator/">Verkoopvoorwaarden Stator-CRM</a><a href="/cgv-rotor/">Verkoopvoorwaarden Rotor-FSM</a><a href="/cgv-suite/">Verkoopvoorwaarden volledige suite</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Alle rechten voorbehouden.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Gegevens gehost in de EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6"></script>
+</body>
+</html>

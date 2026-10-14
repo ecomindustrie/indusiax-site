@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tools — het visitekaartje, in beide richtingen | Indusiax</title>
+<meta name="description" content="Contiax leest de visitekaartjes die u krijgt, gratis. Onze NFC-kaarten zijn het kaartje dat u zelf overhandigt, voor € 5 per stuk. Twee kleine tools van Indusiax, naast de softwaresuite.">
+<link rel="canonical" href="https://indusiax.com/nl/tools/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/outils/">
+<link rel="alternate" hreflang="en" href="https://indusiax.com/en/tools/">
+<link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/tools/">
+<link rel="alternate" hreflang="x-default" href="https://indusiax.com/outils/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=35e9a8dd">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Indusiax-tools — het visitekaartje, in beide richtingen">
+<meta property="og:description" content="Contiax leest de kaartjes die u krijgt. Onze NFC-kaarten zijn het kaartje dat u zelf overhandigt.">
+<meta property="og:url" content="https://indusiax.com/nl/tools/">
+<meta property="og:image" content="https://indusiax.com/assets/outils/scene-cartes.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/outils/scene-cartes.jpg">
+<!-- Page de rubrique : simple liste de liens pour Google, pas une fiche produit.
+     Elle décrivait auparavant la carte NFC comme un Product avec son prix, ce qui
+     créait une deuxième fiche marchande concurrente de /cartes-nfc/ — incomplète,
+     donc signalée en erreur par la Search Console. La fiche produit vit à un seul
+     endroit : /cartes-nfc/. Ici on se contente de pointer vers les deux outils. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Indusiax-tools",
+  "description": "Twee instaptools rond het visitekaartje: Contiax, een gratis scanner voor de kaartjes die u krijgt, en de NFC-visitekaartjes van Indusiax, het kaartje dat u zelf overhandigt.",
+  "url": "https://indusiax.com/nl/tools/",
+  "isPartOf": {"@type": "WebSite", "name": "Indusiax", "url": "https://indusiax.com"},
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListOrder": "https://schema.org/ItemListUnordered",
+    "numberOfItems": 2,
+    "itemListElement": [
+      {
+        "@type": "ListItem", "position": 1,
+        "name": "Contiax — visitekaartjesscanner",
+        "url": "https://indusiax.com/nl/contiax/"
+      },
+      {
+        "@type": "ListItem", "position": 2,
+        "name": "NFC-visitekaartjes van Indusiax",
+        "url": "https://indusiax.com/nl/nfc-visitekaartjes/"
+      }
+    ]
+  }
+}
+</script>
+<style>
+  .ot-hero{padding:74px 0 20px;background:radial-gradient(56rem 26rem at 50% -16%, rgba(232,76,43,.09), transparent 66%);}
+  .ot-hero h1{font-size:clamp(1.95rem,4.6vw,3rem);font-weight:800;letter-spacing:-.025em;
+    line-height:1.13;margin:16px 0 18px;max-width:19ch;}
+  .ot-hero .sub{font-size:clamp(1rem,1.9vw,1.14rem);color:var(--mut);max-width:58ch;}
+
+  /* Les deux outils, côte à côte : c'est la mise en page qui raconte le
+     couple. Empilés, ils redeviendraient deux bricoles sans rapport.
+     La grille porte quatre cellules : les deux photos en première ligne,
+     les deux encarts en seconde. */
+  .ot-duo{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:34px;}
+  @media(max-width:840px){
+    .ot-duo{grid-template-columns:1fr;gap:16px;}
+    /* Sur une colonne, l'ordre du document mettrait les deux photos avant
+       les deux encarts. On remet chaque photo juste au-dessus de l'outil
+       qu'elle met en scène — sans quoi la démonstration se perd. */
+    .ot-photo-1{order:1;} .ot-c1{order:2;}
+    .ot-photo-2{order:3;} .ot-c2{order:4;}
+  }
+
+  .ot-photo{margin:0;border:1px solid var(--bord);border-radius:16px;
+    overflow:hidden;background:var(--bg2);}
+  .ot-photo img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;}
+  .ot-photo figcaption{padding:11px 15px;font-size:.83rem;color:var(--mut2);
+    border-top:1px solid var(--bord);}
+  .ot-photo figcaption b{color:var(--oc);font-weight:650;}
+
+  .ot-carte{
+    position:relative;cursor:pointer;
+    border:1px solid var(--bord);border-radius:18px;padding:26px 25px 24px;
+    background:var(--bg2);display:flex;flex-direction:column;gap:11px;
+    border-top:2px solid var(--oc);transition:border-color .2s,transform .2s;
+  }
+  .ot-carte:hover,.ot-carte:focus-within{transform:translateY(-3px);border-color:var(--oc);}
+  .ot-carte h2{font-size:1.4rem;font-weight:750;letter-spacing:-.02em;}
+  .ot-carte h2 b{color:var(--oc);}
+  .ot-prix{font-family:var(--mono);font-size:.82rem;color:var(--mut2);}
+  .ot-carte p{color:var(--mut);font-size:.95rem;}
+  .ot-liste{list-style:none;display:flex;flex-direction:column;gap:6px;margin-top:2px;}
+  .ot-liste li{display:flex;gap:9px;font-size:.9rem;color:var(--mut);}
+  .ot-liste li::before{content:"—";color:var(--oc);flex:none;}
+  /* Tout l'encart est cliquable, avec un SEUL vrai lien : celui du titre,
+     dont un pseudo-élément s'étend sur toute la carte. Imbriquer un <a>
+     dans un <a> serait invalide, et un gestionnaire de clic sur le bloc
+     priverait le clavier et les lecteurs d'écran du lien.
+     Le lien n'est volontairement pas porté par le bouton : la feuille du
+     site donne à `.btn` un `position:relative` et un `overflow:hidden`, qui
+     enfermeraient la superposition dans le bouton lui-même. */
+  .ot-lien{color:inherit;}
+  .ot-lien::after{content:"";position:absolute;inset:0;border-radius:18px;z-index:2;}
+  .ot-carte:focus-within{outline:2px solid var(--oc);outline-offset:3px;}
+
+  /* Le bouton n'est plus qu'un repère visuel : c'est le titre qui est
+     cliquable. `pointer-events:none` garantit qu'il n'intercepte jamais le
+     clic destiné à la carte. */
+  .ot-bouton{align-self:flex-start;margin-top:auto;pointer-events:none;}
+  .ot-carte:hover .ot-bouton,.ot-carte:focus-within .ot-bouton{
+    background:var(--oc);border-color:var(--oc);color:#0b0d12;}
+
+  .ot-sens{font-family:var(--mono);font-size:.7rem;letter-spacing:.15em;
+    text-transform:uppercase;color:var(--oc);}
+
+  @media(prefers-reduced-motion:no-preference){
+    /* Le bouton respire pour attirer l'œil, mais s'immobilise dès que la
+       souris arrive : une cible qui bouge au moment du clic est un défaut,
+       pas une animation. */
+    .ot-bouton{animation:otRespire 2.8s ease-in-out infinite;}
+    .ot-c2 .ot-bouton{animation-delay:1.4s;}
+    .ot-carte:hover .ot-bouton,.ot-carte:focus-within .ot-bouton{animation-play-state:paused;}
+    @keyframes otRespire{0%,100%{transform:scale(1);}50%{transform:scale(1.06);}}
+  }
+
+  /* Reflet qui balaie l'intitulé, puis se repose sur la couleur pleine.
+     Le dégradé est découpé sur le texte : sans la garde `@supports`, un
+     navigateur qui ignore `background-clip:text` afficherait un texte
+     transparent, c'est-à-dire rien du tout. */
+  @supports ((-webkit-background-clip:text) or (background-clip:text)){
+    @media(prefers-reduced-motion:no-preference){
+      .ot-sens{
+        background-image:linear-gradient(100deg,
+          var(--oc) 0%, var(--oc) 42%, #ffffff 50%, var(--oc) 58%, var(--oc) 100%);
+        background-size:300% 100%;background-repeat:no-repeat;
+        -webkit-background-clip:text;background-clip:text;
+        -webkit-text-fill-color:transparent;color:transparent;
+        animation:otBrille 5.4s ease-in-out infinite;
+      }
+      .ot-c2 .ot-sens{animation-delay:2.7s;}
+      @keyframes otBrille{0%{background-position:100% 0;}
+        42%,100%{background-position:0 0;}}
+    }
+  }
+
+  .ot-pourquoi{border:1px solid var(--bord);border-radius:16px;padding:24px 26px;
+    background:var(--bg2);margin-top:34px;max-width:64ch;}
+  .ot-pourquoi h3{font-size:1.05rem;margin-bottom:9px;}
+  .ot-pourquoi p{color:var(--mut);font-size:.95rem;}
+  .ot-pourquoi p + p{margin-top:10px;}
+
+  .ot-suite{margin-top:38px;padding-top:28px;border-top:1px solid var(--bord);}
+  .ot-suite-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px;}
+  @media(max-width:760px){.ot-suite-grid{grid-template-columns:repeat(2,1fr);}}
+  .ot-suite-i{border:1px solid var(--bord);border-radius:11px;padding:13px 14px;
+    background:var(--bg2);display:block;transition:border-color .2s,transform .2s;}
+  .ot-suite-i:hover{border-color:var(--sc);transform:translateY(-2px);}
+  .ot-suite-i b{display:block;font-size:.9rem;color:var(--sc);}
+  .ot-suite-i span{font-size:.78rem;color:var(--mut2);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/nl/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/nl/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Klanten, offertes, opvolging, rondes, after-sales</i></span></span>
+      <span class="nav-item"><a href="/nl/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Keuringen en buitendienstopdrachten, pdf-rapporten</i></span></span>
+      <span class="nav-item"><a href="/nl/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Vergaderverslagen met AI, gehost in Europa</i></span></span>
+      <span class="nav-item"><a href="/nl/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn-posts, ingesproken en door AI uitgeschreven</i></span></span>
+      <a href="/nl/prijzen/">Prijzen</a>
+      <a href="/nl/blog/">Blog</a>
+      <a class="on" href="/nl/tools/">Tools</a>
+      <a href="/nl/over-ons/">Over ons</a>
+      <a class="nav-cta-mobile" href="/nl/gratis-proberen/">30 dagen gratis proberen</a>
+      <!--i18n-sw--><div class="lang-sw lang-sw-m" role="navigation" aria-label="Taal"><a href="/outils/" hreflang="fr" lang="fr">FR</a><a href="/en/tools/" hreflang="en" lang="en">EN</a><a href="/nl/tools/" hreflang="nl" lang="nl" aria-current="true">NL</a></div><!--/i18n-sw-->
+    </nav>
+    <!--i18n-sw--><div class="lang-sw" role="navigation" aria-label="Taal"><a href="/outils/" hreflang="fr" lang="fr">FR</a><a href="/en/tools/" hreflang="en" lang="en">EN</a><a href="/nl/tools/" hreflang="nl" lang="nl" aria-current="true">NL</a></div><!--/i18n-sw-->
+    <a class="btn btn-acc nav-cta" href="/nl/gratis-proberen/">30 dagen gratis proberen</a>
+  </div>
+</header>
+
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
+
+<section class="ot-hero">
+  <div class="wrap">
+    <span class="eb">Tools</span>
+    <h1>Het visitekaartje, in beide richtingen.</h1>
+    <p class="sub">Aan de ene kant de kaartjes die u krijgt en die onderin een
+      zak belanden. Aan de andere kant uw eigen kaartje, twee jaar geleden gedrukt
+      met een nummer dat inmiddels is veranderd. Voor elk van beide problemen
+      maken wij een kleine tool.</p>
+
+    <div class="ot-duo">
+      <figure class="ot-photo ot-photo-1" style="--oc:var(--contiax)">
+        <picture>
+          <source srcset="/assets/outils/scene-contiax.webp" type="image/webp">
+          <img src="/assets/outils/scene-contiax.jpg" width="960" height="720"
+               fetchpriority="high"
+               alt="In het gangpad van een industriële vakbeurs reikt een verkoper van rond de vijftig een papieren visitekaartje aan; zijn gesprekspartner van in de dertig fotografeert het met zijn smartphone.">
+        </picture>
+        <figcaption>Iemand geeft u een kaartje: <b>Contiax</b> leest het en het
+          contact is opgeslagen voordat het gesprek verdergaat.</figcaption>
+      </figure>
+
+      <figure class="ot-photo ot-photo-2" style="--oc:var(--cartes)">
+        <picture>
+          <source srcset="/assets/outils/scene-cartes.webp" type="image/webp">
+          <img src="/assets/outils/scene-cartes.jpg" width="960" height="720" loading="lazy"
+               alt="Zelfde scène: de jongste van de twee verkopers geeft op zijn beurt een zwart visitekaartje met chip en het logo van Indusiax, dat zijn gesprekspartner aangenaam verrast tegen zijn telefoon houdt.">
+        </picture>
+        <figcaption>Uw beurt: de <b>NFC-kaart</b> opent uw contactfiche op de
+          telefoon van de ander, actueel, zonder dat die iets hoeft in te tikken.</figcaption>
+      </figure>
+
+      <article class="ot-carte ot-c1" style="--oc:var(--contiax)">
+        <span class="ot-sens">De kaartjes die u krijgt</span>
+        <h2><a class="ot-lien" href="/nl/contiax/"><b>Contiax</b></a></h2>
+        <span class="ot-prix">Gratis · geen account · geen cookies</span>
+        <p>Fotografeer een visitekaartje — of een e-mailhandtekening op uw
+          scherm — en het contact gaat naar uw telefoon, een spreadsheet
+          of uw CRM.</p>
+        <ul class="ot-liste">
+          <li>Leest voor- en achterkant in enkele seconden</li>
+          <li>Werkt ook als het netwerk in de beurshal overbelast is</li>
+          <li>Er wordt niets op onze servers bewaard</li>
+          <li>Zes talen</li>
+        </ul>
+        <span class="btn btn-ghost ot-bouton">Ontdek Contiax</span>
+      </article>
+
+      <article class="ot-carte ot-c2" style="--oc:var(--cartes)">
+        <span class="ot-sens">Het kaartje dat u geeft</span>
+        <h2><a class="ot-lien" href="/nl/nfc-visitekaartjes/"><b>NFC</b>-visitekaartjes</a></h2>
+        <span class="ot-prix">€ 5 per kaart · geen abonnement</span>
+        <p>Een chipkaart die u tegen een telefoon houdt: uw fiche opent, het
+          contact wordt opgeslagen. Verandert uw nummer, dan past u de pagina
+          aan — niet de tweehonderd kaartjes die al zijn uitgedeeld.</p>
+        <ul class="ot-liste">
+          <li>Geen app, aan geen van beide kanten</li>
+          <li>Levenslang aanpasbaar, zonder nieuwe kaart</li>
+          <li>Over te dragen aan een opvolger</li>
+          <li>Pagina en hosting inbegrepen</li>
+        </ul>
+        <span class="btn btn-ghost ot-bouton">Ontdek de NFC-kaarten</span>
+      </article>
+    </div>
+
+    <div class="ot-pourquoi">
+      <h3>Waarom zo goedkoop, en waarom zo weinig in de kijker</h3>
+      <p>Deze twee tools zijn niet onze kernactiviteit. Onze kernactiviteit, dat
+        zijn vier beheerprogramma's voor industriële mkb-bedrijven. Contiax en de
+        NFC-kaarten zijn een instap: ze kosten weinig omdat ze er niet zijn om
+        marge te maken, maar opdat een industrieel bedrijf dat ons nog niet
+        kende, ontdekt dat wij bestaan.</p>
+      <p>Daarom staat er ook onderaan elke NFC-fiche de vermelding ‘Powered by
+        Indusiax’, en wordt Contiax zonder tegenprestatie aangeboden — geen
+        account aan te maken, geen reclame, geen doorverkoop van gegevens. Bewijst
+        een van beide u een dienst, dan weet u dat onze software is ontwikkeld
+        door iemand uit de industrie, voor de industrie. Meer verwachten wij er niet van.</p>
+    </div>
+
+    <div class="ot-suite">
+      <span class="eb c" style="display:flex;margin-bottom:10px">Onze kernactiviteit</span>
+      <h2 style="font-size:1.35rem;font-weight:750;letter-spacing:-.02em">Vier softwarepakketten voor de industrie.</h2>
+      <p style="color:var(--mut);margin-top:9px;max-width:62ch">Ontwikkeld door
+        een industrieel bedrijf dat ze elke dag gebruikt, gehost in de Europese
+        Unie, dertig dagen gratis te proberen zonder creditcard.</p>
+      <div class="ot-suite-grid">
+        <a class="ot-suite-i" style="--sc:var(--stator)" href="/nl/stator/"><b>Stator-CRM</b><span>Klanten, offertes, opvolging</span></a>
+        <a class="ot-suite-i" style="--sc:var(--rotor)" href="/nl/rotor/"><b>Rotor-FSM</b><span>Buitendienstopdrachten</span></a>
+        <a class="ot-suite-i" style="--sc:var(--vector)" href="/nl/vector/"><b>Vector-MOM</b><span>Vergaderverslagen</span></a>
+        <a class="ot-suite-i" style="--sc:var(--flux)" href="/nl/flux/"><b>Flux-Link</b><span>Publiceren op LinkedIn</span></a>
+      </div>
+      <p style="margin-top:18px">
+        <a class="btn btn-acc" href="/nl/prijzen/">Bekijk de prijzen</a>
+        <a class="btn btn-ghost" href="/nl/gratis-proberen/" style="margin-left:8px">30 dagen gratis proberen</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/nl/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">De softwaresuite voor industriële mkb-bedrijven.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Producten</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/nl/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/nl/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/nl/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/nl/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/nl/tools/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/nl/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/nl/nfc-visitekaartjes/">NFC-kaarten</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/nl/prijzen/">Prijzen</a>
+        <a href="/nl/blog/">Blog</a>
+        <a href="/nl/tools/">Tools</a>
+        <a href="/nl/over-ons/">Over ons</a>
+        <a href="/nl/contact/">Contact</a>
+        <a href="/nl/gratis-proberen/">Gratis proberen</a>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <a href="/nl/wettelijke-vermeldingen/">Wettelijke vermeldingen</a>
+        <a href="/nl/privacy/">Privacy</a>
+        <a href="/nl/beveiliging/">Beveiliging &amp; gegevens</a>
+        <a href="/nl/voorwaarden-stator/">Verkoopvoorwaarden Stator-CRM</a>
+        <a href="/nl/voorwaarden-rotor/">Verkoopvoorwaarden Rotor-FSM</a>
+        <a href="/nl/voorwaarden-suite/">Verkoopvoorwaarden volledige Suite</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Alle rechten voorbehouden.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+      <span class="foot-eu">🇪🇺 Gegevens gehost in de EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=86b04177" defer></script>
+</body>
+</html>

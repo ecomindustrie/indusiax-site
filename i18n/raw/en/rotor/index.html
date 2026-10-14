@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rotor-FSM — Software for inspection & VGP service providers | Indusiax</title>
+<meta name="description" content="From on-site inspection to signed PDF report, with no re-keying. Rotor-FSM turns your on-site checks into professional reports under your own brand. For VGP (France's mandatory periodic inspections) providers, maintenance firms and inspection bodies. €390/user/year (2 months free), on quotation. 30-day trial.">
+<link rel="canonical" href="https://indusiax.com/rotor/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Rotor-FSM — Software for inspection & VGP service providers">
+<meta property="og:description" content="From on-site inspection to signed report, with no re-keying. Under your brand, ready for the customer. Live online demo, instantly.">
+<meta property="og:url" content="https://indusiax.com/rotor/">
+<meta property="og:image" content="https://indusiax.com/assets/social/rotor.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/rotor.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Rotor-FSM",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web, iOS, Android",
+  "description": "Inspection and VGP (France's mandatory periodic inspections) software for industrial service providers: on-site checks on a tablet, configurable inspection sheets, PDF reports under the provider's own brand, tracking of regulatory due dates.",
+  "url": "https://indusiax.com/rotor/",
+  "offers": {"@type": "Offer", "price": "390.00", "priceCurrency": "EUR", "description": "€390 excl. VAT per user per year (2 months free), paid in advance; business customers only, subscription on quotation; 30-day free trial"}
+}
+</script>
+<style>
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-500.woff2') format('woff2');font-weight:500;font-display:swap;}
+@font-face{font-family:'JBMono';src:url('/assets/rotor/fonts/jbmono-700.woff2') format('woff2');font-weight:700;font-display:swap;}
+/* ── Page ROTOR : éléments riches (charte site + accent bleu rotor) ── */
+.r{--r:#3B82F6;--r-deep:#2563EB;--ok:#22c55e;--aa:#E0A128;--nc:#ef4444;
+  --mono:'JBMono',ui-monospace,Consolas,monospace;--paper:#fff;--pink:#10161d;--pline:#c7d2dd;}
+.r .mono{font-family:var(--mono);}
+.r .eb{font-family:var(--mono);font-weight:500;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--r);display:inline-flex;align-items:center;gap:9px;}
+.r .eb::before{content:"";width:22px;height:2px;background:var(--r);display:inline-block;}
+.pastille{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15);display:inline-block;}
+.p-ok{background:var(--ok);}.p-aa{background:var(--aa);}.p-nc{background:var(--nc);}
+@media(prefers-reduced-motion:no-preference){
+  @keyframes pastillePop{from{transform:scale(0);}60%{transform:scale(1.2);}to{transform:scale(1);}}
+  .vrow .pastille{transform:scale(0);animation:pastillePop .4s cubic-bezier(.34,1.56,.64,1) forwards;}
+  .vrow:nth-of-type(1) .pastille{animation-delay:.9s;}
+  .vrow:nth-of-type(2) .pastille{animation-delay:1.05s;}
+  .vrow:nth-of-type(3) .pastille{animation-delay:1.2s;}
+  .vrow:nth-of-type(4) .pastille{animation-delay:1.35s;}
+  table.mk tbody tr .pastille{opacity:0;transform:scale(0);
+    transition:opacity .3s ease,transform .35s cubic-bezier(.34,1.56,.64,1);}
+  table.mk.in tbody tr .pastille{opacity:1;transform:scale(1);}
+  table.mk.in tbody tr:nth-child(1) .pastille{transition-delay:.05s;}
+  table.mk.in tbody tr:nth-child(2) .pastille{transition-delay:.15s;}
+  table.mk.in tbody tr:nth-child(3) .pastille{transition-delay:.25s;}
+  table.mk.in tbody tr:nth-child(4) .pastille{transition-delay:.35s;}
+  table.mk.in tbody tr:nth-child(5) .pastille{transition-delay:.45s;}
+}
+
+/* HERO photo */
+.r-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--bord);}
+.r-hero .bg{position:absolute;inset:0;z-index:0;}
+.r-hero .bg img{width:100%;height:100%;object-fit:cover;}
+.r-hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#080b10 0%,#080b10d9 36%,#080b1066 60%,#080b1020 100%);}
+.r-hero-in{position:relative;z-index:2;padding:78px 0 84px;display:grid;grid-template-columns:1.08fr .92fr;gap:40px;align-items:center;}
+.r-hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;letter-spacing:-.025em;line-height:1.1;margin:16px 0 20px;}
+.r-hero h1 .ac{color:var(--r);}
+.r-hero .sub{font-size:clamp(1rem,1.9vw,1.18rem);color:var(--mut);max-width:52ch;}
+.r-hero .ctas{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap;}
+.r-trust{margin-top:34px;padding-top:20px;border-top:1px solid var(--bord);}
+.r-trust .lb{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mut2);}
+.r-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;}
+.r-chip{font-family:var(--mono);font-size:.72rem;color:var(--mut);border:1px solid var(--bord);border-radius:3px;padding:5px 10px;}
+/* verdict card */
+.verdict{background:var(--paper);color:var(--pink);border-radius:8px;border:1px solid var(--pline);overflow:hidden;
+  box-shadow:0 30px 70px rgba(0,0,0,.5);justify-self:end;width:100%;max-width:390px;}
+.verdict .vh{display:flex;justify-content:space-between;align-items:center;padding:13px 17px;background:var(--r);color:#fff;}
+.verdict .vh .t{font-family:var(--mono);font-size:.72rem;letter-spacing:.08em;}
+.verdict .vh .a{font-family:var(--mono);font-size:.66rem;opacity:.85;}
+.verdict .vb{padding:15px 17px 17px;}
+.vrow{display:flex;align-items:center;gap:12px;padding:8px 0;border-bottom:1px dashed var(--pline);font-size:.82rem;color:#24303c;}
+.vrow:last-of-type{border-bottom:0;}.vrow .l{flex:1;}
+.vsc{display:flex;align-items:center;gap:13px;margin-top:12px;padding-top:13px;border-top:2px solid var(--pline);}
+.gauge{width:56px;height:56px;border-radius:50%;flex-shrink:0;background:conic-gradient(var(--ok) 94%,var(--pline) 0);display:grid;place-items:center;}
+.gauge span{width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.82rem;}
+.vsc .m{font-family:var(--mono);font-size:.7rem;color:#556;line-height:1.5;}.vsc .m b{color:var(--ok);}
+.stamp{margin-left:auto;font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.08em;color:var(--ok);border:2px solid var(--ok);border-radius:3px;padding:6px 9px;transform:rotate(-4deg);}
+@media(max-width:900px){.r-hero-in{grid-template-columns:1fr;gap:28px;padding:52px 0 60px;}.verdict{justify-self:start;max-width:410px;}.r-hero .bg::after{background:linear-gradient(180deg,#080b10e6,#080b10aa);}}
+
+/* comment + tablet */
+.r-two{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+.r-shot{border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);}
+.r-shot img{width:100%;display:block;aspect-ratio:3/2;object-fit:cover;}
+.r-steps{display:grid;gap:20px;}
+.r-step{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;}
+.r-step .n{font-family:var(--mono);font-weight:700;font-size:.9rem;color:#fff;background:var(--r);width:36px;height:36px;border-radius:8px;display:grid;place-items:center;}
+.r-step h3{font-size:1.05rem;margin:2px 0 5px;}.r-step p{font-size:.92rem;color:var(--mut);}
+@media(max-width:860px){.r-two{grid-template-columns:1fr;gap:30px;}.r-two .r-shot{order:-1;}}
+
+/* image band */
+.r-band{position:relative;overflow:hidden;min-height:380px;display:flex;align-items:center;}
+.r-band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+.r-band::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,#080b10ec 0%,#080b10b0 46%,#080b1055 100%);}
+.r-band .in{position:relative;z-index:2;padding:64px 0;max-width:620px;}
+.r-band h2{font-size:clamp(1.5rem,3.2vw,2.1rem);font-weight:800;letter-spacing:-.02em;margin:14px 0 12px;}
+.r-band p{font-family:var(--mono);font-size:.86rem;color:var(--mut);}
+
+/* report mockup */
+.r-rep{display:grid;grid-template-columns:.92fr 1.08fr;gap:50px;align-items:center;}
+.r-legend{display:grid;gap:10px;margin-top:24px;}
+.r-legend .lg{display:flex;align-items:center;gap:12px;font-size:.92rem;color:var(--mut);}
+.r-legend code{font-family:var(--mono);font-size:.72rem;color:var(--mut2);margin-left:auto;}
+.mock{background:var(--paper);color:var(--pink);border:1px solid var(--pline);border-radius:6px;box-shadow:0 30px 70px rgba(0,0,0,.5);padding:24px;}
+.mock .mh{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:13px;border-bottom:2px solid var(--r);}
+.mock .lg2{font-weight:800;font-size:1.05rem;color:var(--r);}
+.mock .lg2 small{display:block;font-family:var(--mono);font-size:.55rem;letter-spacing:.12em;color:#8794a1;font-weight:500;}
+.mock .tt{text-align:right;font-weight:800;font-size:.9rem;color:var(--r);}
+.mock .tt small{display:block;font-family:var(--mono);font-size:.58rem;color:#8794a1;font-weight:500;}
+table.mk{width:100%;border-collapse:collapse;margin-top:14px;font-size:.72rem;}
+table.mk th{background:var(--r);color:#fff;font-family:var(--mono);font-weight:500;font-size:.58rem;letter-spacing:.05em;text-transform:uppercase;padding:6px 9px;text-align:left;}
+table.mk th:last-child,table.mk td:last-child{text-align:center;width:60px;}
+table.mk td{padding:7px 9px;border-bottom:1px solid #e4eaf0;color:#2a3742;}
+table.mk .sub td{background:#eef2f6;font-weight:700;font-family:var(--mono);font-size:.58rem;letter-spacing:.04em;text-transform:uppercase;color:var(--r);}
+table.mk .pastille{margin:0 auto;}
+.mk-f{display:flex;align-items:center;gap:14px;margin-top:14px;padding-top:12px;border-top:1px solid #e4eaf0;}
+.mk-bar{flex:1;height:11px;background:#eef2f6;border-radius:6px;overflow:hidden;}
+.mk-bar i{display:block;height:100%;width:91%;background:linear-gradient(90deg,var(--ok),#37b06e);}
+.mk-f .sc{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--ok);}
+@media(max-width:860px){.r-rep{grid-template-columns:1fr;gap:32px;}}
+
+/* parc */
+.r-parc{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent);}
+.r-parc-track{display:flex;gap:16px;width:max-content;}
+.r-parc-track .mc{flex:0 0 220px;}
+@media(prefers-reduced-motion:no-preference){
+  .r-parc-track{animation:rParcScroll 32s linear infinite;}
+  @keyframes rParcScroll{to{transform:translateX(-50%);}}
+  .r-parc:hover .r-parc-track,.r-parc:focus-within .r-parc-track{animation-play-state:paused;}
+}
+@media(prefers-reduced-motion:reduce){
+  .r-parc{overflow-x:auto;padding-bottom:10px;-webkit-mask-image:none;mask-image:none;}
+  .r-parc-track{scroll-snap-type:x proximity;}
+  .r-parc-track .mc[aria-hidden]{display:none;}
+}
+.mc{scroll-snap-align:start;background:var(--paper);border:1px solid var(--pline);border-radius:6px;overflow:hidden;}
+.mc .im{background:#fff;padding:10px;}.mc .im img{width:100%;height:auto;}
+.mc .cap{display:flex;align-items:center;justify-content:space-between;padding:11px 13px;border-top:1px solid #e7ecf1;}
+.mc .cap .l{font-weight:700;font-size:.86rem;color:var(--pink);}
+.mc .cap .f{font-family:var(--mono);font-size:.62rem;color:#fff;background:var(--r);border-radius:2px;padding:3px 7px;}
+
+/* pour qui */
+.r-aud{display:grid;grid-template-columns:.82fr 1.18fr;gap:40px;align-items:stretch;}
+.r-photo{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--bord);box-shadow:0 24px 60px rgba(0,0,0,.4);min-height:100%;}
+.r-photo img{width:100%;height:100%;object-fit:cover;}
+.r-photo .badge{position:absolute;left:16px;right:16px;bottom:16px;background:rgba(8,11,16,.82);backdrop-filter:blur(6px);border:1px solid var(--bord);border-radius:10px;padding:15px 17px;}
+.r-photo .badge h3{font-size:1.02rem;margin:8px 0 6px;}
+.r-photo .badge p{font-size:.82rem;color:var(--mut);}
+.r-photo .badge .ref{margin-top:9px;font-family:var(--mono);font-size:.64rem;color:var(--r);}
+.r-audlist{display:grid;gap:13px;align-content:center;}
+.r-aud-i{display:flex;gap:14px;background:var(--bg2);border:1px solid var(--bord);border-radius:12px;padding:17px 19px;}
+.r-aud-i .k{font-family:var(--mono);font-weight:700;font-size:.82rem;color:var(--r);}
+.r-aud-i h3{font-size:1rem;margin-bottom:3px;}.r-aud-i p{font-size:.88rem;color:var(--mut);}
+@media(max-width:860px){.r-aud{grid-template-columns:1fr;}.r-photo{min-height:340px;}}
+
+/* pricing 2-cols */
+.r-prices{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:780px;margin:0 auto;}
+@media(max-width:640px){.r-prices{grid-template-columns:1fr;}}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales</i></span></span>
+      <span class="nav-item"><a class="on" href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field service jobs, PDF reports</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, in Europe</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts dictated and drafted by AI</i></span></span>
+      <a href="/tarifs/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">About</a>
+        <a class="nav-cta-mobile" href="/essai/">30-day free trial</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">View the demo</a>
+</div>
+</header>
+
+<main class="r">
+
+<!-- HERO -->
+<section class="r-hero">
+  <div class="bg"><picture><source srcset="/assets/rotor/hero.webp" type="image/webp"><img src="/assets/rotor/hero.jpg" alt="Technician inspecting a forklift truck with a tablet in a warehouse" fetchpriority="high"></picture></div>
+  <div class="wrap r-hero-in">
+    <div>
+      <span class="eb">By Industry, For Industry</span>
+      <h1>From on-site inspection to signed report. <span class="ac">No re-keying.</span></h1>
+      <p class="sub">Inspect on site, get it signed, send it. Rotor-FSM writes the report while you pack up your kit — professional, under your brand, ready for the customer. Your evenings are no longer for paperwork.</p>
+      <div class="ctas">
+        <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">View the live demo →</a>
+        <a class="btn btn-ghost btn-big" href="/devis/?produit=rotor">Request a quote</a>
+      </div>
+      <p style="margin-top:12px;font-size:.85rem;color:var(--mut2)">
+        €390 /user/year — 2 months free · <a href="#tarifs" style="color:var(--acc);text-decoration:underline;text-underline-offset:3px">see pricing</a>
+      </p>
+      <div class="r-trust">
+        <div class="lb">One tool for your whole equipment base</div>
+        <div class="r-chips">
+          <span class="r-chip">Lifting VGP</span><span class="r-chip">Automatic doors</span>
+          <span class="r-chip">Racking</span><span class="r-chip">Compressed air</span>
+          <span class="r-chip">Fire safety</span><span class="r-chip">Fall-arrest PPE</span>
+        </div>
+      </div>
+    </div>
+    <div class="verdict" aria-label="Preview of an inspection report">
+      <div class="vh"><span class="t">INSPECTION SHEET</span><span class="a">ARC · 2026-0142</span></div>
+      <div class="vb">
+        <div class="vrow"><span class="l">Load plate &amp; capacity</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Service brake (load test)</span><span class="pastille p-ok"></span></div>
+        <div class="vrow"><span class="l">Hydraulic circuit / leaks</span><span class="pastille p-aa"></span></div>
+        <div class="vrow"><span class="l">Limit switches &amp; load limiter</span><span class="pastille p-ok"></span></div>
+        <div class="vsc">
+          <div class="gauge" data-pct="94"><span>94%</span></div>
+          <div class="m">Compliance<br>score<br><b>FIT FOR USE</b></div>
+          <div class="stamp">COMPLIANT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEME -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">What changes, from tomorrow</span>
+    <h2 class="sec">Goodbye wasted time, hello speed and rigour.</h2>
+    <p class="sec-sub">Inspection is your expertise. Re-keying, formatting and chasing are what eat into your margins and delay your invoices. Rotor-FSM removes everything that isn't your actual job.</p>
+    <div class="grid c3">
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">01 · WASTED TIME</span><h3 style="margin-top:10px">No more double data entry</h3><p>Notes in the field by day, re-keyed into Word or Excel by night: every report cost you twice. Here, it only exists once — on site.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">02 · CREDIBILITY</span><h3 style="margin-top:10px">Flawless output</h3><p>The document the customer receives is what they judge your professionalism on — and how they decide whether to book you again next year. Give them a clean report, identical on every job.</p></div>
+      <div class="card"><span class="mono" style="font-size:.72rem;color:var(--r);letter-spacing:.08em">03 · TRACKING</span><h3 style="margin-top:10px">Never miss a due date again</h3><p>Who needs re-inspecting, and when? Rotor-FSM tracks the intervals for you. A missed due date is a contract slipping away: don't let it happen again.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">How it works</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Three steps. From the customer's car park to their inbox.</h2>
+    <div class="r-two" style="margin-top:44px">
+      <div class="r-shot"><picture><source srcset="/assets/rotor/tablet.webp" type="image/webp"><img src="/assets/rotor/tablet.jpg" alt="Gloved hands holding a rugged industrial tablet on site" loading="lazy"></picture></div>
+      <div class="r-steps">
+        <div class="r-step"><div class="n">1</div><div><h3>Inspect on a tablet</h3><p>Tick the condition, enter the measurements, take the photos. It all fits in your hand — even with no signal: workshop, basement, dead zone.</p></div></div>
+        <div class="r-step"><div class="n">2</div><div><h3>Rotor-FSM writes it up</h3><p>Compliant / non-compliant markers, compliance score calculated, summary of defects suggested by AI. You review, you approve.</p></div></div>
+        <div class="r-step"><div class="n">3</div><div><h3>Sign, send</h3><p>The customer signs on screen. The PDF goes out by email, in your colours. No writing up neatly afterwards, no trip back to the office.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BAND -->
+<div class="r-band">
+  <picture><source srcset="/assets/rotor/band.webp" type="image/webp"><img src="/assets/rotor/band.jpg" alt="Industrial warehouse with racking and a forklift truck" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">Tracking that pays</span>
+    <h2>Every piece of your customers' equipment has a due date. Rotor-FSM never forgets it.</h2>
+    <p>VGP (France's mandatory periodic inspections) intervals tracked automatically — you call the customer back before they think of a competitor.</p>
+  </div>
+</div>
+
+<!-- RAPPORT -->
+<section class="alt">
+  <div class="wrap r-rep">
+    <div>
+      <span class="eb" style="margin-bottom:14px">The deliverable</span>
+      <h2 class="sec" style="text-align:left">The report that wins you the next contract.</h2>
+      <p style="color:var(--mut);max-width:52ch;margin-top:14px">Regulatory VGP structure, crystal-clear colour coding, equipment diagram, compliance score. The document that puts you a cut above Word reports — and that the customer holds on to.</p>
+      <div class="r-legend">
+        <div class="lg"><span class="pastille p-ok"></span> Correct — fit for use <code>C</code></div>
+        <div class="lg"><span class="pastille p-aa"></span> Needs improvement — under monitoring <code>AA</code></div>
+        <div class="lg"><span class="pastille p-nc"></span> Non-compliant — action required <code>NC</code></div>
+      </div>
+    </div>
+    <div class="mock" aria-label="Extract from a PDF inspection report">
+      <div class="mh">
+        <div class="lg2">YOUR BRAND<small>IN YOUR COLOURS</small></div>
+        <div class="tt">INSPECTION REPORT<small>PERIODIC — VGP</small></div>
+      </div>
+      <table class="mk">
+        <thead><tr><th>Items</th><th>Condition</th></tr></thead>
+        <tbody>
+          <tr class="sub"><td colspan="2">Lifting components</td></tr>
+          <tr><td>Fork heel wear</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Chains, pins and sheaves</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Hydraulic circuit, leaks</td><td><span class="pastille p-aa"></span></td></tr>
+          <tr class="sub"><td colspan="2">Braking &amp; safety</td></tr>
+          <tr><td>Service brake under load</td><td><span class="pastille p-ok"></span></td></tr>
+          <tr><td>Overhead guard, seat belt</td><td><span class="pastille p-ok"></span></td></tr>
+        </tbody>
+      </table>
+      <div class="mk-f"><span class="mono" style="font-size:.62rem;color:#54636f">COMPLIANCE SCORE</span><div class="mk-bar" data-pct="91"><i></i></div><span class="sc">91%</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- PARC -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">One equipment base, one app</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Every machine has its own sheet. Ready to go.</h2>
+    <p style="color:var(--mut);max-width:56ch;margin:12px 0 36px">Templates designed for the field and aligned with regulatory inspection intervals. Plus an editor to create your own — without writing a line of code.</p>
+    <div class="r-parc">
+      <div class="r-parc-track">
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="Forklift truck diagram" loading="lazy"></div><div class="cap"><span class="l">Forklift truck</span><span class="f">VGP 6 months</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="Overhead crane diagram" loading="lazy"></div><div class="cap"><span class="l">Overhead crane / hoist</span><span class="f">VGP 12 months</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="MEWP aerial work platform diagram" loading="lazy"></div><div class="cap"><span class="l">MEWP aerial platform</span><span class="f">VGP 6 months</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="Racking diagram" loading="lazy"></div><div class="cap"><span class="l">Racking</span><span class="f">EN 15635</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="Fire extinguisher diagram" loading="lazy"></div><div class="cap"><span class="l">Fire extinguisher</span><span class="f">Annual check</span></div></div>
+      <div class="mc"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="Fall-arrest PPE diagram" loading="lazy"></div><div class="cap"><span class="l">Fall-arrest PPE</span><span class="f">Annual check</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-chariot.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Forklift truck</span><span class="f">VGP 6 months</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pont.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Overhead crane / hoist</span><span class="f">VGP 12 months</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-pemp.png" alt="" loading="lazy"></div><div class="cap"><span class="l">MEWP aerial platform</span><span class="f">VGP 6 months</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-rack.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Racking</span><span class="f">EN 15635</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-extincteur.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Fire extinguisher</span><span class="f">Annual check</span></div></div>
+      <div class="mc" aria-hidden="true"><div class="im"><img src="/assets/rotor/schema-epi.png" alt="" loading="lazy"></div><div class="cap"><span class="l">Fall-arrest PPE</span><span class="f">Annual check</span></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FONCTIONS -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Features</span>
+    <h2 class="sec">Everything an inspection provider expects from a field tool.</h2>
+    <div class="grid c4" style="margin-top:40px">
+      <div class="card"><span class="ic">🧩</span><h3>Configurable sheets</h3><p>Create and adapt your machine types and inspection points, without a developer.</p></div>
+      <div class="card"><span class="ic">🎨</span><h3>In your colours</h3><p>Logo, title, theme: the report carries your brand, never ours.</p></div>
+      <div class="card"><span class="ic">🤖</span><h3>AI assistant</h3><p>Defects and conclusions drafted from your readings — you approve.</p></div>
+      <div class="card"><span class="ic">📄</span><h3>Instant PDF</h3><p>Generated on the device, ready to send to the customer — no writing up afterwards.</p></div>
+      <div class="card"><span class="ic">👥</span><h3>Multi-technician</h3><p>The whole team on the same database, every report linked to the technician who did the job.</p></div>
+      <div class="card"><span class="ic">📅</span><h3>VGP schedule</h3><p>Intervals tracked for you: you know who to re-inspect, and when.</p></div>
+      <div class="card"><span class="ic">✍️</span><h3>On-site signature</h3><p>The customer signs on the tablet; their signature appears on the final PDF.</p></div>
+      <div class="card"><span class="ic">📶</span><h3>Offline</h3><p>Workshop, basement, dead zone: data entry carries on, syncing happens once you're back in signal.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POUR QUI -->
+<section>
+  <div class="wrap">
+    <span class="eb" style="margin-bottom:14px">Who it's for</span>
+    <h2 class="sec" style="text-align:left;max-width:640px">Built for independent inspectors and inspection SMEs.</h2>
+    <div class="r-aud" style="margin-top:40px">
+      <div class="r-photo">
+        <picture><source srcset="/assets/rotor/audience.webp" type="image/webp"><img src="/assets/rotor/audience.jpg" alt="Inspection technician with a tablet in an industrial facility" loading="lazy"></picture>
+        <div class="badge">
+          <span class="eb">The market</span>
+          <h3>VGP only requires a “qualified person” (personne qualifiée).</h3>
+          <p>No mandatory accreditation for routine inspection. That is what gave rise to a dense network of independent providers in France — and it is exactly for them that Rotor-FSM is designed.</p>
+          <div class="ref">Art. R4323-24 · arrêté du 1ᵉʳ mars 2004 · NF EN 15635</div>
+        </div>
+      </div>
+      <div class="r-audlist">
+        <div class="r-aud-i"><div class="k">01</div><div><h3>Independent VGP inspectors</h3><p>8 to 10 inspections a day, on the road. A professional report handed over on the spot, without ever going back to the office.</p></div></div>
+        <div class="r-aud-i"><div class="k">02</div><div><h3>Lifting &amp; handling inspection SMEs</h3><p>Forklifts, aerial platforms, overhead cranes: several technicians, one shared database.</p></div></div>
+        <div class="r-aud-i"><div class="k">03</div><div><h3>Door &amp; shutter maintenance firms</h3><p>Six-monthly maintenance contracts: history, due dates and reminders in one place.</p></div></div>
+        <div class="r-aud-i"><div class="k">04</div><div><h3>Inspection &amp; safety bodies</h3><p>Fire extinguishers, PPE, racking: high-volume rounds, reports in batches, effortlessly.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="alt" id="tarifs">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:14px">Pricing</span>
+    <h2 class="sec">One clear price. Paid back from the very first report.</h2>
+    <div class="r-prices" style="margin-top:40px;justify-content:center">
+      <div class="price-card bundle" style="position:relative;max-width:420px;margin:0 auto">
+        <h3>A single rate</h3>
+        <div class="amount">€390<small> excl. VAT / user / year</small></div>
+        <div class="per"><b style="color:var(--txt)">2 months free when paid annually</b> — i.e. €32.50/month. Solo or as a team: you choose your number of technicians, the price follows. Nothing else to decide.</div>
+        <ul>
+          <li>Unlimited reports</li>
+          <li>All machine sheets</li>
+          <li>PDF report in your colours</li>
+          <li>Shared team database &amp; VGP due-date tracking</li>
+          <li>AI assistant &amp; offline mode</li>
+          <li><b>12 months for the price of 10</b> — €78 saved</li>
+        </ul>
+        <a class="btn btn-acc" href="/devis/?produit=rotor">Request a quote</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-family:var(--mono);font-size:.8rem;color:var(--mut2)">Quote within 24 working hours · or <a href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener" style="color:var(--acc);text-decoration:underline;text-underline-offset:3px">try the demo</a>, no credit card required</p>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb" style="display:flex;justify-content:center;margin-bottom:12px">Seeing is believing</span>
+    <h2>Don't take our word for it. Try it.</h2>
+    <p>The online demo is a complete instance, filled with real inspection scenarios. Open a sheet, tick the boxes, generate the PDF. In 3 minutes, you'll know.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-acc btn-big" href="https://demo.rotor.indusiax.com" target="_blank" rel="noopener">Open the live demo →</a>
+      <a class="btn btn-ghost btn-big" href="#tarifs">See pricing</a>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div><h4>Products</h4><span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a><span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a><span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a><span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><h4 class="foot-sous"><a href="/outils/">Tools</a></h4><span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a><span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC cards</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Pricing</a><a href="/blog/">Blog</a><a href="/outils/">Tools</a><a href="/a-propos/">About</a><a href="/contact/">Contact</a><a href="/essai/">Free trial</a></div>
+      <div><h4>Legal</h4><a href="/mentions-legales/">Legal notice</a><a href="/confidentialite/">Privacy</a><a href="/securite/">Security &amp; data</a><a href="/cgv-stator/">Stator-CRM terms of sale</a><a href="/cgv-rotor/">Rotor-FSM terms of sale</a><a href="/cgv-suite/">Full Suite terms of sale</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The real maintenance KPI: not closed work orders | Indusiax Blog</title>
+<meta name="description" content="A high count of closed work orders can hide preventive maintenance that never actually gets done. The real indicator to track, according to maintenance professionals.">
+<link rel="canonical" href="https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/">
+<link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/">
+<link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/">
+<link rel="alternate" hreflang="x-default" href="https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=35e9a8dd">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<link rel="stylesheet" href="/assets/blog.css?v=30a46c17">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The figure that really matters in maintenance: not closed work orders, but the preventive/corrective ratio">
+<meta property="og:description" content="A high count of closed work orders can hide preventive maintenance that never actually gets done. The real indicator to track, according to maintenance professionals.">
+<meta property="og:url" content="https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/">
+<meta property="og:image" content="https://indusiax.com/assets/social/blog-ratio-preventif-curatif-indicateur-maintenance.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/blog-ratio-preventif-curatif-indicateur-maintenance.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "The figure that really matters in maintenance: not closed work orders, but the preventive/corrective ratio",
+  "description": "A high count of closed work orders can hide preventive maintenance that never actually gets done. The real indicator to track, according to maintenance professionals.",
+  "image": "https://indusiax.com/assets/blog/ratio-preventif-curatif-indicateur-maintenance/hero.jpg",
+  "author": {"@type": "Organization", "name": "Indusiax"},
+  "publisher": {"@type": "Organization", "name": "Indusiax", "url": "https://indusiax.com"},
+  "datePublished": "2026-07-31",
+  "dateModified": "2026-07-31",
+  "mainEntityOfPage": "https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"Why is the number of closed work orders a poor indicator?","acceptedAnswer":{"@type":"Answer","text":"Because it says nothing about the nature of the work done. A team can close a large number of work orders while letting its preventive maintenance slide in favour of emergencies, and the indicator will still give the impression that all is well."}},
+    {"@type":"Question","name":"Which indicator should you track instead?","acceptedAnswer":{"@type":"Answer","text":"The ratio between planned and reactive maintenance, tracked over time. That figure shows whether a team is genuinely getting out of corrective mode, or simply documenting its emergencies better."}},
+    {"@type":"Question","name":"How can you calculate this ratio simply?","acceptedAnswer":{"@type":"Answer","text":"By systematically recording the type of every intervention — planned or reactive — and then tracking the share of each category month after month. The difficulty isn't the calculation, it's recording the data consistently in the first place."}},
+    {"@type":"Question","name":"Can Rotor-FSM track this ratio?","acceptedAnswer":{"@type":"Answer","text":"Rotor-FSM records every field intervention with its type and its history for each machine, which makes this tracking possible without having to build extra manual reporting on the side."}}
+  ]
+}
+</script>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+<div class="read-progress"></div>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/en/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales</i></span></span>
+      <span class="nav-item"><a href="/en/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field interventions, PDF reports</i></span></span>
+      <span class="nav-item"><a href="/en/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, hosted in Europe</i></span></span>
+      <span class="nav-item"><a href="/en/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts dictated and written by AI</i></span></span>
+      <a href="/en/pricing/">Pricing</a>
+      <a class="on" href="/en/blog/">Blog</a>
+      <a href="/en/tools/">Tools</a>
+      <a href="/en/about/">About</a>
+        <a class="nav-cta-mobile" href="/en/free-trial/">30-day free trial</a>
+      <!--i18n-sw--><div class="lang-sw lang-sw-m" role="navigation" aria-label="Language"><a href="/blog/ratio-preventif-curatif-indicateur-maintenance/" hreflang="fr" lang="fr">FR</a><a href="/en/blog/preventive-corrective-ratio-maintenance-kpi/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    </nav>
+    <!--i18n-sw--><div class="lang-sw" role="navigation" aria-label="Language"><a href="/blog/ratio-preventif-curatif-indicateur-maintenance/" hreflang="fr" lang="fr">FR</a><a href="/en/blog/preventive-corrective-ratio-maintenance-kpi/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    <a class="btn btn-acc nav-cta" href="/en/free-trial/">30-day free trial</a>
+</div>
+</header>
+
+<main class="pv" style="--p:#3B82F6;--p2:#1d4ed8">
+
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/blog/ratio-preventif-curatif-indicateur-maintenance/hero.webp" type="image/webp"><img src="/assets/blog/ratio-preventif-curatif-indicateur-maintenance/hero.jpg" alt="Maintenance manager studying a printed chart pinned to a corkboard, with an industrial workshop in the background" fetchpriority="high"></picture></div>
+  <div class="wrap" style="position:relative;z-index:2;padding:80px 0 64px;max-width:800px">
+    <span class="eb">Rotor-FSM · KPIs</span>
+    <h1 style="font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:800;letter-spacing:-.025em;line-height:1.14;margin:16px 0 18px">The figure that really matters in maintenance: not closed work orders, but the preventive/corrective ratio</h1>
+    <p class="sub" style="max-width:60ch">A high count of closed work orders can make it look as if all is well, while preventive maintenance quietly slips.</p>
+    <div class="article-meta-top">
+      <span>Indusiax</span><span class="dot"></span><span>31 July 2026</span><span class="dot"></span><span>6 min read</span>
+    </div>
+  </div>
+</section>
+
+<article>
+  <div class="wrap" style="padding:52px 0 8px">
+    <div class="article-body">
+<p>In <a href="/en/blog/cmms-reactive-maintenance-culture/">our article on the corrective maintenance trap</a>, we quoted a discussion between maintenance professionals on <a href="https://www.reddit.com/r/assetmanagement/comments/1um7quz/has_anyone_seen_a_cmms_fail_to_reduce_reactive/">r/assetmanagement</a>. One detail of that thread deserves an article of its own: the diagnosis offered by u/eWorkOrders-CMMS, who says they work on the CMMS vendor side, about the indicator most teams track — and that misleads them. <small>(These comments were written in English; we quote them in our own words from our French article, so the wording may differ slightly from the originals — see the thread for the exact text.)</small></p>
+
+<p><strong>“Teams load all their preventive maintenance into the system, but they never block out the time to actually do it. On paper everyone looks busy because lots of work orders are getting closed, but PM compliance is quietly dropping.”</strong> It's a sentence that should give pause to any managing director of an industrial SME who steers maintenance by the number of closed interventions.</p>
+
+<nav class="article-toc" aria-label="Article contents"><span class="toc-title">Contents</span><ol><li><a href="#l-indicateur-qui-trompe-tout-le-monde">The indicator that fools everyone</a></li><li><a href="#le-vrai-chiffre-le-ratio-preventif-curatif">The real figure: the preventive/corrective ratio</a></li><li><a href="#pourquoi-ce-chiffre-est-difficile-a-obtenir-sans-le-bon-reflexe">Why this figure is hard to get without the right habit</a></li><li><a href="#comment-le-suivre-sans-complexite">How to track it without complexity</a></li></ol></nav>
+
+<h2 id="l-indicateur-qui-trompe-tout-le-monde">The indicator that fools everyone</h2>
+<p>The number of closed work orders is the most natural indicator to look at — it's simple, it rises with activity, it's reassuring. The problem is that it says absolutely nothing about the <em>nature</em> of that work. A team that spends the month firefighting can close as many work orders as, or even more than, a team calmly following its preventive maintenance schedule. The figure goes up in both cases. Only the reality on the shop floor is different.</p>
+<p>That is exactly the mechanism described in the rest of the comment quoted in the introduction: <strong>“A few months later the same machines start breaking down again, and everyone wonders why they're still firefighting.”</strong> The dashboard, meanwhile, won't have seen it coming — because it wasn't looking at the right figure.</p>
+
+<figure class="schema-fig">
+<div class="schema-title">What reassures, what really matters</div>
+<svg viewBox="0 0 680 220" xmlns="http://www.w3.org/2000/svg" role="img"><text x="170" y="20" class="s-mono" font-size="10.5" text-anchor="middle">WHAT REASSURES</text><rect x="50" y="38" width="240" height="42" rx="9" class="s-node"/><text x="170" y="64" class="s-lbl" font-size="13.5" text-anchor="middle">Number of closed work orders</text><text x="170" y="110" class="s-sub" font-size="12" text-anchor="middle">rises whatever the cause,</text><text x="170" y="130" class="s-sub" font-size="12" text-anchor="middle">reactive or planned</text><line x1="340" y1="20" x2="340" y2="200" class="s-dash"/><text x="510" y="20" class="s-mono" font-size="10.5" text-anchor="middle">WHAT REALLY MATTERS</text><rect x="390" y="38" width="240" height="42" rx="9" class="s-node-acc"/><text x="510" y="64" class="s-lbl" font-size="13.5" text-anchor="middle">Preventive / corrective ratio</text><text x="510" y="110" class="s-acc" font-size="12" text-anchor="middle" font-weight="600">shows whether the team is really</text><text x="510" y="130" class="s-acc" font-size="12" text-anchor="middle" font-weight="600">getting out of firefighting mode</text></svg>
+<figcaption>The first figure can rise while the situation gets worse. The second one doesn't lie.</figcaption>
+</figure>
+
+<h2 id="le-vrai-chiffre-le-ratio-preventif-curatif">The real figure: the preventive/corrective ratio</h2>
+<p>In the same discussion, u/MYK_Maintenance offers the direct remedy for this trap: <strong>“It's also worth tracking reactive vs planned as a percentage, so you can actually see whether it's moving. Hard to improve a number you're not looking at.”</strong> The idea is simple to state: out of all the interventions in a month, what proportion was planned in advance, and what proportion was a response to a breakdown that had already happened?</p>
+<p>This ratio has a quality that a raw count of work orders lacks: it can't be inflated artificially. If the reactive share goes up, it shows. If it goes down, that's real progress, not a volume effect. It's an indicator that tells a story, where a simple total tells none.</p>
+
+<figure class="article-figure">
+<picture><source srcset="/assets/blog/ratio-preventif-curatif-indicateur-maintenance/inline.webp" type="image/webp"><img src="/assets/blog/ratio-preventif-curatif-indicateur-maintenance/inline.jpg" alt="Maintenance technician calmly carrying out a scheduled preventive maintenance task on an industrial machine" loading="lazy"></picture>
+<figcaption>A planned intervention doesn't look spectacular — which is precisely the sign that it's working.</figcaption>
+</figure>
+
+<h2 id="pourquoi-ce-chiffre-est-difficile-a-obtenir-sans-le-bon-reflexe">Why this figure is hard to get without the right habit</h2>
+<p>There is nothing mathematically complex about calculating this ratio. The difficulty lies upstream: every intervention has to be recorded with its type, including — above all — the reactive interventions done in a rush, the ones you are most tempted to jot down on a sticky note before moving on to the next. A paper notebook or a spreadsheet updated only in the evening, if at all, almost never captures this data reliably.</p>
+<p>It's the same observation we go into in <a href="/en/blog/field-service-management-software-guide/">our article on managing field interventions</a>: what isn't recorded at the time is rarely recorded correctly later. A reliable preventive/corrective ratio requires systematic recording, not occasional recording.</p>
+
+<blockquote>A figure that can't be measured easily always ends up not being tracked. And a figure that isn't tracked can, by definition, never improve.</blockquote>
+
+<div class="article-cta-inline"><p>Record every intervention from the field, ratio included.</p><a class="btn btn-acc" href="https://demo.rotor.indusiax.com" rel="noopener">See the demo</a></div>
+
+<h2 id="comment-le-suivre-sans-complexite">How to track it without complexity</h2>
+<p>Tracking this ratio doesn't require a sophisticated dashboard. All it takes is for every intervention to carry one minimal piece of information — planned or reactive — at the moment it is created, not reconstructed after the event. Once that data is reliable, calculating the ratio becomes a simple reading, month after month, rather than a manual reporting exercise.</p>
+<p>That is what <a href="/en/rotor/">Rotor-FSM</a> makes possible: every intervention is categorised and logged against its machine at the moment it is carried out in the field, with no re-keying step that would lose this information along the way. Plan details are on the <a href="/en/pricing/">pricing</a> page.</p>
+
+<p>The practical corollary of preventive maintenance is the schedule that supports it: <a href="/en/blog/periodic-inspection-schedule-equipment/">building the periodic inspection schedule for your equipment base</a>.</p>
+
+<div class="faq-block">
+<details class="faq"><summary>Why is the number of closed work orders a poor indicator?</summary><p>Because it says nothing about the nature of the work done. A team can close a large number of work orders while letting its preventive maintenance slide in favour of emergencies, and the indicator will still give the impression that all is well.</p></details>
+<details class="faq"><summary>Which indicator should you track instead?</summary><p>The ratio between planned and reactive maintenance, tracked over time. That figure shows whether a team is genuinely getting out of corrective mode, or simply documenting its emergencies better.</p></details>
+<details class="faq"><summary>How can you calculate this ratio simply?</summary><p>By systematically recording the type of every intervention — planned or reactive — and then tracking the share of each category month after month. The difficulty isn't the calculation, it's recording the data consistently in the first place.</p></details>
+<details class="faq"><summary>Can Rotor-FSM track this ratio?</summary><p>Rotor-FSM records every field intervention with its type and its history for each machine, which makes this tracking possible without having to build extra manual reporting on the side.</p></details>
+</div>
+
+<p>The number of closed work orders gives the reassuring impression that everything is moving forward. The preventive/corrective ratio tells the truth — even when it's less comfortable to look at. That is precisely why it is worth tracking.</p>
+    </div>
+
+    <div class="article-sig">
+      <div class="av">Ix</div>
+      <div class="tx"><b>The Indusiax team</b><span>By industry, for industry — written by people who use their own tools every day.</span></div>
+    </div>
+
+    <div class="article-related">
+      <h4>Related articles</h4>
+      <div class="grid c3">
+      <a class="card" href="/en/blog/cmms-reactive-maintenance-culture/">
+        <span class="tag-rotor bc-tag" style="display:block;margin-bottom:8px">Rotor-FSM</span>
+        <h3 style="font-size:1rem;margin-bottom:8px">CMMS software won't fix a culture of corrective maintenance</h3>
+        <p style="font-size:.86rem">The permanent firefighting trap, and how to get out of it without stopping everything.</p>
+      </a>
+      <a class="card" href="/en/blog/field-service-management-software-guide/">
+        <span class="tag-rotor bc-tag" style="display:block;margin-bottom:8px">Rotor-FSM · Field interventions</span>
+        <h3 style="font-size:1rem;margin-bottom:8px">Field service management software: moving beyond the notebook and Excel</h3>
+        <p style="font-size:.86rem">Why what isn't recorded at the time is never recorded correctly.</p>
+      </a>
+      <a class="card" href="/en/blog/rotor-fsm-vs-praxedo-organilog-kizeo/">
+        <span class="tag-rotor bc-tag" style="display:block;margin-bottom:8px">Rotor-FSM</span>
+        <h3 style="font-size:1rem;margin-bottom:8px">Rotor-FSM vs Praxedo, Organilog and Kizeo Forms: which field service software should you choose?</h3>
+        <p style="font-size:.86rem">An honest comparison on price, solo use and VGP specialisation.</p>
+      </a>
+      </div>
+    </div>
+  </div>
+</article>
+
+<div class="nl-block">
+  <div class="wrap nl-in">
+    <div class="nl-tx">
+      <span class="eb">Newsletter</span>
+      <h3>One article a month, never more.</h3>
+      <p>Our analysis of industrial digitalisation, by email. No spam, unsubscribe in one click.</p>
+    </div>
+    <form class="nl-form" data-endpoint="/api/newsletter" data-success="nl-ok">
+      <input type="email" name="email" required placeholder="you@your-company.com" maxlength="255">
+      <input class="hp" type="text" name="site_web" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="btn btn-acc" type="submit">Subscribe</button>
+      <p class="form-err" role="alert"></p>
+    </form>
+    <div id="nl-ok" class="nl-ok" style="display:none">✅ Subscription confirmed — thank you!</div>
+  </div>
+</div>
+
+<div class="cta-final">
+  <div class="wrap">
+    <h2>30 days to see your own ratio, not just your closed work orders.</h2>
+    <p>Free, no credit card required, no commitment. The only risk is getting used to it.</p>
+    <a class="btn btn-acc btn-big" href="/en/free-trial/">Start my free trial</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/en/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/en/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/en/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/en/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/en/tools/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/en/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/en/nfc-cards/">NFC cards</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/about/">About</a>
+        <a href="/en/contact/">Contact</a>
+        <a href="/en/free-trial/">Free trial</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/en/legal-notice/">Legal notice</a>
+        <a href="/en/privacy/">Privacy</a>
+        <a href="/en/security/">Security &amp; data</a>
+        <a href="/en/terms-stator/">Stator-CRM terms of sale</a>
+        <a href="/en/terms-rotor/">Rotor-FSM terms of sale</a>
+        <a href="/en/terms-suite/">Full Suite terms of sale</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=86b04177"></script>
+</body>
+</html>

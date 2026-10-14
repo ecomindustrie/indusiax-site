@@ -12,12 +12,259 @@
    Le film ne tourne que lorsqu'il est visible à l'écran, et pas du tout
    si l'utilisateur demande un mouvement réduit — dans ce cas une seule
    image est peinte : le réseau formé autour de Stator-CRM.
+
+   Textes en trois langues (FR/EN/NL) : toute modification doit être
+   reportée dans les trois (règle du 14/10/2026). Les tarifs sont
+   incrustés ici : les corriger si la grille change.
    ══════════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
   var root = document.querySelector('.fx');
   if (!root || !window.requestAnimationFrame) return;
+
+  /* ── langue ───────────────────────────────────────────────────────
+     Lue sur <html lang>. Tout texte affiché ou lu par un lecteur
+     d'écran vient de la table TXT ci-dessous. */
+  var LANG = (document.documentElement.lang || 'fr').slice(0, 2).toLowerCase();
+  if (LANG !== 'en' && LANG !== 'nl') LANG = 'fr';
+
+  var TXT = {
+    fr: {
+      locale: 'fr-FR',
+      qOpen: '« ', qClose: ' »',
+      prod: {
+        Stator: {
+          tag: 'CRM industriel · ventes & clients',
+          question: 'Le devis envoyé il y a trois semaines, il en est où ?',
+          answer: 'Clients, devis PDF, relances automatiques, tournées, SAV, parc machines — le CRM qui parle le langage de la vente de matériel.',
+          price: '650 € / utilisateur / an'
+        },
+        Rotor: {
+          tag: 'Contrôles & interventions terrain',
+          question: 'Votre dernière VGP, elle est dans quel classeur ?',
+          answer: 'Vérifications sur tablette, fiches machines paramétrables, rapport PDF signé à votre marque, échéances suivies. Du terrain au rapport, sans ressaisie.',
+          price: '390 € / utilisateur / an'
+        },
+        Vector: {
+          tag: 'Réunions & intelligence artificielle',
+          question: 'Qui rédige le compte-rendu de la réunion de ce matin ?',
+          answer: "L'IA transcrit, distingue qui parle et rédige le compte-rendu structuré — sur nos serveurs européens, jamais chez un géant du cloud.",
+          price: '12 € / utilisateur / mois'
+        },
+        Flux: {
+          tag: 'Communication LinkedIn',
+          question: 'Votre savoir-faire, qui le voit en dehors de l’atelier ?',
+          answer: "Dictez trois phrases, ajoutez les photos : l'IA rédige un post professionnel et le publie. Votre savoir-faire mérite d’être vu.",
+          price: '12 € / utilisateur / mois'
+        }
+      },
+      stageLabel: 'Film de présentation : les quatre logiciels de la suite Indusiax — Stator-CRM, ' +
+        'Rotor-FSM, Vector-MOM et Flux-Link — puis le réseau qu’ils forment autour de Stator-CRM.',
+      openEb: 'Suite Indusiax',
+      openTitle1: 'Quatre logiciels.',
+      openTitle2: 'Une seule chaîne.',
+      lede1: 'Créés ', ledeIn: 'dans', lede2: ' une PME industrielle française, ',
+      ledeFor: 'pour', lede3: ' les TPE & PME de l’industrie.',
+      suiteK: 'La suite connectée',
+      suiteH1: 'Stator-CRM au centre. ',
+      suiteH2: 'Le reste s’y branche.',
+      suiteRows: [
+        ['Une seule connexion', '« Se connecter avec Stator »'],
+        ['Fiches clients partagées', 'aucune double saisie'],
+        ['Les données circulent', 'du terrain au CRM']
+      ],
+      suiteBadge: '1 connexion · 4 outils',
+      suiteNote: 'La suite complète — 990 € / utilisateur / an, 2 mois offerts',
+      stCeb: 'Pipeline commercial',
+      stKpi: ' devis suivis',
+      stCols: ['Devis', 'Relance', 'Négo', 'Gagné'],
+      stCard: 'DEV-2418',
+      stChip: 'Relance auto J+7',
+      stNote: 'aucune affaire oubliée',
+      roCeb: 'VGP — Pont roulant #12',
+      roHead: 'Contrôle sur tablette',
+      roRows: ['Élingues — état', 'Crochet & linguet', 'Chaîne de levage', 'Freins de translation', 'Essai en charge'],
+      roPdf: 'RAPPORT PDF SIGNÉ',
+      roNote: 'à votre marque · échéance J+365',
+      veCeb: 'Réunion de production · 42 min',
+      veLines: [
+        ['Atelier', 'Décision : lancer la série 400 en semaine 12.'],
+        ['Achats', 'Relancer le fournisseur inox avant vendredi.'],
+        ['Direction', 'Budget maintenance validé — 18 k€.']
+      ],
+      veChip: 'Compte-rendu prêt',
+      veEu: 'Hébergé en Europe',
+      flText: 'Nouvelle ligne de soudure inox livrée cette semaine chez notre client agroalimentaire. '
+            + 'Trois mois de conception, deux jours de montage.',
+      flWho: 'Votre entreprise',
+      flSub: 'Post LinkedIn · dicté en 20 s',
+      flPhoto: 'Photo atelier',
+      flPub: 'PUBLIÉ',
+      flLikes: ' réactions',
+      flShares: ' partages',
+      ctrlPlay: 'Lire',
+      ctrlPause: 'Pause',
+      ctrlPlayAria: 'Lire le film de présentation',
+      ctrlPauseAria: 'Mettre le film en pause'
+    },
+    en: {
+      locale: 'en-GB',
+      qOpen: '“', qClose: '”',
+      prod: {
+        Stator: {
+          tag: 'Industrial CRM · sales & customers',
+          question: 'That quote you sent three weeks ago — where is it now?',
+          answer: 'Customers, PDF quotes, automatic follow-ups, sales rounds, after-sales, installed base — the CRM that speaks equipment sales.',
+          price: '€650 / user / year'
+        },
+        Rotor: {
+          tag: 'Inspections & field service',
+          question: 'Your last VGP inspection — which binder is it in?',
+          answer: 'Inspections on a tablet, configurable machine records, signed PDF report in your branding, due dates tracked. From site to report, no re-keying.',
+          price: '€390 / user / year'
+        },
+        Vector: {
+          tag: 'Meetings & artificial intelligence',
+          question: 'Who is writing up the minutes of this morning’s meeting?',
+          answer: 'The AI transcribes, tells speakers apart and writes structured minutes — on our European servers, never at a cloud giant.',
+          price: '€12 / user / month'
+        },
+        Flux: {
+          tag: 'LinkedIn communication',
+          question: 'Your expertise — who sees it outside the workshop?',
+          answer: 'Dictate three sentences, add the photos: the AI writes a professional post and publishes it. Your expertise deserves to be seen.',
+          price: '€12 / user / month'
+        }
+      },
+      stageLabel: 'Presentation film: the four applications of the Indusiax Suite — Stator-CRM, ' +
+        'Rotor-FSM, Vector-MOM and Flux-Link — then the network they form around Stator-CRM.',
+      openEb: 'Indusiax Suite',
+      openTitle1: 'Four applications.',
+      openTitle2: 'One single chain.',
+      lede1: 'Built ', ledeIn: 'in', lede2: ' a French industrial SME, ',
+      ledeFor: 'for', lede3: ' small and mid-sized industrial companies.',
+      suiteK: 'The connected suite',
+      suiteH1: 'Stator-CRM at the centre. ',
+      suiteH2: 'Everything else plugs in.',
+      suiteRows: [
+        ['One single sign-in', '“Sign in with Stator”'],
+        ['Shared customer records', 'no double data entry'],
+        ['Data flows through', 'from the field to the CRM']
+      ],
+      suiteBadge: '1 sign-in · 4 tools',
+      suiteNote: 'The complete suite — €990 / user / year, 2 months free',
+      stCeb: 'Sales pipeline',
+      stKpi: ' quotes tracked',
+      stCols: ['Quote', 'Follow-up', 'Negotiation', 'Won'],
+      stCard: 'QUO-2418',
+      stChip: 'Auto follow-up D+7',
+      stNote: 'no deal forgotten',
+      roCeb: 'VGP — Overhead crane #12',
+      roHead: 'Inspection on tablet',
+      roRows: ['Slings — condition', 'Hook & safety latch', 'Hoist chain', 'Travel brakes', 'Load test'],
+      roPdf: 'SIGNED PDF REPORT',
+      roNote: 'in your branding · due D+365',
+      veCeb: 'Production meeting · 42 min',
+      veLines: [
+        ['Workshop', 'Decision: launch the 400 series in week 12.'],
+        ['Purchasing', 'Chase the stainless steel supplier by Friday.'],
+        ['Management', 'Maintenance budget approved — €18k.']
+      ],
+      veChip: 'Minutes ready',
+      veEu: 'Hosted in Europe',
+      flText: 'New stainless steel welding line delivered this week to our food-industry customer. '
+            + 'Three months of design, two days of assembly.',
+      flWho: 'Your company',
+      flSub: 'LinkedIn post · dictated in 20 s',
+      flPhoto: 'Workshop photo',
+      flPub: 'PUBLISHED',
+      flLikes: ' reactions',
+      flShares: ' shares',
+      ctrlPlay: 'Play',
+      ctrlPause: 'Pause',
+      ctrlPlayAria: 'Play the presentation film',
+      ctrlPauseAria: 'Pause the film'
+    },
+    nl: {
+      locale: 'nl-NL',
+      qOpen: '“', qClose: '”',
+      prod: {
+        Stator: {
+          tag: 'Industriële CRM · verkoop & klanten',
+          question: 'Die offerte van drie weken geleden: hoe staat het ermee?',
+          answer: 'Klanten, pdf-offertes, automatische opvolging, routes, after-sales, machinepark — de CRM die de taal van machineverkoop spreekt.',
+          price: '€ 650 / gebruiker / jaar'
+        },
+        Rotor: {
+          tag: 'Keuringen & buitendienst',
+          question: 'Uw laatste VGP-keuring: in welke map zit die?',
+          answer: 'Keuringen op tablet, instelbare machinefiches, ondertekend pdf-rapport in uw huisstijl, vervaldata bewaakt. Van terrein tot rapport, zonder dubbele invoer.',
+          price: '€ 390 / gebruiker / jaar'
+        },
+        Vector: {
+          tag: 'Vergaderingen & kunstmatige intelligentie',
+          question: 'Wie schrijft het verslag van de vergadering van vanochtend?',
+          answer: 'De AI transcribeert, herkent wie spreekt en schrijft een gestructureerd verslag — op onze Europese servers, nooit bij een cloudreus.',
+          price: '€ 12 / gebruiker / maand'
+        },
+        Flux: {
+          tag: 'LinkedIn-communicatie',
+          question: 'Uw vakmanschap: wie ziet het buiten de werkplaats?',
+          answer: 'Dicteer drie zinnen, voeg de foto’s toe: de AI schrijft een professionele post en publiceert hem. Uw vakmanschap verdient gezien te worden.',
+          price: '€ 12 / gebruiker / maand'
+        }
+      },
+      stageLabel: 'Presentatiefilm: de vier programma’s van de Indusiax Suite — Stator-CRM, ' +
+        'Rotor-FSM, Vector-MOM en Flux-Link — en daarna het netwerk dat ze rond Stator-CRM vormen.',
+      openEb: 'Indusiax Suite',
+      openTitle1: 'Vier programma’s.',
+      openTitle2: 'Eén enkele keten.',
+      lede1: 'Gemaakt ', ledeIn: 'in', lede2: ' een Frans industrieel mkb-bedrijf, ',
+      ledeFor: 'voor', lede3: ' industriële mkb-bedrijven.',
+      suiteK: 'De gekoppelde suite',
+      suiteH1: 'Stator-CRM in het midden. ',
+      suiteH2: 'De rest sluit erop aan.',
+      suiteRows: [
+        ['Eén enkele login', '“Inloggen met Stator”'],
+        ['Gedeelde klantfiches', 'geen dubbele invoer'],
+        ['Gegevens stromen door', 'van het terrein naar de CRM']
+      ],
+      suiteBadge: '1 login · 4 tools',
+      suiteNote: 'De volledige suite — € 990 / gebruiker / jaar, 2 maanden gratis',
+      stCeb: 'Verkooppijplijn',
+      stKpi: ' offertes opgevolgd',
+      stCols: ['Offerte', 'Opvolging', 'Onderhandeling', 'Gewonnen'],
+      stCard: 'OFF-2418',
+      stChip: 'Auto-opvolging D+7',
+      stNote: 'geen deal vergeten',
+      roCeb: 'VGP — Bovenloopkraan #12',
+      roHead: 'Keuring op tablet',
+      roRows: ['Hijsbanden — staat', 'Haak & veiligheidsklep', 'Hijsketting', 'Rijremmen', 'Belastingproef'],
+      roPdf: 'GETEKEND PDF-RAPPORT',
+      roNote: 'in uw huisstijl · vervalt D+365',
+      veCeb: 'Productieoverleg · 42 min',
+      veLines: [
+        ['Werkplaats', 'Besluit: serie 400 starten in week 12.'],
+        ['Inkoop', 'Inox-leverancier vóór vrijdag opvolgen.'],
+        ['Directie', 'Onderhoudsbudget goedgekeurd — € 18.000.']
+      ],
+      veChip: 'Verslag klaar',
+      veEu: 'Gehost in Europa',
+      flText: 'Nieuwe inox-laslijn deze week geleverd bij onze klant in de voedingsindustrie. '
+            + 'Drie maanden ontwerp, twee dagen montage.',
+      flWho: 'Uw bedrijf',
+      flSub: 'LinkedIn-post · ingesproken in 20 s',
+      flPhoto: 'Foto werkplaats',
+      flPub: 'GEPUBLICEERD',
+      flLikes: ' reacties',
+      flShares: ' keer gedeeld',
+      ctrlPlay: 'Afspelen',
+      ctrlPause: 'Pauze',
+      ctrlPlayAria: 'Presentatiefilm afspelen',
+      ctrlPauseAria: 'Film pauzeren'
+    }
+  }[LANG];
 
   /* ── temps ───────────────────────────────────────────────────────
      Chaque scène est jouée 1,15× plus lentement que sa durée d'écriture.
@@ -67,34 +314,34 @@
   /* ── contenu ───────────────────────────────────────────────────── */
   var PRODUCTS = [
     {
-      key: 'Stator', initial: 'S', name: 'Stator-CRM', tag: 'CRM industriel · ventes & clients',
-      question: 'Le devis envoyé il y a trois semaines, il en est où ?',
-      answer: 'Clients, devis PDF, relances automatiques, tournées, SAV, parc machines — le CRM qui parle le langage de la vente de matériel.',
-      price: '650 € / utilisateur / an',
+      key: 'Stator', initial: 'S', name: 'Stator-CRM', tag: TXT.prod.Stator.tag,
+      question: TXT.prod.Stator.question,
+      answer: TXT.prod.Stator.answer,
+      price: TXT.prod.Stator.price,
       color: '#e84c2b', color2: '#ff8a68',
       rail: { x: 150, y: 986 }, net: { x: 1010, y: 600, r: 118 }
     },
     {
-      key: 'Rotor', initial: 'R', name: 'Rotor-FSM', tag: 'Contrôles & interventions terrain',
-      question: 'Votre dernière VGP, elle est dans quel classeur ?',
-      answer: 'Vérifications sur tablette, fiches machines paramétrables, rapport PDF signé à votre marque, échéances suivies. Du terrain au rapport, sans ressaisie.',
-      price: '390 € / utilisateur / an',
+      key: 'Rotor', initial: 'R', name: 'Rotor-FSM', tag: TXT.prod.Rotor.tag,
+      question: TXT.prod.Rotor.question,
+      answer: TXT.prod.Rotor.answer,
+      price: TXT.prod.Rotor.price,
       color: '#3b82f6', color2: '#7dabff',
       rail: { x: 240, y: 986 }, net: { x: 1390, y: 372, r: 78 }
     },
     {
-      key: 'Vector', initial: 'V', name: 'Vector-MOM', tag: 'Réunions & intelligence artificielle',
-      question: 'Qui rédige le compte-rendu de la réunion de ce matin ?',
-      answer: "L'IA transcrit, distingue qui parle et rédige le compte-rendu structuré — sur nos serveurs européens, jamais chez un géant du cloud.",
-      price: '12 € / utilisateur / mois',
+      key: 'Vector', initial: 'V', name: 'Vector-MOM', tag: TXT.prod.Vector.tag,
+      question: TXT.prod.Vector.question,
+      answer: TXT.prod.Vector.answer,
+      price: TXT.prod.Vector.price,
       color: '#a88cfa', color2: '#cfbcff',
       rail: { x: 330, y: 986 }, net: { x: 630, y: 372, r: 78 }
     },
     {
-      key: 'Flux', initial: 'F', name: 'Flux-Link', tag: 'Communication LinkedIn',
-      question: 'Votre savoir-faire, qui le voit en dehors de l’atelier ?',
-      answer: "Dictez trois phrases, ajoutez les photos : l'IA rédige un post professionnel et le publie. Votre savoir-faire mérite d’être vu.",
-      price: '12 € / utilisateur / mois',
+      key: 'Flux', initial: 'F', name: 'Flux-Link', tag: TXT.prod.Flux.tag,
+      question: TXT.prod.Flux.question,
+      answer: TXT.prod.Flux.answer,
+      price: TXT.prod.Flux.price,
       color: '#0ea5e9', color2: '#6bd3f7',
       rail: { x: 420, y: 986 }, net: { x: 1010, y: 852, r: 78 }
     }
@@ -117,9 +364,7 @@
   function build() {
     var stage = mk('div', 'fx-stage', root);
     stage.setAttribute('role', 'img');
-    stage.setAttribute('aria-label',
-      'Film de présentation : les quatre logiciels de la suite Indusiax — Stator-CRM, ' +
-      'Rotor-FSM, Vector-MOM et Flux-Link — puis le réseau qu’ils forment autour de Stator-CRM.');
+    stage.setAttribute('aria-label', TXT.stageLabel);
     R.stage = stage;
     var cam = mk('div', 'fx-cam', stage);
     R.cam = cam;
@@ -188,17 +433,17 @@
     /* — ouverture — */
     var open = mk('div', 'fx-open', cam);
     R.open = open;
-    mk('div', 'fx-eb', open).textContent = 'Suite Indusiax';
+    mk('div', 'fx-eb', open).textContent = TXT.openEb;
     var h1 = mk('div', 'fx-title', open);
-    h1.appendChild(document.createTextNode('Quatre logiciels.'));
+    h1.appendChild(document.createTextNode(TXT.openTitle1));
     mk('br', null, h1);
-    mk('span', 'ac', h1).textContent = 'Une seule chaîne.';
+    mk('span', 'ac', h1).textContent = TXT.openTitle2;
     var lede = mk('p', 'fx-lede', open);
-    lede.appendChild(document.createTextNode('Créés '));
-    mk('b', null, lede).textContent = 'dans';
-    lede.appendChild(document.createTextNode(' une PME industrielle française, '));
-    mk('b', null, lede).textContent = 'pour';
-    lede.appendChild(document.createTextNode(' les TPE & PME de l’industrie.'));
+    lede.appendChild(document.createTextNode(TXT.lede1));
+    mk('b', null, lede).textContent = TXT.ledeIn;
+    lede.appendChild(document.createTextNode(TXT.lede2));
+    mk('b', null, lede).textContent = TXT.ledeFor;
+    lede.appendChild(document.createTextNode(TXT.lede3));
 
     /* — blocs produits — */
     R.prods = PRODUCTS.map(function (p, i) { return buildProduct(cam, p, i); });
@@ -206,18 +451,14 @@
     /* — la suite connectée — */
     var sTitle = mk('div', 'fx-suite-t', cam);
     R.suiteTitle = sTitle;
-    mk('div', 'fx-k', sTitle).textContent = 'La suite connectée';
+    mk('div', 'fx-k', sTitle).textContent = TXT.suiteK;
     var h2 = mk('div', 'fx-h2', sTitle);
-    h2.appendChild(document.createTextNode('Stator-CRM au centre. '));
-    mk('span', 'ac', h2).textContent = 'Le reste s’y branche.';
+    h2.appendChild(document.createTextNode(TXT.suiteH1));
+    mk('span', 'ac', h2).textContent = TXT.suiteH2;
 
     var pts = mk('div', 'fx-suite-p', cam);
     R.suitePts = pts;
-    R.suitePtRows = [
-      ['Une seule connexion', '« Se connecter avec Stator »'],
-      ['Fiches clients partagées', 'aucune double saisie'],
-      ['Les données circulent', 'du terrain au CRM']
-    ].map(function (row) {
+    R.suitePtRows = TXT.suiteRows.map(function (row) {
       var w = mk('div', null, pts);
       mk('b', null, w).textContent = row[0];
       mk('i', null, w).textContent = row[1];
@@ -226,8 +467,8 @@
 
     var cta = mk('div', 'fx-suite-c', cam);
     R.suiteCta = cta;
-    mk('span', 'fx-badge', cta).textContent = '1 connexion · 4 outils';
-    mk('span', 'fx-note', cta).textContent = 'La suite complète — 990 € / utilisateur / an, 2 mois offerts';
+    mk('span', 'fx-badge', cta).textContent = TXT.suiteBadge;
+    mk('span', 'fx-note', cta).textContent = TXT.suiteNote;
 
     /* — signature — */
     buildSignature(cam);
@@ -257,7 +498,7 @@
     o.qmark.textContent = '?';
     o.qmark.style.color = p.color;
     o.qtext = mk('div', 'fx-qtext', o.q);
-    o.qtext.textContent = '« ' + p.question + ' »';
+    o.qtext.textContent = TXT.qOpen + p.question + TXT.qClose;
 
     /* réponse */
     o.a = mk('div', 'fx-a', wrap);
@@ -288,13 +529,13 @@
 
   BUILDERS.Stator = function (card, p) {
     var g = { cols: [], bars: [] };
-    mk('div', 'fx-ceb', card).textContent = 'Pipeline commercial';
+    mk('div', 'fx-ceb', card).textContent = TXT.stCeb;
     g.kpi = mk('div', 'fx-st-kpi', card);
     g.kpiN = document.createTextNode('0');
     g.kpi.appendChild(g.kpiN);
-    mk('span', null, g.kpi).textContent = ' devis suivis';
+    mk('span', null, g.kpi).textContent = TXT.stKpi;
 
-    ['Devis', 'Relance', 'Négo', 'Gagné'].forEach(function (s, i) {
+    TXT.stCols.forEach(function (s, i) {
       var col = mk('div', 'fx-st-col', card);
       col.style.left = px(46 + i * 186);
       var lab = mk('div', 'fx-st-lab', col);
@@ -306,26 +547,26 @@
     });
 
     g.card = mk('div', 'fx-st-card', card);
-    g.card.textContent = 'DEV-2418';
+    g.card.textContent = TXT.stCard;
     g.card.style.background = p.color;
     g.card.style.boxShadow = '0 0 34px ' + p.color + '88';
 
     g.foot = mk('div', 'fx-st-foot', card);
     var chip = mk('span', 'fx-chip', g.foot);
-    chip.textContent = 'Relance auto J+7';
+    chip.textContent = TXT.stChip;
     chip.style.color = p.color;
     chip.style.background = p.color + '22';
     chip.style.border = '1px solid ' + p.color + '66';
-    mk('span', 'fx-note', g.foot).textContent = 'aucune affaire oubliée';
+    mk('span', 'fx-note', g.foot).textContent = TXT.stNote;
     return g;
   };
 
   BUILDERS.Rotor = function (card, p) {
     var g = { rows: [] };
-    mk('div', 'fx-ceb', card).textContent = 'VGP — Pont roulant #12';
-    mk('div', 'fx-ro-h', card).textContent = 'Contrôle sur tablette';
+    mk('div', 'fx-ceb', card).textContent = TXT.roCeb;
+    mk('div', 'fx-ro-h', card).textContent = TXT.roHead;
 
-    ['Élingues — état', 'Crochet & linguet', 'Chaîne de levage', 'Freins de translation', 'Essai en charge']
+    TXT.roRows
       .forEach(function (label, i) {
         var row = mk('div', 'fx-ro-row', card);
         row.style.top = px(152 + i * 74);
@@ -342,16 +583,16 @@
 
     g.foot = mk('div', 'fx-ro-foot', card);
     var pdf = mk('span', 'fx-ro-pdf', g.foot);
-    pdf.textContent = 'RAPPORT PDF SIGNÉ';
+    pdf.textContent = TXT.roPdf;
     pdf.style.background = p.color;
     pdf.style.boxShadow = '0 0 34px ' + p.color + '77';
-    mk('span', 'fx-note', g.foot).textContent = 'à votre marque · échéance J+365';
+    mk('span', 'fx-note', g.foot).textContent = TXT.roNote;
     return g;
   };
 
   BUILDERS.Vector = function (card, p) {
     var g = { bars: [], lines: [] };
-    mk('div', 'fx-ceb', card).textContent = 'Réunion de production · 42 min';
+    mk('div', 'fx-ceb', card).textContent = TXT.veCeb;
     var wave = mk('div', 'fx-ve-wave', card);
     for (var i = 0; i < 46; i++) {
       var b = mk('i', null, wave);
@@ -360,9 +601,7 @@
     }
     mk('div', 'fx-ve-rule', card);
 
-    [['Atelier', 'Décision : lancer la série 400 en semaine 12.'],
-     ['Achats', 'Relancer le fournisseur inox avant vendredi.'],
-     ['Direction', 'Budget maintenance validé — 18 k€.']].forEach(function (ln, i) {
+    TXT.veLines.forEach(function (ln, i) {
       var w = mk('div', 'fx-ve-line', card);
       w.style.top = px(240 + i * 108);
       var who = mk('div', 'fx-ve-who', w);
@@ -381,18 +620,17 @@
 
     g.foot = mk('div', 'fx-ve-foot', card);
     var chip = mk('span', 'fx-chip', g.foot);
-    chip.textContent = 'Compte-rendu prêt';
+    chip.textContent = TXT.veChip;
     chip.style.color = p.color;
     chip.style.background = p.color + '22';
     chip.style.border = '1px solid ' + p.color + '66';
-    mk('span', 'fx-eu', g.foot).textContent = 'Hébergé en Europe';
+    mk('span', 'fx-eu', g.foot).textContent = TXT.veEu;
     return g;
   };
 
   BUILDERS.Flux = function (card, p) {
     var g = { bars: [] };
-    g.text = 'Nouvelle ligne de soudure inox livrée cette semaine chez notre client agroalimentaire. '
-           + 'Trois mois de conception, deux jours de montage.';
+    g.text = TXT.flText;
     var head = mk('div', 'fx-fl-head', card);
     var av = mk('div', 'fx-fl-av', head);
     av.textContent = 'IX';
@@ -400,8 +638,8 @@
     av.style.background = p.color + '22';
     av.style.border = '1px solid ' + p.color + '66';
     var who = mk('span', null, head);
-    mk('span', 'fx-fl-who', who).textContent = 'Votre entreprise';
-    mk('span', 'fx-fl-sub', who).textContent = 'Post LinkedIn · dicté en 20 s';
+    mk('span', 'fx-fl-who', who).textContent = TXT.flWho;
+    mk('span', 'fx-fl-sub', who).textContent = TXT.flSub;
 
     g.wave = mk('div', 'fx-fl-wave', card);
     for (var i = 0; i < 40; i++) {
@@ -417,22 +655,22 @@
     g.caret.style.color = p.color;
 
     g.photo = mk('div', 'fx-fl-photo', card);
-    g.photo.textContent = 'Photo atelier';
+    g.photo.textContent = TXT.flPhoto;
     g.photo.style.background = 'linear-gradient(135deg, ' + p.color + '33, #171b25)';
 
     g.foot = mk('div', 'fx-fl-foot', card);
     var pub = mk('span', 'fx-fl-pub', g.foot);
-    pub.textContent = 'PUBLIÉ';
+    pub.textContent = TXT.flPub;
     pub.style.background = p.color;
     pub.style.boxShadow = '0 0 32px ' + p.color + '77';
     g.likes = mk('span', 'fx-fl-stat', g.foot);
     g.likesN = document.createTextNode('0');
     g.likes.appendChild(g.likesN);
-    mk('span', null, g.likes).textContent = ' réactions';
+    mk('span', null, g.likes).textContent = TXT.flLikes;
     g.shares = mk('span', 'fx-fl-stat', g.foot);
     g.sharesN = document.createTextNode('0');
     g.shares.appendChild(g.sharesN);
-    mk('span', null, g.shares).textContent = ' partages';
+    mk('span', null, g.shares).textContent = TXT.flShares;
     return g;
   };
 
@@ -482,8 +720,8 @@
   function syncControl() {
     if (!R.ctrl) return;
     at(R.ctrl.path, 'd', paused ? 'M2 1l9 5-9 5z' : 'M2 1h3v10H2zm5 0h3v10H7z');
-    tx(R.ctrl.label, paused ? 'Lire' : 'Pause');
-    R.ctrl.btn.setAttribute('aria-label', paused ? 'Lire le film de présentation' : 'Mettre le film en pause');
+    tx(R.ctrl.label, paused ? TXT.ctrlPlay : TXT.ctrlPause);
+    R.ctrl.btn.setAttribute('aria-label', paused ? TXT.ctrlPlayAria : TXT.ctrlPauseAria);
   }
 
   /* ══ image ════════════════════════════════════════════════════════ */
@@ -705,7 +943,7 @@
   UPDATERS.Stator = function (g, l, p) {
     var step = clamp((l - 2.6) / 2.6, 0, 1) * 3;
     var n = Math.round(lerp(0, 128, clamp((l - 2.2) / 2.2, 0, 1)));
-    if (g.lastN !== n) { g.lastN = n; g.kpiN.nodeValue = n.toLocaleString('fr-FR'); }
+    if (g.lastN !== n) { g.lastN = n; g.kpiN.nodeValue = n.toLocaleString(TXT.locale); }
     for (var i = 0; i < g.cols.length; i++) {
       var c = g.cols[i];
       var app = enter(l, 2.0 + i * 0.16, 2.8 + i * 0.16);

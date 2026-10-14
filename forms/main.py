@@ -93,6 +93,14 @@ def _notify(subject: str, body: str):
         pass  # la demande est en base : l'email n'est qu'un confort
 
 
+def _langue(code: str) -> str:
+    """Étiquette d'objet de courriel : « [EN] » / « [NL] », rien pour le français.
+    Repérer la langue dès la boîte de réception évite de répondre en français
+    à un prospect qui a écrit depuis la version anglaise ou néerlandaise."""
+    code = (code or "fr").strip().lower()[:2]
+    return f" [{code.upper()}]" if code in ("en", "nl") else ""
+
+
 class EssaiIn(BaseModel):
     produit: str
     societe: str
@@ -111,6 +119,9 @@ class EssaiIn(BaseModel):
     # avant d'émettre le devis. Facultatif — un prospect ne l'a pas toujours
     # sous la main, et le lui imposer coûterait des demandes.
     siret: str = ""
+    # Langue de la page d'origine (fr / en / nl, posée par site.js depuis le
+    # 14/10/2026) : un prospect néerlandais attend sa réponse en néerlandais.
+    langue: str = "fr"
     site_web: str = ""  # pot de miel — humain = vide
 
 
@@ -119,6 +130,7 @@ class ContactIn(BaseModel):
     email: EmailStr
     societe: str = ""
     message: str
+    langue: str = "fr"
     site_web: str = ""  # pot de miel
 
 
@@ -128,6 +140,7 @@ class RappelIn(BaseModel):
     telephone: str
     creneau: str = ""      # matin / midi / après-midi / peu importe
     produit: str = ""      # intérêt éventuel (stator/rotor/vector/flux/suite/"")
+    langue: str = "fr"
     site_web: str = ""     # pot de miel
 
 
@@ -151,7 +164,7 @@ def essai(data: EssaiIn, request: Request):
         detail = "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
         if origine == "devis":
             _notify(
-                f"[Indusiax] Demande de DEVIS #{rid} — {data.produit} — {data.societe}",
+                f"[Indusiax]{_langue(data.langue)} Demande de DEVIS #{rid} — {data.produit} — {data.societe}",
                 "Nouvelle demande de devis (abonnement annuel) :\n\n"
                 + detail
                 + "\n\nSuite à donner : devis → bon de commande du client → facture"
@@ -161,7 +174,7 @@ def essai(data: EssaiIn, request: Request):
                    if not data.siret.strip() else ""))
         else:
             _notify(
-                f"[Indusiax] Demande d'essai #{rid} — {data.produit} — {data.societe}",
+                f"[Indusiax]{_langue(data.langue)} Demande d'essai #{rid} — {data.produit} — {data.societe}",
                 "Nouvelle demande d'essai 30 jours :\n\n"
                 + detail
                 + "\n\nÀ traiter sous 24 h ouvrées (promesse faite au demandeur).")
@@ -176,7 +189,7 @@ def contact(data: ContactIn, request: Request):
     rid = _store("contact", payload, spam)
     if not spam:
         _notify(
-            f"[Indusiax] Message de {data.nom}" + (f" ({data.societe})" if data.societe else ""),
+            f"[Indusiax]{_langue(data.langue)} Message de {data.nom}" + (f" ({data.societe})" if data.societe else ""),
             "\n".join(f"{k} : {v}" for k, v in payload.items() if v))
     return {"ok": True, "id": rid}
 
@@ -192,7 +205,7 @@ def rappel(data: RappelIn, request: Request):
     rid = _store("rappel", payload, spam)
     if not spam:
         _notify(
-            f"[Indusiax] Demande de RAPPEL #{rid} — {data.societe} ({tel})",
+            f"[Indusiax]{_langue(data.langue)} Demande de RAPPEL #{rid} — {data.societe} ({tel})",
             "Nouvelle demande de rappel téléphonique :\n\n"
             + "\n".join(f"{k} : {v}" for k, v in payload.items() if v)
             + "\n\nPromesse faite au demandeur : rappel sous 24 h ouvrées, d'industriel à industriel.")

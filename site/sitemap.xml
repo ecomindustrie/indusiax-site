@@ -1,24 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://indusiax.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://indusiax.com/stator/</loc><priority>0.9</priority></url>
-  <url><loc>https://indusiax.com/rotor/</loc><priority>0.9</priority></url>
-  <url><loc>https://indusiax.com/vector/</loc><priority>0.9</priority></url>
-  <url><loc>https://indusiax.com/flux/</loc><priority>0.9</priority></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://indusiax.com/</loc><priority>1.0</priority>
+  </url>
+  <url><loc>https://indusiax.com/stator/</loc><priority>0.9</priority>
+  </url>
+  <url><loc>https://indusiax.com/rotor/</loc><priority>0.9</priority>
+  </url>
+  <url><loc>https://indusiax.com/vector/</loc><priority>0.9</priority>
+  </url>
+  <url><loc>https://indusiax.com/flux/</loc><priority>0.9</priority>
+  </url>
   <!-- Contiax et les cartes NFC sont des produits d'entrée, pas la suite :
        priorité abaissée en conséquence, ce qui reflète la place qu'ils ont
        désormais dans la navigation. -->
-  <url><loc>https://indusiax.com/outils/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/contiax/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/cartes-nfc/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/tarifs/</loc><priority>0.9</priority></url>
+  <url><loc>https://indusiax.com/outils/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/contiax/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/cartes-nfc/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/tarifs/</loc><priority>0.9</priority>
+  </url>
   <!-- Le devis est devenu la porte d'entrée principale des offres à
        engagement (Stator, Rotor, Suite) ; l'essai reste la voie secondaire. -->
-  <url><loc>https://indusiax.com/devis/</loc><priority>0.8</priority></url>
-  <url><loc>https://indusiax.com/essai/</loc><priority>0.8</priority></url>
-  <url><loc>https://indusiax.com/a-propos/</loc><priority>0.5</priority></url>
-  <url><loc>https://indusiax.com/securite/</loc><priority>0.6</priority></url>
-  <url><loc>https://indusiax.com/contact/</loc><priority>0.5</priority></url>
+  <url><loc>https://indusiax.com/devis/</loc><priority>0.8</priority>
+  </url>
+  <url><loc>https://indusiax.com/essai/</loc><priority>0.8</priority>
+  </url>
+  <url><loc>https://indusiax.com/a-propos/</loc><priority>0.5</priority>
+  </url>
+  <url><loc>https://indusiax.com/securite/</loc><priority>0.6</priority>
+  </url>
+  <url><loc>https://indusiax.com/contact/</loc><priority>0.5</priority>
+  </url>
   <!-- Les cinq pages légales — /cgv-stator/, /cgv-rotor/, /cgv-suite/,
        /mentions-legales/, /confidentialite/ — sont ABSENTES d'ici À DESSEIN
        (décision de Grégory, 19/08/2026). Elles portent toutes
@@ -31,36 +46,530 @@
        Ne pas les rajouter ici en croyant réparer un oubli : elles y avaient
        été ajoutées le matin du 19/08 pour cette raison, avant que la
        contradiction avec le noindex soit vue. -->
-  <url><loc>https://indusiax.com/blog/</loc><priority>0.8</priority></url>
-  <url><loc>https://indusiax.com/blog/logiciels-pme-industrielle-comparatif/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/logiciel-gestion-interventions-terrain/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/crm-industriel-vs-crm-generaliste/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/relance-client-pme-industrielle/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/excel-ou-crm-pme-industrielle/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/pourquoi-les-crm-meurent-dans-les-pme-industrielles/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/saisie-crm-ce-qui-tue-adoption/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/crm-mobile-commerciaux-terrain/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/comparatifs-crm-en-ligne-pourquoi-mefiance/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/gmao-culture-maintenance-curative/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/compte-rendu-reunion-automatique-ia/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/entreprise-industrielle-linkedin/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/stator-vs-rotor-difference/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/cout-dispersion-logicielle-pme/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/parcours-client-suite-indusiax/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/vector-mom-vs-granola-fireflies-otter/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/stator-crm-vs-salesforce-hubspot-pipedrive/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/rotor-fsm-vs-praxedo-organilog-kizeo/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/flux-link-vs-taplio-supergrow-podawaa/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/pourquoi-equiper-pme-industrielle-maintenant/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/indusiax-souverainete-industrie-francaise-dogfooding/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/relance-apres-salon-professionnel/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/recuperer-contacts-salon-badge-ou-scan/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/application-scan-carte-visite-rgpd/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/carte-visite-nfc-comment-ca-marche/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/cout-reel-carte-de-visite-papier/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/contiax-vs-applis-scan-cartes-visite/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/alternatives-praxedo-logiciel-intervention/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/cout-reel-heure-technicien-terrain/</loc><priority>0.7</priority></url>
-  <url><loc>https://indusiax.com/blog/calendrier-verifications-periodiques-parc/</loc><priority>0.7</priority></url>
+  <url><loc>https://indusiax.com/blog/</loc><priority>0.8</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/logiciels-pme-industrielle-comparatif/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/logiciel-gestion-interventions-terrain/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/crm-industriel-vs-crm-generaliste/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/relance-client-pme-industrielle/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/excel-ou-crm-pme-industrielle/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/pourquoi-les-crm-meurent-dans-les-pme-industrielles/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/saisie-crm-ce-qui-tue-adoption/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/crm-mobile-commerciaux-terrain/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/comparatifs-crm-en-ligne-pourquoi-mefiance/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/gmao-culture-maintenance-curative/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/compte-rendu-reunion-automatique-ia/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/entreprise-industrielle-linkedin/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/stator-vs-rotor-difference/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/cout-dispersion-logicielle-pme/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/parcours-client-suite-indusiax/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/vector-mom-vs-granola-fireflies-otter/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/stator-crm-vs-salesforce-hubspot-pipedrive/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/rotor-fsm-vs-praxedo-organilog-kizeo/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/flux-link-vs-taplio-supergrow-podawaa/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/pourquoi-equiper-pme-industrielle-maintenant/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/indusiax-souverainete-industrie-francaise-dogfooding/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/relance-apres-salon-professionnel/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/recuperer-contacts-salon-badge-ou-scan/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/application-scan-carte-visite-rgpd/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/carte-visite-nfc-comment-ca-marche/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/cout-reel-carte-de-visite-papier/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/contiax-vs-applis-scan-cartes-visite/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/alternatives-praxedo-logiciel-intervention/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/cout-reel-heure-technicien-terrain/</loc><priority>0.7</priority>
+  </url>
+  <url><loc>https://indusiax.com/blog/calendrier-verifications-periodiques-parc/</loc><priority>0.7</priority>
+  </url>
+  <!--i18n--><!-- Versions EN et NL : bloc régénéré par outils/i18n_build.py, ne pas éditer à la main. Mêmes pages que le français ci-dessus. -->
+  <url><loc>https://indusiax.com/en/</loc><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/stator/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/stator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/stator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/stator/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/rotor/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/rotor/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/rotor/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/vector/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/vector/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/vector/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/flux/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/flux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/flux/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/flux/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/tools/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/outils/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/tools/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/tools/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/contiax/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/contiax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/contiax/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/contiax/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/nfc-cards/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/cartes-nfc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/nfc-cards/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/nfc-visitekaartjes/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/pricing/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/tarifs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/prijzen/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/quote/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/devis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/quote/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/offerte/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/free-trial/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/essai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/free-trial/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/gratis-proberen/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/about/</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/over-ons/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/security/</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/securite/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/security/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/beveiliging/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/contact/</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/contact/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/software-industrial-sme-comparison/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/logiciels-pme-industrielle-comparatif/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/software-industrial-sme-comparison/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/software-industrieel-mkb-vergelijking/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/field-service-management-software-guide/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/logiciel-gestion-interventions-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/field-service-management-software-guide/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/software-beheer-buitendienst-interventies/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/industrial-crm-vs-generic-crm/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/crm-industriel-vs-crm-generaliste/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/industrial-crm-vs-generic-crm/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/industriele-crm-vs-generieke-crm/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/quote-follow-up-industrial-sme/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/relance-client-pme-industrielle/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/quote-follow-up-industrial-sme/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/offerte-opvolging-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/excel-or-crm-industrial-sme/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/excel-ou-crm-pme-industrielle/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/excel-or-crm-industrial-sme/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/excel-of-crm-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/why-crm-projects-fail-industrial-smes/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/pourquoi-les-crm-meurent-dans-les-pme-industrielles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/why-crm-projects-fail-industrial-smes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/waarom-crm-projecten-mislukken-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/crm-data-entry-kills-adoption/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/saisie-crm-ce-qui-tue-adoption/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/crm-data-entry-kills-adoption/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/crm-invoer-doodt-adoptie/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/mobile-crm-field-sales/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/crm-mobile-commerciaux-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/mobile-crm-field-sales/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/mobiele-crm-buitendienst-verkoop/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/online-crm-comparisons-why-distrust/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/comparatifs-crm-en-ligne-pourquoi-mefiance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/online-crm-comparisons-why-distrust/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/online-crm-vergelijkingen-wantrouwen/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/cmms-reactive-maintenance-culture/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/gmao-culture-maintenance-curative/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/cmms-reactive-maintenance-culture/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/cmms-correctief-onderhoud-cultuur/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/automatic-ai-meeting-minutes/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/compte-rendu-reunion-automatique-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/automatic-ai-meeting-minutes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/automatisch-vergaderverslag-ai/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/industrial-company-linkedin/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/entreprise-industrielle-linkedin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/industrial-company-linkedin/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/industrieel-bedrijf-linkedin/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/crm-vs-field-service-software-difference/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/stator-vs-rotor-difference/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/crm-vs-field-service-software-difference/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/crm-vs-buitendienstsoftware-verschil/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/cost-of-saas-sprawl-smes/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-dispersion-logicielle-pme/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/cost-of-saas-sprawl-smes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/kosten-versnipperde-software-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/indusiax-suite-customer-journey/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/parcours-client-suite-indusiax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/indusiax-suite-customer-journey/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/indusiax-suite-klantreis/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/vector-mom-vs-granola-fireflies-otter/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/vector-mom-vs-granola-fireflies-otter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/vector-mom-vs-granola-fireflies-otter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/vector-mom-vs-granola-fireflies-otter/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/stator-crm-vs-salesforce-hubspot-pipedrive/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/rotor-fsm-vs-praxedo-organilog-kizeo/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/flux-link-vs-taplio-supergrow-podawaa/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/why-digitalise-industrial-sme-now/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/pourquoi-equiper-pme-industrielle-maintenant/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/why-digitalise-industrial-sme-now/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/waarom-industrieel-mkb-nu-digitaliseren/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/indusiax-dogfooding-european-sovereignty/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/indusiax-souverainete-industrie-francaise-dogfooding/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/indusiax-dogfooding-european-sovereignty/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/indusiax-dogfooding-europese-soevereiniteit/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/trade-show-follow-up/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/relance-apres-salon-professionnel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/trade-show-follow-up/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/opvolging-na-vakbeurs/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/trade-show-leads-badge-scanner-or-app/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/recuperer-contacts-salon-badge-ou-scan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/trade-show-leads-badge-scanner-or-app/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/beursleads-badgescanner-of-app/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/business-card-scanner-app-gdpr/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/application-scan-carte-visite-rgpd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/business-card-scanner-app-gdpr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/visitekaartjes-scanner-app-avg/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/nfc-business-card-how-it-works/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/carte-visite-nfc-comment-ca-marche/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/nfc-business-card-how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/nfc-visitekaartje-hoe-werkt-het/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/true-cost-paper-business-card/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-reel-carte-de-visite-papier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/true-cost-paper-business-card/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/werkelijke-kosten-papieren-visitekaartje/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/contiax-vs-business-card-scanner-apps/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/contiax-vs-applis-scan-cartes-visite/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/contiax-vs-business-card-scanner-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/contiax-vs-visitekaartjes-scan-apps/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/praxedo-alternatives-field-service-software/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/alternatives-praxedo-logiciel-intervention/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/praxedo-alternatives-field-service-software/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/praxedo-alternatieven-buitendienstsoftware/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/true-cost-field-technician-hour/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-reel-heure-technicien-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/true-cost-field-technician-hour/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/werkelijke-kosten-uur-buitendiensttechnicus/"/>
+  </url>
+  <url><loc>https://indusiax.com/en/blog/periodic-inspection-schedule-equipment/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/calendrier-verifications-periodiques-parc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/periodic-inspection-schedule-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/planning-periodieke-keuringen-machinepark/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/</loc><priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/stator/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/stator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/stator/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/stator/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/rotor/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/rotor/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/rotor/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/rotor/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/vector/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/vector/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/vector/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/vector/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/flux/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/flux/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/flux/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/flux/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/tools/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/outils/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/tools/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/tools/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/contiax/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/contiax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/contiax/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/contiax/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/nfc-visitekaartjes/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/cartes-nfc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/nfc-cards/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/nfc-visitekaartjes/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/prijzen/</loc><priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/tarifs/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/prijzen/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/offerte/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/devis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/quote/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/offerte/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/gratis-proberen/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/essai/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/free-trial/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/gratis-proberen/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/over-ons/</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/over-ons/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/beveiliging/</loc><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/securite/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/security/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/beveiliging/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/contact/</loc><priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/contact/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/</loc><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/software-industrieel-mkb-vergelijking/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/logiciels-pme-industrielle-comparatif/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/software-industrial-sme-comparison/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/software-industrieel-mkb-vergelijking/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/software-beheer-buitendienst-interventies/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/logiciel-gestion-interventions-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/field-service-management-software-guide/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/software-beheer-buitendienst-interventies/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/industriele-crm-vs-generieke-crm/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/crm-industriel-vs-crm-generaliste/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/industrial-crm-vs-generic-crm/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/industriele-crm-vs-generieke-crm/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/offerte-opvolging-industrieel-mkb/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/relance-client-pme-industrielle/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/quote-follow-up-industrial-sme/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/offerte-opvolging-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/excel-of-crm-industrieel-mkb/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/excel-ou-crm-pme-industrielle/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/excel-or-crm-industrial-sme/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/excel-of-crm-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/waarom-crm-projecten-mislukken-industrieel-mkb/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/pourquoi-les-crm-meurent-dans-les-pme-industrielles/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/why-crm-projects-fail-industrial-smes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/waarom-crm-projecten-mislukken-industrieel-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/crm-invoer-doodt-adoptie/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/saisie-crm-ce-qui-tue-adoption/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/crm-data-entry-kills-adoption/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/crm-invoer-doodt-adoptie/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/mobiele-crm-buitendienst-verkoop/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/crm-mobile-commerciaux-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/mobile-crm-field-sales/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/mobiele-crm-buitendienst-verkoop/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/online-crm-vergelijkingen-wantrouwen/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/comparatifs-crm-en-ligne-pourquoi-mefiance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/online-crm-comparisons-why-distrust/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/online-crm-vergelijkingen-wantrouwen/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/cmms-correctief-onderhoud-cultuur/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/gmao-culture-maintenance-curative/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/cmms-reactive-maintenance-culture/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/cmms-correctief-onderhoud-cultuur/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/ratio-preventif-curatif-indicateur-maintenance/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/preventive-corrective-ratio-maintenance-kpi/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/verhouding-preventief-correctief-onderhoud-kpi/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/automatisch-vergaderverslag-ai/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/compte-rendu-reunion-automatique-ia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/automatic-ai-meeting-minutes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/automatisch-vergaderverslag-ai/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/industrieel-bedrijf-linkedin/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/entreprise-industrielle-linkedin/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/industrial-company-linkedin/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/industrieel-bedrijf-linkedin/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/crm-vs-buitendienstsoftware-verschil/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/stator-vs-rotor-difference/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/crm-vs-field-service-software-difference/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/crm-vs-buitendienstsoftware-verschil/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/kosten-versnipperde-software-mkb/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-dispersion-logicielle-pme/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/cost-of-saas-sprawl-smes/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/kosten-versnipperde-software-mkb/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/indusiax-suite-klantreis/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/parcours-client-suite-indusiax/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/indusiax-suite-customer-journey/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/indusiax-suite-klantreis/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/vector-mom-vs-granola-fireflies-otter/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/vector-mom-vs-granola-fireflies-otter/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/vector-mom-vs-granola-fireflies-otter/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/vector-mom-vs-granola-fireflies-otter/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/stator-crm-vs-salesforce-hubspot-pipedrive/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/stator-crm-vs-salesforce-hubspot-pipedrive/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/rotor-fsm-vs-praxedo-organilog-kizeo/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/rotor-fsm-vs-praxedo-organilog-kizeo/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/flux-link-vs-taplio-supergrow-podawaa/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/flux-link-vs-taplio-supergrow-podawaa/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/waarom-industrieel-mkb-nu-digitaliseren/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/pourquoi-equiper-pme-industrielle-maintenant/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/why-digitalise-industrial-sme-now/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/waarom-industrieel-mkb-nu-digitaliseren/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/indusiax-dogfooding-europese-soevereiniteit/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/indusiax-souverainete-industrie-francaise-dogfooding/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/indusiax-dogfooding-european-sovereignty/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/indusiax-dogfooding-europese-soevereiniteit/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/opvolging-na-vakbeurs/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/relance-apres-salon-professionnel/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/trade-show-follow-up/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/opvolging-na-vakbeurs/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/beursleads-badgescanner-of-app/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/recuperer-contacts-salon-badge-ou-scan/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/trade-show-leads-badge-scanner-or-app/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/beursleads-badgescanner-of-app/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/visitekaartjes-scanner-app-avg/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/application-scan-carte-visite-rgpd/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/business-card-scanner-app-gdpr/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/visitekaartjes-scanner-app-avg/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/nfc-visitekaartje-hoe-werkt-het/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/carte-visite-nfc-comment-ca-marche/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/nfc-business-card-how-it-works/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/nfc-visitekaartje-hoe-werkt-het/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/werkelijke-kosten-papieren-visitekaartje/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-reel-carte-de-visite-papier/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/true-cost-paper-business-card/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/werkelijke-kosten-papieren-visitekaartje/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/contiax-vs-visitekaartjes-scan-apps/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/contiax-vs-applis-scan-cartes-visite/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/contiax-vs-business-card-scanner-apps/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/contiax-vs-visitekaartjes-scan-apps/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/praxedo-alternatieven-buitendienstsoftware/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/alternatives-praxedo-logiciel-intervention/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/praxedo-alternatives-field-service-software/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/praxedo-alternatieven-buitendienstsoftware/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/werkelijke-kosten-uur-buitendiensttechnicus/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/cout-reel-heure-technicien-terrain/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/true-cost-field-technician-hour/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/werkelijke-kosten-uur-buitendiensttechnicus/"/>
+  </url>
+  <url><loc>https://indusiax.com/nl/blog/planning-periodieke-keuringen-machinepark/</loc><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://indusiax.com/blog/calendrier-verifications-periodiques-parc/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://indusiax.com/en/blog/periodic-inspection-schedule-equipment/"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/blog/planning-periodieke-keuringen-machinepark/"/>
+  </url>
+  <!--/i18n-->
 </urlset>

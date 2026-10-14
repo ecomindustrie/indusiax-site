@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFC business cards — €5 per card, no subscription | Indusiax</title>
+<meta name="description" content="A chip card that opens your contact page on the other person's phone. Your details stay editable for life; the card stays the same. €5 per card, page and hosting included, no subscription.">
+<link rel="canonical" href="https://indusiax.com/cartes-nfc/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/cartes-nfc/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NFC business cards — €5 per card, no subscription">
+<meta property="og:description" content="Hold the card to a phone, your contact page opens, the contact is saved. When your number changes, you edit the page — not the card.">
+<meta property="og:url" content="https://indusiax.com/cartes-nfc/">
+<meta property="og:image" content="https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg">
+<!-- Fiche produit lue par Google (rapport "Fiches de marchand" de la Search Console).
+     "image" est le seul champ vraiment obligatoire : sans lui, Google refuse la fiche.
+     Les deux visuels sont volontairement dans deux formats différents (16/9 et 4/3),
+     Google recommande de lui laisser le choix du cadrage.
+     "priceValidUntil" doit rester dans le futur : une date dépassée fait disparaître
+     l'offre des résultats. À repousser avant le 31/12/2027 si le prix ne change pas.
+     "shippingDetails" reflète la configuration Stripe réelle : aucun frais de port
+     n'est facturé, et la liste des pays est celle de shipping_address_collection.
+     "hasMerchantReturnPolicy" reprend la première règle des mentions légales : le
+     délai de rétractation de quatorze jours, celui qui vaut au moment de l'achat.
+     La condition « tant que les cartes n'ont pas été programmées » ne s'exprime pas
+     dans le format de Google — ce sont les CGV qui font foi, pas ce balisage. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Indusiax NFC business card",
+  "description": "NFC chip business card programmed with the address of an online contact page. Held up to a phone, it opens the page and lets the contact be saved in a single tap. The details remain editable for life without reprogramming the card, and a card can be reassigned to a successor.",
+  "url": "https://indusiax.com/cartes-nfc/",
+  "image": [
+    "https://indusiax.com/assets/blog/carte-visite-nfc-comment-ca-marche/hero.jpg",
+    "https://indusiax.com/assets/outils/scene-cartes.jpg"
+  ],
+  "category": "Connected business cards",
+  "brand": {
+    "@type": "Brand",
+    "name": "Indusiax"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "5.00",
+    "priceCurrency": "EUR",
+    "priceValidUntil": "2027-12-31",
+    "availability": "https://schema.org/InStock",
+    "itemCondition": "https://schema.org/NewCondition",
+    "url": "https://cards.indusiax.com/commander",
+    "description": "€5 per card. Includes the programmed chip card, the online contact page, its hosting and lifetime edits. No subscription.",
+    "hasMerchantReturnPolicy": {
+      "@type": "MerchantReturnPolicy",
+      "applicableCountry": "FR",
+      "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+      "merchantReturnDays": 14,
+      "returnMethod": "https://schema.org/ReturnByMail"
+    },
+    "shippingDetails": {
+      "@type": "OfferShippingDetails",
+      "shippingRate": {
+        "@type": "MonetaryAmount",
+        "value": "0",
+        "currency": "EUR"
+      },
+      "shippingDestination": [
+        { "@type": "DefinedRegion", "addressCountry": "FR" },
+        { "@type": "DefinedRegion", "addressCountry": "BE" },
+        { "@type": "DefinedRegion", "addressCountry": "LU" },
+        { "@type": "DefinedRegion", "addressCountry": "CH" },
+        { "@type": "DefinedRegion", "addressCountry": "DE" },
+        { "@type": "DefinedRegion", "addressCountry": "ES" },
+        { "@type": "DefinedRegion", "addressCountry": "IT" },
+        { "@type": "DefinedRegion", "addressCountry": "NL" },
+        { "@type": "DefinedRegion", "addressCountry": "PT" },
+        { "@type": "DefinedRegion", "addressCountry": "AT" },
+        { "@type": "DefinedRegion", "addressCountry": "MC" }
+      ]
+    },
+    "seller": {
+      "@type": "Organization",
+      "name": "Indusiax",
+      "url": "https://indusiax.com"
+    }
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do you need an app to read the card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, on neither side. The card opens an ordinary web page. On an iPhone or a recent Android phone, you simply hold the card to the phone: a notification appears, you open it and the contact page is displayed. The other person has nothing to install, and neither do you."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if the other person's phone has no NFC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Every contact page carries a QR code that can simply be photographed. It is the fallback for an older iPhone, an Android phone with NFC turned off, or simply someone who prefers to use the camera."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens when my number changes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You edit your contact page online and that is it. The card carries a fixed address that depends neither on your name nor on your details: it keeps opening the same page, whose content is up to date. Cards already handed out do not become wrong."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "An employee leaves: is the card lost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The same physical card is reassigned to their successor from your management area, without reprogramming the chip and without sending it back to us. That is precisely why the address stored on the card does not contain the person's name."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is there a subscription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The €5 covers the card, the page and its hosting. In return, a card that is no longer scanned is eventually put to sleep: two e-mail warnings, after 45 and then 60 days of inactivity, then the page is switched off at 90 days. Nothing is deleted and one click switches it back on, without reprogramming the card."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can the Indusiax mention be removed from the contact pages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, on request. The “Powered by Indusiax” line at the bottom of each contact page is what allows us to sell these cards at this price: it is our brand-awareness budget rather than a margin. We can remove it and display your logo instead; just write to us."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who can see my contact page?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The people you hand the card to. A contact page's address is a string of twelve randomly generated characters, impossible to guess, and the pages are excluded from search engines. Treat it like a paper business card: it goes wherever you hand it out."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  /* La section porte aussi `pv-hero` : c'est cette classe qui règle la
+     taille du titre, du chapô et des boutons pour toutes les pages produit.
+     S'en écarter avec un nom à soi laisse un h1 à 32 px au lieu de 54 —
+     la page paraît alors simplement mal cadrée, sans que rien ne signale
+     l'erreur.
+     Le halo remplace ici la photo pleine largeur des autres pages produit :
+     un objet à 5 € n'appelle pas la mise en scène d'un logiciel à 65 €, et
+     la maquette de droite montre le produit mieux qu'une photo. */
+  .nfc-hero{background:radial-gradient(60rem 30rem at 22% -10%, rgba(245,158,11,.10), transparent 66%);}
+
+  /* La carte physique, vue de trois quarts. */
+  .nfc-carte{
+    width:min(300px,84%);aspect-ratio:1.586;border-radius:13px;margin:0 auto 22px;
+    background:linear-gradient(145deg,#1b1f2a,#0e1118 62%);
+    border:1px solid rgba(255,255,255,.13);
+    box-shadow:0 26px 60px -26px rgba(0,0,0,.95),inset 0 1px 0 rgba(255,255,255,.07);
+    position:relative;display:flex;align-items:flex-end;padding:17px 19px;
+    transform:rotate(-3deg);
+  }
+  .nfc-carte .marque{font-weight:750;letter-spacing:-.01em;font-size:.95rem;color:#f4f5f7;}
+  .nfc-carte .marque b{color:var(--cartes);}
+  .nfc-carte .ondes{position:absolute;top:15px;right:17px;color:var(--cartes);opacity:.9;}
+  .nfc-carte .puce{
+    position:absolute;top:16px;left:19px;width:30px;height:23px;border-radius:4px;
+    background:linear-gradient(140deg,#d6b45f,#8c6f2c);opacity:.85;
+  }
+
+  /* Le téléphone qui vient de lire la carte. */
+  .nfc-tel{
+    background:#12151d;border:1px solid var(--bord);border-radius:26px;padding:11px;
+    width:min(260px,74%);margin:0 auto;box-shadow:0 30px 70px -30px rgba(0,0,0,.9);
+  }
+  .nfc-ecran{background:#0b0d12;border-radius:18px;padding:19px 15px 15px;text-align:center;}
+  .nfc-ava{width:56px;height:56px;border-radius:50%;margin:0 auto 9px;
+    display:grid;place-items:center;font-weight:700;font-size:1.15rem;
+    background:rgba(245,158,11,.14);border:1.5px solid rgba(245,158,11,.42);color:var(--cartes);}
+  .nfc-ecran .nom{font-weight:700;font-size:1rem;letter-spacing:-.01em;}
+  .nfc-ecran .fonc{font-size:.76rem;color:var(--mut);margin-top:1px;}
+  .nfc-ecran .soc{font-size:.76rem;color:var(--cartes);font-weight:650;margin-top:3px;}
+  .nfc-ecran .bt{margin-top:13px;padding:9px;border-radius:10px;background:var(--cartes);
+    color:#160d00;font-weight:700;font-size:.78rem;}
+  .nfc-lignes{margin-top:11px;display:flex;flex-direction:column;gap:7px;text-align:left;}
+  .nfc-lig{display:flex;align-items:center;gap:9px;padding:7px 8px;border-radius:8px;
+    background:#12151d;border:1px solid var(--bord);}
+  .nfc-lig .ic{width:24px;height:24px;border-radius:7px;flex:none;
+    background:rgba(245,158,11,.13);color:var(--cartes);display:grid;place-items:center;font-size:.72rem;}
+  .nfc-lig .tx{font-size:.72rem;color:var(--mut);}
+  .nfc-pied{margin-top:11px;font-size:.62rem;color:var(--mut2);}
+  .nfc-pied b{color:var(--stator);}
+
+  .nfc-args{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:34px;}
+  @media(max-width:820px){.nfc-args{grid-template-columns:1fr;gap:16px;}}
+  .nfc-arg{border:1px solid var(--bord);border-radius:14px;padding:20px 21px;background:var(--bg2);}
+  .nfc-arg h3{font-size:1.02rem;margin-bottom:7px;}
+  .nfc-arg p{font-size:.92rem;color:var(--mut);}
+  .nfc-arg .av{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--cartes);margin-bottom:9px;display:block;}
+
+  .nfc-contenu{display:grid;grid-template-columns:repeat(2,1fr);gap:10px 28px;margin-top:22px;}
+  @media(max-width:700px){.nfc-contenu{grid-template-columns:1fr;}}
+  .nfc-contenu li{list-style:none;display:flex;gap:10px;align-items:flex-start;
+    font-size:.93rem;color:var(--mut);padding:5px 0;}
+  .nfc-contenu li::before{content:"—";color:var(--cartes);flex:none;}
+
+  .nfc-honnete{border:1px solid rgba(245,158,11,.3);background:rgba(245,158,11,.06);
+    border-radius:14px;padding:20px 22px;margin-top:26px;}
+  .nfc-honnete h3{font-size:1rem;margin-bottom:8px;color:var(--cartes);}
+  .nfc-honnete p{font-size:.92rem;color:var(--mut);}
+  .nfc-honnete p + p{margin-top:8px;}
+
+  .nfc-suite{border-top:1px solid var(--bord);padding-top:30px;margin-top:8px;}
+  .nfc-suite-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px;}
+  @media(max-width:760px){.nfc-suite-grid{grid-template-columns:repeat(2,1fr);}}
+  .nfc-suite-i{border:1px solid var(--bord);border-radius:11px;padding:13px 14px;background:var(--bg2);
+    transition:border-color .2s,transform .2s;display:block;}
+  .nfc-suite-i:hover{border-color:var(--sc);transform:translateY(-2px);}
+  .nfc-suite-i b{display:block;font-size:.9rem;color:var(--sc);}
+  .nfc-suite-i span{font-size:.78rem;color:var(--mut2);}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales service</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field service jobs, PDF reports</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, hosted in Europe</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts, dictated and written up by AI</i></span></span>
+      <a href="/tarifs/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">About</a>
+      <a class="nav-cta-mobile" href="https://cards.indusiax.com/commander" rel="noopener">Order</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" style="background:var(--cartes);border-color:var(--cartes);color:#160d00" href="https://cards.indusiax.com/commander" rel="noopener">Order</a>
+  </div>
+</header>
+
+<main class="pv" style="--p:#F59E0B;--p2:#b45309">
+
+<!-- HERO -->
+<section class="pv-hero nfc-hero">
+  <div class="wrap pv-hero-in">
+    <div>
+      <span class="eb">Physical product · €5 per card</span>
+      <h1>Your business card will never change again. <span class="ac">Your details can.</span></h1>
+      <p class="sub">Hold the card to a phone, your contact page opens, the contact
+        is saved. The day your number changes, you edit the page — not the
+        two hundred cards already handed out.</p>
+      <div class="ctas">
+        <a class="btn btn-big" style="background:var(--cartes);border-color:var(--cartes);color:#160d00" href="https://cards.indusiax.com/commander" rel="noopener">Order — €5 per card</a>
+        <a class="btn btn-ghost btn-big" href="https://cards.indusiax.com/c/6dpgnfn3dvzq" rel="noopener">See a live contact page</a>
+      </div>
+      <div class="pv-trust">
+        <div class="lb">Page and hosting included · no subscription</div>
+        <div class="pv-chips">
+          <span class="pv-chip">No app</span><span class="pv-chip">iPhone and Android</span>
+          <span class="pv-chip">Editable for life</span><span class="pv-chip">Reassignable</span>
+        </div>
+      </div>
+    </div>
+
+    <div aria-label="An NFC card and the contact page it opens on a phone">
+      <div class="nfc-carte">
+        <span class="puce" aria-hidden="true"></span>
+        <svg class="ondes" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M8.5 9a5 5 0 0 1 0 6"/><path d="M12.5 6a10 10 0 0 1 0 12"/><path d="M16.5 3a15 15 0 0 1 0 18"/></svg>
+        <span class="marque">Ateliers <b>Vermont</b></span>
+      </div>
+      <div class="nfc-tel">
+        <div class="nfc-ecran">
+          <div class="nfc-ava">CR</div>
+          <div class="nom">Camille Robert</div>
+          <div class="fonc">Maintenance Manager</div>
+          <div class="soc">Ateliers Vermont</div>
+          <div class="bt">Add to contacts</div>
+          <div class="nfc-lignes">
+            <div class="nfc-lig"><span class="ic">☎</span><span class="tx">03 87 00 00 10</span></div>
+            <div class="nfc-lig"><span class="ic">✉</span><span class="tx">camille.robert@…</span></div>
+            <div class="nfc-lig"><span class="ic">◎</span><span class="tx">12 rue des Ateliers, Metz</span></div>
+          </div>
+          <div class="nfc-pied">Powered by <b>Indusiax</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUE ÇA CHANGE -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">The difference</span>
+    <h2 class="sec">Three situations where a paper card costs you dearly.</h2>
+    <div class="nfc-args">
+      <div class="nfc-arg">
+        <span class="av">The number that changes</span>
+        <h3>One line edited, not a box of cards to bin</h3>
+        <p>A new area code, a new mobile number, a site that relocates: normally,
+          everything left in the drawer goes in the bin and the cards already handed
+          out become wrong. Here, you correct the contact page and the cards in
+          circulation are accurate again the same evening.</p>
+      </div>
+      <div class="nfc-arg">
+        <span class="av">The employee who leaves</span>
+        <h3>The card stays, the person changes</h3>
+        <p>The address stored in the chip does not contain its holder's name — that is
+          deliberate. You reassign the card to their successor from your account area,
+          without sending it back to us and without reprogramming anything.</p>
+      </div>
+      <div class="nfc-arg">
+        <span class="av">The trade show</span>
+        <h3>Nothing to re-type, on either side</h3>
+        <p>The person you are talking to taps “Add to contacts”: you are in their
+          address book with your photo, address and LinkedIn link. No crumpled card
+          at the bottom of a pocket, no data entry the following Monday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA MARCHE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">How it works</span>
+    <h2 class="sec">From order to pocket, in four steps.</h2>
+    <div class="pv-steps" style="margin-top:26px;max-width:760px">
+      <div class="pv-step"><div class="n">1</div><div>
+        <h3>You order the number of cards you need</h3>
+        <p>One per employee. Payment is made online; no account to create,
+          no password to remember.</p></div></div>
+      <div class="pv-step"><div class="n">2</div><div>
+        <h3>You receive a link to fill in the contact pages</h3>
+        <p>As many slots as cards ordered. You fill them in by hand, or import an
+          Excel or CSV file — useful when there are thirty employees to
+          enter.</p></div></div>
+      <div class="pv-step"><div class="n">3</div><div>
+        <h3>Everyone completes their own</h3>
+        <p>Each employee receives a personal link to check their details and add
+          their photo. That link opens only their own contact page, never anyone
+          else's — and you do not have to chase people for photos.</p></div></div>
+      <div class="pv-step"><div class="n">4</div><div>
+        <h3>We program the chips and ship the cards</h3>
+        <p>The cards arrive ready to use. They work immediately, even if a contact
+          page has not yet been filled in: the page can be completed later without
+          the card having to come back.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- LA FICHE -->
+<section class="alt">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">The contact page</span>
+    <h2 class="sec">What the other person sees.</h2>
+    <p style="max-width:60ch;margin-top:8px;color:var(--mut)">A plain, uncluttered page,
+      designed for a phone held in one hand, that opens in a second even on the
+      saturated network of an exhibition hall.</p>
+    <ul class="nfc-contenu">
+      <li>Your photo, or your initials if you prefer</li>
+      <li>Name, job title, second job title, company</li>
+      <li>Landline and mobile, callable with one tap</li>
+      <li>E-mail address</li>
+      <li>Postal address, which opens directions</li>
+      <li>Website and LinkedIn profile</li>
+      <li>“Add to contacts” button — vCard file including the photo</li>
+      <li>“Share” button and QR code for phones without NFC</li>
+      <li>Custom fields if you ask for them: on-call duty, certification, languages spoken</li>
+      <li>Automatic dark mode, following the other person's phone settings</li>
+    </ul>
+  </div>
+</section>
+
+<!-- TARIF -->
+<section>
+  <div class="wrap" style="text-align:center">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Price</span>
+    <h2 class="sec">Five euros a card. That is all.</h2>
+    <div style="max-width:440px;margin:30px auto 0">
+      <div class="price-card" style="text-align:center">
+        <h3 style="color:var(--cartes)">NFC business card</h3>
+        <div class="amount" style="margin:4px auto 0">€5<small> per card</small></div>
+        <div class="per">VAT not applicable — French VAT exemption, art. 293 B CGI.</div>
+        <ul style="text-align:left">
+          <li>The chip card, programmed by us</li>
+          <li>Your online contact page</li>
+          <li>Hosting of the page</li>
+          <li>Edits, for life</li>
+          <li>Reassignment to a successor</li>
+          <li>No subscription, no renewal</li>
+        </ul>
+        <a class="btn" style="align-self:center;background:var(--cartes);border-color:var(--cartes);color:#160d00" href="https://cards.indusiax.com/commander" rel="noopener">Order</a>
+      </div>
+    </div>
+
+    <div class="nfc-honnete" style="max-width:640px;margin-left:auto;margin-right:auto;text-align:left">
+      <h3>The trade-off, stated plainly</h3>
+      <p>Without a subscription, a page hosted indefinitely would end up costing us more
+        than it ever brought in. A card that has not been scanned for forty-five days
+        therefore triggers a first e-mail warning, a second at sixty, and then its page
+        is put to sleep at ninety.</p>
+      <p>No data is deleted: the page can be switched back on with one click from your
+        account area, without reprogramming the card. And if someone scans a dormant
+        card, we are notified within the second — a sign that it is still in circulation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUE BLANCHE -->
+<section class="alt">
+  <div class="wrap pv-two">
+    <div>
+      <span class="eb c" style="display:flex;margin-bottom:14px">White label</span>
+      <h2 class="sec">Why the card costs five euros.</h2>
+      <p style="color:var(--mut);margin-top:12px">Every contact page carries a “Powered by
+        Indusiax” line at the bottom. That is what covers the difference: we sell these
+        cards at cost price, and what we gain is that an industrial company receiving
+        your card learns that we exist.</p>
+      <p style="color:var(--mut);margin-top:10px">If that line bothers you, just say so:
+        we remove it and display your logo instead. We would rather see a card in a
+        prospect's hands than a card left unsold.</p>
+    </div>
+    <div class="nfc-honnete" style="margin-top:0">
+      <h3>Already know our software?</h3>
+      <p>Then you know how we work. If not, this card is the simplest way to get to
+        know us — and the one that commits you least.</p>
+      <p style="margin-top:12px"><a class="btn btn-ghost" href="/">See what Indusiax does</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap" style="max-width:820px">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Questions</span>
+    <h2 class="sec">What people ask us.</h2>
+    <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px">
+      <div class="nfc-arg"><h3>Do you need an app?</h3>
+        <p>No, on neither side. The card opens an ordinary web page. You hold the card
+          to the phone, a notification appears, you open it. The other person has
+          nothing to install, and neither do you.</p></div>
+      <div class="nfc-arg"><h3>What if the other person's phone has no NFC?</h3>
+        <p>Every contact page carries a QR code that can simply be photographed. It is
+          the fallback for an older iPhone, an Android phone with NFC turned off, or
+          someone who prefers to use the camera.</p></div>
+      <div class="nfc-arg"><h3>How long does it take to receive the cards?</h3>
+        <p>We program and ship as soon as your contact pages are filled in. Allow
+          a few working days. The pages themselves are online immediately: you
+          can already share the link by e-mail while you wait for the post.</p></div>
+      <div class="nfc-arg"><h3>Who can see my contact page?</h3>
+        <p>The people you hand the card to. The address is a string of twelve
+          randomly generated characters, impossible to guess, and the pages are excluded
+          from search engines. Treat it like a paper card: it goes wherever you
+          hand it out.</p></div>
+      <div class="nfc-arg"><h3>What if I want more cards later?</h3>
+        <p>You re-enter your company code when ordering, and the new cards join your
+          existing account area instead of opening a second one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PONT VERS LA SUITE -->
+<section class="alt">
+  <div class="wrap nfc-suite">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Also from Indusiax</span>
+    <h2 class="sec" style="font-size:1.3rem">Mostly, we make software.</h2>
+    <p style="color:var(--mut);margin-top:10px;max-width:64ch">These cards are a small
+      sideline to our real business: four software products for small and mid-sized
+      industrial companies, designed by an industrial company that uses them every day.</p>
+    <div class="nfc-suite-grid">
+      <a class="nfc-suite-i" style="--sc:var(--stator)" href="/stator/"><b>Stator-CRM</b><span>Customers, quotes, follow-ups</span></a>
+      <a class="nfc-suite-i" style="--sc:var(--rotor)" href="/rotor/"><b>Rotor-FSM</b><span>Field service jobs</span></a>
+      <a class="nfc-suite-i" style="--sc:var(--vector)" href="/vector/"><b>Vector-MOM</b><span>Meeting minutes</span></a>
+      <a class="nfc-suite-i" style="--sc:var(--flux)" href="/flux/"><b>Flux-Link</b><span>LinkedIn publishing</span></a>
+    </div>
+    <p style="margin-top:16px;font-size:.88rem;color:var(--mut2)">And
+      <a href="/contiax/" style="color:var(--contiax)">Contiax</a>, free, for scanning
+      the business cards you are given — the exact opposite of this one.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/outils/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a class="on" href="/cartes-nfc/">NFC cards</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/tarifs/">Pricing</a>
+        <a href="/blog/">Blog</a>
+        <a href="/outils/">Tools</a>
+        <a href="/a-propos/">About</a>
+        <a href="/contact/">Contact</a>
+        <a href="/essai/">Free trial</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/mentions-legales/">Legal notice</a>
+        <a href="/confidentialite/">Privacy</a>
+        <a href="/securite/">Security &amp; data</a>
+        <a href="/cgv-stator/">Stator-CRM terms of sale</a>
+        <a href="/cgv-rotor/">Rotor-FSM terms of sale</a>
+        <a href="/cgv-suite/">Full suite terms of sale</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6" defer></script>
+</body>
+</html>

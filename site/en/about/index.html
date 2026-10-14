@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — Indusiax, tools built out of necessity</title>
+<meta name="description" content="Indusiax was born in a French industrial engineering SME that could not find software suited to its trade. It ended up building that software itself — and now shares it with small and mid-sized industrial companies facing the same realities.">
+<link rel="canonical" href="https://indusiax.com/en/about/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/">
+<link rel="alternate" hreflang="en" href="https://indusiax.com/en/about/">
+<link rel="alternate" hreflang="nl" href="https://indusiax.com/nl/over-ons/">
+<link rel="alternate" hreflang="x-default" href="https://indusiax.com/a-propos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=35e9a8dd">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About — Indusiax, tools built out of necessity">
+<meta property="og:description" content="We were looking for software for our industry. We could not find it. So we built it ourselves.">
+<meta property="og:url" content="https://indusiax.com/en/about/">
+<meta property="og:image" content="https://indusiax.com/assets/apropos/hero.jpg">
+<style>
+/* timeline en 4 temps */
+/* Chronologie verticale — l'accueil présente la même histoire à l'horizontale ;
+   ici on prend le temps de la dérouler, un temps par ligne. */
+.tl{max-width:660px;margin:44px auto 0;position:relative;padding-left:8px;}
+.tl::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;
+  background:linear-gradient(180deg,var(--acc),rgba(232,76,43,.18) 55%,var(--acc));
+  transform:scaleY(0);transform-origin:top;transition:transform 2.4s cubic-bezier(.22,1,.36,1) .2s;}
+@media(prefers-reduced-motion:no-preference){.tl:has(.tl-i.in)::before{transform:scaleY(1);}}
+@media(prefers-reduced-motion:reduce){.tl::before{transform:none;}}
+.tl-i{position:relative;display:grid;grid-template-columns:56px 1fr;align-items:start;
+  column-gap:20px;padding:0 0 34px;text-align:left;}
+.tl-i:last-child{padding-bottom:0;}
+.tl-i .dot{width:44px;height:44px;border-radius:50%;background:#10161d;border:2px solid var(--acc);
+  display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--acc);}
+.tl-i h3{grid-column:2;font-size:1.05rem;margin:10px 0 6px;}
+.tl-i p{grid-column:2;font-size:.9rem;color:var(--mut);max-width:52ch;}
+@media(max-width:560px){.tl{padding-left:0;}.tl::before{left:21px;}
+  .tl-i{grid-template-columns:44px 1fr;column-gap:16px;}}
+/* chiffres */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:880px;margin:0 auto;}
+.stat-strip .s{text-align:center;}
+.stat-strip .n{font-family:var(--mono);font-weight:800;font-size:2rem;color:var(--acc);letter-spacing:-.02em;}
+.stat-strip .l{font-size:.82rem;color:var(--mut);margin-top:4px;}
+@media(max-width:640px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:26px;}}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/en/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales</i></span></span>
+      <span class="nav-item"><a href="/en/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field service jobs, PDF reports</i></span></span>
+      <span class="nav-item"><a href="/en/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, in Europe</i></span></span>
+      <span class="nav-item"><a href="/en/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts dictated and written by AI</i></span></span>
+      <a href="/en/pricing/">Pricing</a>
+      <a href="/en/blog/">Blog</a>
+      <a href="/en/tools/">Tools</a>
+      <a class="on" href="/en/about/">About</a>
+        <a class="nav-cta-mobile" href="/en/free-trial/">30-day free trial</a>
+      <!--i18n-sw--><div class="lang-sw lang-sw-m" role="navigation" aria-label="Language"><a href="/a-propos/" hreflang="fr" lang="fr">FR</a><a href="/en/about/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/over-ons/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    </nav>
+    <!--i18n-sw--><div class="lang-sw" role="navigation" aria-label="Language"><a href="/a-propos/" hreflang="fr" lang="fr">FR</a><a href="/en/about/" hreflang="en" lang="en" aria-current="true">EN</a><a href="/nl/over-ons/" hreflang="nl" lang="nl">NL</a></div><!--/i18n-sw-->
+    <a class="btn btn-acc nav-cta" href="/en/free-trial/">30-day free trial</a>
+</div>
+</header>
+
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/apropos/hero.webp" type="image/webp"><img src="/assets/apropos/hero.jpg" alt="Indusiax founder, arms folded, in his industrial engineering workshop" fetchpriority="high"></picture></div>
+  <div class="wrap" style="position:relative;z-index:2;padding:86px 0 90px;max-width:760px">
+    <span class="eb">Our story</span>
+    <h1 style="font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:16px 0 22px">We could not find the tool we needed. <span class="ac">So we built it.</span></h1>
+    <p class="sub" style="max-width:56ch">Indusiax is not a start-up that “identified a market”. It is a French industrial SME that went looking for software for its trade, found none that fitted, and ended up making its own — good enough to be shared.</p>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section style="padding:52px 0">
+  <div class="wrap">
+    <div class="stat-strip">
+      <div class="s"><div class="n"><span class="cnum" data-count="5">5</span></div><div class="l">tools, one of them completely free</div></div>
+      <div class="s"><div class="n"><span class="cnum" data-count="1">1</span></div><div class="l">industrial SME behind it all</div></div>
+      <div class="s"><div class="n">🇪🇺</div><div class="l">100% European hosting</div></div>
+      <div class="s"><div class="n"><span class="cnum" data-count="30">30</span></div><div class="l">days of trial, 0 credit cards</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉCIT LONG -->
+<section class="alt">
+  <div class="wrap" style="max-width:760px">
+    <div style="color:var(--mut);font-size:1.05rem;line-height:1.7;display:flex;flex-direction:column;gap:20px">
+      <p><b style="color:var(--txt)">It all started with frustration, not a brilliant idea.</b> A French mechanical engineering and industrial equipment company was looking — like thousands of other small and mid-sized companies in the sector — for management tools that matched the way it worked: a CRM that understood it sold machines and service, not SaaS subscriptions; a way to keep track of the assessments carried out at customers' sites, to keep a record of meetings, to show off its expertise without spending its evenings on it.</p>
+      <p>It looked at what was out there. The big CRMs on the market? Cut out for armies of sales reps in suits, full of “leads” and “pipelines” — not for a technician who strips down a gearbox in the morning and writes up the report in the evening. Field service tools? Prohibitively expensive, or designed for multinationals with a dedicated IT department. Automatic meeting-minutes tools? Every one of them ready to ship its most confidential recordings off to an American cloud giant.</p>
+      <p><b style="color:var(--txt)">So it did what industrial people do when a part is not in the catalogue: it machined it in-house.</b> First for itself. No business plan, no fundraising, no market study — just a real need, solved with the means at hand and tested in real conditions every day.</p>
+      <p>The results spoke for themselves. Quotes went out faster. Follow-ups stopped being forgotten. Service reports became clean, signed and professional. Meetings left a record instead of evaporating. The LinkedIn account, silent for years, came to life.</p>
+      <p>That is where the idea for Indusiax was born: <b style="color:var(--txt)">if we were missing these tools, others surely were too.</b> Not “tech companies”. Companies like ours — that sell, service, manufacture and maintain, and have neither the time nor the inclination to wrestle with software that does not speak their language.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BAND origine -->
+<div class="pv-band">
+  <picture><source srcset="/assets/apropos/band.webp" type="image/webp"><img src="/assets/apropos/band.jpg" alt="First hand-drawn sketch of a tool on a workbench" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">The very first tool</span>
+    <h2>A sketch on the corner of a workbench. Not a 40-page specification.</h2>
+    <p>Before the code, there was a concrete problem on a Tuesday morning — and the determination to fix it by Friday.</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">How we got here</span>
+    <h2 class="sec">A story in four stages.</h2>
+    <div class="tl">
+      <div class="tl-i"><div class="dot">01</div><h3>The problem</h3><p>No software on the market truly speaks the language of our industry.</p></div>
+      <div class="tl-i"><div class="dot">02</div><h3>We build for ourselves</h3><p>No outside funding, no marketing roadmap — just solving our own working day.</p></div>
+      <div class="tl-i"><div class="dot">03</div><h3>It works, for real</h3><p>Used every day, in real conditions, by our own teams — the best test there is.</p></div>
+      <div class="tl-i"><div class="dot">04</div><h3>We share it</h3><p>Indusiax is born: putting these tools in the hands of companies facing the same realities.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE / DEVISE -->
+<section class="alt">
+  <div class="wrap">
+    <div class="pv-origin">
+      <p class="lead">“By industry, for industry” is not a slogan an agency sold us. <b>It is our birth certificate.</b></p>
+      <p>We are neither smarter nor faster than the established software publishers. We simply have one advantage no marketing budget can buy: we use our own tools, every day, in our own business. When a screen is badly designed, we are the first to trip over it.</p>
+      <div class="sig">The Indusiax team</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">What we believe in</span>
+    <h2 class="sec">Three convictions behind every product decision.</h2>
+    <div class="grid c3" style="margin-top:32px">
+      <div class="card"><span class="ic">🔧</span><h3>Simplicity takes work</h3><p>A tool the team does not use is worthless, however complete it may be. Every screen is designed for someone with better things to do than data entry.</p></div>
+      <div class="card"><span class="ic">🤝</span><h3>A customer is not a “lead”</h3><p>In industry, business relationships last for years, sometimes decades. Our tools respect that long view: history, traceability, memory.</p></div>
+      <div class="card"><span class="ic">🔒</span><h3>Your data belongs to you</h3><p>Hosted in the European Union, free exports, no reselling, no surprises. If you leave, you take everything with you — nothing stays with us.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">The best argument is a trial</span>
+    <h2>Would you rather judge the finished part?</h2>
+    <p>That is exactly why there is a 30-day free trial, no credit card required.</p>
+    <a class="btn btn-acc btn-big" href="/en/free-trial/">Start my trial</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/en/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/en/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/en/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/en/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/en/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/en/tools/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/en/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/en/nfc-cards/">NFC cards</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/en/pricing/">Pricing</a>
+        <a href="/en/blog/">Blog</a>
+        <a href="/en/tools/">Tools</a>
+        <a href="/en/about/">About</a>
+        <a href="/en/contact/">Contact</a>
+        <a href="/en/free-trial/">Free trial</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="/en/legal-notice/">Legal notice</a>
+        <a href="/en/privacy/">Privacy</a>
+        <a href="/en/security/">Security &amp; data</a>
+        <a href="/en/terms-stator/">Stator-CRM terms of sale</a>
+        <a href="/en/terms-rotor/">Rotor-FSM terms of sale</a>
+        <a href="/en/terms-suite/">Full Suite terms of sale</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=86b04177"></script>
+</body>
+</html>

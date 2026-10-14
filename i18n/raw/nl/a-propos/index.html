@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Over ons — Indusiax, tools gebouwd uit noodzaak</title>
+<meta name="description" content="Indusiax ontstond in een Frans mkb-bedrijf in industriële mechanica dat geen software vond die bij zijn vak paste. Uiteindelijk bouwde het die zelf — en deelt het die nu met industriële mkb-bedrijven die dezelfde realiteit kennen.">
+<link rel="canonical" href="https://indusiax.com/a-propos/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/a-propos/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Over ons — Indusiax, tools gebouwd uit noodzaak">
+<meta property="og:description" content="We zochten software voor onze industrie. We vonden ze niet. Dus bouwden we ze zelf.">
+<meta property="og:url" content="https://indusiax.com/a-propos/">
+<meta property="og:image" content="https://indusiax.com/assets/apropos/hero.jpg">
+<style>
+/* timeline en 4 temps */
+/* Chronologie verticale — l'accueil présente la même histoire à l'horizontale ;
+   ici on prend le temps de la dérouler, un temps par ligne. */
+.tl{max-width:660px;margin:44px auto 0;position:relative;padding-left:8px;}
+.tl::before{content:"";position:absolute;left:27px;top:14px;bottom:14px;width:2px;
+  background:linear-gradient(180deg,var(--acc),rgba(232,76,43,.18) 55%,var(--acc));
+  transform:scaleY(0);transform-origin:top;transition:transform 2.4s cubic-bezier(.22,1,.36,1) .2s;}
+@media(prefers-reduced-motion:no-preference){.tl:has(.tl-i.in)::before{transform:scaleY(1);}}
+@media(prefers-reduced-motion:reduce){.tl::before{transform:none;}}
+.tl-i{position:relative;display:grid;grid-template-columns:56px 1fr;align-items:start;
+  column-gap:20px;padding:0 0 34px;text-align:left;}
+.tl-i:last-child{padding-bottom:0;}
+.tl-i .dot{width:44px;height:44px;border-radius:50%;background:#10161d;border:2px solid var(--acc);
+  display:grid;place-items:center;font-family:var(--mono);font-weight:700;font-size:.85rem;color:var(--acc);}
+.tl-i h3{grid-column:2;font-size:1.05rem;margin:10px 0 6px;}
+.tl-i p{grid-column:2;font-size:.9rem;color:var(--mut);max-width:52ch;}
+@media(max-width:560px){.tl{padding-left:0;}.tl::before{left:21px;}
+  .tl-i{grid-template-columns:44px 1fr;column-gap:16px;}}
+/* chiffres */
+.stat-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;max-width:880px;margin:0 auto;}
+.stat-strip .s{text-align:center;}
+.stat-strip .n{font-family:var(--mono);font-weight:800;font-size:2rem;color:var(--acc);letter-spacing:-.02em;}
+.stat-strip .l{font-size:.82rem;color:var(--mut);margin-top:4px;}
+@media(max-width:640px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:26px;}}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Klanten, offertes, opvolging, routes, after-sales</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Keuringen en buitendienstopdrachten, pdf-rapporten</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>Vergaderverslagen met AI, in Europa</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn-berichten ingesproken en geschreven met AI</i></span></span>
+      <a href="/tarifs/">Prijzen</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a class="on" href="/a-propos/">Over ons</a>
+        <a class="nav-cta-mobile" href="/essai/">30 dagen gratis proberen</a>
+    </nav>
+    <a class="btn btn-acc nav-cta" href="/essai/">30 dagen gratis proberen</a>
+</div>
+</header>
+
+<main class="pv" style="--p:#E84C2B;--p2:#c23a1e">
+
+<!-- HERO -->
+<section class="pv-hero">
+  <div class="bg"><picture><source srcset="/assets/apropos/hero.webp" type="image/webp"><img src="/assets/apropos/hero.jpg" alt="Oprichter van Indusiax, met de armen over elkaar, in zijn werkplaats voor industriële mechanica" fetchpriority="high"></picture></div>
+  <div class="wrap" style="position:relative;z-index:2;padding:86px 0 90px;max-width:760px">
+    <span class="eb">Ons verhaal</span>
+    <h1 style="font-size:clamp(2rem,4.6vw,3.1rem);font-weight:800;letter-spacing:-.025em;line-height:1.12;margin:16px 0 22px">We vonden de tool die we nodig hadden niet. <span class="ac">Dus bouwden we hem zelf.</span></h1>
+    <p class="sub" style="max-width:56ch">Indusiax is geen start-up die “een markt heeft geïdentificeerd”. Het is een Frans industrieel mkb-bedrijf dat software zocht voor zijn vak, niets passends vond, en uiteindelijk zijn eigen software maakte — goed genoeg om te delen.</p>
+  </div>
+</section>
+
+<!-- CHIFFRES -->
+<section style="padding:52px 0">
+  <div class="wrap">
+    <div class="stat-strip">
+      <div class="s"><div class="n"><span class="cnum" data-count="5">5</span></div><div class="l">tools, waarvan één volledig gratis</div></div>
+      <div class="s"><div class="n"><span class="cnum" data-count="1">1</span></div><div class="l">industrieel mkb-bedrijf aan de basis van alles</div></div>
+      <div class="s"><div class="n">🇪🇺</div><div class="l">100 % Europese hosting</div></div>
+      <div class="s"><div class="n"><span class="cnum" data-count="30">30</span></div><div class="l">dagen proberen, 0 creditcards</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉCIT LONG -->
+<section class="alt">
+  <div class="wrap" style="max-width:760px">
+    <div style="color:var(--mut);font-size:1.05rem;line-height:1.7;display:flex;flex-direction:column;gap:20px">
+      <p><b style="color:var(--txt)">Het begint met frustratie, niet met een geniaal idee.</b> Een Frans bedrijf in mechanica en industriële uitrusting zoekt, net als duizenden andere kmo's en mkb-bedrijven in de sector, beheertools die bij het bedrijf passen: een CRM dat begrijpt dat het bedrijf machines en service verkoopt en geen SaaS-abonnementen, een manier om de expertises bij klanten bij te houden, het geheugen van vergaderingen te bewaren, en het eigen vakmanschap te tonen zonder er de avonden aan te besteden.</p>
+      <p>Het bedrijf bekijkt wat er bestaat. De grote CRM's op de markt? Gemaakt voor legers verkopers in maatpak, vol “leads” en “pipelines” — niet voor een technicus die 's ochtends een reductor demonteert en 's avonds zijn rapport schrijft. De buitendiensttools? Onbetaalbaar, of bedacht voor multinationals met een eigen IT-afdeling. De automatische vergaderverslagen? Allemaal bereid om de meest vertrouwelijke opnames naar een Amerikaanse cloudreus te sturen.</p>
+      <p><b style="color:var(--txt)">Dus deed het wat industriëlen doen als een onderdeel niet in de catalogus staat: het maakte het zelf.</b> Eerst voor zichzelf. Zonder businessplan, zonder kapitaalronde, zonder marktstudie — alleen een echte behoefte, opgelost met de middelen die er waren en elke dag in de praktijk getest.</p>
+      <p>De resultaten logen niet. Offertes gingen sneller de deur uit. Opvolgingen werden niet meer vergeten. Interventierapporten werden strak, ondertekend en professioneel. Vergaderingen lieten een spoor na in plaats van te vervliegen. Het LinkedIn-account, al jaren stil, kwam tot leven.</p>
+      <p>Zo ontstond het idee van Indusiax: <b style="color:var(--txt)">als wij deze tools misten, misten anderen ze vast ook.</b> Geen “techbedrijven”. Bedrijven zoals het onze — die verkopen, interventies uitvoeren, produceren en onderhouden, en die tijd noch zin hebben om te vechten met software die hun taal niet spreekt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BAND origine -->
+<div class="pv-band">
+  <picture><source srcset="/assets/apropos/band.webp" type="image/webp"><img src="/assets/apropos/band.jpg" alt="Eerste handgetekende schets van een tool op een werkbank" loading="lazy"></picture>
+  <div class="wrap in">
+    <span class="eb">De allereerste tool</span>
+    <h2>Een schets op een hoek van de werkbank. Geen lastenboek van 40 pagina's.</h2>
+    <p>Wat aan de code voorafging, was een concreet probleem op een dinsdagochtend — en de wil om het vóór vrijdag op te lossen.</p>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Hoe we hier kwamen</span>
+    <h2 class="sec">Een verhaal in vier stappen.</h2>
+    <div class="tl">
+      <div class="tl-i"><div class="dot">01</div><h3>Het probleem</h3><p>Geen enkele software op de markt spreekt echt de taal van onze industrie.</p></div>
+      <div class="tl-i"><div class="dot">02</div><h3>We bouwen voor onszelf</h3><p>Zonder externe financiering, zonder marketingroadmap — gewoon onze eigen werkdag oplossen.</p></div>
+      <div class="tl-i"><div class="dot">03</div><h3>Het werkt, echt</h3><p>Elke dag gebruikt, in de praktijk, door onze eigen teams — de beste test die er is.</p></div>
+      <div class="tl-i"><div class="dot">04</div><h3>We delen het</h3><p>Indusiax is geboren: deze tools in handen geven van bedrijven die dezelfde realiteit kennen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTE / DEVISE -->
+<section class="alt">
+  <div class="wrap">
+    <div class="pv-origin">
+      <p class="lead">“By industry, for industry” is geen slogan die een bureau ons heeft verkocht. <b>Het is onze geboorteakte.</b></p>
+      <p>We zijn niet slimmer of sneller dan de gevestigde softwareleveranciers. We hebben gewoon één voordeel dat geen marketingbudget kan kopen: we gebruiken onze eigen tools, elke dag, in ons eigen bedrijf. Als een scherm slecht is ontworpen, struikelen wij er als eersten over.</p>
+      <div class="sig">Het Indusiax-team</div>
+    </div>
+  </div>
+</section>
+
+<!-- VALEURS -->
+<section>
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:14px">Waar we in geloven</span>
+    <h2 class="sec">Drie overtuigingen achter elke productbeslissing.</h2>
+    <div class="grid c3" style="margin-top:32px">
+      <div class="card"><span class="ic">🔧</span><h3>Eenvoud vraagt werk</h3><p>Een tool die het team niet gebruikt, is niets waard, hoe volledig ook. Elk scherm is ontworpen voor iemand die wel wat beters te doen heeft dan gegevensinvoer.</p></div>
+      <div class="card"><span class="ic">🤝</span><h3>Een klant is geen “lead”</h3><p>In de industrie duren zakelijke relaties jaren, soms decennia. Onze tools respecteren die lange termijn: historiek, traceerbaarheid, geheugen.</p></div>
+      <div class="card"><span class="ic">🔒</span><h3>Uw gegevens zijn van u</h3><p>Hosting in de Europese Unie, vrij exporteren, geen doorverkoop, geen verrassingen. Als u vertrekt, neemt u alles mee — er blijft niets bij ons achter.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-final">
+  <div class="wrap">
+    <span class="eb c" style="display:flex;margin-bottom:12px">Het beste argument is proberen</span>
+    <h2>Liever eerst het werkstuk zelf beoordelen?</h2>
+    <p>Precies daarom kunt u 30 dagen gratis proberen, zonder creditcard.</p>
+    <a class="btn btn-acc btn-big" href="/essai/">Mijn proefperiode starten</a>
+  </div>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">De softwaresuite voor industriële mkb-bedrijven.<br>By industry, for industry.</p>
+      </div>
+      <div>
+        <h4>Producten</h4>
+        <span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a>
+        <span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a>
+        <span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a>
+        <span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a>
+        <h4 class="foot-sous"><a href="/outils/">Tools</a></h4>
+        <span class="fdot" style="--dc:var(--contiax)"></span><a href="/contiax/">Contiax</a>
+        <span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC-kaarten</a>
+      </div>
+      <div>
+        <h4>Indusiax</h4>
+        <a href="/tarifs/">Prijzen</a>
+        <a href="/blog/">Blog</a>
+        <a href="/outils/">Tools</a>
+        <a href="/a-propos/">Over ons</a>
+        <a href="/contact/">Contact</a>
+        <a href="/essai/">Gratis proberen</a>
+      </div>
+      <div>
+        <h4>Juridisch</h4>
+        <a href="/mentions-legales/">Wettelijke vermeldingen</a>
+        <a href="/confidentialite/">Privacy</a>
+        <a href="/securite/">Beveiliging &amp; gegevens</a>
+        <a href="/cgv-stator/">Verkoopvoorwaarden Stator-CRM</a>
+        <a href="/cgv-rotor/">Verkoopvoorwaarden Rotor-FSM</a>
+        <a href="/cgv-suite/">Verkoopvoorwaarden volledige suite</a>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. Alle rechten voorbehouden.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+          <span class="foot-eu">🇪🇺 Gegevens gehost in de EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6"></script>
+</body>
+</html>

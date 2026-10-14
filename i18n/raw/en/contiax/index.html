@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contiax — Free business card scanner | Indusiax</title>
+<meta name="description" content="Photograph a business card — or an email signature on your screen — and get the contact in a few seconds. Free, no account, no cookies, European AI.">
+<link rel="canonical" href="https://indusiax.com/contiax/">
+<link rel="alternate" hreflang="fr" href="https://indusiax.com/contiax/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta name="theme-color" content="#0b0d12">
+<link rel="stylesheet" href="/assets/site.css?v=a864cafc">
+<link rel="stylesheet" href="/assets/product.css?v=6098aea2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contiax — Free business card scanner">
+<meta property="og:description" content="Scan it, the lead is saved. Free, no account, no cookies, European AI.">
+<meta property="og:url" content="https://indusiax.com/contiax/">
+<meta property="og:image" content="https://indusiax.com/assets/social/contiax.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://indusiax.com/assets/social/contiax.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Contiax",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "Business card scanner",
+  "operatingSystem": "Web",
+  "description": "Free business card scanner: photograph a card — or an email signature on your screen — and get the contact in a few seconds, in your phone, a spreadsheet or your CRM. No account, no installation, no cookies.",
+  "url": "https://indusiax.com/contiax/",
+  "installUrl": "https://scan.indusiax.com",
+  "isAccessibleForFree": true,
+  "inLanguage": [
+    "fr",
+    "en",
+    "de",
+    "it",
+    "es",
+    "nl"
+  ],
+  "featureList": [
+    "Reads both sides of a business card in a few seconds",
+    "Reads an email signature photographed on screen",
+    "Holds the photo when there is no network and processes it once the connection returns",
+    "Export to the phone's address book in vCard format",
+    "CSV and Excel workbook export",
+    "Sends to a CRM via a generic webhook or to Stator-CRM",
+    "Interface in French, English, German, Italian, Spanish and Dutch",
+    "No account to create, no cookies, no data kept on the servers"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR",
+    "description": "Free, no account and no credit card required. Ten cards a day, fifty once you leave a business email address."
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Indusiax",
+    "url": "https://indusiax.com"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "It's free, so what's the catch?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There isn't one. Contiax costs us money — not much today, more as the number of users grows — and we treat it as a brand-awareness budget: if it is useful to you, you will know that Indusiax exists and that our software is designed by an industrial company, for industrial companies. That is all we expect."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What happens to the photo of the card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is received, stripped of its metadata — including the GPS location —, read, then discarded. It is never written to disk on our side. Our reading provider, Mistral AI, keeps it for up to thirty days to detect abuse; we would rather say so than suggest it vanishes instantly from end to end."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on anything other than a card?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Contiax reads contact details, not a card format. An email signature, photographed on your computer screen, reads just as well as a business card — often better, because it is consistently formatted and no logo runs across the name. It has even become the most common case: you receive more signatures in a week than you collect cards at a trade show."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Contiax opens in your phone's browser. You can add it to your home screen to find it like an app, but nothing goes through an app store."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What if there is no signal in the exhibition hall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Take the photo anyway. The card waits in your phone and is sent automatically as soon as the connection returns. We designed it precisely for trade shows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many cards can I scan?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ten a day, no strings attached. Beyond that, leave a business email address and you move up to fifty. These limits protect the service from automated use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "In which languages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The interface is available in French, English, German, Italian, Spanish and Dutch. The cards themselves are read whatever their language."
+      }
+    }
+  ]
+}
+</script>
+<style>
+  :root{--contiax:#10B981;}
+  .cx-accent{color:var(--contiax);}
+  .cx-hero-in{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center;}
+  @media(max-width:860px){.cx-hero-in{grid-template-columns:1fr;gap:30px;}}
+  .cx-gratuit{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:7px 16px;border-radius:999px;margin-bottom:18px;
+    background:rgba(16,185,129,.13);border:1px solid rgba(16,185,129,.34);
+    color:var(--contiax);font-size:.85rem;font-weight:700;letter-spacing:.02em;
+  }
+  .cx-tel{
+    background:#12151d;border:1px solid var(--bord);border-radius:26px;
+    padding:22px 18px;max-width:288px;margin:0 auto;text-align:center;
+    box-shadow:0 26px 64px -24px rgba(16,185,129,.5);
+  }
+  .cx-viseur{position:relative;width:104px;height:104px;margin:6px auto 18px;}
+  .cx-viseur svg{width:100%;height:100%;}
+  .cx-balayage{position:absolute;left:14%;right:14%;top:50%;height:2px;border-radius:2px;
+    background:linear-gradient(90deg,transparent,var(--contiax),transparent);
+    box-shadow:0 0 14px 2px rgba(16,185,129,.55);}
+  @media(prefers-reduced-motion:no-preference){
+    .cx-balayage{animation:cxScan 2.6s cubic-bezier(.65,0,.35,1) infinite;}
+    @keyframes cxScan{0%,100%{transform:translateY(-28px);opacity:.2;}50%{transform:translateY(28px);opacity:1;}}
+  }
+  .cx-tel .cx-sign{font-weight:700;font-size:1.02rem;margin-bottom:4px;}
+  .cx-tel .cx-sub{font-size:.85rem;color:var(--mut2);}
+  .cx-qr{background:#fff;border-radius:14px;padding:12px;width:154px;margin:18px auto 10px;}
+  .cx-qr img{display:block;width:100%;height:auto;}
+  .cx-adresse{font-weight:700;font-size:.9rem;color:var(--contiax);}
+  .cx-args{display:grid;grid-template-columns:repeat(auto-fit,minmax(238px,1fr));gap:16px;}
+  .cx-arg{background:var(--bg2);border:1px solid var(--bord);border-radius:15px;padding:20px;
+    transition:border-color .25s,transform .25s;}
+  .cx-arg:hover{border-color:rgba(16,185,129,.34);transform:translateY(-2px);}
+  .cx-arg b{display:flex;align-items:center;gap:9px;font-size:1.02rem;margin-bottom:7px;}
+  .cx-arg b svg{flex-shrink:0;color:var(--contiax);}
+  .cx-arg p{color:var(--mut);font-size:.93rem;margin:0;}
+  .cx-etapes{counter-reset:cx;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;}
+  .cx-etape{position:relative;padding-left:46px;}
+  .cx-etape::before{
+    counter-increment:cx;content:counter(cx);
+    position:absolute;left:0;top:-2px;width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(16,185,129,.13);border:1px solid rgba(16,185,129,.34);
+    color:var(--contiax);font-weight:700;font-size:.92rem;
+  }
+  .cx-etape b{display:block;margin-bottom:4px;}
+  .cx-etape p{color:var(--mut);font-size:.93rem;margin:0;}
+  .cx-btn-vert{background:var(--contiax);color:#04150f;}
+  .cx-btn-vert:hover{background:#34d399;}
+  .cx-faq{border-top:1px solid var(--bord);padding:18px 0;}
+  .cx-faq summary{cursor:pointer;font-weight:650;list-style:none;display:flex;gap:10px;align-items:flex-start;}
+  @media(pointer:coarse){.cx-faq summary{min-height:44px;align-items:center;}}
+  .cx-faq summary::-webkit-details-marker{display:none;}
+  .cx-faq summary::before{content:"›";color:var(--contiax);font-size:1.3rem;line-height:1.1;transition:transform .2s;}
+  .cx-faq[open] summary::before{transform:rotate(90deg);}
+  .cx-faq p{color:var(--mut);margin:10px 0 0 24px;font-size:.95rem;}
+</style>
+<!-- Mesure d'audience Umami, auto-hébergée : aucun cookie, aucune adresse IP
+     conservée, donc aucun bandeau de consentement requis. -->
+<script defer src="https://analytics.indusiax.com/script.js" data-website-id="160d7a75-f719-4aea-b3ff-e3c549f7b8f3"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+    <button id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="nav-links">
+      <span class="nav-item"><a href="/stator/">Stator-CRM</a><span class="np" style="--mc:var(--stator)"><b>Stator-CRM</b><i>Customers, quotes, follow-ups, sales rounds, after-sales service</i></span></span>
+      <span class="nav-item"><a href="/rotor/">Rotor-FSM</a><span class="np" style="--mc:var(--rotor)"><b>Rotor-FSM</b><i>Inspections and field service jobs, PDF reports</i></span></span>
+      <span class="nav-item"><a href="/vector/">Vector-MOM</a><span class="np" style="--mc:var(--vector)"><b>Vector-MOM</b><i>AI meeting minutes, in Europe</i></span></span>
+      <span class="nav-item"><a href="/flux/">Flux-Link</a><span class="np" style="--mc:var(--flux)"><b>Flux-Link</b><i>LinkedIn posts dictated and written by AI</i></span></span>
+      <a href="/tarifs/">Pricing</a>
+      <a href="/blog/">Blog</a>
+      <a href="/outils/">Tools</a>
+      <a href="/a-propos/">About</a>
+      <a class="nav-cta-mobile" href="https://scan.indusiax.com" rel="noopener">Open Contiax</a>
+    </nav>
+    <a class="btn btn-acc nav-cta cx-btn-vert" href="https://scan.indusiax.com" rel="noopener">Open Contiax</a>
+  </div>
+</header>
+
+<!-- ═══ Ouverture ═══ -->
+<section class="pv pv-hero">
+  <div class="wrap cx-hero-in">
+    <div>
+      <span class="cx-gratuit">● 100% free</span>
+      <h1>Scan it, the lead is <span class="cx-accent">saved</span>.</h1>
+      <p class="sub">
+        You are back from a trade show with forty business cards in your pocket.
+        Photograph them: Contiax turns them into clean contacts, ready to
+        go into your phone, a spreadsheet or your CRM.
+        And not just cards&nbsp;— an email signature reads just as well.
+      </p>
+      <div class="row" style="margin-top:26px">
+        <a class="btn btn-acc btn-big cx-btn-vert" href="https://scan.indusiax.com" rel="noopener">Open Contiax</a>
+        <a class="btn btn-ghost btn-big" href="#comment">How it works</a>
+      </div>
+      <p style="margin-top:16px;color:var(--mut2);font-size:.88rem">
+        No account to create. No app to install.
+      </p>
+    </div>
+
+    <div class="cx-tel">
+      <div class="cx-viseur">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <g stroke="rgba(255,255,255,.3)" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 8.5V5.6A2.6 2.6 0 0 1 5.6 3H8.5"/><path d="M15.5 3h2.9A2.6 2.6 0 0 1 21 5.6V8.5"/>
+            <path d="M21 15.5v2.9a2.6 2.6 0 0 1-2.6 2.6H15.5"/><path d="M8.5 21H5.6A2.6 2.6 0 0 1 3 18.4V15.5"/>
+          </g>
+        </svg>
+        <span class="cx-balayage"></span>
+      </div>
+      <p class="cx-sign">Contia<span class="cx-accent">x</span></p>
+      <p class="cx-sub">Scan it, the lead is saved!</p>
+      <!-- Pas de chargement différé : l'image est visible dès l'ouverture,
+           le différer ne ferait que retarder son affichage. -->
+      <div class="cx-qr"><img src="/assets/contiax-qr.svg" alt="QR code linking to scan.indusiax.com" width="130" height="130"></div>
+      <p class="cx-adresse">scan.indusiax.com</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Les sept arguments ═══ -->
+<section class="pv alt">
+  <div class="wrap">
+    <h2 class="sec">Why it is different</h2>
+    <div class="cx-args">
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Genuinely free</b>
+        <p>No limited trial, no credit card, no account. Indusiax gives Contiax away to make our software suite known — it is our own business card.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h8l-1 8 10-12h-8l1-8Z"/></svg>A few seconds</b>
+        <p>One photo, two seconds, and the record appears. Front and back read in one go. You check it, correct it if needed, and save.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Not just cards</b>
+        <p>Photograph the screen showing a message: the signature reads as well as a card, and often better — consistent formatting, no logo across the name. And you receive far more emails than business cards.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></svg>Wherever you want</b>
+        <p>Into your phone's address book, a CSV or Excel file, or straight into your CRM. And it works even when the trade show network cannot keep up.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>No data kept</b>
+        <p>Your contacts stay in your phone. Our servers read the photo, send back the record, and keep nothing — neither the image nor the contact details.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 8 8 8M16 8l-8 8"/></svg>No cookies</b>
+        <p>No banner to click, because there is nothing to accept: no cookies, no trackers, no third-party analytics. The page calls no other site.</p>
+      </div>
+
+      <div class="cx-arg">
+        <b><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3a15 15 0 0 1 0 18a15 15 0 0 1 0-18Z"/></svg>European technology</b>
+        <p>Card reading is handled by Mistral AI, a French company. The service is hosted in the European Union. Nothing goes to a tech giant across the Atlantic.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Comment ça marche ═══ -->
+<section class="pv" id="comment">
+  <div class="wrap">
+    <h2 class="sec">Three steps</h2>
+    <div class="cx-etapes">
+      <div class="cx-etape">
+        <b>Photograph</b>
+        <p>Open scan.indusiax.com, tap the button, frame the card — or the screen showing an email signature. Add the back if it carries information.</p>
+      </div>
+      <div class="cx-etape">
+        <b>Check</b>
+        <p>The record appears filled in: name, company, job title, phone numbers in international format, email, address. Correct whatever needs correcting.</p>
+      </div>
+      <div class="cx-etape">
+        <b>Export</b>
+        <p>Into your phone with one tap, into a spreadsheet at the end of the show, or into your CRM automatically.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ Et après ═══ -->
+<section class="pv alt">
+  <div class="wrap">
+    <h2 class="sec" style="text-align:left;max-width:640px">And once you have the contacts?</h2>
+    <p style="color:var(--mut);max-width:640px;margin-bottom:22px">
+      That is where the real work begins — following up, qualifying, closing.
+      Contiax sends your contacts to the tool you already use, whatever
+      it is: a generic webhook connects it to Zapier, Make or n8n,
+      and therefore to most CRMs on the market.
+    </p>
+    <p style="color:var(--mut);max-width:640px">
+      And if you happen to be looking for a CRM that speaks your language —
+      deals, quotes, sales rounds, installed base —
+      <a href="/stator/" style="color:var(--stator);font-weight:650">discover Stator-CRM</a>,
+      built for industrial SMEs. Contiax connects to it with two fields.
+    </p>
+  </div>
+</section>
+
+<!-- ═══ Questions ═══ -->
+<section class="pv">
+  <div class="wrap" style="max-width:760px">
+    <h2 class="sec">Frequently asked questions</h2>
+
+    <details class="cx-faq">
+      <summary>It's free, so what's the catch?</summary>
+      <p>There isn't one. Contiax costs us money — not much today, more as the number of users grows — and we treat it as a brand-awareness budget: if it is useful to you, you will know that Indusiax exists and that our software is designed by an industrial company, for industrial companies. That is all we expect.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>What happens to the photo of the card?</summary>
+      <p>It is received, stripped of its metadata — including the GPS location —, read, then discarded. It is never written to disk on our side. Our reading provider, Mistral AI, keeps it for up to thirty days to detect abuse; we would rather say so than suggest it vanishes instantly from end to end.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>Does it work on anything other than a card?</summary>
+      <p>Yes. Contiax reads contact details, not a card format. An email signature, photographed on your computer screen, reads just as well as a business card — often better, because it is consistently formatted and no logo runs across the name. It has even become the most common case: you receive more signatures in a week than you collect cards at a trade show.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>Do I need to install anything?</summary>
+      <p>No. Contiax opens in your phone's browser. You can add it to your home screen to find it like an app, but nothing goes through an app store.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>What if there is no signal in the exhibition hall?</summary>
+      <p>Take the photo anyway. The card waits in your phone and is sent automatically as soon as the connection returns. We designed it precisely for trade shows.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>How many cards can I scan?</summary>
+      <p>Ten a day, no strings attached. Beyond that, leave a business email address and you move up to fifty. These limits protect the service from automated use.</p>
+    </details>
+
+    <details class="cx-faq">
+      <summary>In which languages?</summary>
+      <p>The interface is available in French, English, German, Italian, Spanish and Dutch. The cards themselves are read whatever their language.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ═══ Appel final ═══ -->
+<section class="pv alt">
+  <div class="wrap" style="text-align:center">
+    <h2 class="sec">Try it with the card lying on your desk</h2>
+    <p style="color:var(--mut);max-width:520px;margin:0 auto 26px">
+      There is always one. Thirty seconds is enough to see the result.
+    </p>
+    <a class="btn btn-acc btn-big cx-btn-vert" href="https://scan.indusiax.com" rel="noopener">Open Contiax</a>
+
+    <p style="margin-top:34px;padding-top:24px;border-top:1px solid var(--bord);
+              color:var(--mut2);font-size:.9rem;max-width:560px;margin-left:auto;margin-right:auto">
+      Contiax reads the cards you are given. For the one you hand out, we also
+      make <a href="/cartes-nfc/" style="color:var(--cartes)">NFC business cards</a> —
+      a chip card that opens your contact record on the other person's phone, for €5.
+    </p>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="logo" href="/"><svg class="logo-mark" width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="12" cy="12" r="3" fill="#E84C2B"/><path d="M12 2v4.2" stroke="#E84C2B" stroke-width="2.4" stroke-linecap="round"/><path d="M22 12h-4.2" stroke="#3B82F6" stroke-width="2.4" stroke-linecap="round"/><path d="M12 22v-4.2" stroke="#A78BFA" stroke-width="2.4" stroke-linecap="round"/><path d="M2 12h4.2" stroke="#0EA5E9" stroke-width="2.4" stroke-linecap="round"/></svg><span class="logo-word">Indusia<svg class="logo-x" viewBox="0 0 116 112" fill="none" stroke="currentColor" stroke-width="13" stroke-linecap="round" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M26 24 90 88"/><path d="M13.3 100.7 102.7 11.3"/></svg><span class="u-sr">x</span></span></a>
+        <p style="margin-top:10px;max-width:280px">The software suite for small and mid-sized industrial companies.<br>By industry, for industry.</p>
+      </div>
+      <div><h4>Products</h4><span class="fdot" style="--dc:var(--stator)"></span><a href="/stator/">Stator-CRM</a><span class="fdot" style="--dc:var(--rotor)"></span><a href="/rotor/">Rotor-FSM</a><span class="fdot" style="--dc:var(--vector)"></span><a href="/vector/">Vector-MOM</a><span class="fdot" style="--dc:var(--flux)"></span><a href="/flux/">Flux-Link</a><h4 class="foot-sous"><a href="/outils/">Tools</a></h4><span class="fdot" style="--dc:var(--contiax)"></span><a class="on" href="/contiax/">Contiax</a><span class="fdot" style="--dc:var(--cartes)"></span><a href="/cartes-nfc/">NFC cards</a></div>
+      <div><h4>Indusiax</h4><a href="/tarifs/">Pricing</a><a href="/blog/">Blog</a><a href="/outils/">Tools</a><a href="/a-propos/">About</a><a href="/contact/">Contact</a><a href="/essai/">Free trial</a></div>
+      <div><h4>Legal</h4><a href="/mentions-legales/">Legal notice</a><a href="/confidentialite/">Privacy</a><a href="/securite/">Security &amp; data</a><a href="/cgv-stator/">Stator-CRM terms of sale</a><a href="/cgv-rotor/">Rotor-FSM terms of sale</a><a href="/cgv-suite/">Full Suite terms of sale</a></div>
+    </div>
+    <div class="foot-base">
+      <span>© 2026 Indusiax — ECOM INDUSTRIE. All rights reserved.</span>
+      <span><a href="mailto:contact@indusiax.com" style="display:inline">contact@indusiax.com</a></span>
+      <span class="foot-eu">🇪🇺 Data hosted in the EU</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/site.js?v=e322afd6" defer></script>
+</body>
+</html>

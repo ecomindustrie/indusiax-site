@@ -70,7 +70,7 @@
       suiteH1: 'Stator-CRM au centre. ',
       suiteH2: 'Le reste s’y branche.',
       suiteRows: [
-        ['Une seule connexion', '« Se connecter avec Stator »'],
+        ['Une seule connexion', 'depuis votre Stator'],
         ['Fiches clients partagées', 'aucune double saisie'],
         ['Les données circulent', 'du terrain au CRM']
       ],
@@ -148,7 +148,7 @@
       suiteH1: 'Stator-CRM at the centre. ',
       suiteH2: 'Everything else plugs in.',
       suiteRows: [
-        ['One single sign-in', '“Sign in with Stator”'],
+        ['One single sign-in', 'from your Stator'],
         ['Shared customer records', 'no double data entry'],
         ['Data flows through', 'from the field to the CRM']
       ],
@@ -226,7 +226,7 @@
       suiteH1: 'Stator-CRM in het midden. ',
       suiteH2: 'De rest sluit erop aan.',
       suiteRows: [
-        ['Eén enkele login', '“Inloggen met Stator”'],
+        ['Eén enkele login', 'vanuit uw Stator'],
         ['Gedeelde klantfiches', 'geen dubbele invoer'],
         ['Gegevens stromen door', 'van het terrein naar de CRM']
       ],
